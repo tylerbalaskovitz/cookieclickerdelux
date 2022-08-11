@@ -18,12 +18,14 @@ import javax.swing.JTextArea;
 import javax.swing.Timer;
 
 public class CookieMain {
-
+	
+	String rewardsMessage;
 	Random rand = new Random();
 	
-	JPanel itemPanel, cardPanel, slotPanel;
-	JLabel counterLabel, perSecLabel;
-	JButton button1, button2, button3, button4, button5, button6, button7, button8, button9;
+	JFrame window;
+	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, messagePanel, counterPanel, cookiePanel, optionsPanel;
+	JLabel counterLabel, perSecLabel, shopLabel;
+	JButton button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton1, shopButton2, shopButton3, shopButton4, shopButton5;
 	
 	int cookieCounter, timerSpeed, cursorNumber, cursorPrice, grandpaNumber, grandpaPrice, slotsPrice,
 	grandmaPrice, grandmaNumber, elvesPrice, elvesNumber, luckyPrice, bastardPrice, feverPrice;
@@ -50,35 +52,84 @@ public class CookieMain {
 		
 	}
 	
-	public void displaySwitch() {
+	public void displayMainGame() {
+		shopUpperPanel.setVisible(false);
+		shopPanel.setVisible(false);
+		itemPanel.setVisible(true);
+		cardPanel.setVisible(true);
+		slotPanel.setVisible(true);
+		messagePanel.setVisible(true);
+		counterPanel.setVisible(true);
+		cookiePanel.setVisible(true);
+		displayPanelSwitch= true;
+		
+	}
+	
+	public void closeAllPanels() {
+		itemPanel.setVisible(false);
+		cardPanel.setVisible(false);
+		slotPanel.setVisible(false);
+		shopPanel.setVisible(false);
+		messagePanel.setVisible(false);
+		counterPanel.setVisible(false);
+		cookiePanel.setVisible(false);
+		shopPanel.setVisible(false);
+		shopUpperPanel.setVisible(false);
+		displayPanelSwitch= false;
+	}
+	
+	public void displaySwitch(String displayOption) {
+		switch (displayOption) {
+		case "Cog":
 		if(displayPanelSwitch == true) {
-			itemPanel.setVisible(false);
-			cardPanel.setVisible(false);
-			slotPanel.setVisible(false);
+			
+			closeAllPanels();
 			displayPanelSwitch= false;
 			
 		} else if (displayPanelSwitch == false) {
-			itemPanel.setVisible(true);
-			cardPanel.setVisible(true);
-			slotPanel.setVisible(true);
+			displayMainGame();
 			displayPanelSwitch= true;
 			
 		}
+		break;
+		
+		
+		case "ItemShop":
+			if(displayPanelSwitch == true) {
+				closeAllPanels();
+				displayShop();
+				displayPanelSwitch= false;
+				
+			} else if (displayPanelSwitch == false) {
+				displayMainGame();
+				displayPanelSwitch= true;
+			break;
+		
+		}
+	}
 	}
 	
 	public void wildCard(int wildCard) {
 		switch (wildCard) {
+		
 		case(0):
 			elvesPrice = elvesPrice/2;
+			rewardsMessage = "The cost of elves have been halved!";
 			break;
 		case (1):
 			grandmaPrice = grandmaPrice/2;
+			rewardsMessage = "The cost of grandmas have been halved!";
 			break;
 		case (2):
 			grandpaPrice = grandpaPrice/2;
+			rewardsMessage = "The cost of grandpas have been halved!";
 			break;
 		case (3):
 			cursorPrice = cursorPrice/2;
+			rewardsMessage = "The cost of cursors have been halved!";
+			break;
+			default:
+			rewardsMessage = "Ya lost you little bastard!";
 			break;
 		}
 	}
@@ -107,23 +158,35 @@ public class CookieMain {
 			int slot3 = rand.nextInt(slotValue);
 			button7.setText(""+ slot3);
 			if (slot1 == slot2 && slot1 == slot3) {
-				messageText.setText("You're the luckiest bastard of all! You hit the jackpot \n All sticker prices are 1/4 the price");
+				if (slot1 == 3) {
+					rewardsMessage = "Gain 10,000 Cookies";
+					cookieCounter = cookieCounter + 10000;
+				} else {
+					rewardsMessage = "";
+				}
+				
+				messageText.setText("You're the luckiest bastard of all! You hit the jackpot! All sticker prices are 1/4 the price. " + rewardsMessage);
 				cursorPrice = cursorPrice/4;
 				grandpaPrice = grandpaPrice/4;
 				grandmaPrice = grandmaPrice/4;
 				elvesPrice = elvesPrice/4;
-				slotsPrice = slotsPrice + 1000;
+				luckyPrice = luckyPrice/4;
+				bastardPrice = bastardPrice/4;
+				feverPrice = feverPrice/4;
+				
 				break;
 			}
-			if (slot1 == slot2 || slot2==slot3) {
+			else if (slot1 == slot2 || slot2==slot3) {
 				luckyBastardFever("Lucky", 4);
-				messageText.setText("After pulling the rod, the results are a bit lopsided.");
+				messageText.setText("You pulled the rod, and the results are a bit lopsided. " + rewardsMessage);
 				break;
 			}
-			if (slot1 == slot3) {
+			else if (slot1 == slot3) {
 				luckyBastardFever("Bastard", 4);
-				messageText.setText("Keep pulling that rod, you little bastard! Something good will come out!");
+				messageText.setText("Keep pulling that rod, you little bastard! Something good is starting to come out! " + rewardsMessage);
 				break;
+			} else {
+				messageText.setText("Ya lost you little bastard!");
 			}
 			break;
 		
@@ -142,7 +205,7 @@ public class CookieMain {
 		grandpaUnlocked = false;
 		timerOn = false;
 		perSecond = 0;
-		cookieCounter = 11110;
+		cookieCounter = 0;
 		grandpaPrice = 100;
 		grandmaPrice = 200;
 		elvesPrice = 500;
@@ -161,18 +224,64 @@ public class CookieMain {
 		
 	}
 	
+	public void displayShop() {
+		
+		shopPanel.setVisible(true);
+		shopUpperPanel.setVisible(true);
+
+	}
+	
 	
 	public void createUI() {
 		
-		JFrame window = new JFrame();
+		window = new JFrame();
 		window.setSize(800, 600);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.getContentPane().setBackground(Color.black);
 		window.setLayout(null);
 		
-		JPanel displayPanelSwitch = new JPanel();
-		displayPanelSwitch.setBounds(10, 500, 50, 50);
-		displayPanelSwitch.setBackground(Color.black);
+		optionsPanel = new JPanel();
+		optionsPanel.setBounds(10, 500, 250, 50);
+		optionsPanel.setLayout(new GridLayout(1,5));
+		optionsPanel.setBackground(Color.yellow);
+		
+		displayShop = new JButton();
+		ImageIcon shop = new ImageIcon(getClass().getClassLoader().getResource("shop.png"));
+		displayShop = new JButton();
+		displayShop.setBackground(Color.black);
+		displayShop.setIcon(shop);
+		displayShop.setFocusPainted(false);
+		displayShop.setBorder(null);
+		displayShop.addActionListener(cHandler);
+		displayShop.setActionCommand("Shop");
+		optionsPanel.add(displayShop);
+		
+		shopUpperPanel = new JPanel();
+		shopUpperPanel.setBounds(135, 50, 500, 200);
+		shopUpperPanel.setLayout(new GridLayout(2,5));
+		shopUpperPanel.setBackground(Color.white);
+		shopUpperPanel.setVisible(false);
+		
+		
+		shopPanel = new JPanel();
+		shopPanel.setBounds(135, 275, 500, 200);
+		shopPanel.setLayout(new GridLayout(2,5));
+		shopPanel.setBackground(Color.yellow);
+		
+		shopButton1 = new JButton();
+		shopButton1 = new JButton();
+		shopButton1.setBackground(Color.yellow);
+		
+		shopButton1.setFocusPainted(false);
+		shopButton1.setBorder(null);
+		shopButton1.addActionListener(cHandler);
+		shopButton1.setActionCommand("");
+		shopPanel.add(shopButton1);
+		shopPanel.setVisible(false);
+		window.add(shopPanel);
+		window.add(shopUpperPanel);
+		
+		
 		ImageIcon cog = new ImageIcon(getClass().getClassLoader().getResource("cog.png"));
 		button9 = new JButton();
 		button9.setBackground(Color.black);
@@ -181,11 +290,11 @@ public class CookieMain {
 		button9.setBorder(null);
 		button9.addActionListener(cHandler);
 		button9.setActionCommand("Display");
-		displayPanelSwitch.add(button9);
+		optionsPanel.add(button9);
 		
-		window.add(displayPanelSwitch);
+		window.add(optionsPanel);
 		
-		JPanel cookiePanel = new JPanel();
+		cookiePanel = new JPanel();
 		cookiePanel.setBounds(100, 220, 200, 200);
 		cookiePanel.setBackground(Color.black);
 		window.add(cookiePanel);
@@ -224,7 +333,7 @@ public class CookieMain {
 		
 		window.add(slotPanel);
 		
-		JPanel counterPanel = new JPanel();
+		counterPanel = new JPanel();
 		counterPanel.setBounds(100,100,200,100);
 		counterPanel.setBackground(Color.black);
 		counterPanel.setLayout(new GridLayout(2,1));
@@ -327,7 +436,7 @@ public class CookieMain {
 		
 		window.add(itemPanel);
 		
-		JPanel messagePanel = new JPanel();
+		messagePanel = new JPanel();
 		messagePanel.setBounds(500, 50, 250, 150);
 		messagePanel.setBackground(Color.black);
 		window.add(messagePanel);
@@ -405,7 +514,7 @@ public class CookieMain {
 					}
 				} 
 				if(slotsUnlocked==false) {
-					if(cookieCounter >= 1000) {
+					if(cookieCounter >= 1500) {
 						slotsUnlocked = true;
 						button8.setText("Slots");
 					}
@@ -508,8 +617,9 @@ public class CookieMain {
 					if(cookieCounter >= luckyPrice) {
 						cookieCounter = cookieCounter - luckyPrice;
 						luckyPrice = luckyPrice + 500;
-						messageText.setText("Lucky: \n [Price: " + luckyPrice + "] \n Roll the dice, you lucky bastard! One of the four costs to the prices above will be halved");
-						luckyBastardFever("Lucky", 4);
+						luckyBastardFever("Lucky", 5);
+						messageText.setText("Lucky: \n [Price: " + luckyPrice + "] \n" + rewardsMessage);
+						
 						
 						
 						
@@ -520,8 +630,9 @@ public class CookieMain {
 					if(cookieCounter >= bastardPrice) {
 						cookieCounter = cookieCounter - bastardPrice;
 						bastardPrice = bastardPrice + 750;
-						messageText.setText("Bastard: \n " + bastardPrice + "] \nRoll the dice, you lucky bastard! One of the three costs to the prices above will be halved");
 						luckyBastardFever("Bastard", 3);
+						messageText.setText("Bastard: \n [Price: " + bastardPrice + "] \n " + rewardsMessage);
+						
 						
 						
 					}
@@ -531,8 +642,9 @@ public class CookieMain {
 					if(cookieCounter >= feverPrice) {
 						cookieCounter = cookieCounter - feverPrice;
 						feverPrice = feverPrice + 1000;
-						messageText.setText("Roll the dice, you lucky bastard! One of the two costs to the prices above will be halved, or quartered");
 						luckyBastardFever("Bastard", 2);
+						messageText.setText("Fever: \n [Price: " + feverPrice + "] \n"  + rewardsMessage);
+						
 						
 						
 					}
@@ -544,7 +656,10 @@ public class CookieMain {
 					}
 				break;
 				case "Display":
-					displaySwitch();
+					displaySwitch("Cog");
+					break;
+				case "Shop":
+					displaySwitch("ItemShop");
 					break;
 					
 			}
@@ -671,9 +786,15 @@ public class CookieMain {
 		}
 		//by exiting(not hovering over the 8th button, the text for the regular part of the game appear.
 		else if (button == button8) {
+			if (luckyUnlocked == true) {
 			button5.setText("Lucky");
+			}
+			if (bastardUnlocked == true) {
 			button6.setText("Bastard");
+			}
+			if (feverUnlocked == true) {
 			button7.setText("Fever");
+			}
 			messageText.setText(null);
 			
 		}
