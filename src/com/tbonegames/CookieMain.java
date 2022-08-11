@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,17 +19,20 @@ import javax.swing.Timer;
 
 public class CookieMain {
 
+	Random rand = new Random();
+	
+	JPanel itemPanel, cardPanel, slotPanel;
 	JLabel counterLabel, perSecLabel;
-	JButton button1, button2, button3, button4, button5, button6, button7, button8;
+	JButton button1, button2, button3, button4, button5, button6, button7, button8, button9;
 	
 	int cookieCounter, timerSpeed, cursorNumber, cursorPrice, grandpaNumber, grandpaPrice, slotsPrice,
 	grandmaPrice, grandmaNumber, elvesPrice, elvesNumber, luckyPrice, bastardPrice, feverPrice;
 	
 	double perSecond;
-	boolean timerOn, grandpaUnlocked, grandmaUnlocked, elvesUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked;
+	boolean timerOn, grandpaUnlocked, grandmaUnlocked, elvesUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch;
 	Font font1, font2;
 	CookieHandler cHandler = new CookieHandler();
-	Timer timer;
+	Timer timer, slotTimer;
 	JTextArea messageText;
 	MouseHandler mHandler = new MouseHandler();
 	
@@ -46,7 +50,91 @@ public class CookieMain {
 		
 	}
 	
+	public void displaySwitch() {
+		if(displayPanelSwitch == true) {
+			itemPanel.setVisible(false);
+			cardPanel.setVisible(false);
+			slotPanel.setVisible(false);
+			displayPanelSwitch= false;
+			
+		} else if (displayPanelSwitch == false) {
+			itemPanel.setVisible(true);
+			cardPanel.setVisible(true);
+			slotPanel.setVisible(true);
+			displayPanelSwitch= true;
+			
+		}
+	}
+	
+	public void wildCard(int wildCard) {
+		switch (wildCard) {
+		case(0):
+			elvesPrice = elvesPrice/2;
+			break;
+		case (1):
+			grandmaPrice = grandmaPrice/2;
+			break;
+		case (2):
+			grandpaPrice = grandpaPrice/2;
+			break;
+		case (3):
+			cursorPrice = cursorPrice/2;
+			break;
+		}
+	}
+	
+	public void luckyBastardFever(String slotType, int slotValue) {
+		int result;
+		switch (slotType) {
+		case "Lucky":
+			result = rand.nextInt(slotValue);
+			wildCard(result);
+			break;
+		case "Bastard":
+			result = rand.nextInt(slotValue);
+			wildCard(result);
+			break;
+		case "Fever":
+			result = rand.nextInt(slotValue);
+			wildCard(result);
+			break;
+		case "Slots":
+			
+			int slot1 = rand.nextInt(slotValue);
+			button5.setText(""+ slot1);
+			int slot2 = rand.nextInt(slotValue);
+			button6.setText(""+ slot2);
+			int slot3 = rand.nextInt(slotValue);
+			button7.setText(""+ slot3);
+			if (slot1 == slot2 && slot1 == slot3) {
+				messageText.setText("You're the luckiest bastard of all! You hit the jackpot \n All sticker prices are 1/4 the price");
+				cursorPrice = cursorPrice/4;
+				grandpaPrice = grandpaPrice/4;
+				grandmaPrice = grandmaPrice/4;
+				elvesPrice = elvesPrice/4;
+				slotsPrice = slotsPrice + 1000;
+				break;
+			}
+			if (slot1 == slot2 || slot2==slot3) {
+				luckyBastardFever("Lucky", 4);
+				messageText.setText("After pulling the rod, the results are a bit lopsided.");
+				break;
+			}
+			if (slot1 == slot3) {
+				luckyBastardFever("Bastard", 4);
+				messageText.setText("Keep pulling that rod, you little bastard! Something good will come out!");
+				break;
+			}
+			break;
+		
+		
+		
+		}
+			
+	}
+	
 	public void startUpValues() {
+		displayPanelSwitch = true;
 		slotsUnlocked = false;
 		luckyUnlocked = false;
 		bastardUnlocked = false;
@@ -54,7 +142,7 @@ public class CookieMain {
 		grandpaUnlocked = false;
 		timerOn = false;
 		perSecond = 0;
-		cookieCounter = 0;
+		cookieCounter = 11110;
 		grandpaPrice = 100;
 		grandmaPrice = 200;
 		elvesPrice = 500;
@@ -82,6 +170,21 @@ public class CookieMain {
 		window.getContentPane().setBackground(Color.black);
 		window.setLayout(null);
 		
+		JPanel displayPanelSwitch = new JPanel();
+		displayPanelSwitch.setBounds(10, 500, 50, 50);
+		displayPanelSwitch.setBackground(Color.black);
+		ImageIcon cog = new ImageIcon(getClass().getClassLoader().getResource("cog.png"));
+		button9 = new JButton();
+		button9.setBackground(Color.black);
+		button9.setIcon(cog);
+		button9.setFocusPainted(false);
+		button9.setBorder(null);
+		button9.addActionListener(cHandler);
+		button9.setActionCommand("Display");
+		displayPanelSwitch.add(button9);
+		
+		window.add(displayPanelSwitch);
+		
 		JPanel cookiePanel = new JPanel();
 		cookiePanel.setBounds(100, 220, 200, 200);
 		cookiePanel.setBackground(Color.black);
@@ -102,7 +205,7 @@ public class CookieMain {
 		cookieButton.setIcon(cookie);
 		cookiePanel.add(cookieButton);
 		
-		JPanel slotPanel = new JPanel();
+		slotPanel = new JPanel();
 		slotPanel.setBounds(500, 480, 250, 60 );
 		slotPanel.setBackground(Color.yellow);
 		slotPanel.setLayout(new GridLayout(1,1));
@@ -137,7 +240,7 @@ public class CookieMain {
 		perSecLabel.setForeground(Color.white);
 		counterPanel.add(perSecLabel);
 		
-		JPanel cardPanel = new JPanel();
+		cardPanel = new JPanel();
 		cardPanel.setBounds(500, 418, 250, 60);
 		cardPanel.setBackground(Color.black);
 		cardPanel.setLayout(new GridLayout(1,3));
@@ -174,7 +277,7 @@ public class CookieMain {
 		
 		window.add(cardPanel);
 		
-		JPanel itemPanel = new JPanel();
+		itemPanel = new JPanel();
 		itemPanel.setBounds(500, 170, 250, 250);
 		itemPanel.setBackground(Color.black);
 		itemPanel.setLayout(new GridLayout(4,1));
@@ -303,7 +406,7 @@ public class CookieMain {
 				} 
 				if(slotsUnlocked==false) {
 					if(cookieCounter >= 1000) {
-						feverUnlocked = true;
+						slotsUnlocked = true;
 						button8.setText("Slots");
 					}
 				} 
@@ -332,6 +435,8 @@ public class CookieMain {
 		timer.start();
 		
 	}
+	
+	
 	
 	public class CookieHandler implements ActionListener{
 		
@@ -404,6 +509,7 @@ public class CookieMain {
 						cookieCounter = cookieCounter - luckyPrice;
 						luckyPrice = luckyPrice + 500;
 						messageText.setText("Lucky: \n [Price: " + luckyPrice + "] \n Roll the dice, you lucky bastard! One of the four costs to the prices above will be halved");
+						luckyBastardFever("Lucky", 4);
 						
 						
 						
@@ -415,7 +521,7 @@ public class CookieMain {
 						cookieCounter = cookieCounter - bastardPrice;
 						bastardPrice = bastardPrice + 750;
 						messageText.setText("Bastard: \n " + bastardPrice + "] \nRoll the dice, you lucky bastard! One of the three costs to the prices above will be halved");
-						
+						luckyBastardFever("Bastard", 3);
 						
 						
 					}
@@ -426,14 +532,21 @@ public class CookieMain {
 						cookieCounter = cookieCounter - feverPrice;
 						feverPrice = feverPrice + 1000;
 						messageText.setText("Roll the dice, you lucky bastard! One of the two costs to the prices above will be halved, or quartered");
-						
+						luckyBastardFever("Bastard", 2);
 						
 						
 					}
 				break;
 				case "Slots":
-					
+					if(cookieCounter>= slotsPrice) {
+					luckyBastardFever("Slots", 4);
+					cookieCounter = cookieCounter - slotsPrice;
+					}
 				break;
+				case "Display":
+					displaySwitch();
+					break;
+					
 			}
 		
 		}
@@ -460,7 +573,7 @@ public class CookieMain {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -501,6 +614,7 @@ public class CookieMain {
 			messageText.setText("This item is currently locked");
 			} else {
 				messageText.setText("Lucky: \n [Price: " + luckyPrice + "] \n Roll the dice, you lucky bastard! One of the four costs to the prices above will be halved");
+				
 			}
 		}
 		
@@ -555,8 +669,13 @@ public class CookieMain {
 		else if (button == button7) {
 			messageText.setText(null);
 		}
+		//by exiting(not hovering over the 8th button, the text for the regular part of the game appear.
 		else if (button == button8) {
+			button5.setText("Lucky");
+			button6.setText("Bastard");
+			button7.setText("Fever");
 			messageText.setText(null);
+			
 		}
 		
 	}
