@@ -253,7 +253,7 @@ public class CookieMain {
 		optionsPanel = new JPanel();
 		optionsPanel.setBounds(10, 500, 250, 50);
 		optionsPanel.setLayout(new GridLayout(1,5));
-		optionsPanel.setBackground(Color.yellow);
+		optionsPanel.setBackground(Color.black);
 		
 		displayShop = new JButton();
 		ImageIcon shop = new ImageIcon(getClass().getClassLoader().getResource("shop.png"));
@@ -268,14 +268,13 @@ public class CookieMain {
 		
 		shopUpperPanel = new JPanel();
 		shopUpperPanel.setBounds(135, 50, 500, 200);
-		shopUpperPanel.setLayout(new GridLayout(1,2));
-		shopUpperPanel.setBackground(Color.white);
+		shopUpperPanel.setBackground(Color.black);
 		shopUpperPanel.setVisible(false);
 		
 		shopMessageText = new JTextArea();
 		shopMessageText.setBounds(500, 70, 250, 150);
-		shopMessageText.setForeground(Color.white);
 		shopMessageText.setBackground(Color.black);
+		shopMessageText.setForeground(Color.white);
 		shopMessageText.setFont(font3);
 		shopMessageText.setLineWrap(true);
 		shopMessageText.setWrapStyleWord(true);
