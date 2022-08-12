@@ -28,10 +28,10 @@ public class CookieMain {
 	JButton button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton1, shopButton2, shopButton3, shopButton4, shopButton5, 
 	shopButton6, shopButton7, shopButton8, shopButton9, shopButton10, optionButton1, optionButton2, optionButton3,optionButton4;
 	
-	int cookieCounter, timerSpeed, cursorNumber, cursorPrice, grandpaNumber, grandpaPrice, slotsPrice,
+	int  cookieCounter, timerSpeed, cursorNumber, cursorPrice, grandpaNumber, grandpaPrice, slotsPrice, cursorUpgradeAmount, cursorUpgradePrice,
 	grandmaPrice, grandmaNumber, elvesPrice, elvesNumber, luckyPrice, bastardPrice, feverPrice;
 	
-	double perSecond;
+	double  perSecond;
 	boolean timerOn, grandpaUnlocked, grandmaUnlocked, elvesUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch;
 	Font font1, font2, font3;
 	CookieHandler cHandler = new CookieHandler();
@@ -213,6 +213,7 @@ public class CookieMain {
 		feverUnlocked = false;
 		grandpaUnlocked = false;
 		timerOn = false;
+		cursorUpgradeAmount = 0;
 		perSecond = 0;
 		cookieCounter = 0;
 		grandpaPrice = 100;
@@ -295,7 +296,7 @@ public class CookieMain {
 		shopButton1.setForeground(Color.white);
 		shopButton1.setFocusPainted(false);
 		shopButton1.addActionListener(cHandler);
-		shopButton1.setActionCommand("");
+		shopButton1.setActionCommand("CursorUpgrade");
 		shopPanel.add(shopButton1);
 		
 		shopButton2 = new JButton("Bastard Belt");
@@ -642,8 +643,8 @@ public class CookieMain {
 		else if(timerOn==true) {
 			timer.stop();
 		}
-		
 		double speed = 1/perSecond*1000;
+		
 		timerSpeed = (int)Math.round(speed);
 		
 		//the %.1f is a a way for creating a format where the float(decimal) will go 1 digit deep)
@@ -675,10 +676,10 @@ public class CookieMain {
 					cookieCounter = cookieCounter - cursorPrice;
 					cursorPrice = cursorPrice + 5;
 					counterLabel.setText(cookieCounter + " Cookies");
-					messageText.setText("Cursor: \n [Price: " + cursorPrice + "] \n AutoClicks once every 10 seconds");
+					messageText.setText("Cursor: \n [Price: " + cursorPrice + "] \n AutoClicks" + (.1*cursorUpgradeAmount) + "time every second");
 					cursorNumber++;
 					button1.setText("Cursor " + "(" + cursorNumber + ")");
-					perSecond = perSecond + 0.1; timerUpdate();
+					perSecond = (perSecond + 0.1); timerUpdate();
 				} else {
 					messageText.setText("You need more cookies!"); 
 				}
@@ -774,6 +775,12 @@ public class CookieMain {
 				case "NewGame":
 					window.setVisible(false);
 					new CookieMain();
+					break;
+				case "CursorUpgrade":
+					//cookieCounter = cookieCounter - cursorUpgradePrice;
+					//cursorUpgradePrice = cursorUpgradePrice + 2000;
+					cursorUpgradeAmount = cursorUpgradeAmount+1000;
+					break;
 					
 			}
 		
