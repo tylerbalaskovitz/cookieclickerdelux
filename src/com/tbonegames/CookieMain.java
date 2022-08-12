@@ -25,17 +25,18 @@ public class CookieMain {
 	JFrame window;
 	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, messagePanel, counterPanel, cookiePanel, optionsPanel;
 	JLabel counterLabel, perSecLabel, shopLabel;
-	JButton button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton1, shopButton2, shopButton3, shopButton4, shopButton5;
+	JButton button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton1, shopButton2, shopButton3, shopButton4, shopButton5, 
+	shopButton6, shopButton7, shopButton8, shopButton9, shopButton10, optionButton1, optionButton2, optionButton3,optionButton4;
 	
 	int cookieCounter, timerSpeed, cursorNumber, cursorPrice, grandpaNumber, grandpaPrice, slotsPrice,
 	grandmaPrice, grandmaNumber, elvesPrice, elvesNumber, luckyPrice, bastardPrice, feverPrice;
 	
 	double perSecond;
 	boolean timerOn, grandpaUnlocked, grandmaUnlocked, elvesUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch;
-	Font font1, font2;
+	Font font1, font2, font3;
 	CookieHandler cHandler = new CookieHandler();
 	Timer timer, slotTimer;
-	JTextArea messageText;
+	JTextArea messageText, shopMessageText;
 	MouseHandler mHandler = new MouseHandler();
 	
 	public static void main(String[] args) {
@@ -52,8 +53,14 @@ public class CookieMain {
 		
 	}
 	
+	public void displayOptions() {
+		optionsPanel.setVisible(true);
+		
+	}
+	
 	public void displayMainGame() {
 		shopUpperPanel.setVisible(false);
+		optionsPanel.setVisible(false);
 		shopPanel.setVisible(false);
 		itemPanel.setVisible(true);
 		cardPanel.setVisible(true);
@@ -66,6 +73,7 @@ public class CookieMain {
 	}
 	
 	public void closeAllPanels() {
+		optionsPanel.setVisible(false);
 		itemPanel.setVisible(false);
 		cardPanel.setVisible(false);
 		slotPanel.setVisible(false);
@@ -85,6 +93,7 @@ public class CookieMain {
 			
 			closeAllPanels();
 			displayPanelSwitch= false;
+			displayOptions();
 			
 		} else if (displayPanelSwitch == false) {
 			displayMainGame();
@@ -221,6 +230,7 @@ public class CookieMain {
 		
 		font1 = new Font("Comic Sans MS", Font.PLAIN, 32);
 		font2 = new Font("Comic Sans MS", Font.PLAIN, 16);
+		font3 = new Font("Comic Sans MS", Font.PLAIN, 20);
 		
 	}
 	
@@ -258,25 +268,83 @@ public class CookieMain {
 		
 		shopUpperPanel = new JPanel();
 		shopUpperPanel.setBounds(135, 50, 500, 200);
-		shopUpperPanel.setLayout(new GridLayout(2,5));
+		shopUpperPanel.setLayout(new GridLayout(1,2));
 		shopUpperPanel.setBackground(Color.white);
 		shopUpperPanel.setVisible(false);
+		
+		shopMessageText = new JTextArea();
+		shopMessageText.setBounds(500, 70, 250, 150);
+		shopMessageText.setForeground(Color.white);
+		shopMessageText.setBackground(Color.black);
+		shopMessageText.setFont(font3);
+		shopMessageText.setLineWrap(true);
+		shopMessageText.setWrapStyleWord(true);
+		shopMessageText.setEditable(false);
+		shopUpperPanel.add(shopMessageText);
+		
 		
 		
 		shopPanel = new JPanel();
 		shopPanel.setBounds(135, 275, 500, 200);
-		shopPanel.setLayout(new GridLayout(2,5));
-		shopPanel.setBackground(Color.yellow);
+		shopPanel.setLayout(new GridLayout(2,3));
+		shopPanel.setBackground(Color.black);
 		
-		shopButton1 = new JButton();
-		shopButton1 = new JButton();
-		shopButton1.setBackground(Color.yellow);
 		
+		shopButton1 = new JButton("Bastard Rod");
+		shopButton1.setFont(font3);
+		shopButton1.setBackground(Color.black);
+		shopButton1.setForeground(Color.white);
 		shopButton1.setFocusPainted(false);
-		shopButton1.setBorder(null);
 		shopButton1.addActionListener(cHandler);
 		shopButton1.setActionCommand("");
 		shopPanel.add(shopButton1);
+		
+		shopButton2 = new JButton("Bastard Belt");
+		shopButton2.setFont(font3);
+		shopButton2.setBackground(Color.black);
+		shopButton2.setForeground(Color.white);
+		shopButton2.setFocusPainted(false);
+		shopButton2.addActionListener(cHandler);
+		shopButton2.setActionCommand("");
+		shopPanel.add(shopButton2);
+		
+		shopButton3 = new JButton("Bastard Cola");
+		shopButton3.setFont(font3);
+		shopButton3.setBackground(Color.black);
+		shopButton3.setForeground(Color.white);
+		shopButton3.setFocusPainted(false);
+		shopButton3.addActionListener(cHandler);
+		shopButton3.setActionCommand("");
+		shopPanel.add(shopButton3);
+		
+		shopButton4 = new JButton("Bastard Mask");
+		shopButton4.setFont(font3);
+		shopButton4.setBackground(Color.black);
+		shopButton4.setForeground(Color.white);
+		shopButton4.setFocusPainted(false);
+		shopButton4.addActionListener(cHandler);
+		shopButton4.setActionCommand("");
+		shopPanel.add(shopButton4);
+		
+		shopButton5 = new JButton("");
+		shopButton5.setFont(font3);
+		shopButton5.setBackground(Color.black);
+		shopButton5.setForeground(Color.white);
+		shopButton5.setFocusPainted(false);
+		shopButton5.addActionListener(cHandler);
+		shopButton5.setActionCommand("");
+		shopPanel.add(shopButton5);
+		
+		shopButton6 = new JButton("");
+		shopButton6.setFont(font3);
+		shopButton6.setBackground(Color.black);
+		shopButton6.setForeground(Color.white);
+		shopButton6.setFocusPainted(false);
+		shopButton6.addActionListener(cHandler);
+		shopButton6.setActionCommand("");
+		shopPanel.add(shopButton6);
+		
+		
 		shopPanel.setVisible(false);
 		window.add(shopPanel);
 		window.add(shopUpperPanel);
@@ -386,10 +454,53 @@ public class CookieMain {
 		
 		window.add(cardPanel);
 		
+		//started here
+		optionsPanel = new JPanel();
+		optionsPanel.setBounds(275, 170, 250, 250);
+		optionsPanel.setBackground(Color.white);
+		optionsPanel.setLayout(new GridLayout(3,1));
+		
+		optionButton1 = new JButton("New Game");
+		optionButton1.setFont(font1);
+		optionButton1.setBackground(Color.black);
+		optionButton1.setForeground(Color.white);
+		optionButton1.setFocusPainted(false);
+		optionButton1.addActionListener(cHandler);
+		optionButton1.setActionCommand("NewGame");
+		optionButton1.addMouseListener(mHandler);
+		optionsPanel.add(optionButton1);
+		
+		optionButton2 = new JButton("High Scores");
+		optionButton2.setFont(font1);
+		optionButton2.setBackground(Color.black);
+		optionButton2.setForeground(Color.white);
+		optionButton2.setFocusPainted(false);
+		optionButton2.addActionListener(cHandler);
+		optionButton2.setActionCommand("HighScores");
+		optionButton2.addMouseListener(mHandler);
+		optionsPanel.add(optionButton2);
+		
+		
+		optionButton3 = new JButton("Credits");
+		optionButton3.setFont(font1);
+		optionButton3.setBackground(Color.black);
+		optionButton3.setForeground(Color.white);
+		optionButton3.setFocusPainted(false);
+		optionButton3.addActionListener(cHandler);
+		optionButton3.setActionCommand("Credits");
+		optionButton3.addMouseListener(mHandler);
+		optionsPanel.add(optionButton3);
+		optionsPanel.setVisible(false);
+		
+		window.add(optionsPanel);
+		
+		
+		
 		itemPanel = new JPanel();
 		itemPanel.setBounds(500, 170, 250, 250);
 		itemPanel.setBackground(Color.black);
 		itemPanel.setLayout(new GridLayout(4,1));
+		
 		
 		
 		button1 = new JButton("Cursor");
@@ -661,6 +772,9 @@ public class CookieMain {
 				case "Shop":
 					displaySwitch("ItemShop");
 					break;
+				case "NewGame":
+					window.setVisible(false);
+					new CookieMain();
 					
 			}
 		
@@ -737,7 +851,7 @@ public class CookieMain {
 			if(bastardUnlocked==false) {
 			messageText.setText("This item is currently locked");
 			} else {
-				messageText.setText("Bastard: \n " + bastardPrice + "] \nRoll the dice, you lucky bastard! One of the three costs to the prices above will be halved");
+				messageText.setText("Bastard: \n [Price: " + bastardPrice + "] \nRoll the dice, you lucky bastard! One of the three costs to the prices above will be halved");
 			}
 		}
 		if(button == button7) {
@@ -757,6 +871,62 @@ public class CookieMain {
 				messageText.setText("Slots: \n [Price: " + slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
 			}
 		}
+		
+		
+		//buttons for the shop
+		if(button == shopButton1) {
+			if(slotsUnlocked==false) {
+				shopMessageText.setText("This item is currently locked");
+			} else {
+				shopMessageText.setText("Slots: \n [Price: " + slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
+			}
+		}
+		
+		if(button == shopButton2) {
+			if(slotsUnlocked==false) {
+				shopMessageText.setText("This item is currently locked");
+			} else {
+				shopMessageText.setText("Slots: \n [Price: " + slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
+			}
+		}
+		
+		if(button == shopButton3) {
+			if(slotsUnlocked==false) {
+				shopMessageText.setText("This item is currently locked");
+			} else {
+				shopMessageText.setText("Slots: \n [Price: " + slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
+			}
+		}
+		
+		if(button == shopButton4) {
+			if(slotsUnlocked==false) {
+				shopMessageText.setText("This item is currently locked");
+			} else {
+				shopMessageText.setText("Slots: \n [Price: " + slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
+			}
+		}
+		
+		if(button == shopButton5) {
+			if(slotsUnlocked==false) {
+				shopMessageText.setText("This item is currently locked");
+			} else {
+				shopMessageText.setText("Slots: \n [Price: " + slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
+			}
+		}
+		
+		if(button == shopButton6) {
+			if(slotsUnlocked==false) {
+				shopMessageText.setText("This item is currently locked");
+			} else {
+				shopMessageText.setText("Slots: \n [Price: " + slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
+			}
+		}
+		
+		
+		
+		
+		
+		
 		
 	}
 
