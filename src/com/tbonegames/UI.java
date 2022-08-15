@@ -47,17 +47,21 @@ public void createUI() {
 		
 		cMain.shopUpperPanel = new JPanel();
 		cMain.shopUpperPanel.setBounds(135, 50, 500, 200);
-		cMain.shopUpperPanel.setBackground(Color.black);
+		cMain.shopUpperPanel.setLayout(new GridLayout(1,1));
+		cMain.shopUpperPanel.setBackground(Color.white);
 		cMain.shopUpperPanel.setVisible(false);
 		
 		cMain.shopMessageText = new JTextArea();
-		cMain.shopMessageText.setBounds(500, 70, 250, 150);
+		cMain.shopMessageText.addMouseListener(null);
 		cMain.shopMessageText.setBackground(Color.black);
 		cMain.shopMessageText.setForeground(Color.white);
+		cMain.shopMessageText.setText("Test");
 		cMain.shopMessageText.setFont(cMain.font3);
 		cMain.shopMessageText.setLineWrap(true);
 		cMain.shopMessageText.setWrapStyleWord(true);
 		cMain.shopMessageText.setEditable(false);
+		cMain.shopMessageText.setVisible(true);
+		
 		cMain.shopUpperPanel.add(cMain.shopMessageText);
 		
 		
@@ -68,57 +72,64 @@ public void createUI() {
 		cMain.shopPanel.setBackground(Color.black);
 		
 		
-		cMain.shopButton1 = new JButton("Bastard Rod");
+		cMain.shopButton1 = new JButton("Bastard Cola");
 		cMain.shopButton1.setFont(cMain.font3);
 		cMain.shopButton1.setBackground(Color.black);
 		cMain.shopButton1.setForeground(Color.white);
 		cMain.shopButton1.setFocusPainted(false);
 		cMain.shopButton1.addActionListener(cMain.cHandler);
-		cMain.shopButton1.setActionCommand("CursorUpgrade");
+		cMain.shopButton1.setActionCommand("");
+		cMain.shopButton1.addMouseListener(cMain.mHandler);
 		cMain.shopPanel.add(cMain.shopButton1);
 		
-		cMain.shopButton2 = new JButton("Bastard Belt");
+		cMain.shopButton2 = new JButton("Bastard Sausage");
 		cMain.shopButton2.setFont(cMain.font3);
 		cMain.shopButton2.setBackground(Color.black);
 		cMain.shopButton2.setForeground(Color.white);
 		cMain.shopButton2.setFocusPainted(false);
 		cMain.shopButton2.addActionListener(cMain.cHandler);
+		cMain.shopButton2.addMouseListener(cMain.mHandler);
 		cMain.shopButton2.setActionCommand("");
 		cMain.shopPanel.add(cMain.shopButton2);
 		
-		cMain.shopButton3 = new JButton("Bastard Cola");
+		cMain.shopButton3 = new JButton("?");
 		cMain.shopButton3.setFont(cMain.font3);
 		cMain.shopButton3.setBackground(Color.black);
 		cMain.shopButton3.setForeground(Color.white);
 		cMain.shopButton3.setFocusPainted(false);
 		cMain.shopButton3.addActionListener(cMain.cHandler);
+		cMain.shopButton3.addMouseListener(cMain.mHandler);
 		cMain.shopButton3.setActionCommand("");
 		cMain.shopPanel.add(cMain.shopButton3);
 		
-		cMain.shopButton4 = new JButton("Bastard Mask");
+		cMain.shopButton4 = new JButton("?");
 		cMain.shopButton4.setFont(cMain.font3);
 		cMain.shopButton4.setBackground(Color.black);
 		cMain.shopButton4.setForeground(Color.white);
 		cMain.shopButton4.setFocusPainted(false);
 		cMain.shopButton4.addActionListener(cMain.cHandler);
+		cMain.shopButton4.addMouseListener(cMain.mHandler);
 		cMain.shopButton4.setActionCommand("");
 		cMain.shopPanel.add(cMain.shopButton4);
 		
-		cMain.shopButton5 = new JButton("");
+		cMain.shopButton5 = new JButton("?");
 		cMain.shopButton5.setFont(cMain.font3);
 		cMain.shopButton5.setBackground(Color.black);
 		cMain.shopButton5.setForeground(Color.white);
 		cMain.shopButton5.setFocusPainted(false);
 		cMain.shopButton5.addActionListener(cMain.cHandler);
+		cMain.shopButton5.addMouseListener(cMain.mHandler);
 		cMain.shopButton5.setActionCommand("");
+		
 		cMain.shopPanel.add(cMain.shopButton5);
 		
-		cMain.shopButton6 = new JButton("");
+		cMain.shopButton6 = new JButton("?");
 		cMain.shopButton6.setFont(cMain.font3);
 		cMain.shopButton6.setBackground(Color.black);
 		cMain.shopButton6.setForeground(Color.white);
 		cMain.shopButton6.setFocusPainted(false);
 		cMain.shopButton6.addActionListener(cMain.cHandler);
+		cMain.shopButton6.addMouseListener(cMain.mHandler);
 		cMain.shopButton6.setActionCommand("");
 		cMain.shopPanel.add(cMain.shopButton6);
 		
@@ -160,24 +171,7 @@ public void createUI() {
 		cookieButton.setIcon(cookie);
 		cMain.cookiePanel.add(cookieButton);
 		
-		cMain.slotPanel = new JPanel();
-		cMain.slotPanel.setBounds(500, 480, 250, 60 );
-		cMain.slotPanel.setBackground(Color.yellow);
-		cMain.slotPanel.setLayout(new GridLayout(1,1));
 		
-		
-	
-		cMain.button8 = new JButton("?");
-		cMain.button8.setFont(cMain.font1);
-		cMain.button8.setBackground(Color.black);
-		cMain.button8.setForeground(Color.white);
-		cMain.button8.setFocusPainted(false);
-		cMain.button8.addActionListener(cMain.cHandler);
-		cMain.button8.setActionCommand("Slots");
-		cMain.button8.addMouseListener(cMain.mHandler);
-		cMain.slotPanel.add(cMain.button8);
-		
-		cMain.window.add(cMain.slotPanel);
 		
 		cMain.counterPanel = new JPanel();
 		cMain.counterPanel.setBounds(100,100,200,100);
@@ -195,42 +189,7 @@ public void createUI() {
 		cMain.perSecLabel.setForeground(Color.white);
 		cMain.counterPanel.add(cMain.perSecLabel);
 		
-		cMain.cardPanel = new JPanel();
-		cMain.cardPanel.setBounds(500, 418, 250, 60);
-		cMain.cardPanel.setBackground(Color.black);
-		cMain.cardPanel.setLayout(new GridLayout(1,3));
-		
-		cMain.button5 = new JButton("?");
-		cMain.button5.setFont(cMain.font2);
-		cMain.button5.setBackground(Color.black);
-		cMain.button5.setForeground(Color.white);
-		cMain.button5.setFocusPainted(false);
-		cMain.button5.addActionListener(cMain.cHandler);
-		cMain.button5.setActionCommand("Lucky");
-		cMain.button5.addMouseListener(cMain.mHandler);
-		cMain.cardPanel.add(cMain.button5);
-		
-		cMain.button6 = new JButton("?");
-		cMain.button6.setFont(cMain.font2);
-		cMain.button6.setBackground(Color.black);
-		cMain.button6.setForeground(Color.white);
-		cMain.button6.setFocusPainted(false);
-		cMain.button6.addActionListener(cMain.cHandler);
-		cMain.button6.setActionCommand("Bastard");
-		cMain.button6.addMouseListener(cMain.mHandler);
-		cMain.cardPanel.add(cMain.button6);
-		
-		cMain.button7 = new JButton("?");
-		cMain.button7.setFont(cMain.font2);
-		cMain.button7.setBackground(Color.black);
-		cMain.button7.setForeground(Color.white);
-		cMain.button7.setFocusPainted(false);
-		cMain.button7.addActionListener(cMain.cHandler);
-		cMain.button7.setActionCommand("Fever");
-		cMain.button7.addMouseListener(cMain.mHandler);
-		cMain.cardPanel.add(cMain.button7);
-		
-		cMain.window.add(cMain.cardPanel);
+	
 		
 		//started here
 		cMain.optionsPanel = new JPanel();
@@ -320,10 +279,64 @@ public void createUI() {
 		cMain.button4.setActionCommand("Elves");
 		cMain.button4.addMouseListener(cMain.mHandler);
 		cMain.itemPanel.add(cMain.button4);
-		
-		
-		
 		cMain.window.add(cMain.itemPanel);
+		
+		cMain.cardPanel = new JPanel();
+		cMain.cardPanel.setBounds(500, 418, 250, 60);
+		cMain.cardPanel.setBackground(Color.black);
+		cMain.cardPanel.setLayout(new GridLayout(1,3));
+		
+		cMain.button5 = new JButton("?");
+		cMain.button5.setFont(cMain.font2);
+		cMain.button5.setBackground(Color.black);
+		cMain.button5.setForeground(Color.white);
+		cMain.button5.setFocusPainted(false);
+		cMain.button5.addActionListener(cMain.cHandler);
+		cMain.button5.setActionCommand("Lucky");
+		cMain.button5.addMouseListener(cMain.mHandler);
+		cMain.cardPanel.add(cMain.button5);
+		
+		cMain.button6 = new JButton("?");
+		cMain.button6.setFont(cMain.font2);
+		cMain.button6.setBackground(Color.black);
+		cMain.button6.setForeground(Color.white);
+		cMain.button6.setFocusPainted(false);
+		cMain.button6.addActionListener(cMain.cHandler);
+		cMain.button6.setActionCommand("Bastard");
+		cMain.button6.addMouseListener(cMain.mHandler);
+		cMain.cardPanel.add(cMain.button6);
+		
+		cMain.button7 = new JButton("?");
+		cMain.button7.setFont(cMain.font2);
+		cMain.button7.setBackground(Color.black);
+		cMain.button7.setForeground(Color.white);
+		cMain.button7.setFocusPainted(false);
+		cMain.button7.addActionListener(cMain.cHandler);
+		cMain.button7.setActionCommand("Fever");
+		cMain.button7.addMouseListener(cMain.mHandler);
+		cMain.cardPanel.add(cMain.button7);
+		
+		cMain.window.add(cMain.cardPanel);
+		
+		cMain.slotPanel = new JPanel();
+		cMain.slotPanel.setBounds(500, 480, 250, 60 );
+		cMain.slotPanel.setBackground(Color.yellow);
+		cMain.slotPanel.setLayout(new GridLayout(1,1));
+		
+		
+	
+		cMain.button8 = new JButton("?");
+		cMain.button8.setFont(cMain.font1);
+		cMain.button8.setBackground(Color.black);
+		cMain.button8.setForeground(Color.white);
+		cMain.button8.setFocusPainted(false);
+		cMain.button8.addActionListener(cMain.cHandler);
+		cMain.button8.setActionCommand("Slots");
+		cMain.button8.addMouseListener(cMain.mHandler);
+		cMain.slotPanel.add(cMain.button8);
+		
+		cMain.window.add(cMain.slotPanel);
+		
 		
 		cMain.messagePanel = new JPanel();
 		cMain.messagePanel.setBounds(500, 50, 250, 150);
@@ -343,6 +356,7 @@ public void createUI() {
 		
 		
 		cMain.window.setVisible(true);
+		
 		
 		
 	}

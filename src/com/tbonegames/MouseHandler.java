@@ -6,7 +6,7 @@ import java.awt.event.MouseListener;
 import javax.swing.JButton;
 
 public class MouseHandler implements MouseListener{
-		
+	
 	CookieMain cMain;
 	
 	public MouseHandler(CookieMain cMain) {
@@ -99,52 +99,50 @@ public class MouseHandler implements MouseListener{
 		}
 		
 		
-		//buttons for the shop
 		if(button == cMain.shopButton1) {
-			if(cMain.slotsUnlocked==false) {
-				cMain.shopMessageText.setText("This item is currently locked");
-			} else {
-				cMain.shopMessageText.setText("Slots: \n [Price: " + cMain.slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
-			}
+			
+				cMain.shopMessageText.setText("Bastard Cola \n [Price: " + cMain.colaPrice + "] \n Wet your mouth with a bastard soda");
+				
+			
 		}
 		
 		if(button == cMain.shopButton2) {
-			if(cMain.slotsUnlocked==false) {
-				cMain.shopMessageText.setText("This item is currently locked");
-			} else {
-				cMain.shopMessageText.setText("Slots: \n [Price: " + cMain.slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
-			}
+		
+				
+				cMain.shopMessageText.setText("Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n");
+			
 		}
 		
 		if(button == cMain.shopButton3) {
-			if(cMain.slotsUnlocked==false) {
+				if (cMain.rodUnlocked == false){
 				cMain.shopMessageText.setText("This item is currently locked");
-			} else {
-				cMain.shopMessageText.setText("Slots: \n [Price: " + cMain.slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
-			}
+				} else {
+				cMain.shopMessageText.setText("Bastard Rod \n [Price: " + cMain.rodPrice + "] \n");	
+				}
+			
 		}
 		
 		if(button == cMain.shopButton4) {
-			if(cMain.slotsUnlocked==false) {
-				cMain.shopMessageText.setText("This item is currently locked");
+			if (cMain.beltUnlocked == false){
+			cMain.shopMessageText.setText("This item is currently locked");
 			} else {
-				cMain.shopMessageText.setText("Slots: \n [Price: " + cMain.slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
-			}
+				cMain.shopMessageText.setText("Bastard Belt \n [Price: " + cMain.beltPrice + "] \n");	
+			}			
 		}
 		
 		if(button == cMain.shopButton5) {
-			if(cMain.slotsUnlocked==false) {
-				cMain.shopMessageText.setText("This item is currently locked");
+			if (cMain.beltUnlocked == false){
+			cMain.shopMessageText.setText("This item is currently locked");
 			} else {
-				cMain.shopMessageText.setText("Slots: \n [Price: " + cMain.slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
+			cMain.shopMessageText.setText("Bastard Mask \n [Price: " + cMain.maskPrice + "] \n");	
 			}
 		}
 		
 		if(button == cMain.shopButton6) {
-			if(cMain.slotsUnlocked==false) {
-				cMain.shopMessageText.setText("This item is currently locked");
+			if (cMain.armorUnlocked == false){
+			cMain.shopMessageText.setText("This item is currently locked");
 			} else {
-				cMain.shopMessageText.setText("Slots: \n [Price: " + cMain.slotsPrice + "] \n Pull that Bastard Rod, you lucky bastard and get a little action!");
+			cMain.shopMessageText.setText("Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n");	
 			}
 		}
 		
@@ -194,6 +192,31 @@ public class MouseHandler implements MouseListener{
 			cMain.messageText.setText(null);
 			
 		}
+		
+		else if (button== cMain.shopButton1) {
+			cMain.shopMessageText.setText(null);
+		}
+		
+		else if (button== cMain.shopButton2) {
+			cMain.shopMessageText.setText(null);
+		}
+		
+		else if (button== cMain.shopButton3) {
+			cMain.shopMessageText.setText(null);
+		}
+		
+		else if (button== cMain.shopButton4) {
+			cMain.shopMessageText.setText(null);
+		}
+		
+		else if (button== cMain.shopButton5) {
+			cMain.shopMessageText.setText(null);
+		}
+		
+		else if (button== cMain.shopButton6) {
+			cMain.shopMessageText.setText(null);
+		}
+		
 		
 	}
 	

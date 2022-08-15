@@ -74,6 +74,30 @@ public class GameTimers {
 						cMain.button8.setText("Slots");
 					}
 				} 
+				if(cMain.rodUnlocked==false) {
+					if(cMain.cookieCounter >= 400) {
+						cMain.rodUnlocked = true;
+						cMain.shopButton3.setText("Bastard Rod");
+					}
+				} 
+				if(cMain.beltUnlocked==false) {
+					if(cMain.cookieCounter >= 800) {
+						cMain.beltUnlocked = true;
+						cMain.shopButton4.setText("Bastard Belt");
+					}
+				} 
+				if(cMain.maskUnlocked==false) {
+					if(cMain.cookieCounter >= 1600) {
+						cMain.maskUnlocked = true;
+						cMain.shopButton5.setText("Bastard Mask");
+					}
+				} 
+				if(cMain.armorUnlocked==false) {
+					if(cMain.cookieCounter >= 2000) {
+						cMain.armorUnlocked = true;
+						cMain.shopButton6.setText("Bastard Armor");
+					}
+				} 
 				
 			}
 		});

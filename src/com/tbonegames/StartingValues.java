@@ -6,7 +6,10 @@ package com.tbonegames;
 			this.cMain = cMain;
 		}
 	public void startUpValues() {
-			
+			cMain.rodUnlocked = false;
+			cMain.beltUnlocked = false;
+			cMain.maskUnlocked  = false;
+			cMain.armorUnlocked = false;
 			cMain.displayPanelSwitch = true;
 			cMain.slotsUnlocked = false;
 			cMain.luckyUnlocked = false;
