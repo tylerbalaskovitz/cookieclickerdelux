@@ -136,6 +136,19 @@ public class CookieHandler implements ActionListener{
 				cMain.window.setVisible(false);
 				new CookieMain();
 				break;
+				
+			case "BastardCola":
+			break;
+			case "BastardSausage":
+			break;
+			case "BastardRod":
+			break;
+			case "BastardBelt":
+			break;
+			case "BastardMask":
+			break;
+			case "BastardArmor":
+			break;
 			case "CursorUpgrade":
 				//cookieCounter = cookieCounter - cursorUpgradePrice;
 				//cursorUpgradePrice = cursorUpgradePrice + 2000;

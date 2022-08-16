@@ -78,7 +78,7 @@ public void createUI() {
 		cMain.shopButton1.setForeground(Color.white);
 		cMain.shopButton1.setFocusPainted(false);
 		cMain.shopButton1.addActionListener(cMain.cHandler);
-		cMain.shopButton1.setActionCommand("");
+		cMain.shopButton1.setActionCommand("BastardCola");
 		cMain.shopButton1.addMouseListener(cMain.mHandler);
 		cMain.shopPanel.add(cMain.shopButton1);
 		
@@ -89,7 +89,7 @@ public void createUI() {
 		cMain.shopButton2.setFocusPainted(false);
 		cMain.shopButton2.addActionListener(cMain.cHandler);
 		cMain.shopButton2.addMouseListener(cMain.mHandler);
-		cMain.shopButton2.setActionCommand("");
+		cMain.shopButton2.setActionCommand("BastardSausage");
 		cMain.shopPanel.add(cMain.shopButton2);
 		
 		cMain.shopButton3 = new JButton("?");
@@ -99,7 +99,7 @@ public void createUI() {
 		cMain.shopButton3.setFocusPainted(false);
 		cMain.shopButton3.addActionListener(cMain.cHandler);
 		cMain.shopButton3.addMouseListener(cMain.mHandler);
-		cMain.shopButton3.setActionCommand("");
+		cMain.shopButton3.setActionCommand("BastardRod");
 		cMain.shopPanel.add(cMain.shopButton3);
 		
 		cMain.shopButton4 = new JButton("?");
@@ -109,7 +109,7 @@ public void createUI() {
 		cMain.shopButton4.setFocusPainted(false);
 		cMain.shopButton4.addActionListener(cMain.cHandler);
 		cMain.shopButton4.addMouseListener(cMain.mHandler);
-		cMain.shopButton4.setActionCommand("");
+		cMain.shopButton4.setActionCommand("BastardBelt");
 		cMain.shopPanel.add(cMain.shopButton4);
 		
 		cMain.shopButton5 = new JButton("?");
@@ -119,7 +119,7 @@ public void createUI() {
 		cMain.shopButton5.setFocusPainted(false);
 		cMain.shopButton5.addActionListener(cMain.cHandler);
 		cMain.shopButton5.addMouseListener(cMain.mHandler);
-		cMain.shopButton5.setActionCommand("");
+		cMain.shopButton5.setActionCommand("BastardMask");
 		
 		cMain.shopPanel.add(cMain.shopButton5);
 		
@@ -130,7 +130,7 @@ public void createUI() {
 		cMain.shopButton6.setFocusPainted(false);
 		cMain.shopButton6.addActionListener(cMain.cHandler);
 		cMain.shopButton6.addMouseListener(cMain.mHandler);
-		cMain.shopButton6.setActionCommand("");
+		cMain.shopButton6.setActionCommand("BastardArmor");
 		cMain.shopPanel.add(cMain.shopButton6);
 		
 		

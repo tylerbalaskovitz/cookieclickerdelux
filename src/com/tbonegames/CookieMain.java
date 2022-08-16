@@ -31,7 +31,7 @@ public class CookieMain {
 	UI ui = new UI(this);
 	GameTimers timers = new GameTimers(this);
 	CookieHandler cHandler = new CookieHandler(this, ui, timers, slots);
-	Timer timer, slotTimer;
+	Timer timer, slotTimer, dayTimer;
 	JTextArea messageText, shopMessageText;
 	MouseHandler mHandler = new MouseHandler(this);
 	
