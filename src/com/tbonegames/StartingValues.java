@@ -20,6 +20,12 @@ package com.tbonegames;
 			cMain.timerOn = false;
 			cMain.cursorUpgradeAmount = 0;
 			cMain.perSecond = 0;
+			cMain.colaValue = 0;
+			cMain.sausageValue = 0;
+			cMain.rodValue = 0;
+			cMain.beltValue = 0;
+			cMain.maskValue = 0;
+			cMain.armorValue = 0;
 			cMain.cookieCounter = 0;
 			cMain.grandpaPrice = 100;
 			cMain.grandmaPrice = 200;
@@ -32,9 +38,9 @@ package com.tbonegames;
 			cMain.cursorPrice = 10;
 			cMain.colaPrice = 100;
 			cMain.sausagePrice = 300;
-			cMain.rodPrice = 500;
-			cMain.beltPrice = 100;
-			cMain.maskPrice = 2000;
+			cMain.rodPrice = 400;
+			cMain.beltPrice = 800;
+			cMain.maskPrice = 1600;
 			cMain.armorPrice = 2000;
 		}
 		

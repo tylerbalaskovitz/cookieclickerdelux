@@ -55,7 +55,7 @@ public void createUI() {
 		cMain.shopMessageText.addMouseListener(null);
 		cMain.shopMessageText.setBackground(Color.black);
 		cMain.shopMessageText.setForeground(Color.white);
-		cMain.shopMessageText.setText("Test");
+		cMain.shopMessageText.setText("");
 		cMain.shopMessageText.setFont(cMain.font3);
 		cMain.shopMessageText.setLineWrap(true);
 		cMain.shopMessageText.setWrapStyleWord(true);

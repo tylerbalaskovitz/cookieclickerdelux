@@ -139,37 +139,50 @@ public class CookieHandler implements ActionListener{
 				
 			case "BastardCola":
 				if (cMain.cookieCounter>=cMain.colaPrice) {
-				cMain.colaValue = cMain.colaValue++;
+				cMain.colaValue = cMain.colaValue+ 1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.colaPrice;
-				cMain.shopMessageText.setText("Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue +" ] \n Wet your mouth with a bastard soda ");
+				cMain.shopMessageText.setText("Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue + " ] \n Wet your mouth with a bastard soda ");
 				}
 			break;
 			case "BastardSausage":
 				if (cMain.cookieCounter>=cMain.sausagePrice) {
-				cMain.sausageValue = cMain.sausageValue++;
+				cMain.sausageValue = cMain.sausageValue+1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.sausagePrice;
 				cMain.shopMessageText.setText("Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n Get your mouth around a sausage, you little bastard");
 				}
 			break;
 			case "BastardRod":
 				if (cMain.cookieCounter>=cMain.rodPrice) {
-				cMain.rodValue = cMain.rodValue++;
+				cMain.rodValue = cMain.rodValue+1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.rodPrice;
+				cMain.rodPrice = cMain.rodPrice +400;
 				cMain.shopMessageText.setText("Bastard Rod \n [Price: " + cMain.rodPrice + "] \n [Amount: " + cMain.rodValue +" ] \n Grab your little bastard rod and swing it at your friends and your enemies");
 				}
 			break;
 			case "BastardBelt":
 				if (cMain.cookieCounter>=cMain.beltPrice) {
-				cMain.beltValue = cMain.beltValue++;
+				cMain.beltValue = cMain.beltValue+1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.beltPrice;
-				
+				cMain.rodPrice = cMain.beltPrice +800;
+				cMain.shopMessageText.setText("Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With attachment for OSHA certification");
 				}
 			break;
 			case "BastardMask":
-				cMain.maskValue = cMain.maskValue++;
+				if (cMain.cookieCounter>= cMain.maskPrice);{
+				cMain.maskValue = cMain.maskValue+1;
+				cMain.cookieCounter = cMain.cookieCounter - cMain.maskPrice;
+				cMain.rodPrice = cMain.maskPrice +1600;
+				cMain.shopMessageText.setText("Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");
+				
+				}
 			break;
 			case "BastardArmor":
-				cMain.armorValue = cMain.armorValue++;
+				if (cMain.cookieCounter >= cMain.armorPrice) {
+				cMain.armorValue = cMain.armorValue+1;
+				cMain.cookieCounter = cMain.cookieCounter - cMain.armorPrice;
+				cMain.rodPrice = cMain.armorPrice +2000;
+				cMain.shopMessageText.setText("Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.armorValue +"Lucky Bastard Fever Armor");
+				}
 			break;
 		
 				
