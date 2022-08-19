@@ -138,22 +138,40 @@ public class CookieHandler implements ActionListener{
 				break;
 				
 			case "BastardCola":
+				if (cMain.cookieCounter>=cMain.colaPrice) {
+				cMain.colaValue = cMain.colaValue++;
+				cMain.cookieCounter = cMain.cookieCounter - cMain.colaPrice;
+				cMain.shopMessageText.setText("Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue +" ] \n Wet your mouth with a bastard soda ");
+				}
 			break;
 			case "BastardSausage":
+				if (cMain.cookieCounter>=cMain.sausagePrice) {
+				cMain.sausageValue = cMain.sausageValue++;
+				cMain.cookieCounter = cMain.cookieCounter - cMain.sausagePrice;
+				cMain.shopMessageText.setText("Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n Get your mouth around a sausage, you little bastard");
+				}
 			break;
 			case "BastardRod":
+				if (cMain.cookieCounter>=cMain.rodPrice) {
+				cMain.rodValue = cMain.rodValue++;
+				cMain.cookieCounter = cMain.cookieCounter - cMain.rodPrice;
+				cMain.shopMessageText.setText("Bastard Rod \n [Price: " + cMain.rodPrice + "] \n [Amount: " + cMain.rodValue +" ] \n Grab your little bastard rod and swing it at your friends and your enemies");
+				}
 			break;
 			case "BastardBelt":
+				if (cMain.cookieCounter>=cMain.beltPrice) {
+				cMain.beltValue = cMain.beltValue++;
+				cMain.cookieCounter = cMain.cookieCounter - cMain.beltPrice;
+				
+				}
 			break;
 			case "BastardMask":
+				cMain.maskValue = cMain.maskValue++;
 			break;
 			case "BastardArmor":
+				cMain.armorValue = cMain.armorValue++;
 			break;
-			case "CursorUpgrade":
-				//cookieCounter = cookieCounter - cursorUpgradePrice;
-				//cursorUpgradePrice = cursorUpgradePrice + 2000;
-				cMain.cursorUpgradeAmount = cMain.cursorUpgradeAmount+1000;
-				break;
+		
 				
 		}
 	

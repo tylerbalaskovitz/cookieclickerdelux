@@ -6,6 +6,7 @@ package com.tbonegames;
 			this.cMain = cMain;
 		}
 	public void startUpValues() {
+			
 			cMain.rodUnlocked = false;
 			cMain.beltUnlocked = false;
 			cMain.maskUnlocked  = false;
@@ -29,6 +30,12 @@ package com.tbonegames;
 			cMain.slotsPrice = 1000;
 			cMain.cursorNumber = 0;
 			cMain.cursorPrice = 10;
+			cMain.colaPrice = 100;
+			cMain.sausagePrice = 300;
+			cMain.rodPrice = 500;
+			cMain.beltPrice = 100;
+			cMain.maskPrice = 2000;
+			cMain.armorPrice = 2000;
 		}
 		
 	}
