@@ -1,9 +1,9 @@
 package com.tbonegames.enemies;
 
-public class KungFujiApple extends Enemies{
+public class InflatableOfDoom extends Enemies {
 
-	public KungFujiApple() {
-		name = "Kung Fuji Apple";
+	public InflatableOfDoom() {
+		name ="The Inflatable of Doom";
 		hp = 300;
 		attack = 100;
 		defense = 50;
@@ -11,8 +11,6 @@ public class KungFujiApple extends Enemies{
 		attack2 = "BirdShit";
 		attack3 = "Fly";
 		attack4 = "ArachnoBots";
-		
-		
 	}
 	
 }

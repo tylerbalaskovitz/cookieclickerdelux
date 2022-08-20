@@ -170,7 +170,7 @@ public class CookieHandler implements ActionListener{
 					soundFX.playSoundEffect(purchase);
 				cMain.sausageValue = cMain.sausageValue+1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.sausagePrice;
-				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n Get your mouth around a sausage, you little bastard");
+				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n  Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die");
 				} else { 
 					soundFX.playSoundEffect(error);
 				}

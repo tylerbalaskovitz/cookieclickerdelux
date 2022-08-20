@@ -109,7 +109,7 @@ public class MouseHandler implements MouseListener{
 		if(button == cMain.shopButton2) {
 		
 				
-				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n Get your mouth around a sausage, you little bastard");
+				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die");
 			
 		}
 		
@@ -126,7 +126,7 @@ public class MouseHandler implements MouseListener{
 			if (cMain.beltUnlocked == false){
 			cMain.shopMessageText.setText("This item is currently locked");
 			} else {
-				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With attachment for OSHA certification");	
+				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With growing wire for OSHA compliance");	
 			}			
 		}
 		

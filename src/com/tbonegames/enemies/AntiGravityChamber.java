@@ -1,18 +1,16 @@
 package com.tbonegames.enemies;
 
-public class KungFujiApple extends Enemies{
+public class AntiGravityChamber extends Enemies {
 
-	public KungFujiApple() {
-		name = "Kung Fuji Apple";
+	AntiGravityChamber(){
+		name = "Anti-Gravity Chamber";
 		hp = 300;
 		attack = 100;
 		defense = 50;
-		attack1 = "RottenToTheCoreSphincterClench";
+		attack1 = "BigPecker";
 		attack2 = "BirdShit";
 		attack3 = "Fly";
 		attack4 = "ArachnoBots";
-		
-		
 	}
 	
 }
