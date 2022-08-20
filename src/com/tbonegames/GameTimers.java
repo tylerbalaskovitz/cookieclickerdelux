@@ -2,11 +2,15 @@ package com.tbonegames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 import javax.swing.Timer;
 
 public class GameTimers {
 	
+	public URL unlock = getClass().getClassLoader().getResource("audio//healsound.wav");
+	
+	SoundFX soundFX = new SoundFX();
 	CookieMain cMain;
 	
 	public GameTimers(CookieMain cMain) {
@@ -21,8 +25,10 @@ public class GameTimers {
 				cMain.cookieCounter++;
 				cMain.counterLabel.setText(cMain.cookieCounter + " Cookies");
 				
+				
 				if(cMain.grandpaUnlocked==false) {
 					if(cMain.cookieCounter >= 100) {
+						soundFX.playSoundEffect(unlock);
 						cMain.grandpaUnlocked = true;
 						cMain.button2.setText("Grandpa " + "(" + cMain.grandpaNumber + ")");
 					}
@@ -32,6 +38,7 @@ public class GameTimers {
 				
 				if(cMain.grandmaUnlocked==false) {
 					if(cMain.cookieCounter >= 200) {
+						soundFX.playSoundEffect(unlock);
 						cMain.grandmaUnlocked = true;
 						cMain.button3.setText("Grandma " + "(" + cMain.grandmaNumber + ")");
 					}
@@ -41,6 +48,7 @@ public class GameTimers {
 				
 				if(cMain.elvesUnlocked==false) {
 					if(cMain.cookieCounter >= 500) {
+						soundFX.playSoundEffect(unlock);
 						cMain.elvesUnlocked = true;
 						cMain.button4.setText("Elves " + "(" + cMain.elvesNumber + ")");
 					}
@@ -51,12 +59,14 @@ public class GameTimers {
 			
 				if(cMain.luckyUnlocked==false) {
 					if(cMain.cookieCounter >= 500) {
+						soundFX.playSoundEffect(unlock);
 						cMain.luckyUnlocked = true;
 						cMain.button5.setText("Lucky");
 					}
 				} 
 				if(cMain.bastardUnlocked==false) {
 					if(cMain.cookieCounter >= 750) {
+						soundFX.playSoundEffect(unlock);
 						cMain.bastardUnlocked = true;
 						cMain.button6.setText("Bastard");
 					}
@@ -64,36 +74,42 @@ public class GameTimers {
 				
 				if(cMain.feverUnlocked==false) {
 					if(cMain.cookieCounter >= 1000) {
+						soundFX.playSoundEffect(unlock);
 						cMain.feverUnlocked = true;
 						cMain.button7.setText("Fever");
 					}
 				} 
 				if(cMain.slotsUnlocked==false) {
 					if(cMain.cookieCounter >= 1500) {
+						soundFX.playSoundEffect(unlock);
 						cMain.slotsUnlocked = true;
 						cMain.button8.setText("Slots");
 					}
 				} 
 				if(cMain.rodUnlocked==false) {
 					if(cMain.cookieCounter >= 400) {
+						soundFX.playSoundEffect(unlock);
 						cMain.rodUnlocked = true;
 						cMain.shopButton3.setText("Bastard Rod");
 					}
 				} 
 				if(cMain.beltUnlocked==false) {
 					if(cMain.cookieCounter >= 800) {
+						soundFX.playSoundEffect(unlock);
 						cMain.beltUnlocked = true;
 						cMain.shopButton4.setText("Bastard Belt");
 					}
 				} 
 				if(cMain.maskUnlocked==false) {
 					if(cMain.cookieCounter >= 1600) {
+						soundFX.playSoundEffect(unlock);
 						cMain.maskUnlocked = true;
 						cMain.shopButton5.setText("Bastard Mask");
 					}
 				} 
 				if(cMain.armorUnlocked==false) {
 					if(cMain.cookieCounter >= 2000) {
+						soundFX.playSoundEffect(unlock);
 						cMain.armorUnlocked = true;
 						cMain.shopButton6.setText("Bastard Armor");
 					}

@@ -101,7 +101,7 @@ public class MouseHandler implements MouseListener{
 		
 		if(button == cMain.shopButton1) {
 			
-				cMain.shopMessageText.setText("Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue +" ] \n Wet your mouth with a bastard soda ");
+				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue +" ] \n Wet your mouth with a bastard soda ");
 				
 			
 		}
@@ -109,15 +109,15 @@ public class MouseHandler implements MouseListener{
 		if(button == cMain.shopButton2) {
 		
 				
-				cMain.shopMessageText.setText("Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n Get your mouth around a sausage, you little bastard");
+				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n Get your mouth around a sausage, you little bastard");
 			
 		}
 		
 		if(button == cMain.shopButton3) {
 				if (cMain.rodUnlocked == false){
-				cMain.shopMessageText.setText("This item is currently locked");
+				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"This item is currently locked");
 				} else {
-				cMain.shopMessageText.setText("Bastard Rod \n [Price: " + cMain.rodPrice + "] \n [Amount: " + cMain.rodValue +" ] \n Grab your little bastard rod and swing it at your friends and your enemies");	
+				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Rod \n [Price: " + cMain.rodPrice + "] \n [Amount: " + cMain.rodValue +" ] \n Grab your little bastard rod and swing it at your friends and your enemies");	
 				}
 			
 		}
@@ -126,7 +126,7 @@ public class MouseHandler implements MouseListener{
 			if (cMain.beltUnlocked == false){
 			cMain.shopMessageText.setText("This item is currently locked");
 			} else {
-				cMain.shopMessageText.setText("Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With attachment for OSHA certification");	
+				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With attachment for OSHA certification");	
 			}			
 		}
 		
@@ -134,7 +134,7 @@ public class MouseHandler implements MouseListener{
 			if (cMain.beltUnlocked == false){
 			cMain.shopMessageText.setText("This item is currently locked");
 			} else {
-			cMain.shopMessageText.setText("Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");	
+			cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");	
 			}
 		}
 		
@@ -142,7 +142,7 @@ public class MouseHandler implements MouseListener{
 			if (cMain.armorUnlocked == false){
 			cMain.shopMessageText.setText("This item is currently locked");
 			} else {
-			cMain.shopMessageText.setText("Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.armorValue +"Lucky Bastard Fever Armor");	
+			cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.armorValue +"Lucky Bastard Fever Armor");	
 			}
 		}
 		
