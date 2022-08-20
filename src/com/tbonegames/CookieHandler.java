@@ -152,6 +152,7 @@ public class CookieHandler implements ActionListener{
 				break;
 			case "NewGame":
 				cMain.window.setVisible(false);
+				cMain.soundFX.stop(cMain.backgroundmusic);
 				new CookieMain();
 				break;
 				
@@ -191,7 +192,7 @@ public class CookieHandler implements ActionListener{
 					soundFX.playSoundEffect(purchase);
 				cMain.beltValue = cMain.beltValue+1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.beltPrice;
-				cMain.rodPrice = cMain.beltPrice +800;
+				cMain.beltPrice = cMain.beltPrice +800;
 				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With attachment for OSHA certification");
 				} else {
 					soundFX.playSoundEffect(error);
@@ -203,7 +204,7 @@ public class CookieHandler implements ActionListener{
 					soundFX.playSoundEffect(purchase);
 				cMain.maskValue = cMain.maskValue+1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.maskPrice;
-				cMain.rodPrice = cMain.maskPrice +1600;
+				cMain.maskPrice = cMain.maskPrice +1600;
 				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");
 				} else  {soundFX.playSoundEffect(error);}
 				}	soundFX.playSoundEffect(error);
@@ -213,7 +214,7 @@ public class CookieHandler implements ActionListener{
 					soundFX.playSoundEffect(purchase);
 				cMain.armorValue = cMain.armorValue+1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.armorPrice;
-				cMain.rodPrice = cMain.armorPrice +2000;
+				cMain.armorPrice = cMain.armorPrice +2000;
 				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.armorValue +"Lucky Bastard Fever Armor");
 				} else {
 					soundFX.playSoundEffect(error);

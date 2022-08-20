@@ -29,10 +29,94 @@ public void createUI() {
 	cMain.window.getContentPane().setBackground(Color.black);
 	cMain.window.setLayout(null);
 		
+
+	
+	cMain.combatPanel = new JPanel();
+	cMain.combatPanel.setBounds(100, 100, 600, 250);
+	cMain.combatPanel.setBackground(Color.black);
+	cMain.window.add(cMain.combatPanel);
+	
+	cMain.combatTextArea = new JTextArea("");
+	cMain.combatTextArea.setBounds(100, 100, 600, 250);
+	cMain.combatTextArea.setBackground(Color.black);
+	cMain.combatTextArea.setForeground(Color.white);
+	cMain.combatTextArea.setFont(cMain.font3);
+	
+	//this allows longer text to be wrapped so that way it will stay in one area.
+	cMain.combatTextArea.setLineWrap(true);
+	cMain.combatTextArea.setWrapStyleWord(true);
+	cMain.combatTextArea.setEditable(false);
+	cMain.combatPanel.add(cMain.combatTextArea);
+	
+	
+	
+	cMain.combatButtonPanel = new JPanel();
+	cMain.combatButtonPanel.setBounds(100, 350, 600, 150);
+	cMain.combatButtonPanel.setBackground(Color.black);
+	cMain.combatButtonPanel.setLayout(new GridLayout(2,2));
+	cMain.window.add(cMain.combatButtonPanel);
+	
+	cMain.combatButton1 = new JButton("Enter the Garden");
+	cMain.combatButton1.setFocusPainted(false);
+	cMain.combatButton1.setBackground(Color.black);
+	cMain.combatButton1.setForeground(Color.white);
+	cMain.combatButton1.setFont(cMain.font3);
+	cMain.combatButton1.addActionListener(cMain.cHandler);
+	cMain.combatButton1.setActionCommand("");
+	cMain.combatButtonPanel.add(cMain.combatButton1);
+	
+	
+	cMain.combatButton2 = new JButton("");
+	cMain.combatButton2.setFocusPainted(false);
+	cMain.combatButton2.setBackground(Color.black);
+	cMain.combatButton2.setForeground(Color.white);
+	cMain.combatButton2.setFont(cMain.font3);
+	cMain.combatButton2.addActionListener(cMain.cHandler);
+	cMain.combatButton2.setActionCommand("");
+	cMain.combatButtonPanel.add(cMain.combatButton2);
+
+	
+	
+	cMain.combatButton3 = new JButton("");
+	cMain.combatButton3.setFocusPainted(false);
+	cMain.combatButton3.setBackground(Color.black);
+	cMain.combatButton3.setForeground(Color.white);
+	cMain.combatButton3.setFont(cMain.font3);
+	cMain.combatButton3.addActionListener(cMain.cHandler);
+	cMain.combatButton3.setActionCommand("");
+	cMain.combatButtonPanel.add(cMain.combatButton3);
+
+	
+	
+	cMain.combatButton4 = new JButton("");
+	cMain.combatButton4.setFocusPainted(false);
+	cMain.combatButton4.setBackground(Color.black);
+	cMain.combatButton4.setForeground(Color.white);
+	cMain.combatButton4.setFont(cMain.font3);
+	cMain.combatButton4.addActionListener(cMain.cHandler);
+	cMain.combatButton4.setActionCommand("");
+	cMain.combatButtonPanel.add(cMain.combatButton4);
+	
+	cMain.combatPanel.setVisible(false);
+	cMain.combatButtonPanel.setVisible(false);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	cMain.optionsPanel = new JPanel();
 	cMain.optionsPanel.setBounds(10, 500, 250, 50);
 	cMain.optionsPanel.setLayout(new GridLayout(1,5));
 	cMain.optionsPanel.setBackground(Color.black);
+	
+	
+	
+	
 		
 	cMain.displayShop = new JButton();
 		ImageIcon shop = new ImageIcon(getClass().getClassLoader().getResource("shop.png"));
@@ -365,6 +449,12 @@ public void createUI() {
 	cMain.optionsPanel.setVisible(true);
 	
 }
+	
+	public void displayCombat() {
+		closeAllPanels();
+		cMain.combatPanel.setVisible(true);
+		cMain.combatButtonPanel.setVisible(true);
+	}
 
 	public void displayMainGame() {
 		cMain.shopUpperPanel.setVisible(false);
@@ -393,6 +483,8 @@ public void createUI() {
 			cMain.cookiePanel.setVisible(false);
 			cMain.shopPanel.setVisible(false);
 			cMain.shopUpperPanel.setVisible(false);
+			cMain.combatPanel.setVisible(false);
+			cMain.combatButtonPanel.setVisible(false);
 			cMain.displayPanelSwitch= false;
 		}
 

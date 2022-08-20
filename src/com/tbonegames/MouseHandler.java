@@ -131,7 +131,7 @@ public class MouseHandler implements MouseListener{
 		}
 		
 		if(button == cMain.shopButton5) {
-			if (cMain.beltUnlocked == false){
+			if (cMain.maskUnlocked == false){
 			cMain.shopMessageText.setText("This item is currently locked");
 			} else {
 			cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");	

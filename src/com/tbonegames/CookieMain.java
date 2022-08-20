@@ -16,7 +16,7 @@ public class CookieMain {
 	String rewardsMessage;
 	Random rand = new Random();
 	JFrame window;
-	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, shopCookiePanel, messagePanel, counterPanel, cookiePanel, optionsPanel;
+	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, shopCookiePanel, messagePanel, counterPanel, cookiePanel, optionsPanel, combatPanel, combatButtonPanel;
 	JLabel counterLabel, shopCookieLabel, perSecLabel, shopLabel;
 	JButton button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton1, shopButton2, shopButton3, shopButton4, shopButton5, 
 	shopButton6, shopButton7, shopButton8, shopButton9, shopButton10, optionButton1, optionButton2, optionButton3,optionButton4, combatButton1, combatButton2, combatButton3,
@@ -36,7 +36,7 @@ public class CookieMain {
 	GameTimers timers = new GameTimers(this);
 	CookieHandler cHandler = new CookieHandler(this, ui, timers, slots);
 	Timer timer, slotTimer, dayTimer;
-	JTextArea messageText, shopMessageText;
+	JTextArea messageText, shopMessageText, combatTextArea;
 	MouseHandler mHandler = new MouseHandler(this);
 	SoundFX soundFX = new SoundFX();
 	

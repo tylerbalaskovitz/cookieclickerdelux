@@ -8,7 +8,7 @@ public class TheGreatO extends Enemies{
 		attack = 100;
 		defense = 50;
 		attack1 = "Clones";
-		attack2 = "BirdShit";
+		attack2 = "Multiple O's";
 		attack3 = "Fly";
 		attack4 = "ArachnoBots";
 	}
