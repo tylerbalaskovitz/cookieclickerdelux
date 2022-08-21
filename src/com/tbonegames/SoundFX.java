@@ -44,7 +44,7 @@ public class SoundFX {
 		play(name);
 		loop(name);
 		
-		
+	
 	}
 	
 	public void play(URL name) {
