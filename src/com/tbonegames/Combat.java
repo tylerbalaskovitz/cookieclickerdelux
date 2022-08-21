@@ -59,7 +59,7 @@ public class Combat {
 	
 	public void enemyAttack() {
 		
-		int enemyDamage = new java.util.Random().nextInt(enemy.attackDamage);
+		int enemyDamage = new java.util.Random().nextInt(enemy.attack);
 		
 		cMain.combatTextArea.setText(enemy.name + " attacked and and dealt " + enemyDamage + "damage" );
 		
@@ -130,7 +130,8 @@ public class Combat {
 			
 			//the switch position takes the String nextPosition as its parameter.
 			switch(defeatedEnemy) {
-			case "Gerri": gerri = true; silverKey = true; ui.mainTextArea.setText("You have defeated " + enemy.name + "\n (You gained a silver manor key)");break;
+			case "AntiGravityChamber": antiGravityChamber = true; cMain.combatTextArea.setText("You have defeated " + enemy.name + "\n ");break;
+			
 			
 			}
 	
