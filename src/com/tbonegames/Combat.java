@@ -4,29 +4,108 @@ import com.tbonegames.enemies.Enemies;
 
 public class Combat {
 	
+	
 	CookieMain cMain;
+	
+	CombatHandler combatHandler;
 	
 	Enemies enemy;
 	
+	String defeatedEnemy;
+	
+	public Combat(CookieMain cMain, CombatHandler combatHandler) {
+		this.cMain = cMain;
+		this.combatHandler = combatHandler;
+	}
+
+	public Combat(CookieMain cMain) {
+		this.cMain = cMain;
+	}
+
 	public void fight() {
 		
+		cMain.timer.stop();
 		cMain.combatTextArea.setText(enemy.name +"'s HP:" + enemy.hp);
 		//playerDamage3();
 		
 		cMain.combatButton1.setText("Attack");
-		cMain.combatButton2.setText("");
-		cMain.combatButton3.setText("");
+		cMain.combatButton2.setText("Defend");
+		cMain.combatButton3.setText("Item");
 		cMain.combatButton4.setText("");
 		
-		launcher.nextPosition1 = "playerAttack";
-		launcher.nextPosition2 = "";
-		launcher.nextPosition3 = "";
-		launcher.nextPosition4 = "";
+		
 		
 		
 	}
 	
-	public void playerAttack(){
+	public void playerDefendChoices() {
+		
+		cMain.combatButton1.setText("Bastard Block");
+		cMain.combatButton1.setActionCommand("BastardBlock");
+		
+		if (cMain.rodUnlocked == true) {
+		cMain.combatButton2.setText("Bastard Rod");
+		cMain.combatButton2.setActionCommand("BastardRod");
+		
+		} else {
+			cMain.combatButton2.setText("?");
+			cMain.combatButton2.setActionCommand("");
+		}
+		
+		if (cMain.beltUnlocked == true) {
+			cMain.combatButton3.setText("Bastard Belt");
+			cMain.combatButton3.setActionCommand("BastardBelt");
+			
+			} else {
+				cMain.combatButton3.setText("?");
+				cMain.combatButton3.setActionCommand("");
+			}
+		
+		if (cMain.maskUnlocked == true) {
+			cMain.combatButton4.setText("Bastard Mask");
+			cMain.combatButton4.setActionCommand("BastardMask");
+			
+			} else {
+				cMain.combatButton2.setText("?");
+				cMain.combatButton2.setActionCommand("");
+			}
+		
+	}
+	
+	public void playerAttackChoices() {
+		
+		cMain.combatButton1.setText("Bastard Fists");
+		cMain.combatButton1.setActionCommand("BastardFists");
+		
+		if (cMain.rodUnlocked == true) {
+		cMain.combatButton2.setText("Bastard Rod");
+		cMain.combatButton2.setActionCommand("BastardRod");
+		
+		} else {
+			cMain.combatButton2.setText("?");
+			cMain.combatButton2.setActionCommand("");
+		}
+		
+		if (cMain.beltUnlocked == true) {
+			cMain.combatButton3.setText("Bastard Belt");
+			cMain.combatButton3.setActionCommand("BastardBelt");
+			
+			} else {
+				cMain.combatButton3.setText("?");
+				cMain.combatButton3.setActionCommand("");
+			}
+		
+		if (cMain.maskUnlocked == true) {
+			cMain.combatButton4.setText("Bastard Mask");
+			cMain.combatButton4.setActionCommand("BastardMask");
+			
+			} else {
+				cMain.combatButton2.setText("?");
+				cMain.combatButton2.setActionCommand("");
+			}
+	}
+	
+	public void playerAttackResult(){
 		
 		gameOver();
 		victory();
@@ -38,33 +117,48 @@ public class Combat {
 		enemy.hp = enemy.hp - playerDamage;
 		
 		cMain.combatButton1.setText("Continue");
+		cMain.combatButton1.setActionCommand("Continue");
 		cMain.combatButton2.setText("");
+		cMain.combatButton2.setActionCommand("");
 		cMain.combatButton3.setText("");
+		cMain.combatButton3.setActionCommand("");
 		cMain.combatButton4.setText("");
+		cMain.combatButton4.setActionCommand("");
 		
 		if (enemy.hp>0) {
-		launcher.nextPosition1 = "enemyAttack";
-		launcher.nextPosition2 = "";
-		launcher.nextPosition3 = "";
-		launcher.nextPosition4 = "";
+		
 		}
 		else if (enemy.hp<1) {
-			launcher.nextPosition1 = "victory";
-			launcher.nextPosition2 = "";
-			launcher.nextPosition3 = "";
-			launcher.nextPosition4 = "";
 			
+			victory();
 		}
 	}
 	
 	public void enemyAttack() {
+		String rolledAttack;
+		int enemyAttackChoice = new java.util.Random().nextInt(4);
+		switch (enemyAttackChoice) {
+		case 0:
+			rolledAttack = enemy.attack1Command;
+			break;
+		case 1:
+			rolledAttack = enemy.attack2Command;
+			break;
+		case 2:
+			rolledAttack = enemy.attack3Command;
+			break;
+		case 3:
+			rolledAttack = enemy.attack4Command;
+			break;
 		
+		
+		}
 		int enemyDamage = new java.util.Random().nextInt(enemy.attack);
 		
-		cMain.combatTextArea.setText(enemy.name + " attacked and and dealt " + enemyDamage + "damage" );
+		cMain.combatTextArea.setText(enemy.name + " attacked with the " + enemyDamage + "damage" );
 		
 		cMain.cookieCounter = cMain.cookieCounter  - enemyDamage;
-		ui.hpLabelNumber.setText(""+player.playerHP);
+		cMain.combatTextArea.setText(""+cMain.cookieCounter);
 		
 		
 		
@@ -73,10 +167,7 @@ public class Combat {
 		cMain.combatButton3.setText("");
 		cMain.combatButton4.setText("");
 		
-		launcher.nextPosition1 = "fight";
-		launcher.nextPosition2 = "";
-		launcher.nextPosition3 = "";
-		launcher.nextPosition4 = "";
+		
 		
 		gameOver();
 		victory();
@@ -97,10 +188,7 @@ public class Combat {
 		cMain.combatButton3.setVisible(false);
 		cMain.combatButton4.setVisible(false);
 		
-		launcher.nextPosition1 = "restartGame";
-		launcher.nextPosition2 = "";
-		launcher.nextPosition3 = "";
-		launcher.nextPosition4 = "";
+		
 		
 		}
 		
@@ -116,10 +204,7 @@ public class Combat {
 			cMain.combatButton3.setText("");
 			cMain.combatButton4.setText("");
 			
-			launcher.nextPosition1 = postFight;
-			launcher.nextPosition2 = "";
-			launcher.nextPosition3 = "";
-			launcher.nextPosition4 = "";
+		
 			
 		}
 		
@@ -130,7 +215,7 @@ public class Combat {
 			
 			//the switch position takes the String nextPosition as its parameter.
 			switch(defeatedEnemy) {
-			case "AntiGravityChamber": antiGravityChamber = true; cMain.combatTextArea.setText("You have defeated " + enemy.name + "\n ");break;
+			case "AntiGravityChamber": cMain.antiGravityChamber = true; cMain.combatTextArea.setText("You have defeated " + enemy.name + "\n ");break;
 			
 			
 			}

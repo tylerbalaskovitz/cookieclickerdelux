@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.Timer;
 
+import com.tbonegames.enemies.Enemies;
+
 public class CookieMain {
 	
 	String rewardsMessage;
@@ -28,12 +30,16 @@ public class CookieMain {
 	
 	double  perSecond;
 	boolean timerOn, grandpaUnlocked, grandmaUnlocked, elvesUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, rodUnlocked, beltUnlocked,
-	colaUnlocked, maskUnlocked, armorUnlocked, sausageUnlocked;
+	colaUnlocked, maskUnlocked, armorUnlocked, sausageUnlocked, antiGravityChamber;
 	Font font1, font2, font3;
 	Slots slots = new Slots(this);
+	
 	StartingValues sValues = new StartingValues(this);
 	UI ui = new UI(this);
+	Combat combat = new Combat(this);
 	GameTimers timers = new GameTimers(this);
+	CombatHandler combatHandler = new CombatHandler(this, combat);
+	
 	CookieHandler cHandler = new CookieHandler(this, ui, timers, slots);
 	Timer timer, slotTimer, dayTimer;
 	JTextArea messageText, shopMessageText, combatTextArea;

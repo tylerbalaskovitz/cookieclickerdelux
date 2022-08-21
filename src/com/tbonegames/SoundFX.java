@@ -50,10 +50,10 @@ public class SoundFX {
 	public void play(URL name) {
 		clip.setFramePosition(0);
 		clip.start();
+
 	}
 	
 	public void loop(URL name) {
-		
 		clip.loop(Clip.LOOP_CONTINUOUSLY);
 		
 	}

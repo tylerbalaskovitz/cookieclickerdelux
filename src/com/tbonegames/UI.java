@@ -56,34 +56,39 @@ public void createUI() {
 	cMain.combatButtonPanel.setLayout(new GridLayout(2,2));
 	cMain.window.add(cMain.combatButtonPanel);
 	
-	cMain.combatButton1 = new JButton("Enter the Garden");
+	cMain.combatButton1 = new JButton("Attack");
 	cMain.combatButton1.setFocusPainted(false);
 	cMain.combatButton1.setBackground(Color.black);
 	cMain.combatButton1.setForeground(Color.white);
 	cMain.combatButton1.setFont(cMain.font3);
-	cMain.combatButton1.addActionListener(cMain.cHandler);
-	cMain.combatButton1.setActionCommand("");
+	cMain.combatButton1.addActionListener(cMain.combatHandler);
+	cMain.combatButton1.setActionCommand("Attack");
 	cMain.combatButtonPanel.add(cMain.combatButton1);
 	
 	
-	cMain.combatButton2 = new JButton("");
+	
+
+	
+	
+	
+	cMain.combatButton2 = new JButton("Defend");
 	cMain.combatButton2.setFocusPainted(false);
 	cMain.combatButton2.setBackground(Color.black);
 	cMain.combatButton2.setForeground(Color.white);
 	cMain.combatButton2.setFont(cMain.font3);
-	cMain.combatButton2.addActionListener(cMain.cHandler);
-	cMain.combatButton2.setActionCommand("");
+	cMain.combatButton2.addActionListener(cMain.combatHandler);
+	cMain.combatButton2.setActionCommand("Defend");
 	cMain.combatButtonPanel.add(cMain.combatButton2);
 
 	
 	
-	cMain.combatButton3 = new JButton("");
+	cMain.combatButton3 = new JButton("Item");
 	cMain.combatButton3.setFocusPainted(false);
 	cMain.combatButton3.setBackground(Color.black);
 	cMain.combatButton3.setForeground(Color.white);
 	cMain.combatButton3.setFont(cMain.font3);
-	cMain.combatButton3.addActionListener(cMain.cHandler);
-	cMain.combatButton3.setActionCommand("");
+	cMain.combatButton3.addActionListener(cMain.combatHandler);
+	cMain.combatButton3.setActionCommand("Item");
 	cMain.combatButtonPanel.add(cMain.combatButton3);
 
 	
@@ -93,7 +98,7 @@ public void createUI() {
 	cMain.combatButton4.setBackground(Color.black);
 	cMain.combatButton4.setForeground(Color.white);
 	cMain.combatButton4.setFont(cMain.font3);
-	cMain.combatButton4.addActionListener(cMain.cHandler);
+	cMain.combatButton4.addActionListener(cMain.combatHandler);
 	cMain.combatButton4.setActionCommand("");
 	cMain.combatButtonPanel.add(cMain.combatButton4);
 	
