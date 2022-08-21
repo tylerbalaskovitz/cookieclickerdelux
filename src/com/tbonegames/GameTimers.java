@@ -24,6 +24,7 @@ public class GameTimers {
 				
 				cMain.cookieCounter++;
 				cMain.counterLabel.setText(cMain.cookieCounter + " Cookies");
+				cMain.shopCookieLabel.setText(cMain.cookieCounter + " Cookies");
 				
 				
 				if(cMain.grandpaUnlocked==false) {

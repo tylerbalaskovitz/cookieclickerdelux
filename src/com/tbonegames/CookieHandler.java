@@ -35,9 +35,17 @@ public class CookieHandler implements ActionListener{
 		
 		
 		switch (action) {
-			case "cookie": cMain.cookieCounter = (cMain.cookieCounter + 1 +(cMain.rodValue) + (cMain.beltValue * 2) + (cMain.maskValue * 3)); 
-			cMain.counterLabel.setText(cMain.cookieCounter + " Cookies"); 
-			cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n");
+			case "Start":
+				cMain.soundFX.stop(cMain.titleClip);
+				soundFX.playSoundEffect(purchase);
+				cMain.ui.closeAllPanels();
+				cMain.ui.displayMainGame();
+				cMain.soundFX.playMusic(cMain.backgroundmusic);
+				break;
+			case "cookie": 
+				cMain.cookieCounter = (cMain.cookieCounter + 1 +(cMain.rodValue) + (cMain.beltValue * 2) + (cMain.maskValue * 3)); 
+				cMain.counterLabel.setText(cMain.cookieCounter + " Cookies"); 
+				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n");
 			break;
 			case "Cursor": if (cMain.cookieCounter >= cMain.cursorPrice) {
 				soundFX.playSoundEffect(purchase);
@@ -161,7 +169,7 @@ public class CookieHandler implements ActionListener{
 					soundFX.playSoundEffect(purchase);
 				cMain.colaValue = cMain.colaValue+ 1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.colaPrice;
-				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" + "Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue + " ] \n Wet your mouth with a bastard soda ");
+				cMain.shopMessageText.setText("Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue + " ] \n Wet your mouth with a bastard soda ");
 				} else {
 					soundFX.playSoundEffect(error);
 				}
@@ -171,7 +179,7 @@ public class CookieHandler implements ActionListener{
 					soundFX.playSoundEffect(purchase);
 				cMain.sausageValue = cMain.sausageValue+1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.sausagePrice;
-				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n  Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die");
+				cMain.shopMessageText.setText("Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n  Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die");
 				} else { 
 					soundFX.playSoundEffect(error);
 				}
@@ -182,7 +190,7 @@ public class CookieHandler implements ActionListener{
 				cMain.rodValue = cMain.rodValue+1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.rodPrice;
 				cMain.rodPrice = cMain.rodPrice +400;
-				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Rod \n [Price: " + cMain.rodPrice + "] \n [Amount: " + cMain.rodValue +" ] \n Grab your little bastard rod and swing it at your friends and your enemies");
+				cMain.shopMessageText.setText("Bastard Rod \n [Price: " + cMain.rodPrice + "] \n [Amount: " + cMain.rodValue +" ] \n Grab your little bastard rod and swing it at your friends and your enemies");
 				} else {
 					soundFX.playSoundEffect(error);
 				}
@@ -193,7 +201,7 @@ public class CookieHandler implements ActionListener{
 				cMain.beltValue = cMain.beltValue+1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.beltPrice;
 				cMain.beltPrice = cMain.beltPrice +800;
-				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With attachment for OSHA certification");
+				cMain.shopMessageText.setText("Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With attachment for OSHA certification");
 				} else {
 					soundFX.playSoundEffect(error);
 				}
@@ -205,7 +213,7 @@ public class CookieHandler implements ActionListener{
 				cMain.maskValue = cMain.maskValue+1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.maskPrice;
 				cMain.maskPrice = cMain.maskPrice +1600;
-				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");
+				cMain.shopMessageText.setText("Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");
 				} else  {soundFX.playSoundEffect(error);}
 				}	soundFX.playSoundEffect(error);
 			break;
@@ -215,7 +223,7 @@ public class CookieHandler implements ActionListener{
 				cMain.armorValue = cMain.armorValue+1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.armorPrice;
 				cMain.armorPrice = cMain.armorPrice +2000;
-				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n" +"Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.armorValue +"Lucky Bastard Fever Armor");
+				cMain.shopMessageText.setText("Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.armorValue +"] \n Lucky Bastard Fever Armor");
 				} else {
 					soundFX.playSoundEffect(error);
 				}

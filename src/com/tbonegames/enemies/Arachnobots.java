@@ -8,6 +8,8 @@ public class Arachnobots extends Enemies {
 		hp = 300;
 		attack = 100;
 		defense = 50;
+		dodge = 10;
+		
 		attack1 = "Big Pecker";
 		attack1Command = "BigPecker";
 		attack1Damage = 0;

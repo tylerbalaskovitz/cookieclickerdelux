@@ -24,12 +24,53 @@ public class UI {
 public void createUI() {
 		
 	cMain.window = new JFrame();
+	cMain.window.setTitle("Action Bastard's Lucky Bastard Fever");
 	cMain.window.setSize(800, 600);
 	cMain.window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	cMain.window.getContentPane().setBackground(Color.black);
 	cMain.window.setLayout(null);
-		
+	
 
+	
+	cMain.titleNamePanel = new JPanel();
+	cMain.titleNamePanel.setBounds(100, 100, 600, 150);
+	cMain.titleNamePanel.setBackground(Color.black);
+	cMain.titleNameLabel = new JLabel("Action Bastard's Lucky Bastard Fever");
+	cMain.titleNameLabel.setForeground(Color.white);
+	cMain.titleNameLabel.setFont(cMain.font1);
+	cMain.titleNamePanel.add(cMain.titleNameLabel);
+	cMain.titleNamePanel.setVisible(false);
+	
+	cMain.descriptionPanel = new JPanel();
+	cMain.descriptionPanel.setBounds(100, 500, 600, 50);
+	cMain.descriptionPanel.setBackground(Color.black);
+	cMain.descriptionLabel = new JLabel("Created by T-bone Games ©2022");
+	cMain.descriptionLabel.setForeground(Color.white);
+	cMain.descriptionLabel.setFont(cMain.font3);
+	cMain.descriptionPanel.add(cMain.descriptionLabel);
+	cMain.descriptionPanel.setVisible(false);
+	
+	cMain.startButtonPanel = new JPanel();
+	cMain.startButtonPanel.setBackground(Color.black);
+	cMain.startButtonPanel.setBounds(300, 400, 200, 100);
+	
+	
+	cMain.startButton = new JButton("Start");
+	cMain.startButton.setBackground(Color.black);
+	cMain.startButton.setForeground(Color.white);
+	cMain.startButton.setFont(cMain.font3);
+	cMain.startButton.setFocusPainted(false);
+	cMain.startButton.addActionListener(cMain.cHandler);
+	cMain.startButton.setActionCommand("Start");
+	cMain.startButtonPanel.setVisible(false);
+	cMain.startButtonPanel.add(cMain.startButton);
+	
+	
+	
+	cMain.window.add(cMain.startButtonPanel);
+	cMain.window.add(cMain.descriptionPanel);
+	cMain.window.add(cMain.titleNamePanel);
+	
 	
 	cMain.combatPanel = new JPanel();
 	cMain.combatPanel.setBounds(100, 100, 600, 250);
@@ -106,23 +147,12 @@ public void createUI() {
 	cMain.combatButtonPanel.setVisible(false);
 	
 	
+	cMain.navigationPanel = new JPanel();
+	cMain.navigationPanel.setBounds(10, 500, 250, 50);
+	cMain.navigationPanel.setLayout(new GridLayout(1,5));
+	cMain.navigationPanel.setBackground(Color.black);
 	
 	
-	
-	
-	
-	
-	
-	
-	cMain.optionsPanel = new JPanel();
-	cMain.optionsPanel.setBounds(10, 500, 250, 50);
-	cMain.optionsPanel.setLayout(new GridLayout(1,5));
-	cMain.optionsPanel.setBackground(Color.black);
-	
-	
-	
-	
-		
 	cMain.displayShop = new JButton();
 		ImageIcon shop = new ImageIcon(getClass().getClassLoader().getResource("shop.png"));
 		cMain.displayShop = new JButton();
@@ -132,7 +162,21 @@ public void createUI() {
 		cMain.displayShop.setBorder(null);
 		cMain.displayShop.addActionListener(cMain.cHandler);
 		cMain.displayShop.setActionCommand("Shop");
-		cMain.optionsPanel.add(cMain.displayShop);
+		cMain.navigationPanel.add(cMain.displayShop);
+		
+		cMain.shopCookiePanel = new JPanel();
+		cMain.shopCookiePanel.setBounds(135, 12, 500, 30);
+		cMain.shopCookiePanel.setLayout(new GridLayout(1,1));
+		cMain.shopCookiePanel.setBackground(Color.black);
+		cMain.shopCookiePanel.setVisible(false);
+		
+		cMain.shopCookieLabel = new JLabel();
+		cMain.shopCookieLabel.setFont(cMain.font1);
+		cMain.shopCookieLabel.setForeground(Color.white);
+		cMain.shopCookiePanel.add(cMain.shopCookieLabel);
+		
+		cMain.window.add(cMain.shopCookiePanel);
+		
 		
 		cMain.shopUpperPanel = new JPanel();
 		cMain.shopUpperPanel.setBounds(135, 50, 500, 200);
@@ -236,9 +280,9 @@ public void createUI() {
 		cMain.button9.setBorder(null);
 		cMain.button9.addActionListener(cMain.cHandler);
 		cMain.button9.setActionCommand("Display");
-		cMain.optionsPanel.add(cMain.button9);
-		
-		cMain.window.add(cMain.optionsPanel);
+		cMain.navigationPanel.add(cMain.button9);
+		cMain.window.add(cMain.navigationPanel);
+		cMain.navigationPanel.setVisible(false);
 		
 		cMain.cookiePanel = new JPanel();
 		cMain.cookiePanel.setBounds(100, 220, 200, 200);
@@ -265,7 +309,7 @@ public void createUI() {
 		cMain.counterPanel = new JPanel();
 		cMain.counterPanel.setBounds(100,100,200,100);
 		cMain.counterPanel.setBackground(Color.black);
-		cMain.counterPanel.setLayout(new GridLayout(2,1));
+		cMain.counterPanel.setLayout(new GridLayout(3,1));
 		cMain.window.add(cMain.counterPanel);
 		
 		cMain.counterLabel = new JLabel(cMain.cookieCounter + " Cookies");
@@ -277,6 +321,11 @@ public void createUI() {
 		cMain.perSecLabel.setFont(cMain.font2);
 		cMain.perSecLabel.setForeground(Color.white);
 		cMain.counterPanel.add(cMain.perSecLabel);
+		
+		cMain.dayLabel = new JLabel();
+		cMain.dayLabel.setFont(cMain.font2);
+		cMain.dayLabel.setForeground(Color.white);
+		cMain.counterPanel.add(cMain.dayLabel);
 		
 	
 		
@@ -316,7 +365,7 @@ public void createUI() {
 		cMain.optionButton3.setActionCommand("Credits");
 		cMain.optionButton3.addMouseListener(cMain.mHandler);
 		cMain.optionsPanel.add(cMain.optionButton3);
-		cMain.optionsPanel.setVisible(false);
+		
 		
 		cMain.window.add(cMain.optionsPanel);
 		
@@ -452,6 +501,7 @@ public void createUI() {
 
 	public void displayOptions() {
 	cMain.optionsPanel.setVisible(true);
+	cMain.navigationPanel.setVisible(true);
 	
 }
 	
@@ -462,9 +512,14 @@ public void createUI() {
 	}
 
 	public void displayMainGame() {
+		cMain.shopCookiePanel.setVisible(false);
+		cMain.descriptionPanel.setVisible(false);
+		cMain.titleNamePanel.setVisible(false);
+		cMain.startButtonPanel.setVisible(false);
 		cMain.shopUpperPanel.setVisible(false);
 		cMain.optionsPanel.setVisible(false);
 		cMain.shopPanel.setVisible(false);
+		cMain.navigationPanel.setVisible(true);
 		cMain.itemPanel.setVisible(true);
 		cMain.cardPanel.setVisible(true);
 		cMain.slotPanel.setVisible(true);
@@ -478,6 +533,11 @@ public void createUI() {
 
 
 		public void closeAllPanels() {
+			cMain.shopCookiePanel.setVisible(false);
+			cMain.navigationPanel.setVisible(false);
+			cMain.descriptionPanel.setVisible(false);
+			cMain.titleNamePanel.setVisible(false);
+			cMain.startButtonPanel.setVisible(false);
 			cMain.optionsPanel.setVisible(false);
 			cMain.itemPanel.setVisible(false);
 			cMain.cardPanel.setVisible(false);
@@ -492,6 +552,20 @@ public void createUI() {
 			cMain.combatButtonPanel.setVisible(false);
 			cMain.displayPanelSwitch= false;
 		}
+		
+		public void displayStartMenu() {
+		cMain.descriptionPanel.setVisible(true);
+		cMain.titleNamePanel.setVisible(true);
+		cMain.startButtonPanel.setVisible(true);
+		}
+		
+		public void displayShop() {
+		cMain.shopCookiePanel.setVisible(true);
+		cMain.navigationPanel.setVisible(true);
+		cMain.shopPanel.setVisible(true);
+		cMain.shopUpperPanel.setVisible(true);
+	
+	}
 
 		public void displaySwitch(String displayOption) {
 			switch (displayOption) {
@@ -536,12 +610,7 @@ public void createUI() {
 		}
 		
 
-			public void displayShop() {
-			
-			cMain.shopPanel.setVisible(true);
-			cMain.shopUpperPanel.setVisible(true);
-		
-		}
+
 
 	
 }
