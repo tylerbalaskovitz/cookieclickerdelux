@@ -3,6 +3,8 @@ package com.tbonegames;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -33,477 +35,227 @@ public void createUI() {
 
 	
 	cMain.titleNamePanel = new JPanel();
-	cMain.titleNamePanel.setBounds(100, 100, 600, 150);
-	cMain.titleNamePanel.setBackground(Color.black);
-	cMain.titleNameLabel = new JLabel("Action Bastard's Lucky Bastard Fever");
-	cMain.titleNameLabel.setForeground(Color.white);
-	cMain.titleNameLabel.setFont(cMain.font1);
-	cMain.titleNamePanel.add(cMain.titleNameLabel);
-	cMain.titleNamePanel.setVisible(false);
+	panelConfiguration(cMain.titleNamePanel, 100, 50, 600, 150, Color.black, 1, 1, cMain.window);
+
+	
+	cMain.titleNameLabel = new JLabel();
+	labelConfiguration(cMain.titleNameLabel, "Action Bastard's Lucky Bastard Fever", cMain.font1, Color.white,cMain.titleNamePanel);
 	
 	cMain.descriptionPanel = new JPanel();
-	cMain.descriptionPanel.setBounds(100, 500, 600, 50);
-	cMain.descriptionPanel.setBackground(Color.black);
+	panelConfiguration(cMain.descriptionPanel, 235, 500, 600, 50, Color.black, 1, 1, cMain.window);
+	
+	
 	cMain.descriptionLabel = new JLabel("Created by T-bone Games ©2022");
-	cMain.descriptionLabel.setForeground(Color.white);
-	cMain.descriptionLabel.setFont(cMain.font3);
-	cMain.descriptionPanel.add(cMain.descriptionLabel);
-	cMain.descriptionPanel.setVisible(false);
+	labelConfiguration(cMain.descriptionLabel, "Created by T-bone Games ©2022", cMain.font3, Color.white,cMain.descriptionPanel);
+	
 	
 	cMain.startButtonPanel = new JPanel();
-	cMain.startButtonPanel.setBackground(Color.black);
-	cMain.startButtonPanel.setBounds(300, 400, 200, 100);
-	
+	panelConfiguration(cMain.startButtonPanel, 350, 400, 100, 50, Color.black, 1, 1, cMain.window);
 	
 	cMain.startButton = new JButton("Start");
-	cMain.startButton.setBackground(Color.black);
-	cMain.startButton.setForeground(Color.white);
-	cMain.startButton.setFont(cMain.font3);
-	cMain.startButton.setFocusPainted(false);
-	cMain.startButton.addActionListener(cMain.cHandler);
-	cMain.startButton.setActionCommand("Start");
-	cMain.startButtonPanel.setVisible(false);
-	cMain.startButtonPanel.add(cMain.startButton);
+	buttonGenerator(cMain.startButton, cMain.font3, Color.black, Color.white, false, cMain.cHandler, "Start", cMain.mHandler, cMain.startButtonPanel);
 	
-	
-	
-	cMain.window.add(cMain.startButtonPanel);
-	cMain.window.add(cMain.descriptionPanel);
-	cMain.window.add(cMain.titleNamePanel);
-	
-	
+	//Things relating to Combat
 	cMain.combatPanel = new JPanel();
-	cMain.combatPanel.setBounds(100, 100, 600, 250);
-	cMain.combatPanel.setBackground(Color.black);
-	cMain.window.add(cMain.combatPanel);
-	
+	panelConfiguration(cMain.combatPanel, 100, 100, 600, 250, Color.black, 1, 1, cMain.window);
 	cMain.combatTextArea = new JTextArea("");
-	cMain.combatTextArea.setBounds(100, 100, 600, 250);
-	cMain.combatTextArea.setBackground(Color.black);
-	cMain.combatTextArea.setForeground(Color.white);
-	cMain.combatTextArea.setFont(cMain.font3);
-	
-	//this allows longer text to be wrapped so that way it will stay in one area.
-	cMain.combatTextArea.setLineWrap(true);
-	cMain.combatTextArea.setWrapStyleWord(true);
-	cMain.combatTextArea.setEditable(false);
-	cMain.combatPanel.add(cMain.combatTextArea);
-	
-	
-	
+	textAreaConfiguration(cMain.combatTextArea, Color.black, Color.white, cMain.font3, true, true, false, true, cMain.combatPanel);
 	cMain.combatButtonPanel = new JPanel();
-	cMain.combatButtonPanel.setBounds(100, 350, 600, 150);
-	cMain.combatButtonPanel.setBackground(Color.black);
-	cMain.combatButtonPanel.setLayout(new GridLayout(2,2));
-	cMain.window.add(cMain.combatButtonPanel);
+	panelConfiguration(cMain.combatButtonPanel, 100, 350, 600, 150, Color.black, 2, 2, cMain.window);
 	
 	cMain.combatButton1 = new JButton("Attack");
-	cMain.combatButton1.setFocusPainted(false);
-	cMain.combatButton1.setBackground(Color.black);
-	cMain.combatButton1.setForeground(Color.white);
-	cMain.combatButton1.setFont(cMain.font3);
-	cMain.combatButton1.addActionListener(cMain.combatHandler);
-	cMain.combatButton1.setActionCommand("Attack");
-	cMain.combatButtonPanel.add(cMain.combatButton1);
-	
-	
-	
-
-	
-	
+	buttonGenerator(cMain.combatButton1, cMain.font3, Color.black, Color.white, false, cMain.combatHandler, "Attack", cMain.mHandler, cMain.combatButtonPanel);
 	
 	cMain.combatButton2 = new JButton("Defend");
-	cMain.combatButton2.setFocusPainted(false);
-	cMain.combatButton2.setBackground(Color.black);
-	cMain.combatButton2.setForeground(Color.white);
-	cMain.combatButton2.setFont(cMain.font3);
-	cMain.combatButton2.addActionListener(cMain.combatHandler);
-	cMain.combatButton2.setActionCommand("Defend");
-	cMain.combatButtonPanel.add(cMain.combatButton2);
+	buttonGenerator(cMain.combatButton2, cMain.font3, Color.black, Color.white, false, cMain.combatHandler, "Defend", cMain.mHandler, cMain.combatButtonPanel);
 
-	
-	
 	cMain.combatButton3 = new JButton("Item");
-	cMain.combatButton3.setFocusPainted(false);
-	cMain.combatButton3.setBackground(Color.black);
-	cMain.combatButton3.setForeground(Color.white);
-	cMain.combatButton3.setFont(cMain.font3);
-	cMain.combatButton3.addActionListener(cMain.combatHandler);
-	cMain.combatButton3.setActionCommand("Item");
-	cMain.combatButtonPanel.add(cMain.combatButton3);
-
-	
+	buttonGenerator(cMain.combatButton3, cMain.font3, Color.black, Color.white, false, cMain.combatHandler, "Item", cMain.mHandler, cMain.combatButtonPanel);
 	
 	cMain.combatButton4 = new JButton("");
-	cMain.combatButton4.setFocusPainted(false);
-	cMain.combatButton4.setBackground(Color.black);
-	cMain.combatButton4.setForeground(Color.white);
-	cMain.combatButton4.setFont(cMain.font3);
-	cMain.combatButton4.addActionListener(cMain.combatHandler);
-	cMain.combatButton4.setActionCommand("");
-	cMain.combatButtonPanel.add(cMain.combatButton4);
+	buttonGenerator(cMain.combatButton4, cMain.font3, Color.black, Color.white, false, cMain.combatHandler, "", cMain.mHandler, cMain.combatButtonPanel);
+
 	
-	cMain.combatPanel.setVisible(false);
-	cMain.combatButtonPanel.setVisible(false);
-	
-	
+	//Navigation Panel and Buttons
 	cMain.navigationPanel = new JPanel();
-	cMain.navigationPanel.setBounds(10, 500, 250, 50);
-	cMain.navigationPanel.setLayout(new GridLayout(1,5));
-	cMain.navigationPanel.setBackground(Color.black);
+	panelConfiguration(cMain.navigationPanel, 10, 500, 250, 50, Color.black, 1, 5, cMain.window);
 	
-	
+	ImageIcon shop = new ImageIcon(getClass().getClassLoader().getResource("shop.png"));
 	cMain.displayShop = new JButton();
-		ImageIcon shop = new ImageIcon(getClass().getClassLoader().getResource("shop.png"));
-		cMain.displayShop = new JButton();
-		cMain.displayShop.setBackground(Color.black);
-		cMain.displayShop.setIcon(shop);
-		cMain.displayShop.setFocusPainted(false);
-		cMain.displayShop.setBorder(null);
-		cMain.displayShop.addActionListener(cMain.cHandler);
-		cMain.displayShop.setActionCommand("Shop");
-		cMain.navigationPanel.add(cMain.displayShop);
+	iconButtonGenerator(shop, cMain.displayShop, Color.black, Color.white, false, cMain.cHandler, "Shop", cMain.mHandler, cMain.navigationPanel);
+	
+	ImageIcon cog = new ImageIcon(getClass().getClassLoader().getResource("cog.png"));
+	cMain.button9 = new JButton();
+	iconButtonGenerator(cog, cMain.button9, Color.black, Color.white, false, cMain.cHandler, "Display", cMain.mHandler, cMain.navigationPanel);
 		
+	//Buttons for the inGameSHop
 		cMain.shopCookiePanel = new JPanel();
-		cMain.shopCookiePanel.setBounds(135, 12, 500, 30);
-		cMain.shopCookiePanel.setLayout(new GridLayout(1,1));
-		cMain.shopCookiePanel.setBackground(Color.black);
-		cMain.shopCookiePanel.setVisible(false);
-		
+		panelConfiguration(cMain.shopCookiePanel, 135, 12, 500, 30, Color.black, 1, 1, cMain.window);
 		cMain.shopCookieLabel = new JLabel();
-		cMain.shopCookieLabel.setFont(cMain.font1);
-		cMain.shopCookieLabel.setForeground(Color.white);
-		cMain.shopCookiePanel.add(cMain.shopCookieLabel);
-		
-		cMain.window.add(cMain.shopCookiePanel);
-		
-		
+		labelConfiguration(cMain.shopCookieLabel, "", cMain.font1, Color.white,cMain.shopCookiePanel);
 		cMain.shopUpperPanel = new JPanel();
-		cMain.shopUpperPanel.setBounds(135, 50, 500, 200);
-		cMain.shopUpperPanel.setLayout(new GridLayout(1,1));
-		cMain.shopUpperPanel.setBackground(Color.white);
-		cMain.shopUpperPanel.setVisible(false);
-		
+		panelConfiguration(cMain.shopUpperPanel, 135, 50, 500, 200, Color.black, 1, 1, cMain.window);
 		cMain.shopMessageText = new JTextArea();
-		cMain.shopMessageText.addMouseListener(null);
-		cMain.shopMessageText.setBackground(Color.black);
-		cMain.shopMessageText.setForeground(Color.white);
-		cMain.shopMessageText.setText("");
-		cMain.shopMessageText.setFont(cMain.font3);
-		cMain.shopMessageText.setLineWrap(true);
-		cMain.shopMessageText.setWrapStyleWord(true);
-		cMain.shopMessageText.setEditable(false);
-		cMain.shopMessageText.setVisible(true);
-		
-		cMain.shopUpperPanel.add(cMain.shopMessageText);
-		
-		
-		
+		textAreaConfiguration(cMain.shopMessageText, Color.black, Color.white, cMain.font3, true, true, false, true, cMain.shopUpperPanel);
 		cMain.shopPanel = new JPanel();
-		cMain.shopPanel.setBounds(135, 275, 500, 200);
-		cMain.shopPanel.setLayout(new GridLayout(2,3));
-		cMain.shopPanel.setBackground(Color.black);
-		
+		panelConfiguration(cMain.shopPanel, 135, 275, 500, 200, Color.black, 2, 3, cMain.window);
 		
 		cMain.shopButton1 = new JButton("Bastard Cola");
-		cMain.shopButton1.setFont(cMain.font3);
-		cMain.shopButton1.setBackground(Color.black);
-		cMain.shopButton1.setForeground(Color.white);
-		cMain.shopButton1.setFocusPainted(false);
-		cMain.shopButton1.addActionListener(cMain.cHandler);
-		cMain.shopButton1.setActionCommand("BastardCola");
-		cMain.shopButton1.addMouseListener(cMain.mHandler);
-		cMain.shopPanel.add(cMain.shopButton1);
+		buttonGenerator(cMain.shopButton1, cMain.font3, Color.black, Color.white, false, cMain.cHandler, "BastardCola", cMain.mHandler, cMain.shopPanel);
 		
 		cMain.shopButton2 = new JButton("Bastard Sausage");
-		cMain.shopButton2.setFont(cMain.font3);
-		cMain.shopButton2.setBackground(Color.black);
-		cMain.shopButton2.setForeground(Color.white);
-		cMain.shopButton2.setFocusPainted(false);
-		cMain.shopButton2.addActionListener(cMain.cHandler);
-		cMain.shopButton2.addMouseListener(cMain.mHandler);
-		cMain.shopButton2.setActionCommand("BastardSausage");
-		cMain.shopPanel.add(cMain.shopButton2);
-		
+		buttonGenerator(cMain.shopButton2, cMain.font3, Color.black, Color.white, false, cMain.cHandler, "BastardSausage", cMain.mHandler, cMain.shopPanel);
+
 		cMain.shopButton3 = new JButton("?");
-		cMain.shopButton3.setFont(cMain.font3);
-		cMain.shopButton3.setBackground(Color.black);
-		cMain.shopButton3.setForeground(Color.white);
-		cMain.shopButton3.setFocusPainted(false);
-		cMain.shopButton3.addActionListener(cMain.cHandler);
-		cMain.shopButton3.addMouseListener(cMain.mHandler);
-		cMain.shopButton3.setActionCommand("BastardRod");
-		cMain.shopPanel.add(cMain.shopButton3);
-		
+		buttonGenerator(cMain.shopButton3, cMain.font3, Color.black, Color.white, false, cMain.cHandler, "BastardRod", cMain.mHandler, cMain.shopPanel);
+
 		cMain.shopButton4 = new JButton("?");
-		cMain.shopButton4.setFont(cMain.font3);
-		cMain.shopButton4.setBackground(Color.black);
-		cMain.shopButton4.setForeground(Color.white);
-		cMain.shopButton4.setFocusPainted(false);
-		cMain.shopButton4.addActionListener(cMain.cHandler);
-		cMain.shopButton4.addMouseListener(cMain.mHandler);
-		cMain.shopButton4.setActionCommand("BastardBelt");
-		cMain.shopPanel.add(cMain.shopButton4);
+		buttonGenerator(cMain.shopButton4, cMain.font3, Color.black, Color.white, false, cMain.cHandler, "BastardBelt", cMain.mHandler, cMain.shopPanel);
 		
 		cMain.shopButton5 = new JButton("?");
-		cMain.shopButton5.setFont(cMain.font3);
-		cMain.shopButton5.setBackground(Color.black);
-		cMain.shopButton5.setForeground(Color.white);
-		cMain.shopButton5.setFocusPainted(false);
-		cMain.shopButton5.addActionListener(cMain.cHandler);
-		cMain.shopButton5.addMouseListener(cMain.mHandler);
-		cMain.shopButton5.setActionCommand("BastardMask");
-		
-		cMain.shopPanel.add(cMain.shopButton5);
+		buttonGenerator(cMain.shopButton5, cMain.font3, Color.black, Color.white, false, cMain.cHandler, "BastardMask", cMain.mHandler, cMain.shopPanel);
 		
 		cMain.shopButton6 = new JButton("?");
-		cMain.shopButton6.setFont(cMain.font3);
-		cMain.shopButton6.setBackground(Color.black);
-		cMain.shopButton6.setForeground(Color.white);
-		cMain.shopButton6.setFocusPainted(false);
-		cMain.shopButton6.addActionListener(cMain.cHandler);
-		cMain.shopButton6.addMouseListener(cMain.mHandler);
-		cMain.shopButton6.setActionCommand("BastardArmor");
-		cMain.shopPanel.add(cMain.shopButton6);
+		buttonGenerator(cMain.shopButton6, cMain.font3, Color.black, Color.white, false, cMain.cHandler, "BastardArmor", cMain.mHandler, cMain.shopPanel);
 		
-		
-		cMain.shopPanel.setVisible(false);
-		cMain.window.add(cMain.shopPanel);
-		cMain.window.add(cMain.shopUpperPanel);
-		
-		
-		ImageIcon cog = new ImageIcon(getClass().getClassLoader().getResource("cog.png"));
-		cMain.button9 = new JButton();
-		cMain.button9.setBackground(Color.black);
-		cMain.button9.setIcon(cog);
-		cMain.button9.setFocusPainted(false);
-		cMain.button9.setBorder(null);
-		cMain.button9.addActionListener(cMain.cHandler);
-		cMain.button9.setActionCommand("Display");
-		cMain.navigationPanel.add(cMain.button9);
-		cMain.window.add(cMain.navigationPanel);
-		cMain.navigationPanel.setVisible(false);
-		
+		//Code for the main button to click
 		cMain.cookiePanel = new JPanel();
-		cMain.cookiePanel.setBounds(100, 220, 200, 200);
-		cMain.cookiePanel.setBackground(Color.black);
-		cMain.window.add(cMain.cookiePanel);
-		
-		
+		panelConfiguration(cMain.cookiePanel, 100, 220, 200, 200, Color.black, 1,1, cMain.window);	
 		ImageIcon cookie = new ImageIcon(getClass().getClassLoader().getResource("cookie.png"));
-		
 		JButton cookieButton = new JButton();
-		
-		
-		cookieButton.setBackground(Color.black);
-		cookieButton.setFocusPainted(false);
-		cookieButton.setBorder(null);
-		cookieButton.addActionListener(cMain.cHandler);
-		cookieButton.setActionCommand("cookie");
-		//setIcon is a method that allows you to set a picture on this Button
-		cookieButton.setIcon(cookie);
-		cMain.cookiePanel.add(cookieButton);
-		
-		
-		
-		cMain.counterPanel = new JPanel();
-		cMain.counterPanel.setBounds(100,100,200,100);
-		cMain.counterPanel.setBackground(Color.black);
-		cMain.counterPanel.setLayout(new GridLayout(3,1));
-		cMain.window.add(cMain.counterPanel);
-		
-		cMain.counterLabel = new JLabel(cMain.cookieCounter + " Cookies");
-		cMain.counterLabel.setFont(cMain.font1);
-		cMain.counterLabel.setForeground(Color.white);
-		cMain.counterPanel.add(cMain.counterLabel);
-		
-		cMain.perSecLabel = new JLabel();
-		cMain.perSecLabel.setFont(cMain.font2);
-		cMain.perSecLabel.setForeground(Color.white);
-		cMain.counterPanel.add(cMain.perSecLabel);
-		
-		cMain.dayLabel = new JLabel();
-		cMain.dayLabel.setFont(cMain.font2);
-		cMain.dayLabel.setForeground(Color.white);
-		cMain.counterPanel.add(cMain.dayLabel);
-		
+		iconButtonGenerator(cookie, cookieButton, Color.black, Color.white, false, cMain.cHandler, "cookie", cMain.mHandler, cMain.cookiePanel);
 	
-		
-		//started here
+		//Panel for the main stats of the game to be tracked
+		cMain.counterPanel = new JPanel();
+		panelConfiguration(cMain.counterPanel, 100, 100, 200, 100, Color.black, 3,1, cMain.window);
+		cMain.counterLabel = new JLabel("Cookies");
+		labelConfiguration(cMain.counterLabel, cMain.cookieCounter + " Cookies", cMain.font1, Color.white,cMain.counterPanel);
+		cMain.perSecLabel = new JLabel();
+		labelConfiguration(cMain.perSecLabel, "Per Second: 0.0", cMain.font2, Color.white,cMain.counterPanel);
+		cMain.dayLabel = new JLabel();
+		labelConfiguration(cMain.dayLabel, "0 Days", cMain.font2, Color.white,cMain.counterPanel);
+
+
+		//Menu options when selecting the Cog Icon
 		cMain.optionsPanel = new JPanel();
-		cMain.optionsPanel.setBounds(275, 170, 250, 250);
-		cMain.optionsPanel.setBackground(Color.white);
-		cMain.optionsPanel.setLayout(new GridLayout(3,1));
+		panelConfiguration(cMain.optionsPanel, 275, 170, 250, 250, Color.black, 3,1, cMain.window);
 		
 		cMain.optionButton1 = new JButton("New Game");
-		cMain.optionButton1.setFont(cMain.font1);
-		cMain.optionButton1.setBackground(Color.black);
-		cMain.optionButton1.setForeground(Color.white);
-		cMain.optionButton1.setFocusPainted(false);
-		cMain.optionButton1.addActionListener(cMain.cHandler);
-		cMain.optionButton1.setActionCommand("NewGame");
-		cMain.optionButton1.addMouseListener(cMain.mHandler);
-		cMain.optionsPanel.add(cMain.optionButton1);
+		buttonGenerator(cMain.optionButton1, cMain.font1, Color.black, Color.white, false, cMain.cHandler, "NewGame", cMain.mHandler, cMain.optionsPanel);
 		
 		cMain.optionButton2 = new JButton("High Scores");
-		cMain.optionButton2.setFont(cMain.font1);
-		cMain.optionButton2.setBackground(Color.black);
-		cMain.optionButton2.setForeground(Color.white);
-		cMain.optionButton2.setFocusPainted(false);
-		cMain.optionButton2.addActionListener(cMain.cHandler);
-		cMain.optionButton2.setActionCommand("HighScores");
-		cMain.optionButton2.addMouseListener(cMain.mHandler);
-		cMain.optionsPanel.add(cMain.optionButton2);
-		
+		buttonGenerator(cMain.optionButton2, cMain.font1, Color.black, Color.white, false, cMain.cHandler, "HighScore", cMain.mHandler, cMain.optionsPanel);
 		
 		cMain.optionButton3 = new JButton("Credits");
-		cMain.optionButton3.setFont(cMain.font1);
-		cMain.optionButton3.setBackground(Color.black);
-		cMain.optionButton3.setForeground(Color.white);
-		cMain.optionButton3.setFocusPainted(false);
-		cMain.optionButton3.addActionListener(cMain.cHandler);
-		cMain.optionButton3.setActionCommand("Credits");
-		cMain.optionButton3.addMouseListener(cMain.mHandler);
-		cMain.optionsPanel.add(cMain.optionButton3);
+		buttonGenerator(cMain.optionButton3, cMain.font1, Color.black, Color.white, false, cMain.cHandler, "Credits", cMain.mHandler, cMain.optionsPanel);
 		
-		
-		cMain.window.add(cMain.optionsPanel);
-		
-		
-		
+		//Maint actions/items to be bought during the game
 		cMain.itemPanel = new JPanel();
-		cMain.itemPanel.setBounds(500, 170, 250, 250);
-		cMain.itemPanel.setBackground(Color.black);
-		cMain.itemPanel.setLayout(new GridLayout(4,1));
-		
-		
+		panelConfiguration(cMain.itemPanel, 500, 170, 250, 250, Color.black, 4,1, cMain.window);
 		
 		cMain.button1 = new JButton("Cursor");
-		cMain.button1.setFont(cMain.font1);
-		cMain.button1.setBackground(Color.black);
-		cMain.button1.setForeground(Color.white);
-		cMain.button1.setFocusPainted(false);
-		cMain.button1.addActionListener(cMain.cHandler);
-		cMain.button1.setActionCommand("Cursor");
-		cMain.button1.addMouseListener(cMain.mHandler);
-		cMain.itemPanel.add(cMain.button1);
+		buttonGenerator(cMain.button1, cMain.font1, Color.black, Color.white, false, cMain.cHandler, "Cursor", cMain.mHandler, cMain.itemPanel);
 		
 		cMain.button2 = new JButton("?");
-		cMain.button2.setFont(cMain.font1);
-		cMain.button2.setBackground(Color.black);
-		cMain.button2.setForeground(Color.white);
-		cMain.button2.setFocusPainted(false);
-		cMain.button2.addActionListener(cMain.cHandler);
-		cMain.button2.setActionCommand("Grandpa");
-		cMain.button2.addMouseListener(cMain.mHandler);
-		cMain.itemPanel.add(cMain.button2);
-		
+		buttonGenerator(cMain.button2, cMain.font1, Color.black, Color.white, false, cMain.cHandler, "Grandpa", cMain.mHandler, cMain.itemPanel);
+
 		cMain.button3 = new JButton("?");
-		cMain.button3.setFont(cMain.font1);
-		cMain.button3.setBackground(Color.black);
-		cMain.button3.setForeground(Color.white);
-		cMain.button3.setFocusPainted(false);
-		cMain.button3.addActionListener(cMain.cHandler);
-		cMain.button3.setActionCommand("Grandma");
-		cMain.button3.addMouseListener(cMain.mHandler);
-		cMain.itemPanel.add(cMain.button3);
-		
+		buttonGenerator(cMain.button3, cMain.font1, Color.black, Color.white, false, cMain.cHandler, "Grandma", cMain.mHandler, cMain.itemPanel);
+	
 		cMain.button4 = new JButton("?");
-		cMain.button4.setFont(cMain.font1);
-		cMain.button4.setBackground(Color.black);
-		cMain.button4.setForeground(Color.white);
-		cMain.button4.setFocusPainted(false);
-		cMain.button4.addActionListener(cMain.cHandler);
-		cMain.button4.setActionCommand("Elves");
-		cMain.button4.addMouseListener(cMain.mHandler);
-		cMain.itemPanel.add(cMain.button4);
-		cMain.window.add(cMain.itemPanel);
+		buttonGenerator(cMain.button4, cMain.font1, Color.black, Color.white, false, cMain.cHandler, "Elves", cMain.mHandler, cMain.itemPanel);
 		
 		cMain.cardPanel = new JPanel();
-		cMain.cardPanel.setBounds(500, 418, 250, 60);
-		cMain.cardPanel.setBackground(Color.black);
-		cMain.cardPanel.setLayout(new GridLayout(1,3));
-		
+		panelConfiguration(cMain.cardPanel, 500, 418, 250, 60, Color.black, 1, 3, cMain.window);
+
+		//slot spaces
 		cMain.button5 = new JButton("?");
-		cMain.button5.setFont(cMain.font2);
-		cMain.button5.setBackground(Color.black);
-		cMain.button5.setForeground(Color.white);
-		cMain.button5.setFocusPainted(false);
-		cMain.button5.addActionListener(cMain.cHandler);
-		cMain.button5.setActionCommand("Lucky");
-		cMain.button5.addMouseListener(cMain.mHandler);
-		cMain.cardPanel.add(cMain.button5);
-		
+		buttonGenerator(cMain.button5, cMain.font2, Color.black, Color.white, false, cMain.cHandler, "Lucky", cMain.mHandler, cMain.cardPanel);
+	
 		cMain.button6 = new JButton("?");
-		cMain.button6.setFont(cMain.font2);
-		cMain.button6.setBackground(Color.black);
-		cMain.button6.setForeground(Color.white);
-		cMain.button6.setFocusPainted(false);
-		cMain.button6.addActionListener(cMain.cHandler);
-		cMain.button6.setActionCommand("Bastard");
-		cMain.button6.addMouseListener(cMain.mHandler);
-		cMain.cardPanel.add(cMain.button6);
-		
+		buttonGenerator(cMain.button6, cMain.font2, Color.black, Color.white, false, cMain.cHandler, "Bastard", cMain.mHandler, cMain.cardPanel);
+
 		cMain.button7 = new JButton("?");
-		cMain.button7.setFont(cMain.font2);
-		cMain.button7.setBackground(Color.black);
-		cMain.button7.setForeground(Color.white);
-		cMain.button7.setFocusPainted(false);
-		cMain.button7.addActionListener(cMain.cHandler);
-		cMain.button7.setActionCommand("Fever");
-		cMain.button7.addMouseListener(cMain.mHandler);
-		cMain.cardPanel.add(cMain.button7);
+		buttonGenerator(cMain.button7, cMain.font2, Color.black, Color.white, false, cMain.cHandler, "Fever", cMain.mHandler, cMain.cardPanel);
 		
-		cMain.window.add(cMain.cardPanel);
-		
+		//slots
 		cMain.slotPanel = new JPanel();
-		cMain.slotPanel.setBounds(500, 480, 250, 60 );
-		cMain.slotPanel.setBackground(Color.yellow);
-		cMain.slotPanel.setLayout(new GridLayout(1,1));
-		
-		
+		panelConfiguration(cMain.slotPanel, 500, 480, 250, 60, Color.black, 1, 1, cMain.window);
 	
 		cMain.button8 = new JButton("?");
-		cMain.button8.setFont(cMain.font1);
-		cMain.button8.setBackground(Color.black);
-		cMain.button8.setForeground(Color.white);
-		cMain.button8.setFocusPainted(false);
-		cMain.button8.addActionListener(cMain.cHandler);
-		cMain.button8.setActionCommand("Slots");
-		cMain.button8.addMouseListener(cMain.mHandler);
-		cMain.slotPanel.add(cMain.button8);
-		
-		cMain.window.add(cMain.slotPanel);
-		
+		buttonGenerator(cMain.button8, cMain.font1, Color.black, Color.white, false, cMain.cHandler, "Slots", cMain.mHandler, cMain.slotPanel);
 		
 		cMain.messagePanel = new JPanel();
-		cMain.messagePanel.setBounds(500, 50, 250, 150);
-		cMain.messagePanel.setBackground(Color.black);
-		cMain.window.add(cMain.messagePanel);
+		panelConfiguration(cMain.messagePanel, 500, 50, 250, 140, Color.black, 1, 1, cMain.window);
 		
 		cMain.messageText = new JTextArea();
-		cMain.messageText.setBounds(500, 70, 250, 150);
-		cMain.messageText.setForeground(Color.white);
-		cMain.messageText.setBackground(Color.black);
-		cMain.messageText.setFont(cMain.font2);
-		cMain.messageText.setLineWrap(true);
-		cMain.messageText.setWrapStyleWord(true);
-		cMain.messageText.setEditable(false);
-		cMain.messagePanel.add(cMain.messageText);
-		
-		
+		cMain.messageText.setBounds(500, 30, 250, 150);
+		textAreaConfiguration(cMain.messageText, Color.black, Color.white, cMain.font2, true, true, false, true, cMain.messagePanel);
 		
 		cMain.window.setVisible(true);
 		
 		
-		
 	}
 
-	public void displayOptions() {
-	cMain.optionsPanel.setVisible(true);
-	cMain.navigationPanel.setVisible(true);
+	public void labelConfiguration(JLabel label, String labelText, Font font, Color color, JPanel targetPanel ) {
+		label.setText(labelText);
+		label.setFont(font);
+		label.setForeground(color);
+		targetPanel.add(label);
+	}
+
+	public void textAreaConfiguration(JTextArea textArea, Color colorBG, Color colorFG, Font font, boolean lineWrap, boolean wrapStyle, boolean editable, boolean visible, JPanel targetPanel) {
+		textArea.addMouseListener(null);
+		textArea.setBackground(colorBG);
+		textArea.setForeground(colorFG);
+		textArea.setText("");
+		textArea.setFont(font);
+		textArea.setLineWrap(lineWrap);
+		textArea.setWrapStyleWord(wrapStyle);
+		textArea.setEditable(editable);
+		textArea.setVisible(visible);
+		targetPanel.add(textArea);
+	}
+
+	public void panelConfiguration(JPanel newPanel, int x1,int  y1,int x2,int y2, Color colorBG, int rows, int columns, JFrame targetFrame) {
+		newPanel.setBounds(x1, y1, x2, y2 );
+		newPanel.setBackground(colorBG);
+		newPanel.setLayout(new GridLayout(rows,columns));
+		targetFrame.add(newPanel);
+	}
+
+	public void iconButtonGenerator(ImageIcon icon, JButton newButton, Color colorBG, Color colorFG, boolean painted, ActionListener actionHandler, String actionCommand, MouseListener mouseListener,JPanel targetPanel   ) {
 	
-}
+		newButton.setBorder(null);
+		newButton.setIcon(icon);
+		newButton.setBackground(colorBG);
+		newButton.setForeground(colorFG);
+		newButton.setFocusPainted(painted);
+		newButton.addActionListener(actionHandler);
+		newButton.setActionCommand(actionCommand);
+		newButton.addMouseListener(mouseListener);
+		targetPanel.add(newButton);
+	}
+
+	
+
+	public void buttonGenerator(JButton newButton, Font font, Color colorBG, Color colorFG, boolean painted, ActionListener actionHandler, String actionCommand, MouseListener mouseListener,JPanel targetPanel   ) {
+		newButton.setFont(font);
+		newButton.setBackground(colorBG);
+		newButton.setForeground(colorFG);
+		newButton.setFocusPainted(painted);
+		newButton.addActionListener(actionHandler);
+		newButton.setActionCommand(actionCommand);
+		newButton.addMouseListener(mouseListener);
+		targetPanel.add(newButton);
+	}
+
+
+
+	public void displayOptions() {
+		cMain.optionsPanel.setVisible(true);
+		cMain.navigationPanel.setVisible(true);
+	}
 	
 	public void displayCombat() {
 		closeAllPanels();
@@ -528,43 +280,42 @@ public void createUI() {
 		cMain.cookiePanel.setVisible(true);
 		cMain.displayPanelSwitch= true;
 	
-}
+	}
 
 
 
-		public void closeAllPanels() {
-			cMain.shopCookiePanel.setVisible(false);
-			cMain.navigationPanel.setVisible(false);
-			cMain.descriptionPanel.setVisible(false);
-			cMain.titleNamePanel.setVisible(false);
-			cMain.startButtonPanel.setVisible(false);
-			cMain.optionsPanel.setVisible(false);
-			cMain.itemPanel.setVisible(false);
-			cMain.cardPanel.setVisible(false);
-			cMain.slotPanel.setVisible(false);
-			cMain.shopPanel.setVisible(false);
-			cMain.messagePanel.setVisible(false);
-			cMain.counterPanel.setVisible(false);
-			cMain.cookiePanel.setVisible(false);
-			cMain.shopPanel.setVisible(false);
-			cMain.shopUpperPanel.setVisible(false);
-			cMain.combatPanel.setVisible(false);
-			cMain.combatButtonPanel.setVisible(false);
-			cMain.displayPanelSwitch= false;
-		}
+	public void closeAllPanels() {
+		cMain.shopCookiePanel.setVisible(false);
+		cMain.navigationPanel.setVisible(false);
+		cMain.descriptionPanel.setVisible(false);
+		cMain.titleNamePanel.setVisible(false);
+		cMain.startButtonPanel.setVisible(false);
+		cMain.optionsPanel.setVisible(false);
+		cMain.itemPanel.setVisible(false);
+		cMain.cardPanel.setVisible(false);
+		cMain.slotPanel.setVisible(false);
+		cMain.shopPanel.setVisible(false);
+		cMain.messagePanel.setVisible(false);
+		cMain.counterPanel.setVisible(false);
+		cMain.cookiePanel.setVisible(false);
+		cMain.shopPanel.setVisible(false);
+		cMain.shopUpperPanel.setVisible(false);
+		cMain.combatPanel.setVisible(false);
+		cMain.combatButtonPanel.setVisible(false);
+		cMain.displayPanelSwitch= false;
+	}
 		
-		public void displayStartMenu() {
+	public void displayStartMenu() {
 		cMain.descriptionPanel.setVisible(true);
 		cMain.titleNamePanel.setVisible(true);
 		cMain.startButtonPanel.setVisible(true);
-		}
+	}
 		
 		public void displayShop() {
 		cMain.shopCookiePanel.setVisible(true);
 		cMain.navigationPanel.setVisible(true);
 		cMain.shopPanel.setVisible(true);
 		cMain.shopUpperPanel.setVisible(true);
-	
 	}
 
 		public void displaySwitch(String displayOption) {
@@ -579,11 +330,8 @@ public void createUI() {
 			} else if (cMain.displayPanelSwitch == false) {
 				displayMainGame();
 				cMain.displayPanelSwitch= true;
-				
 			}
 			break;
-			
-			
 			case "ItemShop":
 				if(cMain.displayPanelSwitch == true) {
 					closeAllPanels();
@@ -594,7 +342,6 @@ public void createUI() {
 					displayMainGame();
 					cMain.displayPanelSwitch= true;
 				break;
-			
 			}
 		}
 	
@@ -602,15 +349,8 @@ public void createUI() {
 		
 		
 		public void createFont() {
-			
 			cMain.font1 = new Font("Comic Sans MS", Font.PLAIN, 32);
 			cMain.font2 = new Font("Comic Sans MS", Font.PLAIN, 16);
 			cMain.font3 = new Font("Comic Sans MS", Font.PLAIN, 20);
-			
-		}
-		
-
-
-
-	
+		}	
 }
