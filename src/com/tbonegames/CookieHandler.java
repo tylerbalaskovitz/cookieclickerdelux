@@ -6,6 +6,7 @@ import java.net.URL;
 
 public class CookieHandler implements ActionListener{
 	
+	DayTimer dayTimer;
 	SoundFX soundFX = new SoundFX();
 	CookieMain cMain;
 	UI ui;
@@ -15,10 +16,11 @@ public class CookieHandler implements ActionListener{
 	public URL error = getClass().getClassLoader().getResource("audio//error.wav");
 	
 	//each of these classes is needed to be passed into the CookieHandler class because there are values taken from each of the classes coming from the main class.
-	public CookieHandler(CookieMain cMain, UI ui, GameTimers timers, Slots slots) {
+	public CookieHandler(CookieMain cMain, UI ui, GameTimers timers, DayTimer dayTimer, Slots slots) {
 		this.cMain = cMain;
 		this.ui = ui;
 		this.timers = timers;
+		this.dayTimer = dayTimer;
 		this.slots = slots;
 	}
 	
@@ -38,6 +40,8 @@ public class CookieHandler implements ActionListener{
 			case "Start":
 				cMain.soundFX.stop(cMain.titleClip);
 				soundFX.playSoundEffect(purchase);
+				cMain.dayPerSecond = .1;
+				dayTimer.timerUpdate();
 				cMain.ui.closeAllPanels();
 				cMain.ui.displayMainGame();
 				cMain.soundFX.playMusic(cMain.backgroundmusic);

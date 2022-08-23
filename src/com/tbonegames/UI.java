@@ -186,7 +186,7 @@ public void createUI() {
 		buttonGenerator(cMain.button8, cMain.font1, Color.black, Color.white, false, cMain.cHandler, "Slots", cMain.mHandler, cMain.slotPanel);
 		
 		cMain.messagePanel = new JPanel();
-		panelConfiguration(cMain.messagePanel, 500, 50, 250, 140, Color.black, 1, 1, cMain.window);
+		panelConfiguration(cMain.messagePanel, 500, 30, 250, 140, Color.black, 1, 1, cMain.window);
 		
 		cMain.messageText = new JTextArea();
 		cMain.messageText.setBounds(500, 30, 250, 150);
@@ -345,8 +345,7 @@ public void createUI() {
 			}
 		}
 	
-}
-		
+}	
 		
 		public void createFont() {
 			cMain.font1 = new Font("Comic Sans MS", Font.PLAIN, 32);

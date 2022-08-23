@@ -25,12 +25,12 @@ public class CookieMain {
 	shopButton6, shopButton7, shopButton8, shopButton9, shopButton10, optionButton1, optionButton2, optionButton3,optionButton4, combatButton1, combatButton2, combatButton3,
 	combatButton4;
 	
-	int  cookieCounter, timerSpeed, cursorNumber, cursorPrice, grandpaNumber, grandpaPrice, slotsPrice, cursorUpgradeAmount, cursorUpgradePrice, colaPrice, sausagePrice, rodPrice,
+	int  cookieCounter, timerSpeed, dayTimerSpeed, cursorNumber, cursorPrice, grandpaNumber, grandpaPrice, slotsPrice, cursorUpgradeAmount, cursorUpgradePrice, colaPrice, sausagePrice, rodPrice,
 	beltPrice, maskPrice, armorPrice, grandmaPrice, grandmaNumber, elvesPrice, elvesNumber, luckyPrice, bastardPrice, feverPrice, colaValue, sausageValue, rodValue, beltValue,
-	maskValue, armorValue;
+	maskValue, armorValue, day;
 	
-	double  perSecond;
-	boolean timerOn, grandpaUnlocked, grandmaUnlocked, elvesUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, rodUnlocked, beltUnlocked,
+	double  perSecond, dayPerSecond;
+	boolean timerOn, dayTimerOn, grandpaUnlocked, grandmaUnlocked, elvesUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, rodUnlocked, beltUnlocked,
 	colaUnlocked, maskUnlocked, armorUnlocked, sausageUnlocked, antiGravityChamber;
 	Font font1, font2, font3;
 	Slots slots = new Slots(this);
@@ -39,9 +39,10 @@ public class CookieMain {
 	UI ui = new UI(this);
 	Combat combat = new Combat(this);
 	GameTimers timers = new GameTimers(this);
+	DayTimer dayTimers = new DayTimer(this);
 	CombatHandler combatHandler = new CombatHandler(this, combat);
 	
-	CookieHandler cHandler = new CookieHandler(this, ui, timers, slots);
+	CookieHandler cHandler = new CookieHandler(this, ui, timers, dayTimers, slots);
 	Timer timer, slotTimer, dayTimer;
 	JTextArea messageText, shopMessageText, combatTextArea;
 	MouseHandler mHandler = new MouseHandler(this);

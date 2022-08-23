@@ -20,6 +20,7 @@ package com.tbonegames;
 			cMain.timerOn = false;
 			cMain.cursorUpgradeAmount = 0;
 			cMain.perSecond = 0;
+			cMain.dayPerSecond = 0;
 			cMain.colaValue = 0;
 			cMain.sausageValue = 0;
 			cMain.rodValue = 0;
