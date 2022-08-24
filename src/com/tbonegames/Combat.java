@@ -138,8 +138,23 @@ public class Combat {
 		
 		gameOver();
 		victory();
-		
-		int playerDamage = new java.util.Random().nextInt(10);
+		int itemDamageBonus = 0;
+		int itemDamageDenominator = 10;
+		//Allow these to be upgraded. 
+		switch (cMain.combatItemString) {
+		case "BastardFists":
+			break;
+		case "BastardRod":
+			itemDamageBonus = cMain.rodValue;
+			break;
+		case "BastardBelt":
+			itemDamageBonus = cMain.beltValue*2;
+			break;
+		case "BastardMask":
+			itemDamageBonus = cMain.maskValue*3;
+			break;
+		}
+		int playerDamage = new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus))/itemDamageDenominator);
 		
 		cMain.combatTextArea.setText("You attacked " + cMain.enemy.name + " and dealt " + playerDamage + "damage" );
 		
@@ -169,19 +184,19 @@ public class Combat {
 		cMain.enemyAttackChoice = new java.util.Random().nextInt(10);
 		if (cMain.enemyAttackChoice  >= cMain.enemy.attack4Chance) {
 			rolledAttack = cMain.enemy.attack4;
-			cMain.enemyDamage = cMain.enemy.attack4Damage;
+			cMain.enemyDamage = new java.util.Random().nextInt(cMain.enemy.attack4Damage) + cMain.enemy.attack;
 		}
 		if ((cMain.enemyAttackChoice  >= cMain.enemy.attack3Chance) && (cMain.enemyAttackChoice  < cMain.enemy.attack4Chance)) {
 			rolledAttack = cMain.enemy.attack3;
-			cMain.enemyDamage = cMain.enemy.attack3Damage;
+			cMain.enemyDamage = new java.util.Random().nextInt(cMain.enemy.attack3Damage) + cMain.enemy.attack;
 		}
 		if ((cMain.enemyAttackChoice  >= cMain.enemy.attack2Chance) && (cMain.enemyAttackChoice  < cMain.enemy.attack3Chance)) {
 			rolledAttack = cMain.enemy.attack2;
-			cMain.enemyDamage = cMain.enemy.attack2Damage;
+			cMain.enemyDamage = new java.util.Random().nextInt(cMain.enemy.attack2Damage) + cMain.enemy.attack;
 		}
 		if ((cMain.enemyAttackChoice  >= cMain.enemy.attack1Chance) && (cMain.enemyAttackChoice  < cMain.enemy.attack2Chance)) {
 			rolledAttack = cMain.enemy.attack1;
-			cMain.enemyDamage = cMain.enemy.attack1Damage;
+			cMain.enemyDamage = new java.util.Random().nextInt(cMain.enemy.attack1Damage) + cMain.enemy.attack;
 		}
 	
 		

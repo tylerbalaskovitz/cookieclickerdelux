@@ -47,7 +47,7 @@ public class CookieHandler implements ActionListener{
 				cMain.soundFX.playMusic(cMain.backgroundmusic);
 				break;
 			case "cookie": 
-				cMain.cookieCounter = (cMain.cookieCounter + 1 +(cMain.rodValue) + (cMain.beltValue * 2) + (cMain.maskValue * 3)); 
+				cMain.cookieCounter = (cMain.cookieCounter + 1 +(cMain.rodValue) + (cMain.beltValue * (3/2)) + (cMain.maskValue * (5/2))); 
 				cMain.counterLabel.setText(cMain.cookieCounter + " Cookies"); 
 				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n");
 			break;
@@ -171,6 +171,7 @@ public class CookieHandler implements ActionListener{
 			case "BastardCola":
 				if (cMain.cookieCounter>=cMain.colaPrice) {
 					soundFX.playSoundEffect(purchase);
+				cMain.startingDamage = cMain.startingDamage +3; 
 				cMain.colaValue = cMain.colaValue+ 1;
 				cMain.cookieCounter = cMain.cookieCounter - cMain.colaPrice;
 				cMain.shopMessageText.setText("Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue + " ] \n Wet your mouth with a bastard soda ");
@@ -182,6 +183,7 @@ public class CookieHandler implements ActionListener{
 				if (cMain.cookieCounter>=cMain.sausagePrice) {
 					soundFX.playSoundEffect(purchase);
 				cMain.sausageValue = cMain.sausageValue+1;
+				cMain.startingDamage = cMain.startingDamage +10; 
 				cMain.cookieCounter = cMain.cookieCounter - cMain.sausagePrice;
 				cMain.shopMessageText.setText("Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n  Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die");
 				} else { 

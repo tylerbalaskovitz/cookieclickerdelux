@@ -21,6 +21,7 @@ package com.tbonegames;
 			cMain.inCombat = false;
 			cMain.day = 0;
 			cMain.bossDay = 20;
+			cMain.startingDamage = 5;
 			cMain.cursorUpgradeAmount = 0;
 			cMain.perSecond = 0;
 			cMain.dayPerSecond = 0;

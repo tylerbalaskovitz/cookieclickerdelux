@@ -29,10 +29,12 @@ public class CombatHandler implements ActionListener{
 		case "Item":
 			break;
 		case "BastardFists":
-			cMain.enemy.hp = cMain.enemy.hp-10;
+			cMain.combatItemString = "Fists";
 			combat.playerAttackResult();
 			break;
 		case "BastardRod":
+			cMain.combatItemString = "BastardRod";
+			combat.playerAttackResult();
 			break;
 		case "BastardBelt":
 			break;

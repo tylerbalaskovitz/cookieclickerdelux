@@ -41,93 +41,93 @@ public class DayTimer {
 				
 				//order of Boss encounters
 				if (cMain.day == 20) {
-					launchCombat();
 					cMain.enemy = new FeverDemon();
+					launchCombat();
 					cMain.bossDay = 40;
 				}
 				if (cMain.day == 40) {
-					launchCombat();
 					cMain.enemy = new DrEnema();
+					launchCombat();
 					cMain.bossDay = 60;
 				}
 				if (cMain.day == 60) {
-					launchCombat();
 					cMain.enemy = new KungFujiApple();
+					launchCombat();
 					cMain.bossDay = 70;
 				}
 				if (cMain.day == 70) {
-					launchCombat();
 					cMain.enemy = new BetaCarrotine();
+					launchCombat();
 					cMain.bossDay = 90;
 				}
 				if (cMain.day == 90) {
-					launchCombat();
 					cMain.enemy = new AntiGravityChamber();
+					launchCombat();
 					cMain.bossDay = 100;
 				}
 				if (cMain.day == 100) {
-					launchCombat();
 					cMain.enemy = new CornWhole();
+					launchCombat();
 					cMain.bossDay = 120;
 				}
 				if (cMain.day == 120) {
-					launchCombat();
 					cMain.enemy = new DrDeflation();
+					launchCombat();
 					cMain.bossDay = 130;
 				}
 				if (cMain.day == 130) {
-					launchCombat();
 					cMain.enemy = new TheDeflowerer();
+					launchCombat();
 					cMain.bossDay = 150;
 				}
 				if (cMain.day == 150) {
-					launchCombat();
 					cMain.enemy = new TheGreatO();
+					launchCombat();
 					cMain.bossDay = 180;
 				}
 				if (cMain.day == 180) {
-					launchCombat();
 					cMain.enemy = new Arachnobots();
+					launchCombat();
 					cMain.bossDay = 190;
 				}
 				if (cMain.day == 190) {
-					launchCombat();
 					cMain.enemy = new HenchPeckers();
+					launchCombat();
 					cMain.bossDay = 200;
 				}
 				if (cMain.day == 200) {
-					launchCombat();
 					cMain.enemy = new InflatableOfDoom();
+					launchCombat();
 					cMain.bossDay = 210;
 				}
 				if (cMain.day == 210) {
-					launchCombat();
 					cMain.enemy = new FlyingPecker();
+					launchCombat();
 					cMain.bossDay = 220;
 				}
 				if (cMain.day == 220) {
-					launchCombat();
 					cMain.enemy = new HenchPeckers();
+					launchCombat();
 					cMain.bossDay = 225;
 				}
 				if (cMain.day == 225) {
-					launchCombat();
 					cMain.enemy = new FlyingPecker();
+					launchCombat();
 					cMain.bossDay = 230;
 				}
 				if (cMain.day == 230) {
-					launchCombat();
 					cMain.enemy = new HenchPeckers();
+					launchCombat();
 					cMain.bossDay = 245;
 				}
 				if (cMain.day == 245) {
-					launchCombat();
 					cMain.enemy = new DrHitlerClone();
+					launchCombat();
 					cMain.bossDay = 260;
 				}
 				if (cMain.day == 260) {
-					launchCombat();
 					cMain.enemy = new DrHitlerCloneAndroid();
+					launchCombat();
 					cMain.bossDay = 80;
 				}
 				

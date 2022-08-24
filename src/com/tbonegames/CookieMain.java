@@ -15,7 +15,7 @@ import com.tbonegames.enemies.Enemies;
 
 public class CookieMain {
 	
-	String rewardsMessage;
+	String rewardsMessage, combatItemString;
 	Random rand = new Random();
 	JFrame window;
 	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, shopCookiePanel, messagePanel, counterPanel, cookiePanel, optionsPanel, navigationPanel, combatPanel, combatButtonPanel, 
@@ -27,7 +27,7 @@ public class CookieMain {
 	
 	int  cookieCounter, timerSpeed, dayTimerSpeed, cursorNumber, cursorPrice, grandpaNumber, grandpaPrice, slotsPrice, cursorUpgradeAmount, cursorUpgradePrice, colaPrice, sausagePrice, rodPrice,
 	beltPrice, maskPrice, armorPrice, grandmaPrice, grandmaNumber, elvesPrice, elvesNumber, luckyPrice, bastardPrice, feverPrice, colaValue, sausageValue, rodValue, beltValue,
-	maskValue, armorValue, day, enemyAttackChoice, enemyDamage, bossDay;
+	maskValue, armorValue, day, enemyAttackChoice, enemyDamage, bossDay, startingDamage;
 	
 	double  perSecond, dayPerSecond;
 	boolean timerOn, dayTimerOn, grandpaUnlocked, grandmaUnlocked, elvesUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, rodUnlocked, beltUnlocked,
