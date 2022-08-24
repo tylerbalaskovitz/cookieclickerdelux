@@ -127,14 +127,15 @@ public void createUI() {
 	
 		//Panel for the main stats of the game to be tracked
 		cMain.counterPanel = new JPanel();
-		panelConfiguration(cMain.counterPanel, 100, 100, 200, 100, Color.black, 3,1, cMain.window);
+		panelConfiguration(cMain.counterPanel, 100, 75, 250, 125, Color.black, 4,1, cMain.window);
 		cMain.counterLabel = new JLabel("Cookies");
 		labelConfiguration(cMain.counterLabel, cMain.cookieCounter + " Cookies", cMain.font1, Color.white,cMain.counterPanel);
 		cMain.perSecLabel = new JLabel();
 		labelConfiguration(cMain.perSecLabel, "Per Second: 0.0", cMain.font2, Color.white,cMain.counterPanel);
+		cMain.combatDayLabel = new JLabel();
+		labelConfiguration(cMain.combatDayLabel, "Next Combat Day: " + (cMain.bossDay), cMain.font2, Color.white,cMain.counterPanel);
 		cMain.dayLabel = new JLabel();
 		labelConfiguration(cMain.dayLabel, "0 Days", cMain.font2, Color.white,cMain.counterPanel);
-
 
 		//Menu options when selecting the Cog Icon
 		cMain.optionsPanel = new JPanel();

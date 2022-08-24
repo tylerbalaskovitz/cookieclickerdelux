@@ -73,10 +73,11 @@ public class Slots {
 			if (slot1 == slot2 && slot1 == slot3) {
 				if (slot1 == 3) {
 					soundFX.playSoundEffect(jackpot);
-					cMain.rewardsMessage = "Gain 10,000 Cookies";
-					cMain.cookieCounter = cMain.cookieCounter + 10000;
+					cMain.rewardsMessage = "Gain 15,000 Cookies";
+					cMain.cookieCounter = cMain.cookieCounter + 15000;
 				} else {
-					cMain.rewardsMessage = "";
+					cMain.rewardsMessage = "Gain 5,000";
+					cMain.cookieCounter = cMain.cookieCounter + 5000;
 					soundFX.playSoundEffect(slotWinner);
 				}
 				

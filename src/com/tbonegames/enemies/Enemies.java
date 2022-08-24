@@ -1,5 +1,7 @@
 package com.tbonegames.enemies;
 
+import java.net.URL;
+
 import com.tbonegames.CookieMain;
 
 public class Enemies {
@@ -10,21 +12,31 @@ public class Enemies {
 	public int attack;
 	public int defense;
 	public int dodge;
+	public int disableDuration;
 	
 	public String attack1;
 	public String attack1Command;
 	public int attack1Damage;
+	public int attack1Chance;
 	
 	public String attack2;
 	public String attack2Command;
 	public int attack2Damage;
+	public int attack2Chance;
 	
 	public String attack3;
 	public String attack3Command;
 	public int attack3Damage;
+	public int attack3Chance;
 	
 	public String attack4;
 	public String attack4Command;
 	public int attack4Damage;
+	public int attack4Chance;
+	
+	public URL talk1;
+	public URL talk2;
+	public URL talk3;
+	public URL defeated;
 	
 }

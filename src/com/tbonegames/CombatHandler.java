@@ -29,6 +29,8 @@ public class CombatHandler implements ActionListener{
 		case "Item":
 			break;
 		case "BastardFists":
+			cMain.enemy.hp = cMain.enemy.hp-10;
+			combat.playerAttackResult();
 			break;
 		case "BastardRod":
 			break;
@@ -41,6 +43,22 @@ public class CombatHandler implements ActionListener{
 		case "BastardSausage":
 			break;
 		case "BastardCola":
+			break;
+		case "EnemyTurn":
+			combat.enemyAttack();
+			break;
+		case "ContinueBattle":
+			combat.fight();
+			combat.gameOver();
+			break;
+		case "Victory":
+			cMain.ui.closeAllPanels();
+			cMain.ui.displayMainGame();
+			break;
+		case "GameOver":
+			cMain.window.setVisible(false);
+			cMain.soundFX.stop(cMain.backgroundmusic);
+			new CookieMain();
 			break;
 			
 			//Action Bastard Movies

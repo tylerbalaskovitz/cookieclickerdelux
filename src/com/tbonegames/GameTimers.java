@@ -22,11 +22,13 @@ public class GameTimers {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				if (cMain.inCombat == false) {
 				cMain.cookieCounter++;
+				}
 				cMain.counterLabel.setText(cMain.cookieCounter + " Cookies");
 				cMain.shopCookieLabel.setText(cMain.cookieCounter + " Cookies");
 				
-				
+			
 				if(cMain.grandpaUnlocked==false) {
 					if(cMain.cookieCounter >= 100) {
 						soundFX.playSoundEffect(unlock);

@@ -1,9 +1,15 @@
 package com.tbonegames;
 
+import java.net.URL;
+import java.util.Random;
 import com.tbonegames.enemies.Enemies;
 
 public class Combat {
 	
+	public URL death = getClass().getClassLoader().getResource("audio//deathsound.wav");
+	SoundFX soundFX = new SoundFX();
+	
+	Random random = new Random();
 	
 	CookieMain cMain;
 	
@@ -24,15 +30,24 @@ public class Combat {
 
 	public void fight() {
 		
-		cMain.timer.stop();
-		cMain.combatTextArea.setText(enemy.name +"'s HP:" + enemy.hp);
+		cMain.inCombat=true;
+		cMain.combatTextArea.setText(cMain.enemy.name +"'s HP:" + cMain.enemy.hp);
 		//playerDamage3();
 		
+		 
 		cMain.combatButton1.setText("Attack");
-		cMain.combatButton2.setText("Defend");
-		cMain.combatButton3.setText("Item");
-		cMain.combatButton4.setText("");
+		cMain.combatButton1.setActionCommand("Attack");
+	
 		
+		cMain.combatButton2.setText("Defend");
+		cMain.combatButton2.setActionCommand("Defend");
+		
+		cMain.combatButton3.setText("Item");
+		cMain.combatButton3.setActionCommand("Item");
+		
+		
+		cMain.combatButton4.setText("?");
+		cMain.combatButton4.setActionCommand("");
 		
 		
 		
@@ -66,17 +81,20 @@ public class Combat {
 			cMain.combatButton4.setActionCommand("BastardMask");
 			
 			} else {
-				cMain.combatButton2.setText("?");
-				cMain.combatButton2.setActionCommand("");
+				cMain.combatButton4.setText("?");
+				cMain.combatButton4.setActionCommand("");
 			}
 		
 	}
 	
 	public void playerAttackChoices() {
 		
+		 if (cMain.attack1Disabled == false) {
 		cMain.combatButton1.setText("Bastard Fists");
 		cMain.combatButton1.setActionCommand("BastardFists");
+		 }
 		
+		 if (cMain.attack2Disabled == false) {
 		if (cMain.rodUnlocked == true) {
 		cMain.combatButton2.setText("Bastard Rod");
 		cMain.combatButton2.setActionCommand("BastardRod");
@@ -85,7 +103,10 @@ public class Combat {
 			cMain.combatButton2.setText("?");
 			cMain.combatButton2.setActionCommand("");
 		}
-		
+		 }
+		 
+		 
+		if (cMain.attack3Disabled == false) {
 		if (cMain.beltUnlocked == true) {
 			cMain.combatButton3.setText("Bastard Belt");
 			cMain.combatButton3.setActionCommand("BastardBelt");
@@ -94,7 +115,9 @@ public class Combat {
 				cMain.combatButton3.setText("?");
 				cMain.combatButton3.setActionCommand("");
 			}
+		}
 		
+		if (cMain.attack4Disabled == false) {
 		if (cMain.maskUnlocked == true) {
 			cMain.combatButton4.setText("Bastard Mask");
 			cMain.combatButton4.setActionCommand("BastardMask");
@@ -103,6 +126,12 @@ public class Combat {
 				cMain.combatButton2.setText("?");
 				cMain.combatButton2.setActionCommand("");
 			}
+		 }
+		
+		if ((cMain.attack1Disabled == true) && (cMain.attack2Disabled == true) && (cMain.attack3Disabled == true) && (cMain.attack4Disabled == true)) {
+			enemyAttack();
+		}
+		
 	}
 	
 	public void playerAttackResult(){
@@ -110,14 +139,68 @@ public class Combat {
 		gameOver();
 		victory();
 		
-		int playerDamage = new java.util.Random().nextInt();
+		int playerDamage = new java.util.Random().nextInt(10);
 		
-		cMain.combatTextArea.setText("You attacked " + enemy.name + " and dealt " + playerDamage + "damage" );
+		cMain.combatTextArea.setText("You attacked " + cMain.enemy.name + " and dealt " + playerDamage + "damage" );
 		
-		enemy.hp = enemy.hp - playerDamage;
+		cMain.enemy.hp = cMain.enemy.hp - playerDamage;
 		
 		cMain.combatButton1.setText("Continue");
-		cMain.combatButton1.setActionCommand("Continue");
+		cMain.combatButton1.setActionCommand("EnemyTurn");
+		cMain.combatButton2.setText("");
+		cMain.combatButton2.setActionCommand("");
+		cMain.combatButton3.setText("");
+		cMain.combatButton3.setActionCommand("");
+		cMain.combatButton4.setText("");
+		cMain.combatButton4.setActionCommand("");
+		gameOver();
+		if (cMain.enemy.hp>0) {
+		
+		}
+		else if (cMain.enemy.hp<1) {
+			
+			victory();
+		}
+	}
+	
+	
+	public void enemyAttack() {
+		String rolledAttack = "";
+		cMain.enemyAttackChoice = new java.util.Random().nextInt(10);
+		if (cMain.enemyAttackChoice  >= cMain.enemy.attack4Chance) {
+			rolledAttack = cMain.enemy.attack4;
+			cMain.enemyDamage = cMain.enemy.attack4Damage;
+		}
+		if ((cMain.enemyAttackChoice  >= cMain.enemy.attack3Chance) && (cMain.enemyAttackChoice  < cMain.enemy.attack4Chance)) {
+			rolledAttack = cMain.enemy.attack3;
+			cMain.enemyDamage = cMain.enemy.attack3Damage;
+		}
+		if ((cMain.enemyAttackChoice  >= cMain.enemy.attack2Chance) && (cMain.enemyAttackChoice  < cMain.enemy.attack3Chance)) {
+			rolledAttack = cMain.enemy.attack2;
+			cMain.enemyDamage = cMain.enemy.attack2Damage;
+		}
+		if ((cMain.enemyAttackChoice  >= cMain.enemy.attack1Chance) && (cMain.enemyAttackChoice  < cMain.enemy.attack2Chance)) {
+			rolledAttack = cMain.enemy.attack1;
+			cMain.enemyDamage = cMain.enemy.attack1Damage;
+		}
+	
+		
+		
+		
+			
+		switch (rolledAttack) {
+		case "Miss":
+			break;
+		
+		
+		
+		}
+
+		cMain.cookieCounter = cMain.cookieCounter  - cMain.enemyDamage;
+		cMain.combatTextArea.setText(cMain.enemy.name + " attacked with " + rolledAttack + " doing "  + cMain.enemyDamage + "damage" + "\n You have " + cMain.cookieCounter + "logos remaining" );
+		
+		cMain.combatButton1.setText(">");
+		cMain.combatButton1.setActionCommand("ContinueBattle");
 		cMain.combatButton2.setText("");
 		cMain.combatButton2.setActionCommand("");
 		cMain.combatButton3.setText("");
@@ -125,65 +208,22 @@ public class Combat {
 		cMain.combatButton4.setText("");
 		cMain.combatButton4.setActionCommand("");
 		
-		if (enemy.hp>0) {
 		
-		}
-		else if (enemy.hp<1) {
-			
-			victory();
-		}
-	}
-	
-	public void enemyAttack() {
-		String rolledAttack;
-		int enemyAttackChoice = new java.util.Random().nextInt(4);
-		switch (enemyAttackChoice) {
-		case 0:
-			rolledAttack = enemy.attack1Command;
-			break;
-		case 1:
-			rolledAttack = enemy.attack2Command;
-			break;
-		case 2:
-			rolledAttack = enemy.attack3Command;
-			break;
-		case 3:
-			rolledAttack = enemy.attack4Command;
-			break;
-		
-		
-		}
-		int enemyDamage = new java.util.Random().nextInt(enemy.attack);
-		
-		cMain.combatTextArea.setText(enemy.name + " attacked with the " + enemyDamage + "damage" );
-		
-		cMain.cookieCounter = cMain.cookieCounter  - enemyDamage;
-		cMain.combatTextArea.setText(""+cMain.cookieCounter);
-		
-		
-		
-		cMain.combatButton1.setText(">");
-		cMain.combatButton2.setText("");
-		cMain.combatButton3.setText("");
-		cMain.combatButton4.setText("");
-		
-		
-		
-		gameOver();
-		victory();
 	}
 	
 	public void gameOver() {
 		
 		if (cMain.cookieCounter < 1) {
 		
-		
-		
+		soundFX.playSoundEffect(death);
+		cMain.soundFX.stop(cMain.backgroundmusic);
+		cMain.inCombat = false;
 		cMain.combatTextArea.setText("You have ran out of life \n Game Over.");
 		
 		
 		
-		cMain.combatButton1.setText("Main Menu");
+		cMain.combatButton1.setText("New Game");
+		cMain.combatButton1.setActionCommand("GameOver");
 		cMain.combatButton2.setVisible(false);
 		cMain.combatButton3.setVisible(false);
 		cMain.combatButton4.setVisible(false);
@@ -194,15 +234,20 @@ public class Combat {
 		
 	};
 	public void victory() {
-		if (enemy.hp < 1) {
-			cMain.combatTextArea.setText("You have defeated " + enemy.name);
-			defeatedEnemy = enemy.name;
+		if (cMain.enemy.hp < 1) {
+			cMain.combatTextArea.setText("You have defeated " + cMain.enemy.name);
+			defeatedEnemy = cMain.enemy.name;
+			cMain.inCombat = false;
 			combatLog();
 			
-			cMain.combatButton1.setText("Continue Journey");
+			cMain.combatButton1.setText("Continue");
+			cMain.combatButton1.setActionCommand("Victory");
 			cMain.combatButton2.setText("");
+			cMain.combatButton2.setActionCommand("");
 			cMain.combatButton3.setText("");
+			cMain.combatButton3.setActionCommand("");
 			cMain.combatButton4.setText("");
+			cMain.combatButton4.setActionCommand("");
 			
 		
 			

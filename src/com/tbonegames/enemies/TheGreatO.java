@@ -8,22 +8,31 @@ public class TheGreatO extends Enemies{
 		attack = 100;
 		defense = 50;
 		dodge = 10;
+		disableDuration = 0;
 		
-		attack1 = "Big Pecker";
-		attack1Command = "BigPecker";
+		//Eludes an enemies attacks -- None of your attacks work -- booleans
+		attack1 = "Elusion";
+		attack1Command = "Elusion";
 		attack1Damage = 0;
+		attack1Chance = 0;
 		
-		attack2 = "Bird Shit";
-		attack2Command = "BirdShit";
+		
+		attack2 = "Clones";
+		attack2Command = "Clones";
 		attack2Damage = 0;
+		attack2Chance = 0;
 		
-		attack3 = "Fly";
-		attack3Command = "Fly";
+		//Damage Doubles Each Turn
+		attack3 = "Wear You Out";
+		attack3Command = "WearYouOut";
 		attack3Damage = 0;
+		attack3Chance = 0;
 		
-		attack4 = "ArachnoBots";
-		attack4Command = "ArachnoBots";
-		attack4Damage = 0;
+		//Never Travel Alone. Strongest attack
+		attack4 = "Never Travel Alone";
+		attack4Command = "NeverTravelAlone";
+		attack4Damage = 502;
+		attack4Chance = 0;
 	}
 	
 }

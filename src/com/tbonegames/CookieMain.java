@@ -20,18 +20,18 @@ public class CookieMain {
 	JFrame window;
 	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, shopCookiePanel, messagePanel, counterPanel, cookiePanel, optionsPanel, navigationPanel, combatPanel, combatButtonPanel, 
 	startButtonPanel, titleNamePanel, descriptionPanel;
-	JLabel counterLabel, shopCookieLabel, perSecLabel, shopLabel, titleNameLabel, descriptionLabel, dayLabel;
+	JLabel counterLabel, shopCookieLabel, perSecLabel, shopLabel, titleNameLabel, descriptionLabel, dayLabel, combatDayLabel;
 	JButton startButton, button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton1, shopButton2, shopButton3, shopButton4, shopButton5, 
 	shopButton6, shopButton7, shopButton8, shopButton9, shopButton10, optionButton1, optionButton2, optionButton3,optionButton4, combatButton1, combatButton2, combatButton3,
 	combatButton4;
 	
 	int  cookieCounter, timerSpeed, dayTimerSpeed, cursorNumber, cursorPrice, grandpaNumber, grandpaPrice, slotsPrice, cursorUpgradeAmount, cursorUpgradePrice, colaPrice, sausagePrice, rodPrice,
 	beltPrice, maskPrice, armorPrice, grandmaPrice, grandmaNumber, elvesPrice, elvesNumber, luckyPrice, bastardPrice, feverPrice, colaValue, sausageValue, rodValue, beltValue,
-	maskValue, armorValue, day;
+	maskValue, armorValue, day, enemyAttackChoice, enemyDamage, bossDay;
 	
 	double  perSecond, dayPerSecond;
 	boolean timerOn, dayTimerOn, grandpaUnlocked, grandmaUnlocked, elvesUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, rodUnlocked, beltUnlocked,
-	colaUnlocked, maskUnlocked, armorUnlocked, sausageUnlocked, antiGravityChamber;
+	colaUnlocked, maskUnlocked, armorUnlocked, sausageUnlocked, antiGravityChamber, inCombat, attack1Disabled, attack2Disabled, attack3Disabled, attack4Disabled;
 	Font font1, font2, font3;
 	Slots slots = new Slots(this);
 	
@@ -41,7 +41,7 @@ public class CookieMain {
 	GameTimers timers = new GameTimers(this);
 	DayTimer dayTimers = new DayTimer(this);
 	CombatHandler combatHandler = new CombatHandler(this, combat);
-	
+	Enemies enemy = new Enemies();
 	CookieHandler cHandler = new CookieHandler(this, ui, timers, dayTimers, slots);
 	Timer timer, slotTimer, dayTimer;
 	JTextArea messageText, shopMessageText, combatTextArea;
