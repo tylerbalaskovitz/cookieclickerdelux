@@ -5,7 +5,7 @@ public class FeverDemon extends Enemies{
 	public FeverDemon() {
 		name = "The Red Hot Fever Demon";
 		hp = 300;
-		attack = 100;
+		attack = 50;
 		defense = 50;
 		dodge = 10;
 		disableDuration = 0;

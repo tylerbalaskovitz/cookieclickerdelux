@@ -27,7 +27,7 @@ public class CookieMain {
 	
 	int  cookieCounter, timerSpeed, dayTimerSpeed, cursorNumber, cursorPrice, grandpaNumber, grandpaPrice, slotsPrice, cursorUpgradeAmount, cursorUpgradePrice, colaPrice, sausagePrice, rodPrice,
 	beltPrice, maskPrice, armorPrice, grandmaPrice, grandmaNumber, elvesPrice, elvesNumber, luckyPrice, bastardPrice, feverPrice, colaValue, sausageValue, rodValue, beltValue,
-	maskValue, armorValue, day, enemyAttackChoice, enemyDamage, bossDay, startingDamage;
+	maskValue, armorValue, day, enemyAttackChoice, enemyDamage, bossDay, startingDamage, enemyDisableCounter, enemiesDefeated;
 	
 	double  perSecond, dayPerSecond;
 	boolean timerOn, dayTimerOn, grandpaUnlocked, grandmaUnlocked, elvesUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, rodUnlocked, beltUnlocked,

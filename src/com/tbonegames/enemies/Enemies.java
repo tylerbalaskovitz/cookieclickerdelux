@@ -2,7 +2,6 @@ package com.tbonegames.enemies;
 
 import java.net.URL;
 
-import com.tbonegames.CookieMain;
 
 public class Enemies {
 

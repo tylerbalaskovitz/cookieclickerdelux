@@ -44,95 +44,121 @@ public class DayTimer {
 					cMain.enemy = new FeverDemon();
 					launchCombat();
 					cMain.bossDay = 40;
+					statTracker();
 				}
 				if (cMain.day == 40) {
 					cMain.enemy = new DrEnema();
 					launchCombat();
 					cMain.bossDay = 60;
+					statTracker();
 				}
 				if (cMain.day == 60) {
 					cMain.enemy = new KungFujiApple();
 					launchCombat();
 					cMain.bossDay = 70;
+					statTracker();
 				}
 				if (cMain.day == 70) {
 					cMain.enemy = new BetaCarrotine();
 					launchCombat();
 					cMain.bossDay = 90;
+					statTracker();
 				}
 				if (cMain.day == 90) {
 					cMain.enemy = new AntiGravityChamber();
 					launchCombat();
 					cMain.bossDay = 100;
+					statTracker();
 				}
 				if (cMain.day == 100) {
 					cMain.enemy = new CornWhole();
 					launchCombat();
 					cMain.bossDay = 120;
+					statTracker();
 				}
 				if (cMain.day == 120) {
 					cMain.enemy = new DrDeflation();
 					launchCombat();
 					cMain.bossDay = 130;
+					statTracker();
 				}
 				if (cMain.day == 130) {
 					cMain.enemy = new TheDeflowerer();
 					launchCombat();
 					cMain.bossDay = 150;
+					statTracker();
 				}
 				if (cMain.day == 150) {
 					cMain.enemy = new TheGreatO();
 					launchCombat();
 					cMain.bossDay = 180;
+					statTracker();
 				}
 				if (cMain.day == 180) {
 					cMain.enemy = new Arachnobots();
 					launchCombat();
 					cMain.bossDay = 190;
+					statTracker();
 				}
 				if (cMain.day == 190) {
 					cMain.enemy = new HenchPeckers();
 					launchCombat();
 					cMain.bossDay = 200;
+					statTracker();
 				}
 				if (cMain.day == 200) {
 					cMain.enemy = new InflatableOfDoom();
 					launchCombat();
 					cMain.bossDay = 210;
+					statTracker();
 				}
 				if (cMain.day == 210) {
 					cMain.enemy = new FlyingPecker();
 					launchCombat();
 					cMain.bossDay = 220;
+					statTracker();
 				}
 				if (cMain.day == 220) {
 					cMain.enemy = new HenchPeckers();
 					launchCombat();
 					cMain.bossDay = 225;
+					statTracker();
 				}
 				if (cMain.day == 225) {
 					cMain.enemy = new FlyingPecker();
 					launchCombat();
 					cMain.bossDay = 230;
+					statTracker();
 				}
 				if (cMain.day == 230) {
 					cMain.enemy = new HenchPeckers();
 					launchCombat();
 					cMain.bossDay = 245;
+					statTracker();
 				}
 				if (cMain.day == 245) {
 					cMain.enemy = new DrHitlerClone();
 					launchCombat();
 					cMain.bossDay = 260;
+					statTracker();
 				}
 				if (cMain.day == 260) {
 					cMain.enemy = new DrHitlerCloneAndroid();
 					launchCombat();
-					cMain.bossDay = 80;
+					cMain.bossDay = 280;
+					statTracker();
 				}
 				
 			}
 		});
+	}
+	
+	public void statTracker() {
+		System.out.println("Day" + cMain.day + ", Cookies: " + cMain.cookieCounter + ". Armor:" + cMain.armorValue + 
+				" \n Rod" + cMain.rodValue + "Mask:" + cMain.maskValue + ". Belt:" + cMain.beltValue + "\n Cola:" + cMain.colaValue + "Sausage" + cMain.sausageValue
+				+ "\n =============================");
+		
+		
 	}
 	
 	public void launchCombat() {

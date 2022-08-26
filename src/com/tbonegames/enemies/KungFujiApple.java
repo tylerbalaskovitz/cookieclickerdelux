@@ -25,7 +25,7 @@ public class KungFujiApple extends Enemies{
 		attack3Damage = 0;
 		attack3Chance = 0;
 		
-		attack4 = "Plant Your Seed In Me";
+		attack4 = "Plant Your Apple Seeds In Me";
 		attack4Command = "PlantSeed";
 		attack4Damage = 0;
 		attack4Chance = 0;

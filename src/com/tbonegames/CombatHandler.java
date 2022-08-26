@@ -21,12 +21,24 @@ public class CombatHandler implements ActionListener{
 		String combatSelect = event.getActionCommand();
 		
 		switch (combatSelect) {
+		case "Return":
+			combat.fight();
+			break;
+		case "ShinChan":
+			break;
+		case "Lollipop":
+			break;
+		case "Doc":
+			break;
 		case "Attack":
 			combat.playerAttackChoices();
 			break;
 		case "Defend":
 			break;
 		case "Item":
+			break;
+		case "Party":
+			combat.partyChoices();
 			break;
 		case "BastardFists":
 			cMain.combatItemString = "Fists";
@@ -37,8 +49,12 @@ public class CombatHandler implements ActionListener{
 			combat.playerAttackResult();
 			break;
 		case "BastardBelt":
+			cMain.combatItemString = "BastardBelt";
+			combat.playerAttackResult();
 			break;
 		case "BastardMask":
+			cMain.combatItemString = "BastardMask";
+			combat.playerAttackResult();
 			break;
 		case "BastardArmor":
 			break;
