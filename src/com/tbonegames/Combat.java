@@ -52,32 +52,25 @@ public class Combat {
 		
 		if (cMain.rodUnlocked == true) {
 		combatButtonConfig(cMain.combatButton2, "Bastard Rod", "BastardRod");
-		
 		} else {
 			combatButtonConfig(cMain.combatButton2, "?", "");
 		}
 		
 		if (cMain.beltUnlocked == true) {
 			combatButtonConfig(cMain.combatButton3, "Bastard Belt", "BastardBelt");
-			
 			} else {
 				combatButtonConfig(cMain.combatButton3, "?", "");
 			}
 		
 		if (cMain.maskUnlocked == true) {
 			combatButtonConfig(cMain.combatButton4, "Bastard Mask", "BastardMask");
-			
 			} else {
 				combatButtonConfig(cMain.combatButton4, "?", "");
-				
 			}
 		
 	}
 	
-	public void combatButtonConfig(JButton combatButton, String text, String command) {
-		combatButton.setText(text);
-		combatButton.setActionCommand(command);
-	}
+	
 	
 	
 	public void partyChoices() {
@@ -91,70 +84,54 @@ public class Combat {
 		
 	}
 	
+	public void removeDisables() {
+		combatButtonConfig(cMain.combatButton1, "Restore Attacks", "RestoreAttacks");
+		
+		combatButtonConfig(cMain.combatButton2, "Restore Blocks", "RestoreBlocks");
+		
+		combatButtonConfig(cMain.combatButton3, "Restore Items", "RestoreItems");
+		
+		combatButtonConfig(cMain.combatButton4, "Return", "Party");
+		
+		
+	}
+	
+	
+	
 	public void playerAttackChoices() {
 		
-		 if (cMain.attack1Disabled == false) {
-			 combatButtonConfig(cMain.combatButton1, "Bastard Fists", "BastardFists");
-		 }
+		 	if (cMain.attacksDisabled == false) {
+			 	combatButtonConfig(cMain.combatButton1, "Bastard Fists", "BastardFists");
+		 	}
 		
-		 if (cMain.attack2Disabled == false) {
-		if (cMain.rodUnlocked == true) {
-			combatButtonConfig(cMain.combatButton2, "Bastard Rod", "BastardRod");
 		
-		} else {
-			combatButtonConfig(cMain.combatButton2, "?", "");
-		}
-		 }
+		 	if (cMain.rodUnlocked == true) {
+			 combatButtonConfig(cMain.combatButton2, "Bastard Rod", "BastardRod");
+		
+			} else {
+				combatButtonConfig(cMain.combatButton2, "?", "");
+			}
 		 
 		 
-		if (cMain.attack3Disabled == false) {
+		 
+		
 		if (cMain.beltUnlocked == true) {
 			combatButtonConfig(cMain.combatButton3, "Bastard Belt", "BastardBelt");
 			
 			} else {
 			combatButtonConfig(cMain.combatButton3, "?", "");
 			}
-		}
 		
-		if (cMain.attack4Disabled == false) {
-		if (cMain.maskUnlocked == true) {
-			combatButtonConfig(cMain.combatButton4, "Bastard Mask", "BastardMask");
-			
+		
+		
+			if (cMain.maskUnlocked == true) {
+				combatButtonConfig(cMain.combatButton4, "Bastard Mask", "BastardMask");
 			} else {
 			combatButtonConfig(cMain.combatButton4, "?", "");
 			}
-		 }
-		
-		if ((cMain.attack1Disabled == true) && (cMain.attack2Disabled == true) && (cMain.attack3Disabled == true) && (cMain.attack4Disabled == true)) {
-			enemyAttack();
-		}
 		
 	}
-	
-	public void bypassDisabledAttacks() {
-		 
-					combatButtonConfig(cMain.combatButton1, "Bastard Fists", "BastardFists");
 		
-				if (cMain.rodUnlocked == true) {
-					combatButtonConfig(cMain.combatButton2, "Bastard Rod", "BastardRod");
-				
-				} else {
-					combatButtonConfig(cMain.combatButton2, "?", "");
-				}
-				 
-				if (cMain.beltUnlocked == true) {
-					combatButtonConfig(cMain.combatButton3, "Bastard Belt", "BastardBelt");
-					
-					} else {
-						combatButtonConfig(cMain.combatButton3, "?", "");
-					}
-				
-				if (cMain.maskUnlocked == true) {
-					combatButtonConfig(cMain.combatButton4, "Bastard Mask", "BastardMask");
-					} else {
-						combatButtonConfig(cMain.combatButton4, "?", "");
-					}	
-			}
 	
 	public void playerAttackResult(){
 		
@@ -182,35 +159,16 @@ public class Combat {
 		
 		cMain.enemy.hp = cMain.enemy.hp - playerDamage;
 		
-		combatButtonConfig(cMain.combatButton1, "Continue", "EnemyTurn");
-		combatButtonConfig(cMain.combatButton2, "?", "");
-		combatButtonConfig(cMain.combatButton3, "?", "");
-		combatButtonConfig(cMain.combatButton4, "?", "");
+		numberOfTurns();
 		
 		gameOver();
-		if (cMain.enemy.hp>0) {
 		
-		}
-		else if (cMain.enemy.hp<1) {
-			
-			victory();
-		}
+		
 	}
-	
-	public void disableCounter() {
-		cMain.enemyDisableCounter = cMain.enemyDisableCounter-1;
-		if (cMain.enemyDisableCounter < 0) {
-			cMain.enemyDisableCounter = 0;
-			cMain.attack1Disabled = false;
-			cMain.attack2Disabled = false;
-			cMain.attack3Disabled = false;
-			cMain.attack4Disabled = false;
-		}
-	}
-	
 	
 	public void enemyAttack() {
-		
+		victory();
+		if (cMain.inCombat==true) {
 		String rolledAttack = "";
 		cMain.enemyAttackChoice = new java.util.Random().nextInt(10);
 		if (cMain.enemyAttackChoice  >= cMain.enemy.attack4Chance) {
@@ -244,8 +202,67 @@ public class Combat {
 		combatButtonConfig(cMain.combatButton3, "?", "");
 		combatButtonConfig(cMain.combatButton4, "?", "");
 		
-		
+		}
 	}
+	
+	public void combatButtonConfig(JButton combatButton, String text, String command) {
+		combatButton.setText(text);
+		combatButton.setActionCommand(command);
+	}
+	
+	public void numberOfTurns(){
+		if (cMain.numberOfActions > 0) {
+			cMain.numberOfActions--;
+			combatButtonConfig(cMain.combatButton1, "Bastard Blitz", "Return");
+			combatButtonConfig(cMain.combatButton2, "?", "");
+			combatButtonConfig(cMain.combatButton3, "?", "");
+			combatButtonConfig(cMain.combatButton4, "?", "");
+	
+			
+		} else if (cMain.numberOfActions <= 0) {
+			combatButtonConfig(cMain.combatButton1, "Continue", "EnemyTurn");
+			combatButtonConfig(cMain.combatButton2, "?", "");
+			combatButtonConfig(cMain.combatButton3, "?", "");
+			combatButtonConfig(cMain.combatButton4, "?", "");	
+			cMain.numberOfActions = 0;
+			
+		}
+	}
+	
+	public void disableAttackCounter() {
+		cMain.disableAttacksCounter--;
+		if (cMain.disableAttacksCounter <= 0) {
+			cMain.disableAttacksCounter = 0;
+			cMain.attacksDisabled = false;
+		} else if (cMain.disableAttacksCounter > 0 ) {
+			cMain.attacksDisabled = true;
+		}
+	}
+	
+	public void disableBlocksCounter() {
+		cMain.disableBlocksCounter--;
+		if (cMain.disableBlocksCounter <= 0) {
+			cMain.disableBlocksCounter = 0;
+			cMain.blocksDisabled = false;
+		} else if (cMain.disableAttacksCounter > 0 ) {
+			cMain.blocksDisabled = true;
+		}
+	}
+	
+	public void disableItemsCounter() {
+		cMain.disableItemsCounter--;
+		if (cMain.disableItemsCounter <= 0) {
+			cMain.disableItemsCounter = 0;
+			cMain.itemsDisabled = false;
+		} else if (cMain.disableItemsCounter > 0 ) {
+			cMain.itemsDisabled = true;
+		}
+	}
+	
+	
+	
+	
+
 	
 	public void gameOver() {
 		

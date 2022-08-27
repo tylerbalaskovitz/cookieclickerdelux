@@ -69,6 +69,12 @@ public class CombatHandler implements ActionListener{
 			combat.fight();
 			combat.gameOver();
 			break;
+		case "RestoreAttacks":
+			break;
+		case "RestoreBlocks":
+			break;
+		case "RestoreItems":
+			break;
 		case "Victory":
 			cMain.ui.closeAllPanels();
 			cMain.ui.displayMainGame();

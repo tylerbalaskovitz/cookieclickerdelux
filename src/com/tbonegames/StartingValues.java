@@ -19,7 +19,7 @@ package com.tbonegames;
 			cMain.grandpaUnlocked = false;
 			cMain.timerOn = false;
 			cMain.inCombat = false;
-			cMain.day = 19;
+			cMain.day = 0;
 			cMain.bossDay = 20;
 			cMain.startingDamage = 5;
 			cMain.cursorUpgradeAmount = 0;
