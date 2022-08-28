@@ -103,18 +103,14 @@ public class Combat {
 		 	if (cMain.attacksDisabled == false) {
 			 	combatButtonConfig(cMain.combatButton1, "Bastard Fists", "BastardFists");
 		 	}
-		
-		
+
 		 	if (cMain.rodUnlocked == true) {
 			 combatButtonConfig(cMain.combatButton2, "Bastard Rod", "BastardRod");
 		
 			} else {
 				combatButtonConfig(cMain.combatButton2, "?", "");
 			}
-		 
-		 
-		 
-		
+
 		if (cMain.beltUnlocked == true) {
 			combatButtonConfig(cMain.combatButton3, "Bastard Belt", "BastardBelt");
 			

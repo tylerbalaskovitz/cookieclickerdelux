@@ -18,17 +18,17 @@ public class InflatableOfDoom extends Enemies {
 		attack2 = "Bird Shit";
 		attack2Command = "BirdShit";
 		attack2Damage = 0;
-		attack2Chance = 0;
+		attack2Chance = 10;
 		
 		attack3 = "Fly";
 		attack3Command = "Fly";
 		attack3Damage = 0;
-		attack3Chance = 0;
+		attack3Chance = 11;
 		
 		attack4 = "ArachnoBots";
 		attack4Command = "ArachnoBots";
 		attack4Damage = 0;
-		attack4Chance = 0;
+		attack4Chance = 12;
 	}
 	
 }

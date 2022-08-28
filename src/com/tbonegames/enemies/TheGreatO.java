@@ -20,19 +20,19 @@ public class TheGreatO extends Enemies{
 		attack2 = "Clones";
 		attack2Command = "Clones";
 		attack2Damage = 0;
-		attack2Chance = 0;
+		attack2Chance = 2;
 		
 		//Damage Doubles Each Turn
 		attack3 = "Wear You Out";
 		attack3Command = "WearYouOut";
 		attack3Damage = 0;
-		attack3Chance = 0;
+		attack3Chance = 4;
 		
 		//Never Travel Alone. Strongest attack
 		attack4 = "Never Travel Alone";
 		attack4Command = "NeverTravelAlone";
 		attack4Damage = 502;
-		attack4Chance = 0;
+		attack4Chance = 6;
 	}
 	
 }

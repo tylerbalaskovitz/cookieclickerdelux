@@ -4,7 +4,7 @@ public class DrEnema extends Enemies{
 
 	public DrEnema() {
 		name = "Dr. Enema";
-		hp = 800;
+		hp = 1100;
 		attack = 100;
 		defense = 50;
 		dodge = 10;

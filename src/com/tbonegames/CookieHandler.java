@@ -47,7 +47,7 @@ public class CookieHandler implements ActionListener{
 				cMain.soundFX.playMusic(cMain.backgroundmusic);
 				break;
 			case "cookie": 
-				cMain.cookieCounter = (cMain.cookieCounter + 1 +(cMain.rodValue) + (cMain.beltValue * (3/2)) + (cMain.maskValue * (5/2))); 
+				cMain.cookieCounter = (cMain.cookieCounter + 1 +(cMain.rodValue) + (cMain.beltValue * 2) + (cMain.maskValue * 3)); 
 				cMain.counterLabel.setText(cMain.cookieCounter + " Cookies"); 
 				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n");
 			break;

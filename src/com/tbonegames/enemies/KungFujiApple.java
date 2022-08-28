@@ -5,7 +5,7 @@ public class KungFujiApple extends Enemies{
 	public KungFujiApple() {
 		name = "Kung Fuji Apple";
 		hp = 2200;
-		attack = 100;
+		attack = 200;
 		defense = 50;
 		dodge = 10;
 		disableDuration = 0;
@@ -18,17 +18,17 @@ public class KungFujiApple extends Enemies{
 		attack2 = "Skin Peel";
 		attack2Command = "Skin Peel";
 		attack2Damage = 500;
-		attack2Chance = 0;
+		attack2Chance = 4;
 		
 		attack3 = "Johnny Apple Seed";
 		attack3Command = "AppleSeed";
-		attack3Damage = 0;
-		attack3Chance = 0;
+		attack3Damage = 500;
+		attack3Chance = 6;
 		
 		attack4 = "Plant Your Apple Seeds In Me";
 		attack4Command = "PlantSeed";
-		attack4Damage = 0;
-		attack4Chance = 0;
+		attack4Damage = 1000;
+		attack4Chance = 8;
 		
 		
 	}

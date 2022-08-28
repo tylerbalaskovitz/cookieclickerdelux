@@ -26,13 +26,13 @@ public class DrHitlerCloneAndroid extends Enemies{
 		attack3 = "Inhuman Stamina";
 		attack3Command = "InhumanStamina";
 		attack3Damage = 0;
-		attack3Chance = 6;
+		attack3Chance = 4;
 		
 		//does more the more Chicken Shit Satelite is used
 		attack4 = "Nuclear Holocaust";
 		attack4Command = "Holocaust";
 		attack4Damage = 0;
-		attack4Chance = 8;
+		attack4Chance = 6;
 		
 	}
 	

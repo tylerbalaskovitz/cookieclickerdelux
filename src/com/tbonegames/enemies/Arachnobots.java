@@ -26,12 +26,12 @@ public class Arachnobots extends Enemies {
 		attack3 = "Fly";
 		attack3Command = "Fly";
 		attack3Damage = 0;
-		attack3Chance = 6;
+		attack3Chance = 4;
 		
 		attack4 = "ArachnoBots";
 		attack4Command = "ArachnoBots";
 		attack4Damage = 0;
-		attack4Chance = 8;
+		attack4Chance = 6;
 	}
 	
 }

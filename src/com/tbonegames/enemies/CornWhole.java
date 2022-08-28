@@ -5,31 +5,32 @@ public class CornWhole extends Enemies{
 	public CornWhole() {
 		
 		name = "Corn Whole";
-		hp = 300;
-		attack = 100;
+		hp = 4200;
+		attack = 400;
 		defense = 50;
 		dodge = 10;
 		disableDuration = 0;
 		
 		attack1 = "Cornhole Blast";
 		attack1Command = "CornholeBlast";
-		attack1Damage = 0;
+		attack1Damage = 1000;
 		attack1Chance = 0;
 		
-		attack2 = "Bird Shit";
-		attack2Command = "BirdShit";
-		attack2Damage = 0;
-		attack2Chance = 0;
+		//this one does the disables
+		attack2 = "Corn Stalker Surprise";
+		attack2Command = "CornStalker";
+		attack2Damage = 750;
+		attack2Chance = 2;
 		
-		attack3 = "Fly";
-		attack3Command = "Fly";
-		attack3Damage = 0;
-		attack3Chance = 0;
+		attack3 = "Pop Your Corn Like a Cherry";
+		attack3Command = "Popcorn";
+		attack3Damage = 1500;
+		attack3Chance = 4;
 		
-		attack4 = "ArachnoBots";
+		attack4 = "Running Through a Cornfield Backwards and Naked";
 		attack4Command = "ArachnoBots";
-		attack4Damage = 0;
-		attack4Chance = 0;
+		attack4Damage = 2000;
+		attack4Chance = 8;
 	}
 	
 }
