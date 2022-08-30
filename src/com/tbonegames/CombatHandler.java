@@ -41,19 +41,19 @@ public class CombatHandler implements ActionListener{
 			combat.partyChoices();
 			break;
 		case "BastardFists":
-			cMain.combatItemString = "Fists";
+			cMain.combatAttackingItem = "Fists";
 			combat.playerAttackResult();
 			break;
 		case "BastardRod":
-			cMain.combatItemString = "BastardRod";
+			cMain.combatAttackingItem = "BastardRod";
 			combat.playerAttackResult();
 			break;
 		case "BastardBelt":
-			cMain.combatItemString = "BastardBelt";
+			cMain.combatAttackingItem = "BastardBelt";
 			combat.playerAttackResult();
 			break;
 		case "BastardMask":
-			cMain.combatItemString = "BastardMask";
+			cMain.combatAttackingItem = "BastardMask";
 			combat.playerAttackResult();
 			break;
 		case "BastardArmor":

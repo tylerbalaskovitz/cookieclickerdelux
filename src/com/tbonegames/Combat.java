@@ -136,7 +136,7 @@ public class Combat {
 		int itemDamageBonus = 0;
 		int itemDamageDenominator = 10;
 		//Allow these to be upgraded. 
-		switch (cMain.combatItemString) {
+		switch (cMain.combatAttackingItem) {
 		case "BastardFists":
 			break;
 		case "BastardRod":

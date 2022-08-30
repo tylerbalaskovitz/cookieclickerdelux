@@ -93,28 +93,36 @@ public class GameTimers {
 					if(cMain.cookieCounter >= 400) {
 						soundFX.playSoundEffect(unlock);
 						cMain.rodUnlocked = true;
-						cMain.shopButton3.setText("Bastard Rod");
+						if (cMain.displayWeaponsShop == true) {
+						cMain.shopButton1.setText("Bastard Rod");
+						}
 					}
 				} 
 				if(cMain.beltUnlocked==false) {
 					if(cMain.cookieCounter >= 800) {
 						soundFX.playSoundEffect(unlock);
 						cMain.beltUnlocked = true;
-						cMain.shopButton4.setText("Bastard Belt");
+						if (cMain.displayWeaponsShop == true) {
+						cMain.shopButton2.setText("Bastard Belt");
+						}
 					}
 				} 
 				if(cMain.maskUnlocked==false) {
 					if(cMain.cookieCounter >= 1600) {
 						soundFX.playSoundEffect(unlock);
 						cMain.maskUnlocked = true;
-						cMain.shopButton5.setText("Bastard Mask");
+						if (cMain.displayWeaponsShop == true) {
+						cMain.shopButton3.setText("Bastard Mask");
+						}
 					}
 				} 
 				if(cMain.armorUnlocked==false) {
 					if(cMain.cookieCounter >= 2000) {
 						soundFX.playSoundEffect(unlock);
 						cMain.armorUnlocked = true;
-						cMain.shopButton6.setText("Bastard Armor");
+						if (cMain.displayArmorShop == true) {
+						cMain.shopButton1.setText("Bastard Armor");
+						}
 					}
 				} 
 				

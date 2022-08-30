@@ -100,50 +100,121 @@ public class MouseHandler implements MouseListener{
 		
 		
 		if(button == cMain.shopButton1) {
-			
+			if (cMain.displayItemsShop == true) {
 				cMain.shopMessageText.setText("Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue +" ] \n Wet your mouth with a bastard soda ");
-				
-			
-		}
-		
-		if(button == cMain.shopButton2) {
-		
-				
-				cMain.shopMessageText.setText("Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die");
-			
-		}
-		
-		if(button == cMain.shopButton3) {
+			}
+			if (cMain.displayWeaponsShop == true) {
 				if (cMain.rodUnlocked == false){
 				cMain.shopMessageText.setText("This item is currently locked");
 				} else {
 				cMain.shopMessageText.setText("Bastard Rod \n [Price: " + cMain.rodPrice + "] \n [Amount: " + cMain.rodValue +" ] \n Grab your little bastard rod and swing it at your friends and your enemies");	
 				}
+				
+			}
+			
+			if (cMain.displayArmorShop == true) {
+				if (cMain.armorUnlocked == false){
+					cMain.shopMessageText.setText("This item is currently locked");
+					} else {
+					cMain.shopMessageText.setText("Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.armorValue +"Lucky Bastard Fever Armor");	
+					}
+			}
+			
+		}
+		
+		if(button == cMain.shopButton2) {
+			
+				if (cMain.displayItemsShop == true) {
+				cMain.shopMessageText.setText("Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die");
+				}
+				
+				if (cMain.displayWeaponsShop == true) {
+					if (cMain.beltUnlocked == false){
+						cMain.shopMessageText.setText("This item is currently locked");
+						} else {
+							cMain.shopMessageText.setText("Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With growing wire for OSHA compliance");	
+						}	
+				}
+				
+				if (cMain.displayArmorShop == true) {
+					
+				}
+				
+		}
+		
+		if(button == cMain.shopButton3) {
+
+				
+				if (cMain.displayItemsShop == true){
+					
+					
+				}
+				
+				if (cMain.displayWeaponsShop == true) {
+					if (cMain.maskUnlocked == false){
+						cMain.shopMessageText.setText("This item is currently locked");
+						} else {
+						cMain.shopMessageText.setText("Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");	
+						}
+				}
+				
+				if (cMain.displayArmorShop == true) {
+					
+				}
 			
 		}
 		
 		if(button == cMain.shopButton4) {
-			if (cMain.beltUnlocked == false){
-			cMain.shopMessageText.setText("This item is currently locked");
-			} else {
-				cMain.shopMessageText.setText("Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With growing wire for OSHA compliance");	
-			}			
+			
+			if (cMain.displayItemsShop == true){
+				
+				
+			}
+			
+			if (cMain.displayWeaponsShop == true) {
+				
+			}
+			
+			if (cMain.displayArmorShop == true) {
+				
+			}
+			
+					
 		}
 		
 		if(button == cMain.shopButton5) {
-			if (cMain.maskUnlocked == false){
-			cMain.shopMessageText.setText("This item is currently locked");
-			} else {
-			cMain.shopMessageText.setText("Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");	
+			
+			if (cMain.displayItemsShop == true){
+				
+				
 			}
+			
+			if (cMain.displayWeaponsShop == true) {
+				
+			}
+			
+			if (cMain.displayArmorShop == true) {
+				
+			}
+			
+
 		}
 		
 		if(button == cMain.shopButton6) {
-			if (cMain.armorUnlocked == false){
-			cMain.shopMessageText.setText("This item is currently locked");
-			} else {
-			cMain.shopMessageText.setText("Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.armorValue +"Lucky Bastard Fever Armor");	
+			
+			if (cMain.displayItemsShop == true){
+				
+				
 			}
+			
+			if (cMain.displayWeaponsShop == true) {
+				
+			}
+			
+			if (cMain.displayArmorShop == true) {
+				
+			}
+
 		}
 		
 		

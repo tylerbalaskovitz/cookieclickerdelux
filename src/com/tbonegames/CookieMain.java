@@ -15,15 +15,16 @@ import com.tbonegames.enemies.Enemies;
 
 public class CookieMain {
 	
-	String rewardsMessage, combatItemString;
+	String rewardsMessage, combatAttackingItem, weaponPurhcase1,  weaponPurchase2, weaponPurchase3, weapon1Handler, weapon2Handler, weapon3Handler, itemPurhcase1, itemPurchase2, 
+	itemPurchase3, item1Handler, item2Handler, item3Handler, armorPurchase1, armorPurchase2, armorPurchase3, armor1Handler, armor2Handler, armor3Handler;
 	Random rand = new Random();
 	JFrame window;
 	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, shopCookiePanel, messagePanel, counterPanel, cookiePanel, optionsPanel, navigationPanel, combatPanel, combatButtonPanel, 
-	startButtonPanel, titleNamePanel, descriptionPanel;
+	startButtonPanel, titleNamePanel, descriptionPanel, shopNavigationPanel;
 	JLabel counterLabel, shopCookieLabel, perSecLabel, shopLabel, titleNameLabel, descriptionLabel, dayLabel, combatDayLabel;
 	JButton startButton, button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton1, shopButton2, shopButton3, shopButton4, shopButton5, 
 	shopButton6, shopButton7, shopButton8, shopButton9, shopButton10, optionButton1, optionButton2, optionButton3,optionButton4, combatButton1, combatButton2, combatButton3,
-	combatButton4;
+	combatButton4, shopNavigationButton1, shopNavigationButton2, shopNavigationButton3, shopNavigationButton4;
 	
 	int  cookieCounter, timerSpeed, dayTimerSpeed, cursorNumber, cursorPrice, grandpaNumber, grandpaPrice, slotsPrice, cursorUpgradeAmount, cursorUpgradePrice, colaPrice, sausagePrice, rodPrice,
 	beltPrice, maskPrice, armorPrice, grandmaPrice, grandmaNumber, elvesPrice, elvesNumber, luckyPrice, bastardPrice, feverPrice, colaValue, sausageValue, rodValue, beltValue,
@@ -31,7 +32,9 @@ public class CookieMain {
 	
 	double  perSecond, dayPerSecond;
 	boolean timerOn, dayTimerOn, grandpaUnlocked, grandmaUnlocked, elvesUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, rodUnlocked, beltUnlocked,
-	colaUnlocked, maskUnlocked, armorUnlocked, sausageUnlocked, antiGravityChamber, inCombat, attacksDisabled, blocksDisabled, itemsDisabled;
+	colaUnlocked, maskUnlocked, armorUnlocked, sausageUnlocked, antiGravityChamber, inCombat, attacksDisabled, blocksDisabled, itemsDisabled, displayItemsShop, displayWeaponsShop, 
+	displayArmorShop;
+	
 	Font font1, font2, font3;
 	Slots slots = new Slots(this);
 	
@@ -40,12 +43,13 @@ public class CookieMain {
 	Combat combat = new Combat(this);
 	GameTimers timers = new GameTimers(this);
 	DayTimer dayTimers = new DayTimer(this);
+	ShopHandler shopHandler = new ShopHandler(this);
 	CombatHandler combatHandler = new CombatHandler(this, combat);
 	Enemies enemy = new Enemies();
-	CookieHandler cHandler = new CookieHandler(this, ui, timers, dayTimers, slots);
+	CookieHandler cookieHandler = new CookieHandler(this, ui, timers, dayTimers, slots);
 	Timer timer, slotTimer, dayTimer;
 	JTextArea messageText, shopMessageText, combatTextArea;
-	MouseHandler mHandler = new MouseHandler(this);
+	MouseHandler mouseHandler = new MouseHandler(this);
 	SoundFX soundFX = new SoundFX();
 	
 	public URL backgroundmusic = getClass().getClassLoader().getResource("audio//backgroundmusic.wav");
