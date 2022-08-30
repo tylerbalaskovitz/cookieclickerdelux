@@ -5,7 +5,7 @@ public class TheDeflowerer extends Enemies {
 	public TheDeflowerer() {
 		name = "The Deflowerer";
 		hp = 7000;
-		attack = 100;
+		attack = 1000;
 		defense = 50;
 		dodge = 10;
 		disableDuration = 0;
@@ -13,7 +13,7 @@ public class TheDeflowerer extends Enemies {
 		//disables an attack
 		attack1 = "Hymen Break";
 		attack1Command = "HymenBreak";
-		attack1Damage = 0;
+		attack1Damage = 2000;
 		attack1Chance = 0;
 		
 		//disables two attacks
@@ -24,12 +24,12 @@ public class TheDeflowerer extends Enemies {
 		
 		attack3 = "Old Enough to Buy Cigarettes";
 		attack3Command = "BuyCigarettes";
-		attack3Damage = 0;
+		attack3Damage = 5000;
 		attack3Chance = 4;
 		
 		attack4 = "Go Where No Man Has Gone Before";
-		attack4Command = "GoWHereNoMan";
-		attack4Damage = 0;
+		attack4Command = "GoWhereNoMan";
+		attack4Damage = 10000;
 		attack4Chance = 6;
 		
 		

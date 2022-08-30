@@ -5,30 +5,31 @@ public class HenchPeckers extends Enemies{
 	public HenchPeckers() {
 		
 			name = "Hench Peckers";
-			hp = 300;
-			attack = 100;
+			hp = 35000;
+			attack = 2200;
 			defense = 50;
 			dodge = 10;
 			
 			attack1 = "Off Season Ice Dance";
 			attack1Command = "IceDance";
-			attack1Damage = 0;
+			attack1Damage = 4000;
 			attack1Chance = 0;
 			
+			//full disable
 			attack2 = "Pull off the Costume";
-			attack2Command = "BirdShit";
-			attack2Damage = 0;
+			attack2Command = "Costume";
+			attack2Damage = 2000;
 			attack2Chance = 2;
 			
-			attack3 = "Fly";
-			attack3Command = "Fly";
-			attack3Damage = 0;
+			attack3 = "Hench Pecking";
+			attack3Command = "HenchPeck";
+			attack3Damage = 6000;
 			attack3Chance = 4;
 			
-			attack4 = "ArachnoBots";
-			attack4Command = "ArachnoBots";
-			attack4Damage = 0;
-			attack4Chance = 6;
+			attack4 = "Drill a Hole with my mouth, I mean beak Beak";
+			attack4Command = "DrillHole";
+			attack4Damage = 20000;
+			attack4Chance = 8;
 	}
 	
 }
