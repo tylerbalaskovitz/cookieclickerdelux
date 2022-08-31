@@ -217,6 +217,25 @@ public class MouseHandler implements MouseListener{
 
 		}
 		
+		if (button == cMain.shopNavigationButton1) {
+			cMain.shopMessageText.setText("Click here to buy weapons useful throughout the game. They can be used when facing off against enemies and helpful when trying to get more logos.");
+			
+		}
+		
+		if (button == cMain.shopNavigationButton2) {
+			cMain.shopMessageText.setText("Click here to buy armor useful throughout the game. These can reduce damage in combat and more.");
+			
+		}
+		
+		if (button == cMain.shopNavigationButton3) {
+			cMain.shopMessageText.setText("Click here to buy items. These can make you stronger in combat, heal you in combat and more.");
+			
+		}
+		
+		if (button == cMain.shopNavigationButton4) {
+			cMain.shopMessageText.setText("These are very useful in combat and can give you all sorts of special abilities");
+			
+		}
 		
 		
 		
@@ -285,6 +304,22 @@ public class MouseHandler implements MouseListener{
 		}
 		
 		else if (button== cMain.shopButton6) {
+			cMain.shopMessageText.setText(null);
+		}
+		
+		else if (button== cMain.shopNavigationButton1) {
+			cMain.shopMessageText.setText(null);
+		}
+		
+		else if (button== cMain.shopNavigationButton2) {
+			cMain.shopMessageText.setText(null);
+		}
+		
+		else if (button== cMain.shopNavigationButton3) {
+			cMain.shopMessageText.setText(null);
+		}
+		
+		else if (button== cMain.shopNavigationButton4) {
 			cMain.shopMessageText.setText(null);
 		}
 		

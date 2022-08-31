@@ -110,9 +110,15 @@ public class ShopHandler implements ActionListener{
 		
 	}
 
-	public void shopButtonConfig(JButton shopButton, String text, String command) {
-		shopButton.setText(text);
-		shopButton.setActionCommand(command);
+	public void shopButtonConfig(JButton shopButton, boolean shopItem, String trueText, String trueHandler) {
+		if (shopItem == true ) {
+			shopButton.setText(trueText);
+			shopButton.setActionCommand(trueHandler);
+		} else {
+			shopButton.setText("?");
+			shopButton.setActionCommand("");
+		}
+		
 	}
 	
 	public void displayShopNavigation() {
@@ -125,11 +131,17 @@ public class ShopHandler implements ActionListener{
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopPanel.setVisible(true);
 		cMain.displayItemsShop = false;
-		cMain.displayWeaponsShop = false;
-		cMain.displayArmorShop = true;
-		shopButtonConfig(cMain.shopButton1, "Bastard Rod", "BastardRod");
-		shopButtonConfig(cMain.shopButton2, "Bastard Belt", "BastardBelt");
-		shopButtonConfig(cMain.shopButton3, "Bastard Mask", "BastardMask");
+		cMain.displayWeaponsShop = true;
+		cMain.displayArmorShop = false;
+		
+		shopButtonConfig(cMain.shopButton1, cMain.rodUnlocked,"Bastard Rod", "BastardRod");
+		shopButtonConfig(cMain.shopButton2, cMain.beltUnlocked,"Bastard Belt", "BastardBelt");
+		shopButtonConfig(cMain.shopButton3, cMain.maskUnlocked,"Bastard Mask", "BastardMask");
+		shopButtonConfig(cMain.shopButton4, cMain.vibratingShaftUnlocked,"Bastard Vibrating Shaft", "VibratingShaft");
+		shopButtonConfig(cMain.shopButton5, cMain.nitrogenBombUnlocked,"Bastard Nitrogen Bomb", "NitrogenBomb");
+		
+		
+		
 	}
 	
 	public void displayItemsShop() {
@@ -138,8 +150,12 @@ public class ShopHandler implements ActionListener{
 		cMain.displayArmorShop = false;
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopPanel.setVisible(true);
-		shopButtonConfig(cMain.shopButton1, "Bastard Cola", "BastardCola");
-		shopButtonConfig(cMain.shopButton2, "Bastard Sausage", "BastardSausage");
+		shopButtonConfig(cMain.shopButton1, cMain.colaUnlocked, "Bastard Cola", "BastardCola");
+		shopButtonConfig(cMain.shopButton2, cMain.sausageUnlocked, "Bastard Sausage", "BastardSausage");
+		shopButtonConfig(cMain.shopButton3, cMain.nutsUnlocked, "Bastard Nuts", "BastardNuts");
+		shopButtonConfig(cMain.shopButton4, cMain.juiceUnlocked, "Bastard Juice", "BastardNuts");
+		shopButtonConfig(cMain.shopButton5, cMain.chipsUnlocked, "Bastard Stopwatch", "BastardStopwatch");
+	
 	}
 	
 	public void displayArmorShop() {
@@ -148,7 +164,13 @@ public class ShopHandler implements ActionListener{
 		cMain.displayArmorShop = true;
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopPanel.setVisible(true);
-		shopButtonConfig(cMain.shopButton1, "Bastard Armor", "BastardArmor");
+		
+		shopButtonConfig(cMain.shopButton1, cMain.armorUnlocked, "Bastard Armor", "BastardArmor");
+		shopButtonConfig(cMain.shopButton2, cMain.shoulderPadsUnlocked, "Bastard Shoulder Pads", "ShoulderPads");
+		shopButtonConfig(cMain.shopButton3, cMain.glovesUnlocked, "Bastard Gloves", "BastardGloves");
+		
+		
+		
 		
 	}
 	

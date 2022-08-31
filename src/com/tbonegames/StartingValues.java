@@ -6,7 +6,8 @@ package com.tbonegames;
 			this.cMain = cMain;
 		}
 	public void startUpValues() {
-			
+			cMain.colaUnlocked = true;
+			cMain.sausageUnlocked = true;
 			cMain.rodUnlocked = false;
 			cMain.beltUnlocked = false;
 			cMain.maskUnlocked  = false;
@@ -31,7 +32,7 @@ package com.tbonegames;
 			cMain.beltValue = 0;
 			cMain.maskValue = 0;
 			cMain.armorValue = 0;
-			cMain.cookieCounter = 0;
+			cMain.cookieCounter = 20000;
 			cMain.grandpaPrice = 100;
 			cMain.grandmaPrice = 200;
 			cMain.elvesPrice = 500;
