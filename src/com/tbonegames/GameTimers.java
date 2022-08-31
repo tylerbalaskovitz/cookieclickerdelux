@@ -27,6 +27,7 @@ public class GameTimers {
 				}
 				cMain.counterLabel.setText(cMain.cookieCounter + " Cookies");
 				cMain.shopCookieLabel.setText(cMain.cookieCounter + " Cookies");
+				cMain.inCombatHPLabel.setText("HP:" + cMain.cookieCounter);
 				
 			
 				if(cMain.grandpaUnlocked==false) {

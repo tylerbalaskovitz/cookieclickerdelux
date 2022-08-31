@@ -9,19 +9,21 @@ import javax.sound.sampled.Clip;
 public class SoundFX {
 	Clip clip;
 	URL url;
-	
+	CookieMain cMain;
 	GameTimers gameTimers;
 	
-	public SoundFX(GameTimers gameTimers, URL url) {
+	
+	public SoundFX(CookieMain cMain, GameTimers gameTimers, URL url) {
 		this.gameTimers = gameTimers;
 		this.url = url;
+		this.cMain = cMain;
 	}
 	
 	
 
 	
 	public SoundFX() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public void playSoundEffect(URL url) {

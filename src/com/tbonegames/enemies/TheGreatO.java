@@ -10,7 +10,7 @@ public class TheGreatO extends Enemies{
 		dodge = 10;
 		disableDuration = 0;
 		
-		//Eludes an enemies attacks -- Full Diable
+		//Eludes an enemies attacks -- Full Disable
 		attack1 = "Elusion";
 		attack1Command = "Elusion";
 		attack1Damage = 2500;

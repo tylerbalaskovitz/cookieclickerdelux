@@ -4,6 +4,7 @@ package com.tbonegames;
 import java.awt.Font;
 import java.net.URL;
 import java.util.Random;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,6 +13,10 @@ import javax.swing.JTextArea;
 import javax.swing.Timer;
 
 import com.tbonegames.enemies.Enemies;
+import com.tbonegames.items.Armors;
+import com.tbonegames.items.Buffs;
+import com.tbonegames.items.Items;
+import com.tbonegames.items.Weapons;
 
 public class CookieMain {
 	
@@ -20,8 +25,8 @@ public class CookieMain {
 	Random rand = new Random();
 	JFrame window;
 	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, shopCookiePanel, messagePanel, counterPanel, cookiePanel, optionsPanel, navigationPanel, combatPanel, combatButtonPanel, 
-	startButtonPanel, titleNamePanel, descriptionPanel, shopNavigationPanel;
-	JLabel counterLabel, shopCookieLabel, perSecLabel, shopLabel, titleNameLabel, descriptionLabel, dayLabel, combatDayLabel;
+	startButtonPanel, titleNamePanel, descriptionPanel, shopNavigationPanel, combatStatsPanel;
+	JLabel counterLabel, shopCookieLabel, perSecLabel, shopLabel, titleNameLabel, descriptionLabel, dayLabel, combatDayLabel, inCombatHPLabel, inCombatDayLabel, inCombatActionsLabel;
 	JButton startButton, button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton1, shopButton2, shopButton3, shopButton4, shopButton5, 
 	shopButton6, shopButton7, shopButton8, shopButton9, shopButton10, optionButton1, optionButton2, optionButton3,optionButton4, combatButton1, combatButton2, combatButton3,
 	combatButton4, shopNavigationButton1, shopNavigationButton2, shopNavigationButton3, shopNavigationButton4;
@@ -37,7 +42,7 @@ public class CookieMain {
 	
 	Font font1, font2, font3;
 	Slots slots = new Slots(this);
-	
+	URL url;
 	StartingValues sValues = new StartingValues(this);
 	UI ui = new UI(this);
 	Combat combat = new Combat(this);
@@ -45,6 +50,10 @@ public class CookieMain {
 	DayTimer dayTimers = new DayTimer(this);
 	ShopHandler shopHandler = new ShopHandler(this);
 	CombatHandler combatHandler = new CombatHandler(this, combat);
+	Armors armors = new Armors();
+	Buffs buffs = new Buffs();
+	Items items = new Items();
+	Weapons weapons = new Weapons();
 	Enemies enemy = new Enemies();
 	CookieHandler cookieHandler = new CookieHandler(this, ui, timers, dayTimers, slots);
 	Timer timer, slotTimer, dayTimer;

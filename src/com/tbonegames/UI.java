@@ -56,6 +56,18 @@ public void createUI() {
 	buttonGenerator(cMain.startButton, cMain.font3, Color.black, Color.white, false, cMain.cookieHandler, "Start", cMain.mouseHandler, cMain.startButtonPanel);
 	
 	//Things relating to Combat
+	cMain.combatStatsPanel = new JPanel();
+	panelConfiguration(cMain.combatStatsPanel, 100, 50, 600, 50, Color.black, 1, 3, cMain.window);
+	
+	cMain.inCombatHPLabel = new JLabel();
+	labelConfiguration(cMain.inCombatHPLabel, "HP: " + cMain.cookieCounter, cMain.font3, Color.white,cMain.combatStatsPanel);
+	
+	cMain.inCombatDayLabel = new JLabel();
+	labelConfiguration(cMain.inCombatDayLabel, "Day: " + cMain.day, cMain.font3, Color.white,cMain.combatStatsPanel);
+	
+	cMain.inCombatActionsLabel = new JLabel();
+	labelConfiguration(cMain.inCombatActionsLabel, "Actions: " + cMain.numberOfActions, cMain.font3, Color.white,cMain.combatStatsPanel);
+	
 	cMain.combatPanel = new JPanel();
 	panelConfiguration(cMain.combatPanel, 100, 100, 600, 250, Color.black, 1, 1, cMain.window);
 	cMain.combatTextArea = new JTextArea("");
@@ -275,6 +287,7 @@ public void createUI() {
 	
 	public void displayCombat() {
 		closeAllPanels();
+		cMain.combatStatsPanel.setVisible(true);
 		cMain.combatPanel.setVisible(true);
 		cMain.combatButtonPanel.setVisible(true);
 	}
@@ -301,6 +314,7 @@ public void createUI() {
 
 
 	public void closeAllPanels() {
+		cMain.combatStatsPanel.setVisible(false);
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopCookiePanel.setVisible(false);
 		cMain.navigationPanel.setVisible(false);

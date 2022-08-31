@@ -17,17 +17,17 @@ public class AntiGravityChamber extends Enemies {
 		
 		attack2 = "Bird Shit";
 		attack2Command = "BirdShit";
-		attack2Damage = 0;
+		attack2Damage = 1;
 		attack2Chance = 9;
 		
 		attack3 = "Fly";
 		attack3Command = "Fly";
-		attack3Damage = 0;
+		attack3Damage = 1;
 		attack3Chance = 10;
 		
 		attack4 = "ArachnoBots";
 		attack4Command = "ArachnoBots";
-		attack4Damage = 0;
+		attack4Damage = 1;
 		attack4Chance = 11;
 		
 	}

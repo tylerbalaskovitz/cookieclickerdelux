@@ -38,6 +38,7 @@ public class DayTimer {
 				cMain.day++;
 				cMain.dayLabel.setText("Day: "+ cMain.day);
 				cMain.combatDayLabel.setText("Next Combat Day: " + (cMain.bossDay));
+				cMain.inCombatDayLabel.setText("Day: " + cMain.day);
 				
 				//order of Boss encounters
 				if (cMain.day == 20) {
@@ -164,6 +165,7 @@ public class DayTimer {
 	public void launchCombat() {
 	cMain.ui.closeAllPanels();
 	cMain.ui.displayCombat();
+	cMain.numberOfActions = 1;
 	cMain.combat.fight();
 	}
 	

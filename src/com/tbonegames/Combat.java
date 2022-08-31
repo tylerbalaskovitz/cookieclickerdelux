@@ -70,6 +70,30 @@ public class Combat {
 		
 	}
 	
+	public void itemChoices() {
+		combatButtonConfig(cMain.combatButton1, "Bastard Cola", "BastardCola");
+		
+		combatButtonConfig(cMain.combatButton2, "Bastard Sausage", "BastardSausage");
+		
+		combatButtonConfig(cMain.combatButton3, "?", "");
+		
+		combatButtonConfig(cMain.combatButton4, "?", "");
+		
+	}
+	
+	public void healSelfCola() {
+		if (cMain.colaValue >0 ) {
+			cMain.colaValue--;
+			cMain.cookieCounter = cMain.cookieCounter +100;
+		}
+	}
+	
+	public void healSelfSausage() {
+		if (cMain.sausageValue >0 ) {
+			cMain.sausageValue--;
+			cMain.cookieCounter = cMain.cookieCounter +300;
+		}
+	}
 	
 	
 	
@@ -104,14 +128,14 @@ public class Combat {
 			 	combatButtonConfig(cMain.combatButton1, "Bastard Fists", "BastardFists");
 		 	}
 
-		 	if (cMain.rodUnlocked == true) {
+		 	if (cMain.rodValue > 0) {
 			 combatButtonConfig(cMain.combatButton2, "Bastard Rod", "BastardRod");
 		
 			} else {
 				combatButtonConfig(cMain.combatButton2, "?", "");
 			}
 
-		if (cMain.beltUnlocked == true) {
+		if (cMain.beltValue > 0) {
 			combatButtonConfig(cMain.combatButton3, "Bastard Belt", "BastardBelt");
 			
 			} else {
@@ -120,12 +144,22 @@ public class Combat {
 		
 		
 		
-			if (cMain.maskUnlocked == true) {
+			if (cMain.maskValue > 0) {
 				combatButtonConfig(cMain.combatButton4, "Bastard Mask", "BastardMask");
 			} else {
 			combatButtonConfig(cMain.combatButton4, "?", "");
 			}
 		
+	}
+	
+	public void playerHealResult() {
+		switch (cMain.combatAttackingItem) {
+		
+		
+		
+		}
+		
+		numberOfTurns();
 	}
 		
 	
@@ -193,6 +227,7 @@ public class Combat {
 		cMain.cookieCounter = cMain.cookieCounter  - cMain.enemyDamage;
 		cMain.combatTextArea.setText(cMain.enemy.name + " attacked with " + rolledAttack + " doing "  + cMain.enemyDamage + "damage" + "\n You have " + cMain.cookieCounter + "logos remaining" );
 		
+		
 		combatButtonConfig(cMain.combatButton1, ">", "ContinueBattle");
 		combatButtonConfig(cMain.combatButton2, "?", "");
 		combatButtonConfig(cMain.combatButton3, "?", "");
@@ -207,8 +242,8 @@ public class Combat {
 	}
 	
 	public void numberOfTurns(){
-		if (cMain.numberOfActions > 0) {
 			cMain.numberOfActions--;
+		if (cMain.numberOfActions > 0) {
 			combatButtonConfig(cMain.combatButton1, "Bastard Blitz", "Return");
 			combatButtonConfig(cMain.combatButton2, "?", "");
 			combatButtonConfig(cMain.combatButton3, "?", "");
