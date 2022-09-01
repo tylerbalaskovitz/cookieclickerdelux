@@ -33,6 +33,7 @@ public class ShopHandler implements ActionListener{
 			displayItemsShop();
 			break;
 		case "Buffs":
+			displayBuffsShop();
 			break;
 		case "Return":
 			displayShopNavigation();
@@ -127,12 +128,28 @@ public class ShopHandler implements ActionListener{
 		
 	}
 	
+	public void displayBuffsShop() {
+		cMain.shopNavigationPanel.setVisible(false);
+		cMain.shopPanel.setVisible(true);
+		cMain.displayItemsShop = false;
+		cMain.displayWeaponsShop = false;
+		cMain.displayArmorShop = false;
+		cMain.displayBuffsSHop = true;
+		
+		shopButtonConfig(cMain.shopButton1, cMain.stopWatchUnlocked,"Bastard Stopwatch", "BastardStopwatch");
+		shopButtonConfig(cMain.shopButton2, cMain.beltUnlocked,"?", "");
+		shopButtonConfig(cMain.shopButton3, cMain.maskUnlocked,"?", "");
+		shopButtonConfig(cMain.shopButton4, cMain.vibratingShaftUnlocked,"?", "");
+		shopButtonConfig(cMain.shopButton5, cMain.nitrogenBombUnlocked,"?", "");
+	}
+		
 	public void displayWeaponsShop() {
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopPanel.setVisible(true);
 		cMain.displayItemsShop = false;
 		cMain.displayWeaponsShop = true;
 		cMain.displayArmorShop = false;
+		cMain.displayBuffsSHop = false;
 		
 		shopButtonConfig(cMain.shopButton1, cMain.rodUnlocked,"Bastard Rod", "BastardRod");
 		shopButtonConfig(cMain.shopButton2, cMain.beltUnlocked,"Bastard Belt", "BastardBelt");
@@ -148,6 +165,7 @@ public class ShopHandler implements ActionListener{
 		cMain.displayItemsShop = true;
 		cMain.displayWeaponsShop = false;
 		cMain.displayArmorShop = false;
+		cMain.displayBuffsSHop = false;
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopPanel.setVisible(true);
 		shopButtonConfig(cMain.shopButton1, cMain.colaUnlocked, "Bastard Cola", "BastardCola");
@@ -161,6 +179,7 @@ public class ShopHandler implements ActionListener{
 	public void displayArmorShop() {
 		cMain.displayItemsShop = false;
 		cMain.displayWeaponsShop = false;
+		cMain.displayBuffsSHop = false;
 		cMain.displayArmorShop = true;
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopPanel.setVisible(true);
