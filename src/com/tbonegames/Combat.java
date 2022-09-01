@@ -158,6 +158,12 @@ public class Combat {
 		
 		
 		}
+		cMain.combatTextArea.setText("You healed yourself and your HP is now " + cMain.cookieCounter);
+		cMain.inCombatHPLabel.setText("HP: " + cMain.cookieCounter);
+		
+		
+		
+		gameOver();
 		
 		numberOfTurns();
 	}

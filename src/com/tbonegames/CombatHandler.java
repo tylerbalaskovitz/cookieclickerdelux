@@ -79,7 +79,7 @@ public class CombatHandler implements ActionListener{
 			cMain.numberOfActions--;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.healSelfCola();
-			combat.enemyAttack();
+			combat.playerHealResult();
 			break;
 		case "EnemyTurn":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
