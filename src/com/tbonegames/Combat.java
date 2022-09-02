@@ -84,14 +84,14 @@ public class Combat {
 	public void healSelfCola() {
 		if (cMain.colaValue >0 ) {
 			cMain.colaValue--;
-			cMain.cookieCounter = cMain.cookieCounter +100;
+			cMain.logosCounter = cMain.logosCounter +100;
 		}
 	}
 	
 	public void healSelfSausage() {
 		if (cMain.sausageValue >0 ) {
 			cMain.sausageValue--;
-			cMain.cookieCounter = cMain.cookieCounter +300;
+			cMain.logosCounter = cMain.logosCounter +300;
 		}
 	}
 	
@@ -158,8 +158,8 @@ public class Combat {
 		
 		
 		}
-		cMain.combatTextArea.setText("You healed yourself and your HP is now " + cMain.cookieCounter);
-		cMain.inCombatHPLabel.setText("HP: " + cMain.cookieCounter);
+		cMain.combatTextArea.setText("You healed yourself and your HP is now " + cMain.logosCounter);
+		cMain.inCombatHPLabel.setText("HP: " + cMain.logosCounter);
 		
 		
 		
@@ -230,8 +230,8 @@ public class Combat {
 		
 		}
 
-		cMain.cookieCounter = cMain.cookieCounter  - cMain.enemyDamage;
-		cMain.combatTextArea.setText(cMain.enemy.name + " attacked with " + rolledAttack + " doing "  + cMain.enemyDamage + "damage" + "\n You have " + cMain.cookieCounter + "logos remaining" );
+		cMain.logosCounter = cMain.logosCounter  - cMain.enemyDamage;
+		cMain.combatTextArea.setText(cMain.enemy.name + " attacked with " + rolledAttack + " doing "  + cMain.enemyDamage + "damage" + "\n You have " + cMain.logosCounter + "logos remaining" );
 		
 		
 		combatButtonConfig(cMain.combatButton1, ">", "ContinueBattle");
@@ -304,10 +304,12 @@ public class Combat {
 	
 	public void gameOver() {
 		
-		if (cMain.cookieCounter < 1) {
+		if (cMain.logosCounter < 1) {
 			
 		cMain.soundFX.stop(cMain.titleClip);
 			
+		cMain.soundFX.stop(cMain.backgroundmusic);
+		cMain.soundFX.stop(cMain.backgroundmusic);
 		cMain.soundFX.stop(cMain.backgroundmusic);
 		
 		cMain.soundFX.playSoundEffect(death);

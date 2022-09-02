@@ -22,17 +22,17 @@ public class Slots {
 		switch (wildCard) {
 		
 		case(0):
-			cMain.elvesPrice = cMain.elvesPrice/2;
+			cMain.docPrice = cMain.docPrice/2;
 			cMain.soundFX.playSoundEffect(slotWinner);
 			cMain.rewardsMessage = "The cost of elves have been halved!";
 			break;
 		case (1):
-			cMain.grandmaPrice = cMain.grandmaPrice/2;
+			cMain.lollipopPrice = cMain.lollipopPrice/2;
 			cMain.soundFX.playSoundEffect(slotWinner);
 			cMain.rewardsMessage = "The cost of grandmas have been halved!";
 			break;
 		case (2):
-			cMain.grandpaPrice = cMain.grandpaPrice/2;
+			cMain.whiteyPrice = cMain.whiteyPrice/2;
 			cMain.soundFX.playSoundEffect(slotWinner);
 			cMain.rewardsMessage = "The cost of grandpas have been halved!";
 			break;
@@ -74,24 +74,24 @@ public class Slots {
 				if (slot1 == 0) {
 					cMain.counterUpgrade++;
 					cMain.rewardsMessage = "Gain 5,000, and you upgrade your counter";
-					cMain.cookieCounter = cMain.cookieCounter + 5000;
+					cMain.logosCounter = cMain.logosCounter + 5000;
 				}
 				else if (slot1 == 3) {
 					cMain.soundFX.playSoundEffect(jackpot);
 					cMain.rewardsMessage = "Gain 50,000 Cookies";
-					cMain.cookieCounter = cMain.cookieCounter + 50000;
+					cMain.logosCounter = cMain.logosCounter + 50000;
 				} else if ((slot1 == 2) || (slot1 == 1)){
 					cMain.soundFX.playSoundEffect(jackpot);
 					cMain.rewardsMessage = "Gain 10,000";
-					cMain.cookieCounter = cMain.cookieCounter + 10000;
+					cMain.logosCounter = cMain.logosCounter + 10000;
 					cMain.soundFX.playSoundEffect(slotWinner);
 				}
 				
 				cMain.messageText.setText("You're the luckiest bastard of all! You hit the jackpot! All sticker prices are 1/4 the price. " + cMain.rewardsMessage);
 				cMain.cursorPrice = cMain.cursorPrice/4;
-				cMain.grandpaPrice = cMain.grandpaPrice/4;
-				cMain.grandmaPrice = cMain.grandmaPrice/4;
-				cMain.elvesPrice = cMain.elvesPrice/4;
+				cMain.whiteyPrice = cMain.whiteyPrice/4;
+				cMain.lollipopPrice = cMain.lollipopPrice/4;
+				cMain.docPrice = cMain.docPrice/4;
 				cMain.luckyPrice = cMain.luckyPrice/4;
 				cMain.bastardPrice = cMain.bastardPrice/4;
 				cMain.feverPrice = cMain.feverPrice/4;

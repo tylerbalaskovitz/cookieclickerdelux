@@ -15,17 +15,13 @@ public class SoundFX {
 	
 	public SoundFX(CookieMain cMain) {
 		this.cMain = cMain;
-		
 	}
-	
-	
 	
 	
 
 	public void playSoundEffect(URL name) {
 		setFile(name);
 		play(name);
-		
 	}
 	
 	public void setFile(URL name) {
@@ -42,24 +38,18 @@ public class SoundFX {
 		setFile(name);
 		play(name);
 		loop(name);
-		
-		
-	
 	}
 	
 	public void play(URL name) {
 		clip.setFramePosition(0);
 		clip.start();
-
 	}
 	
 	public void loop(URL name) {
 		clip.loop(Clip.LOOP_CONTINUOUSLY);
-		
 	}
 	
 	public void stop(URL name) {
-		
 		clip.stop();
 	}
 }

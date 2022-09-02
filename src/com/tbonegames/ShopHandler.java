@@ -40,32 +40,32 @@ public class ShopHandler implements ActionListener{
 			break;
 		
 		case "BastardCola":
-			if (cMain.cookieCounter>=cMain.colaPrice) {
+			if (cMain.logosCounter>=cMain.colaPrice) {
 				cMain.soundFX.playSoundEffect(purchase);
 			cMain.startingDamage = cMain.startingDamage +3; 
 			cMain.colaValue = cMain.colaValue+ 1;
-			cMain.cookieCounter = cMain.cookieCounter - cMain.colaPrice;
+			cMain.logosCounter = cMain.logosCounter - cMain.colaPrice;
 			cMain.shopMessageText.setText("Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue + " ] \n Wet your mouth with a bastard soda ");
 			} else {
 				cMain.soundFX.playSoundEffect(error);
 			}
 		break;
 		case "BastardSausage":
-			if (cMain.cookieCounter>=cMain.sausagePrice) {
+			if (cMain.logosCounter>=cMain.sausagePrice) {
 				cMain.soundFX.playSoundEffect(purchase);
 			cMain.sausageValue = cMain.sausageValue+1;
 			cMain.startingDamage = cMain.startingDamage +10; 
-			cMain.cookieCounter = cMain.cookieCounter - cMain.sausagePrice;
+			cMain.logosCounter = cMain.logosCounter - cMain.sausagePrice;
 			cMain.shopMessageText.setText("Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n  Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die");
 			} else { 
 				cMain.soundFX.playSoundEffect(error);
 			}
 		break;
 		case "BastardRod":
-			if (cMain.cookieCounter>=cMain.rodPrice) {
+			if (cMain.logosCounter>=cMain.rodPrice) {
 				cMain.soundFX.playSoundEffect(purchase);
 			cMain.rodValue = cMain.rodValue+1;
-			cMain.cookieCounter = cMain.cookieCounter - cMain.rodPrice;
+			cMain.logosCounter = cMain.logosCounter - cMain.rodPrice;
 			cMain.rodPrice = cMain.rodPrice +400;
 			cMain.shopMessageText.setText("Bastard Rod \n [Price: " + cMain.rodPrice + "] \n [Amount: " + cMain.rodValue +" ] \n Grab your little bastard rod and swing it at your friends and your enemies");
 			} else {
@@ -73,10 +73,10 @@ public class ShopHandler implements ActionListener{
 			}
 		break;
 		case "BastardBelt":
-			if (cMain.cookieCounter>=cMain.beltPrice) {
+			if (cMain.logosCounter>=cMain.beltPrice) {
 				cMain.soundFX.playSoundEffect(purchase);
 			cMain.beltValue = cMain.beltValue+1;
-			cMain.cookieCounter = cMain.cookieCounter - cMain.beltPrice;
+			cMain.logosCounter = cMain.logosCounter - cMain.beltPrice;
 			cMain.beltPrice = cMain.beltPrice +800;
 			cMain.shopMessageText.setText("Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With attachment for OSHA certification");
 			} else {
@@ -85,20 +85,20 @@ public class ShopHandler implements ActionListener{
 		break;
 		case "BastardMask":
 			if (cMain.maskUnlocked==true) {
-			if (cMain.cookieCounter>= cMain.maskPrice){
+			if (cMain.logosCounter>= cMain.maskPrice){
 				cMain.soundFX.playSoundEffect(purchase);
 			cMain.maskValue = cMain.maskValue+1;
-			cMain.cookieCounter = cMain.cookieCounter - cMain.maskPrice;
+			cMain.logosCounter = cMain.logosCounter - cMain.maskPrice;
 			cMain.maskPrice = cMain.maskPrice +1600;
 			cMain.shopMessageText.setText("Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");
 			} else  {cMain.soundFX.playSoundEffect(error);}
 			}	cMain.soundFX.playSoundEffect(error);
 		break;
 		case "BastardArmor":
-			if (cMain.cookieCounter >= cMain.armorPrice) {
+			if (cMain.logosCounter >= cMain.armorPrice) {
 				cMain.soundFX.playSoundEffect(purchase);
 			cMain.armorValue = cMain.armorValue+1;
-			cMain.cookieCounter = cMain.cookieCounter - cMain.armorPrice;
+			cMain.logosCounter = cMain.logosCounter - cMain.armorPrice;
 			cMain.armorPrice = cMain.armorPrice +2000;
 			cMain.shopMessageText.setText("Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.armorValue +"] \n Lucky Bastard Fever Armor");
 			} else {

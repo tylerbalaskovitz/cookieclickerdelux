@@ -155,7 +155,7 @@ public class DayTimer {
 	}
 	
 	public void statTracker() {
-		System.out.println("Day" + cMain.day + ", Cookies: " + cMain.cookieCounter + ". Armor:" + cMain.armorValue + 
+		System.out.println("Day" + cMain.day + ", Cookies: " + cMain.logosCounter + ". Armor:" + cMain.armorValue + 
 				" \n Rod" + cMain.rodValue + "Mask:" + cMain.maskValue + ". Belt:" + cMain.beltValue + "\n Cola:" + cMain.colaValue + "Sausage" + cMain.sausageValue
 				+ "\n =============================");
 		

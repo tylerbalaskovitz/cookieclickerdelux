@@ -60,7 +60,7 @@ public void createUI() {
 	panelConfiguration(cMain.combatStatsPanel, 100, 50, 600, 50, Color.black, 1, 3, cMain.window);
 	
 	cMain.inCombatHPLabel = new JLabel();
-	labelConfiguration(cMain.inCombatHPLabel, "HP: " + cMain.cookieCounter, cMain.font3, Color.white,cMain.combatStatsPanel);
+	labelConfiguration(cMain.inCombatHPLabel, "HP: " + cMain.logosCounter, cMain.font3, Color.white,cMain.combatStatsPanel);
 	
 	cMain.inCombatDayLabel = new JLabel();
 	labelConfiguration(cMain.inCombatDayLabel, "Day: " + cMain.day, cMain.font3, Color.white,cMain.combatStatsPanel);
@@ -156,7 +156,7 @@ public void createUI() {
 		cMain.counterPanel = new JPanel();
 		panelConfiguration(cMain.counterPanel, 100, 75, 250, 125, Color.black, 4,1, cMain.window);
 		cMain.counterLabel = new JLabel("Cookies");
-		labelConfiguration(cMain.counterLabel, cMain.cookieCounter + " Cookies", cMain.font1, Color.white,cMain.counterPanel);
+		labelConfiguration(cMain.counterLabel, cMain.logosCounter + " Logos", cMain.font1, Color.white,cMain.counterPanel);
 		cMain.perSecLabel = new JLabel();
 		labelConfiguration(cMain.perSecLabel, "Per Second: 0.0", cMain.font2, Color.white,cMain.counterPanel);
 		cMain.combatDayLabel = new JLabel();
@@ -181,7 +181,7 @@ public void createUI() {
 		cMain.itemPanel = new JPanel();
 		panelConfiguration(cMain.itemPanel, 500, 170, 250, 250, Color.black, 4,1, cMain.window);
 		
-		cMain.button1 = new JButton("Cursor");
+		cMain.button1 = new JButton("Shin-Chan");
 		buttonGenerator(cMain.button1, cMain.font1, Color.black, Color.white, false, cMain.cookieHandler, "Cursor", cMain.mouseHandler, cMain.itemPanel);
 		
 		cMain.button2 = new JButton("?");

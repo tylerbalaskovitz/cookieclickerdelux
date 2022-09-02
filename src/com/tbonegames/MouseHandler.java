@@ -37,31 +37,31 @@ public class MouseHandler implements MouseListener{
 		JButton button = (JButton)e.getSource();
 		
 		if(button == cMain.button1) {
-			cMain.messageText.setText("Cursor: \n [Price: " + cMain.cursorPrice + "] \n AutoClicks once every 10 seconds");
+			cMain.messageText.setText("Shin-Chan: \n [Price: " + cMain.cursorPrice + "] \n AutoClicks once every 10 seconds");
 		}
 		
 		if(button == cMain.button2) {
-			if(cMain.grandpaUnlocked==false) {
+			if(cMain.whiteyUnlocked==false) {
 				cMain.messageText.setText("This item is currently locked");
 			} else {
-				cMain.messageText.setText("Grandpa: \n [Price: " + cMain.grandpaPrice + "] \n Each grandpa produces 1 cookie per second");
+				cMain.messageText.setText("Whitey: \n [Price: " + cMain.whiteyPrice + "] \n Each Whitey produces 1 logo per second");
 			}
 		}
 		if(button == cMain.button3) {
-			if(cMain.grandmaUnlocked==false) {
+			if(cMain.lollipopUnlocked==false) {
 				
 			
 				cMain.messageText.setText("This item is currently locked");
 			} else {
-				cMain.messageText.setText("Grandma: \n [Price: " + cMain.grandmaPrice + "] \n Each grandma produces 3 cookie per second");
+				cMain.messageText.setText("Lollipop: \n [Price: " + cMain.lollipopPrice + "] \n Each Lollipop produces 3 logo per second");
 			}
 		}
 		
 		if(button == cMain.button4) {
-			if(cMain.elvesUnlocked==false) {
+			if(cMain.docUnlocked==false) {
 				cMain.messageText.setText("This item is currently locked");
 			} else {
-				cMain.messageText.setText("Elves: \n [Price: " + cMain.elvesPrice + "] \n Each elf produces 7 cookie per second");
+				cMain.messageText.setText("Doc: \n [Price: " + cMain.docPrice + "] \n Each Doc produces 7 logo per second");
 			}
 		}
 		if(button == cMain.button5) {
@@ -86,7 +86,7 @@ public class MouseHandler implements MouseListener{
 			
 				cMain.messageText.setText("This item is currently locked");
 			} else {
-				cMain.messageText.setText("Fever: \n [Price: " + cMain.feverPrice + "] \n Roll the dice, you lucky bastard! One of the two costs to the prices above will be halved, or quartered");
+				cMain.messageText.setText("Fever: \n [Price: " + cMain.feverPrice + "] \n Roll the dice, you lucky bastard! One of the two costs to the prices above will be halved!");
 			}
 		}
 		
