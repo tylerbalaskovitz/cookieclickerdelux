@@ -6,6 +6,7 @@ package com.tbonegames;
 			this.cMain = cMain;
 		}
 	public void startUpValues() {
+			cMain.healingMultiplier = 1;
 			cMain.counterUpgrade = 1;
 			cMain.combatAttackingItem = "";
 			cMain.colaUnlocked = true;

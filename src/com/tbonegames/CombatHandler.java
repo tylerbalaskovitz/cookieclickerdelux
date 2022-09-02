@@ -40,6 +40,17 @@ public class CombatHandler implements ActionListener{
 			break;
 		case "Party":
 			combat.partyChoices();
+		case "MultiplierSelecter":
+			combat.multiplier();
+			break;
+		case "NormalStrength":
+			cMain.healingMultiplier = 1;
+			break;
+		case "ExtraStrength":
+			cMain.healingMultiplier = (cMain.selectedItemValue)/2;
+			break;
+		case "BastardlyStrength":
+			cMain.healingMultiplier = (cMain.selectedItemValue);
 			break;
 		case "BastardFists":
 			
@@ -64,24 +75,41 @@ public class CombatHandler implements ActionListener{
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "BastardMask";
 			combat.playerAttackResult();
+		case "VibratingShaft":
+			break;
+		case "NitrogenBomb":
+			break;
+		case "ShoulderPads":
+			break;
+		case "BastardBoots":
+			break;
+		case "BastardGloves":
+			break;
+		case "SlotBelt":
 			break;
 		case "BastardArmor":
 			cMain.combatAttackingItem = "BastardArmor";
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			break;
+		case "BastardCola":
+			cMain.selectedItemValue = cMain.colaValue;
+			cMain.combatAttackingItem = "BastardCola";
+			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			combat.healSelfCola();
+			combat.playerHealResult();
+			break;
 		case "BastardSausage":
-			
+			cMain.selectedItemValue = cMain.colaValue;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			
 			combat.healSelfSausage();
 			combat.playerHealResult();
 			break;
-		case "BastardCola":
-			
-			cMain.combatAttackingItem = "BastardCola";
-			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
-			combat.healSelfCola();
-			combat.playerHealResult();
+		case "BastardNuts":
+			break;
+		case "BastardChips":
+			break;
+		case "BastardJuice":
 			break;
 		case "EnemyTurn":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);

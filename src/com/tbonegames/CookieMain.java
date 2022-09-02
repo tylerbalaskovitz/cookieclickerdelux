@@ -35,13 +35,13 @@ public class CookieMain {
 	int  logosCounter, timerSpeed, dayTimerSpeed, cursorNumber, cursorPrice, whiteyNumber, whiteyPrice, slotsPrice, cursorUpgradeAmount, cursorUpgradePrice, colaPrice, sausagePrice, rodPrice,
 	beltPrice, maskPrice, armorPrice, lollipopPrice, lollipopNumber, docPrice, docNumber, luckyPrice, bastardPrice, feverPrice, colaValue, sausageValue, rodValue, beltValue,
 	maskValue, armorValue, day, enemyAttackChoice, enemyDamage, bossDay, startingDamage, disableAttacksCounter, disableBlocksCounter, disableItemsCounter, enemiesDefeated, 
-	numberOfActions, counterUpgrade;
+	numberOfActions, counterUpgrade, healingMultiplier, selectedItemValue;
 	
 	double  perSecond, dayPerSecond;
 	boolean timerOn, dayTimerOn, whiteyUnlocked, lollipopUnlocked, docUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, rodUnlocked, beltUnlocked,
 	colaUnlocked, maskUnlocked, armorUnlocked, sausageUnlocked, antiGravityChamber, inCombat, attacksDisabled, blocksDisabled, itemsDisabled, displayItemsShop, displayWeaponsShop, 
 	displayArmorShop, displayBuffsSHop, nutsUnlocked, juiceUnlocked, chipsUnlocked, shoulderPadsUnlocked, glovesUnlocked, vibratingShaftUnlocked, nitrogenBombUnlocked,
-	stopWatchUnlocked, bootsUnlocked;
+	stopWatchUnlocked, bootsUnlocked, slotBeltUnlocked;
 	
 	Clip clip;
 	Font font1, font2, font3;

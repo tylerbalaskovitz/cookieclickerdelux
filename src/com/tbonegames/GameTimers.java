@@ -96,18 +96,19 @@ public class GameTimers {
 						cMain.nutsUnlocked = true;
 					}
 				}
-				if(cMain.juiceUnlocked==false) {
-					if(cMain.logosCounter >= 750) {
-						cMain.soundFX.playSoundEffect(unlock);
-						cMain.juiceUnlocked = true;
-					}
-				}
 				if(cMain.chipsUnlocked==false) {
-					if(cMain.logosCounter >= 1000) {
+					if(cMain.logosCounter >= 750) {
 						cMain.soundFX.playSoundEffect(unlock);
 						cMain.chipsUnlocked = true;
 					}
 				}
+				if(cMain.juiceUnlocked==false) {
+					if(cMain.logosCounter >= 1000) {
+						cMain.soundFX.playSoundEffect(unlock);
+						cMain.juiceUnlocked = true;
+					}
+				}
+
 				if(cMain.rodUnlocked==false) {
 					if(cMain.logosCounter >= 400) {
 						cMain.soundFX.playSoundEffect(unlock);
@@ -153,17 +154,25 @@ public class GameTimers {
 					}
 				} 
 				if(cMain.bootsUnlocked==false) {
-					if(cMain.logosCounter >= 1500) {
+					if(cMain.logosCounter >= 1600) {
 						cMain.soundFX.playSoundEffect(unlock);
-						cMain.armorUnlocked = true;
+						cMain.bootsUnlocked = true;
 					}
 				} 
+				if(cMain.slotBeltUnlocked==false) {
+					if(cMain.logosCounter >= 1750) {
+						cMain.soundFX.playSoundEffect(unlock);
+						cMain.slotBeltUnlocked = true;
+					}
+				} 
+				
 				if(cMain.armorUnlocked==false) {
 					if(cMain.logosCounter >= 2000) {
 						cMain.soundFX.playSoundEffect(unlock);
 						cMain.armorUnlocked = true;
 					}
 				} 
+				
 				
 			}
 		});

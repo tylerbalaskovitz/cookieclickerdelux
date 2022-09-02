@@ -81,17 +81,27 @@ public class Combat {
 		
 	}
 	
+	public void multiplier() {
+		combatButtonConfig(cMain.combatButton1, "Normal", "NormalStrength");
+		
+		combatButtonConfig(cMain.combatButton2, "Extra", "ExtraStrength");
+		
+		combatButtonConfig(cMain.combatButton3, "Bastardly", "BastardlyStrength");
+		
+		combatButtonConfig(cMain.combatButton4, "Return", "Items");
+	}
+	
 	public void healSelfCola() {
 		if (cMain.colaValue >0 ) {
-			cMain.colaValue--;
-			cMain.logosCounter = cMain.logosCounter +100;
+			cMain.colaValue-=cMain.healingMultiplier;
+			cMain.logosCounter = (cMain.logosCounter + (100 * cMain.healingMultiplier));
 		}
 	}
 	
 	public void healSelfSausage() {
 		if (cMain.sausageValue >0 ) {
-			cMain.sausageValue--;
-			cMain.logosCounter = cMain.logosCounter +300;
+			cMain.sausageValue-=cMain.healingMultiplier;
+			cMain.logosCounter = (cMain.logosCounter + (300 * cMain.healingMultiplier));
 		}
 	}
 	
@@ -160,8 +170,6 @@ public class Combat {
 		}
 		cMain.combatTextArea.setText("You healed yourself and your HP is now " + cMain.logosCounter);
 		cMain.inCombatHPLabel.setText("HP: " + cMain.logosCounter);
-		
-		
 		
 		numberOfTurns();
 	
@@ -243,6 +251,10 @@ public class Combat {
 	}
 	
 	public void combatButtonConfig(JButton combatButton, String text, String command) {
+		combatButton.setText(text);
+		combatButton.setActionCommand(command);
+	}
+	public void combatButtonConfig(JButton combatButton, String text, String command, String multiplier) {
 		combatButton.setText(text);
 		combatButton.setActionCommand(command);
 	}
