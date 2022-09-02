@@ -9,8 +9,8 @@ import com.tbonegames.enemies.Enemies;
 
 public class Combat {
 	
-	public URL death = getClass().getClassLoader().getResource("audio//deathsound.wav");
-	SoundFX soundFX = new SoundFX();
+	public URL death = getClass().getClassLoader().getResource("audio/deathsound.wav");
+	
 	
 	Random random = new Random();
 	
@@ -163,9 +163,9 @@ public class Combat {
 		
 		
 		
-		gameOver();
-		
 		numberOfTurns();
+	
+		gameOver();
 	}
 		
 	
@@ -248,7 +248,8 @@ public class Combat {
 	}
 	
 	public void numberOfTurns(){
-			cMain.numberOfActions--;
+		cMain.numberOfActions--;
+		
 		if (cMain.numberOfActions > 0) {
 			combatButtonConfig(cMain.combatButton1, "Bastard Blitz", "Return");
 			combatButtonConfig(cMain.combatButton2, "?", "");
@@ -304,10 +305,14 @@ public class Combat {
 	public void gameOver() {
 		
 		if (cMain.cookieCounter < 1) {
-		
-		soundFX.playSoundEffect(death);
+			
+		cMain.soundFX.stop(cMain.titleClip);
+			
 		cMain.soundFX.stop(cMain.backgroundmusic);
-		cMain.inCombat = false;
+		
+		cMain.soundFX.playSoundEffect(death);
+		
+		cMain.inCombat = true;
 		cMain.combatTextArea.setText("You have ran out of life \n Game Over.");
 		
 		

@@ -42,41 +42,43 @@ public class CombatHandler implements ActionListener{
 			combat.partyChoices();
 			break;
 		case "BastardFists":
-			cMain.numberOfActions--;
+			
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Fists";
 			combat.playerAttackResult();
 			break;
 		case "BastardRod":
-			cMain.numberOfActions--;
+			
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "BastardRod";
 			combat.playerAttackResult();
 			break;
 		case "BastardBelt":
-			cMain.numberOfActions--;
+			
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "BastardBelt";
 			combat.playerAttackResult();
 			break;
 		case "BastardMask":
-			cMain.numberOfActions--;
+			
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "BastardMask";
 			combat.playerAttackResult();
 			break;
 		case "BastardArmor":
-			cMain.numberOfActions--;
+			cMain.combatAttackingItem = "BastardArmor";
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			break;
 		case "BastardSausage":
-			cMain.numberOfActions--;
+			
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			
 			combat.healSelfSausage();
 			combat.playerHealResult();
 			break;
 		case "BastardCola":
-			cMain.numberOfActions--;
+			
+			cMain.combatAttackingItem = "BastardCola";
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.healSelfCola();
 			combat.playerHealResult();

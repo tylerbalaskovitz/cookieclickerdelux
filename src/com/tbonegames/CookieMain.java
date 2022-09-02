@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.net.URL;
 import java.util.Random;
 
+import javax.sound.sampled.Clip;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -33,14 +34,16 @@ public class CookieMain {
 	
 	int  cookieCounter, timerSpeed, dayTimerSpeed, cursorNumber, cursorPrice, grandpaNumber, grandpaPrice, slotsPrice, cursorUpgradeAmount, cursorUpgradePrice, colaPrice, sausagePrice, rodPrice,
 	beltPrice, maskPrice, armorPrice, grandmaPrice, grandmaNumber, elvesPrice, elvesNumber, luckyPrice, bastardPrice, feverPrice, colaValue, sausageValue, rodValue, beltValue,
-	maskValue, armorValue, day, enemyAttackChoice, enemyDamage, bossDay, startingDamage, disableAttacksCounter, disableBlocksCounter, disableItemsCounter, enemiesDefeated, numberOfActions;
+	maskValue, armorValue, day, enemyAttackChoice, enemyDamage, bossDay, startingDamage, disableAttacksCounter, disableBlocksCounter, disableItemsCounter, enemiesDefeated, 
+	numberOfActions, counterUpgrade;
 	
 	double  perSecond, dayPerSecond;
 	boolean timerOn, dayTimerOn, grandpaUnlocked, grandmaUnlocked, elvesUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, rodUnlocked, beltUnlocked,
 	colaUnlocked, maskUnlocked, armorUnlocked, sausageUnlocked, antiGravityChamber, inCombat, attacksDisabled, blocksDisabled, itemsDisabled, displayItemsShop, displayWeaponsShop, 
 	displayArmorShop, displayBuffsSHop, nutsUnlocked, juiceUnlocked, chipsUnlocked, shoulderPadsUnlocked, glovesUnlocked, vibratingShaftUnlocked, nitrogenBombUnlocked,
-	stopWatchUnlocked;
+	stopWatchUnlocked, bootsUnlocked;
 	
+	Clip clip;
 	Font font1, font2, font3;
 	Slots slots = new Slots(this);
 	URL url;
@@ -60,24 +63,33 @@ public class CookieMain {
 	Timer timer, slotTimer, dayTimer;
 	JTextArea messageText, shopMessageText, combatTextArea;
 	MouseHandler mouseHandler = new MouseHandler(this);
-	SoundFX soundFX = new SoundFX();
 	
-	public URL backgroundmusic = getClass().getClassLoader().getResource("audio//backgroundmusic.wav");
-	public URL titleClip = getClass().getClassLoader().getResource("audio//titleclip.wav");
+	public URL backgroundmusic = getClass().getClassLoader().getResource("audio/backgroundmusic.wav");
+	public URL titleClip = getClass().getClassLoader().getResource("audio/titleclip.wav");
+	SoundFX soundFX = new SoundFX(this);
 	
 	public static void main(String[] args) {
+		
+		
 		new CookieMain();
 	}
 	
 	public CookieMain() {
 		
-		soundFX.playSoundEffect(titleClip);
+		
 		
 		sValues.startUpValues();
 		
-		ui.createFont();
+		soundFX.playSoundEffect(titleClip);
 		
-		ui.createUI(); ui.closeAllPanels(); ui.displayStartMenu();
+		ui.createFont();
+		ui.createUI(); 
+		ui.closeAllPanels(); 
+		ui.displayStartMenu();
+		
+		
 		
 	}
+	
+	
 }

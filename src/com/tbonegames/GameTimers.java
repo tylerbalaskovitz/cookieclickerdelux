@@ -8,9 +8,9 @@ import javax.swing.Timer;
 
 public class GameTimers {
 	
-	public URL unlock = getClass().getClassLoader().getResource("audio//healsound.wav");
+	public URL unlock = getClass().getClassLoader().getResource("audio/healsound.wav");
 	
-	SoundFX soundFX = new SoundFX();
+	
 	CookieMain cMain;
 	
 	public GameTimers(CookieMain cMain) {
@@ -23,7 +23,7 @@ public class GameTimers {
 			public void actionPerformed(ActionEvent e) {
 				
 				if (cMain.inCombat == false) {
-				cMain.cookieCounter++;
+				cMain.cookieCounter+=cMain.counterUpgrade;
 				}
 				cMain.counterLabel.setText(cMain.cookieCounter + " Cookies");
 				cMain.shopCookieLabel.setText(cMain.cookieCounter + " Cookies");
@@ -32,7 +32,7 @@ public class GameTimers {
 			
 				if(cMain.grandpaUnlocked==false) {
 					if(cMain.cookieCounter >= 100) {
-						soundFX.playSoundEffect(unlock);
+						cMain.soundFX.playSoundEffect(unlock);
 						cMain.grandpaUnlocked = true;
 						cMain.button2.setText("Grandpa " + "(" + cMain.grandpaNumber + ")");
 					}
@@ -42,7 +42,7 @@ public class GameTimers {
 				
 				if(cMain.grandmaUnlocked==false) {
 					if(cMain.cookieCounter >= 200) {
-						soundFX.playSoundEffect(unlock);
+						cMain.soundFX.playSoundEffect(unlock);
 						cMain.grandmaUnlocked = true;
 						cMain.button3.setText("Grandma " + "(" + cMain.grandmaNumber + ")");
 					}
@@ -52,7 +52,7 @@ public class GameTimers {
 				
 				if(cMain.elvesUnlocked==false) {
 					if(cMain.cookieCounter >= 500) {
-						soundFX.playSoundEffect(unlock);
+						cMain.soundFX.playSoundEffect(unlock);
 						cMain.elvesUnlocked = true;
 						cMain.button4.setText("Elves " + "(" + cMain.elvesNumber + ")");
 					}
@@ -63,14 +63,14 @@ public class GameTimers {
 			
 				if(cMain.luckyUnlocked==false) {
 					if(cMain.cookieCounter >= 500) {
-						soundFX.playSoundEffect(unlock);
+						cMain.soundFX.playSoundEffect(unlock);
 						cMain.luckyUnlocked = true;
 						cMain.button5.setText("Lucky");
 					}
 				} 
 				if(cMain.bastardUnlocked==false) {
 					if(cMain.cookieCounter >= 750) {
-						soundFX.playSoundEffect(unlock);
+						cMain.soundFX.playSoundEffect(unlock);
 						cMain.bastardUnlocked = true;
 						cMain.button6.setText("Bastard");
 					}
@@ -78,42 +78,89 @@ public class GameTimers {
 				
 				if(cMain.feverUnlocked==false) {
 					if(cMain.cookieCounter >= 1000) {
-						soundFX.playSoundEffect(unlock);
+						cMain.soundFX.playSoundEffect(unlock);
 						cMain.feverUnlocked = true;
 						cMain.button7.setText("Fever");
 					}
 				} 
 				if(cMain.slotsUnlocked==false) {
 					if(cMain.cookieCounter >= 1500) {
-						soundFX.playSoundEffect(unlock);
+						cMain.soundFX.playSoundEffect(unlock);
 						cMain.slotsUnlocked = true;
 						cMain.button8.setText("Slots");
 					}
 				} 
+				if(cMain.nutsUnlocked==false) {
+					if(cMain.cookieCounter >= 500) {
+						cMain.soundFX.playSoundEffect(unlock);
+						cMain.nutsUnlocked = true;
+					}
+				}
+				if(cMain.juiceUnlocked==false) {
+					if(cMain.cookieCounter >= 750) {
+						cMain.soundFX.playSoundEffect(unlock);
+						cMain.juiceUnlocked = true;
+					}
+				}
+				if(cMain.chipsUnlocked==false) {
+					if(cMain.cookieCounter >= 1000) {
+						cMain.soundFX.playSoundEffect(unlock);
+						cMain.chipsUnlocked = true;
+					}
+				}
 				if(cMain.rodUnlocked==false) {
 					if(cMain.cookieCounter >= 400) {
-						soundFX.playSoundEffect(unlock);
-						cMain.rodUnlocked = true;
-						
+						cMain.soundFX.playSoundEffect(unlock);
+						cMain.rodUnlocked = true;	
 					}
 				} 
 				if(cMain.beltUnlocked==false) {
 					if(cMain.cookieCounter >= 800) {
-						soundFX.playSoundEffect(unlock);
+						cMain.soundFX.playSoundEffect(unlock);
 						cMain.beltUnlocked = true;
 						}
 					}
 				
 				
+				if(cMain.vibratingShaftUnlocked==false) {
+					if(cMain.cookieCounter >= 3000) {
+						cMain.soundFX.playSoundEffect(unlock);
+						cMain.vibratingShaftUnlocked = true;
+					}
+				} 
+				if(cMain.nitrogenBombUnlocked==false) {
+					if(cMain.cookieCounter >= 10000) {
+						cMain.soundFX.playSoundEffect(unlock);
+						cMain.nitrogenBombUnlocked = true;
+					}
+				} 
 				if(cMain.maskUnlocked==false) {
 					if(cMain.cookieCounter >= 1600) {
-						soundFX.playSoundEffect(unlock);
+						cMain.soundFX.playSoundEffect(unlock);
 						cMain.maskUnlocked = true;
+					}
+				} 
+				if(cMain.shoulderPadsUnlocked==false) {
+					if(cMain.cookieCounter >= 500) {
+						cMain.soundFX.playSoundEffect(unlock);
+						cMain.shoulderPadsUnlocked = true;
+					}
+				}
+				if(cMain.glovesUnlocked==false) {
+					if(cMain.cookieCounter >= 1000) {
+						cMain.soundFX.playSoundEffect(unlock);
+						cMain.glovesUnlocked = true;
+					}
+				} 
+				if(cMain.bootsUnlocked==false) {
+					if(cMain.cookieCounter >= 1500) {
+						cMain.soundFX.playSoundEffect(unlock);
+						cMain.armorUnlocked = true;
 					}
 				} 
 				if(cMain.armorUnlocked==false) {
 					if(cMain.cookieCounter >= 2000) {
-						soundFX.playSoundEffect(unlock);
+						cMain.soundFX.playSoundEffect(unlock);
 						cMain.armorUnlocked = true;
 					}
 				} 

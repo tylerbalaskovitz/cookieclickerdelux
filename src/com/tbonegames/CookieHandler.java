@@ -7,13 +7,12 @@ import java.net.URL;
 public class CookieHandler implements ActionListener{
 	
 	DayTimer dayTimer;
-	SoundFX soundFX = new SoundFX();
 	CookieMain cMain;
 	UI ui;
 	GameTimers timers;
 	Slots slots;
-	public URL purchase = getClass().getClassLoader().getResource("audio//purchase.wav");
-	public URL error = getClass().getClassLoader().getResource("audio//error.wav");
+	public URL purchase = getClass().getClassLoader().getResource("audio/purchase.wav");
+	public URL error = getClass().getClassLoader().getResource("audio/error.wav");
 	
 	//each of these classes is needed to be passed into the CookieHandler class because there are values taken from each of the classes coming from the main class.
 	public CookieHandler(CookieMain cMain, UI ui, GameTimers timers, DayTimer dayTimer, Slots slots) {
@@ -39,7 +38,7 @@ public class CookieHandler implements ActionListener{
 		switch (action) {
 			case "Start":
 				cMain.soundFX.stop(cMain.titleClip);
-				soundFX.playSoundEffect(purchase);
+				cMain.soundFX.playSoundEffect(purchase);
 				cMain.dayPerSecond = .1;
 				dayTimer.timerUpdate();
 				cMain.ui.closeAllPanels();
@@ -52,7 +51,7 @@ public class CookieHandler implements ActionListener{
 				cMain.shopMessageText.setText(cMain.cookieCounter + " Cookies \n");
 			break;
 			case "Cursor": if (cMain.cookieCounter >= cMain.cursorPrice) {
-				soundFX.playSoundEffect(purchase);
+				cMain.soundFX.playSoundEffect(purchase);
 				cMain.cookieCounter = cMain.cookieCounter - cMain.cursorPrice;
 				cMain.cursorPrice = cMain.cursorPrice + 5;
 				cMain.counterLabel.setText(cMain.cookieCounter + " Cookies");
@@ -61,12 +60,12 @@ public class CookieHandler implements ActionListener{
 				cMain.button1.setText("Cursor " + "(" + cMain.cursorNumber + ")");
 				cMain.perSecond = (cMain.perSecond + 0.1); timers.timerUpdate();
 			} else {
-				soundFX.playSoundEffect(error);
+				cMain.soundFX.playSoundEffect(error);
 			}
 			break;
 			case "Grandpa":
 			 if (cMain.cookieCounter >= cMain.grandpaPrice) {
-				 soundFX.playSoundEffect(purchase);
+				 cMain.soundFX.playSoundEffect(purchase);
 				 cMain.cookieCounter = cMain.cookieCounter - cMain.grandpaPrice;
 				 cMain.grandpaPrice = cMain.grandpaPrice + 50;
 				 cMain.counterLabel.setText(cMain.cookieCounter + " Cookies");
@@ -75,12 +74,12 @@ public class CookieHandler implements ActionListener{
 				 cMain.button2.setText("Grandpa " + "(" + cMain.grandpaNumber + ")");
 				 cMain.perSecond = cMain.perSecond + 1; timers.timerUpdate();
 			} else {
-				soundFX.playSoundEffect(error);
+				cMain.soundFX.playSoundEffect(error);
 			}
 			break;
 			case "Grandma":
 				if (cMain.cookieCounter >= cMain.grandmaPrice) {
-					soundFX.playSoundEffect(purchase);
+					cMain.soundFX.playSoundEffect(purchase);
 					cMain.cookieCounter = cMain.cookieCounter - cMain.grandmaPrice;
 					cMain.grandmaPrice = cMain.grandmaPrice + 200;
 					cMain.counterLabel.setText(cMain.cookieCounter + " Cookies");
@@ -89,12 +88,12 @@ public class CookieHandler implements ActionListener{
 					cMain.button3.setText("Grandpa " + "(" + cMain.grandmaNumber + ")");
 					cMain.perSecond = cMain.perSecond + 3; timers.timerUpdate();
 				} else {
-					soundFX.playSoundEffect(error);
+					cMain.soundFX.playSoundEffect(error);
 				}
 			break;
 			case "Elves":
 				if (cMain.cookieCounter >= cMain.elvesPrice) {
-					soundFX.playSoundEffect(purchase);
+					cMain.soundFX.playSoundEffect(purchase);
 					cMain.cookieCounter = cMain.cookieCounter - cMain.elvesPrice;
 					cMain.elvesPrice = cMain.elvesPrice + 500;
 					cMain.counterLabel.setText(cMain.cookieCounter + " Cookies");
@@ -103,57 +102,57 @@ public class CookieHandler implements ActionListener{
 					cMain.button4.setText("Elves " + "(" + cMain.elvesNumber + ")");
 					cMain.perSecond = cMain.perSecond + 7; timers.timerUpdate();
 				} else {
-					soundFX.playSoundEffect(error);
+					cMain.soundFX.playSoundEffect(error);
 				}
 			break;
 			
 			case "Lucky":
 				if(cMain.cookieCounter >= cMain.luckyPrice) {
-					soundFX.playSoundEffect(purchase);
+					cMain.soundFX.playSoundEffect(purchase);
 					cMain.cookieCounter = cMain.cookieCounter - cMain.luckyPrice;
 					cMain.luckyPrice = cMain.luckyPrice + 500;
 					slots.luckyBastardFever("Lucky", 5);
 					cMain.messageText.setText("Lucky: \n [Price: " + cMain.luckyPrice + "] \n" +cMain.rewardsMessage);			
 				}
 				else { 
-					soundFX.playSoundEffect(error);
+					cMain.soundFX.playSoundEffect(error);
 				}
 			break;
 			
 			case "Bastard":
 				if(cMain.cookieCounter >= cMain.bastardPrice) {
-					soundFX.playSoundEffect(purchase);
+					cMain.soundFX.playSoundEffect(purchase);
 					cMain.cookieCounter = cMain.cookieCounter - cMain.bastardPrice;
 					cMain.bastardPrice = cMain.bastardPrice + 750;
 					slots.luckyBastardFever("Bastard", 3);
 					cMain.messageText.setText("Bastard: \n [Price: " + cMain.bastardPrice + "] \n " + cMain.rewardsMessage);
 				} else {
-					soundFX.playSoundEffect(error);
+					cMain.soundFX.playSoundEffect(error);
 				}
 			break;
 			
 			case "Fever":
 				if(cMain.cookieCounter >= cMain.feverPrice) {
-					soundFX.playSoundEffect(purchase);
+					cMain.soundFX.playSoundEffect(purchase);
 					cMain.cookieCounter = cMain.cookieCounter - cMain.feverPrice;
 					cMain.feverPrice = cMain.feverPrice + 1000;
 					slots.luckyBastardFever("Bastard", 2);
 					cMain.messageText.setText("Fever: \n [Price: " + cMain.feverPrice + "] \n"  + cMain.rewardsMessage);
 				}
 				else {
-					soundFX.playSoundEffect(error);
+					cMain.soundFX.playSoundEffect(error);
 				}
 			break;
 			case "Slots":
 				if (cMain.slotsUnlocked==true) {
-					soundFX.playSoundEffect(purchase);
+					cMain.soundFX.playSoundEffect(purchase);
 					if(cMain.cookieCounter>= cMain.slotsPrice) {
 					slots.luckyBastardFever("Slots", 4);
 					cMain.cookieCounter = cMain.cookieCounter - cMain.slotsPrice;
 					} else {
-						soundFX.playSoundEffect(error);
+						cMain.soundFX.playSoundEffect(error);
 					}
-				} soundFX.playSoundEffect(error);
+				} cMain.soundFX.playSoundEffect(error);
 				
 			break;
 			case "Display":

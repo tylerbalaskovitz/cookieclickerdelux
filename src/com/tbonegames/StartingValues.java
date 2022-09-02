@@ -6,6 +6,8 @@ package com.tbonegames;
 			this.cMain = cMain;
 		}
 	public void startUpValues() {
+			cMain.counterUpgrade = 1;
+			cMain.combatAttackingItem = "";
 			cMain.colaUnlocked = true;
 			cMain.sausageUnlocked = true;
 			cMain.rodUnlocked = false;
@@ -20,7 +22,7 @@ package com.tbonegames;
 			cMain.grandpaUnlocked = false;
 			cMain.timerOn = false;
 			cMain.inCombat = false;
-			cMain.day = 19;
+			cMain.day = 0;
 			cMain.bossDay = 20;
 			cMain.startingDamage = 5;
 			cMain.cursorUpgradeAmount = 0;
@@ -32,7 +34,7 @@ package com.tbonegames;
 			cMain.beltValue = 0;
 			cMain.maskValue = 0;
 			cMain.armorValue = 0;
-			cMain.cookieCounter = 20000;
+			cMain.cookieCounter = 0;
 			cMain.grandpaPrice = 100;
 			cMain.grandmaPrice = 200;
 			cMain.elvesPrice = 500;

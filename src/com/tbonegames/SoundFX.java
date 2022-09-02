@@ -10,25 +10,22 @@ public class SoundFX {
 	Clip clip;
 	URL url;
 	CookieMain cMain;
-	GameTimers gameTimers;
 	
 	
-	public SoundFX(CookieMain cMain, GameTimers gameTimers, URL url) {
-		this.gameTimers = gameTimers;
-		this.url = url;
+	
+	public SoundFX(CookieMain cMain) {
 		this.cMain = cMain;
-	}
-	
-	
-
-	
-	public SoundFX() {
 		
 	}
+	
+	
+	
+	
 
-	public void playSoundEffect(URL url) {
-		setFile(url);
-		play(url);
+	public void playSoundEffect(URL name) {
+		setFile(name);
+		play(name);
+		
 	}
 	
 	public void setFile(URL name) {
@@ -45,6 +42,7 @@ public class SoundFX {
 		setFile(name);
 		play(name);
 		loop(name);
+		
 		
 	
 	}
