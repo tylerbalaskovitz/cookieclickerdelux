@@ -64,8 +64,7 @@ public class CookieMain {
 	JTextArea messageText, shopMessageText, combatTextArea;
 	MouseHandler mouseHandler = new MouseHandler(this);
 	
-	public URL backgroundmusic = getClass().getClassLoader().getResource("audio/backgroundmusic.wav");
-	public URL titleClip = getClass().getClassLoader().getResource("audio/titleclip.wav");
+	SoundFXValues soundFXValues = new SoundFXValues();
 	SoundFX soundFX = new SoundFX(this);
 	
 	public static void main(String[] args) {
@@ -80,7 +79,7 @@ public class CookieMain {
 		
 		sValues.startUpValues();
 		
-		soundFX.playSoundEffect(titleClip);
+		soundFX.playSoundEffect(soundFXValues.titleClip);
 		
 		ui.createFont();
 		ui.createUI(); 

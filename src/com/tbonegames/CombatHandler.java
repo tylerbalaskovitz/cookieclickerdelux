@@ -133,7 +133,7 @@ public class CombatHandler implements ActionListener{
 			break;
 		case "GameOver":
 			cMain.window.setVisible(false);
-			cMain.soundFX.stop(cMain.backgroundmusic);
+			cMain.soundFX.stop(cMain.soundFXValues.backgroundmusic);
 			new CookieMain();
 			break;
 			

@@ -11,8 +11,7 @@ public class CookieHandler implements ActionListener{
 	UI ui;
 	GameTimers timers;
 	Slots slots;
-	public URL purchase = getClass().getClassLoader().getResource("audio/purchase.wav");
-	public URL error = getClass().getClassLoader().getResource("audio/error.wav");
+
 	
 	//each of these classes is needed to be passed into the CookieHandler class because there are values taken from each of the classes coming from the main class.
 	public CookieHandler(CookieMain cMain, UI ui, GameTimers timers, DayTimer dayTimer, Slots slots) {
@@ -37,13 +36,13 @@ public class CookieHandler implements ActionListener{
 		
 		switch (action) {
 			case "Start":
-				cMain.soundFX.stop(cMain.titleClip);
-				cMain.soundFX.playSoundEffect(purchase);
+				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.dayPerSecond = .1;
 				dayTimer.timerUpdate();
 				cMain.ui.closeAllPanels();
 				cMain.ui.displayMainGame();
-				cMain.soundFX.playMusic(cMain.backgroundmusic);
+				cMain.soundFX.playMusic(cMain.soundFXValues.backgroundmusic);
 				break;
 			case "cookie": 
 				cMain.logosCounter = (cMain.logosCounter + 1 +(cMain.rodValue) + (cMain.beltValue * 2) + (cMain.maskValue * 3)); 
@@ -51,7 +50,7 @@ public class CookieHandler implements ActionListener{
 				cMain.shopMessageText.setText(cMain.logosCounter + " Cookies \n");
 			break;
 			case "Cursor": if (cMain.logosCounter >= cMain.cursorPrice) {
-				cMain.soundFX.playSoundEffect(purchase);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.logosCounter = cMain.logosCounter - cMain.cursorPrice;
 				cMain.cursorPrice = cMain.cursorPrice + 5;
 				cMain.counterLabel.setText(cMain.logosCounter + " Cookies");
@@ -60,12 +59,12 @@ public class CookieHandler implements ActionListener{
 				cMain.button1.setText("Shin-Chan " + "(" + cMain.cursorNumber + ")");
 				cMain.perSecond = (cMain.perSecond + 0.1); timers.timerUpdate();
 			} else {
-				cMain.soundFX.playSoundEffect(error);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 			break;
 			case "Grandpa":
 			 if (cMain.logosCounter >= cMain.whiteyPrice) {
-				 cMain.soundFX.playSoundEffect(purchase);
+				 cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				 cMain.logosCounter = cMain.logosCounter - cMain.whiteyPrice;
 				 cMain.whiteyPrice = cMain.whiteyPrice + 50;
 				 cMain.counterLabel.setText(cMain.logosCounter + " Cookies");
@@ -74,12 +73,12 @@ public class CookieHandler implements ActionListener{
 				 cMain.button2.setText("Whitey " + "(" + cMain.whiteyNumber + ")");
 				 cMain.perSecond = cMain.perSecond + 1; timers.timerUpdate();
 			} else {
-				cMain.soundFX.playSoundEffect(error);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 			break;
 			case "Grandma":
 				if (cMain.logosCounter >= cMain.lollipopPrice) {
-					cMain.soundFX.playSoundEffect(purchase);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 					cMain.logosCounter = cMain.logosCounter - cMain.lollipopPrice;
 					cMain.lollipopPrice = cMain.lollipopPrice + 200;
 					cMain.counterLabel.setText(cMain.logosCounter + " Cookies");
@@ -88,12 +87,12 @@ public class CookieHandler implements ActionListener{
 					cMain.button3.setText("Lollipop " + "(" + cMain.lollipopNumber + ")");
 					cMain.perSecond = cMain.perSecond + 3; timers.timerUpdate();
 				} else {
-					cMain.soundFX.playSoundEffect(error);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 				}
 			break;
 			case "Elves":
 				if (cMain.logosCounter >= cMain.docPrice) {
-					cMain.soundFX.playSoundEffect(purchase);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 					cMain.logosCounter = cMain.logosCounter - cMain.docPrice;
 					cMain.docPrice = cMain.docPrice + 500;
 					cMain.counterLabel.setText(cMain.logosCounter + " Cookies");
@@ -102,57 +101,57 @@ public class CookieHandler implements ActionListener{
 					cMain.button4.setText("Doc " + "(" + cMain.docNumber + ")");
 					cMain.perSecond = cMain.perSecond + 7; timers.timerUpdate();
 				} else {
-					cMain.soundFX.playSoundEffect(error);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 				}
 			break;
 			
 			case "Lucky":
 				if(cMain.logosCounter >= cMain.luckyPrice) {
-					cMain.soundFX.playSoundEffect(purchase);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 					cMain.logosCounter = cMain.logosCounter - cMain.luckyPrice;
 					cMain.luckyPrice = cMain.luckyPrice + 500;
 					slots.luckyBastardFever("Lucky", 5);
 					cMain.messageText.setText("Lucky: \n [Price: " + cMain.luckyPrice + "] \n" +cMain.rewardsMessage);			
 				}
 				else { 
-					cMain.soundFX.playSoundEffect(error);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 				}
 			break;
 			
 			case "Bastard":
 				if(cMain.logosCounter >= cMain.bastardPrice) {
-					cMain.soundFX.playSoundEffect(purchase);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 					cMain.logosCounter = cMain.logosCounter - cMain.bastardPrice;
 					cMain.bastardPrice = cMain.bastardPrice + 750;
 					slots.luckyBastardFever("Bastard", 3);
 					cMain.messageText.setText("Bastard: \n [Price: " + cMain.bastardPrice + "] \n " + cMain.rewardsMessage);
 				} else {
-					cMain.soundFX.playSoundEffect(error);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 				}
 			break;
 			
 			case "Fever":
 				if(cMain.logosCounter >= cMain.feverPrice) {
-					cMain.soundFX.playSoundEffect(purchase);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 					cMain.logosCounter = cMain.logosCounter - cMain.feverPrice;
 					cMain.feverPrice = cMain.feverPrice + 1000;
 					slots.luckyBastardFever("Bastard", 2);
 					cMain.messageText.setText("Fever: \n [Price: " + cMain.feverPrice + "] \n"  + cMain.rewardsMessage);
 				}
 				else {
-					cMain.soundFX.playSoundEffect(error);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 				}
 			break;
 			case "Slots":
 				if (cMain.slotsUnlocked==true) {
-					cMain.soundFX.playSoundEffect(purchase);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 					if(cMain.logosCounter>= cMain.slotsPrice) {
 					slots.luckyBastardFever("Slots", 4);
 					cMain.logosCounter = cMain.logosCounter - cMain.slotsPrice;
 					} else {
-						cMain.soundFX.playSoundEffect(error);
+						cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 					}
-				} cMain.soundFX.playSoundEffect(error);
+				} cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 				
 			break;
 			case "Display":
@@ -163,7 +162,7 @@ public class CookieHandler implements ActionListener{
 				break;
 			case "NewGame":
 				cMain.window.setVisible(false);
-				cMain.soundFX.stop(cMain.backgroundmusic);
+				cMain.soundFX.stop(cMain.soundFXValues.backgroundmusic);
 				new CookieMain();
 				break;
 				

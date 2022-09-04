@@ -9,7 +9,7 @@ import com.tbonegames.enemies.Enemies;
 
 public class Combat {
 	
-	public URL death = getClass().getClassLoader().getResource("audio/deathsound.wav");
+	
 	
 	
 	Random random = new Random();
@@ -318,13 +318,13 @@ public class Combat {
 		
 		if (cMain.logosCounter < 1) {
 			
-		cMain.soundFX.stop(cMain.titleClip);
+		cMain.soundFX.stop(cMain.soundFXValues.titleClip);
 			
-		cMain.soundFX.stop(cMain.backgroundmusic);
-		cMain.soundFX.stop(cMain.backgroundmusic);
-		cMain.soundFX.stop(cMain.backgroundmusic);
+		cMain.soundFX.stop(cMain.soundFXValues.backgroundmusic);
+		cMain.soundFX.stop(cMain.soundFXValues.backgroundmusic);
+		cMain.soundFX.stop(cMain.soundFXValues.backgroundmusic);
 		
-		cMain.soundFX.playSoundEffect(death);
+		cMain.soundFX.playSoundEffect(cMain.soundFXValues.death);
 		
 		cMain.inCombat = true;
 		cMain.combatTextArea.setText("You have ran out of life \n Game Over.");

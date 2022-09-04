@@ -8,8 +8,7 @@ import javax.swing.JButton;
 
 public class ShopHandler implements ActionListener{
 
-	public URL purchase = getClass().getClassLoader().getResource("audio/purchase.wav");
-	public URL error = getClass().getClassLoader().getResource("audio/error.wav");
+
 	
 	CookieMain cMain;
 	
@@ -41,68 +40,68 @@ public class ShopHandler implements ActionListener{
 		
 		case "BastardCola":
 			if (cMain.logosCounter>=cMain.colaPrice) {
-				cMain.soundFX.playSoundEffect(purchase);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.startingDamage = cMain.startingDamage +3; 
 			cMain.colaValue = cMain.colaValue+ 1;
 			cMain.logosCounter = cMain.logosCounter - cMain.colaPrice;
 			cMain.shopMessageText.setText("Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue + " ] \n Wet your mouth with a bastard soda ");
 			} else {
-				cMain.soundFX.playSoundEffect(error);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 		break;
 		case "BastardSausage":
 			if (cMain.logosCounter>=cMain.sausagePrice) {
-				cMain.soundFX.playSoundEffect(purchase);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.sausageValue = cMain.sausageValue+1;
 			cMain.startingDamage = cMain.startingDamage +10; 
 			cMain.logosCounter = cMain.logosCounter - cMain.sausagePrice;
 			cMain.shopMessageText.setText("Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n  Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die");
 			} else { 
-				cMain.soundFX.playSoundEffect(error);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 		break;
 		case "BastardRod":
 			if (cMain.logosCounter>=cMain.rodPrice) {
-				cMain.soundFX.playSoundEffect(purchase);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.rodValue = cMain.rodValue+1;
 			cMain.logosCounter = cMain.logosCounter - cMain.rodPrice;
 			cMain.rodPrice = cMain.rodPrice +400;
 			cMain.shopMessageText.setText("Bastard Rod \n [Price: " + cMain.rodPrice + "] \n [Amount: " + cMain.rodValue +" ] \n Grab your little bastard rod and swing it at your friends and your enemies");
 			} else {
-				cMain.soundFX.playSoundEffect(error);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 		break;
 		case "BastardBelt":
 			if (cMain.logosCounter>=cMain.beltPrice) {
-				cMain.soundFX.playSoundEffect(purchase);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.beltValue = cMain.beltValue+1;
 			cMain.logosCounter = cMain.logosCounter - cMain.beltPrice;
 			cMain.beltPrice = cMain.beltPrice +800;
 			cMain.shopMessageText.setText("Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With attachment for OSHA certification");
 			} else {
-				cMain.soundFX.playSoundEffect(error);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 		break;
 		case "BastardMask":
 			if (cMain.maskUnlocked==true) {
 			if (cMain.logosCounter>= cMain.maskPrice){
-				cMain.soundFX.playSoundEffect(purchase);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.maskValue = cMain.maskValue+1;
 			cMain.logosCounter = cMain.logosCounter - cMain.maskPrice;
 			cMain.maskPrice = cMain.maskPrice +1600;
 			cMain.shopMessageText.setText("Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");
-			} else  {cMain.soundFX.playSoundEffect(error);}
-			}	cMain.soundFX.playSoundEffect(error);
+			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
+			}	cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 		break;
 		case "BastardArmor":
 			if (cMain.logosCounter >= cMain.armorPrice) {
-				cMain.soundFX.playSoundEffect(purchase);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.armorValue = cMain.armorValue+1;
 			cMain.logosCounter = cMain.logosCounter - cMain.armorPrice;
 			cMain.armorPrice = cMain.armorPrice +2000;
 			cMain.shopMessageText.setText("Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.armorValue +"] \n Lucky Bastard Fever Armor");
 			} else {
-				cMain.soundFX.playSoundEffect(error);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 		break;
 

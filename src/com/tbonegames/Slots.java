@@ -6,8 +6,7 @@ public class Slots {
 	
 	
 	
-	public URL jackpot = getClass().getClassLoader().getResource("audio/jackpot.wav");
-	public URL slotWinner = getClass().getClassLoader().getResource("audio/slotwinner.wav");
+
 	
 	CookieMain cMain;
 	
@@ -23,22 +22,22 @@ public class Slots {
 		
 		case(0):
 			cMain.docPrice = cMain.docPrice/2;
-			cMain.soundFX.playSoundEffect(slotWinner);
+			cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
 			cMain.rewardsMessage = "The cost of elves have been halved!";
 			break;
 		case (1):
 			cMain.lollipopPrice = cMain.lollipopPrice/2;
-			cMain.soundFX.playSoundEffect(slotWinner);
+			cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
 			cMain.rewardsMessage = "The cost of grandmas have been halved!";
 			break;
 		case (2):
 			cMain.whiteyPrice = cMain.whiteyPrice/2;
-			cMain.soundFX.playSoundEffect(slotWinner);
+			cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
 			cMain.rewardsMessage = "The cost of grandpas have been halved!";
 			break;
 		case (3):
 			cMain.cursorPrice = cMain.cursorPrice/2;
-			cMain.soundFX.playSoundEffect(slotWinner);
+			cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
 			cMain.rewardsMessage = "The cost of cursors have been halved!";
 			break;
 			default:
@@ -77,14 +76,14 @@ public class Slots {
 					cMain.logosCounter = cMain.logosCounter + 5000;
 				}
 				else if (slot1 == 3) {
-					cMain.soundFX.playSoundEffect(jackpot);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);
 					cMain.rewardsMessage = "Gain 50,000 Cookies";
 					cMain.logosCounter = cMain.logosCounter + 50000;
 				} else if ((slot1 == 2) || (slot1 == 1)){
-					cMain.soundFX.playSoundEffect(jackpot);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);
 					cMain.rewardsMessage = "Gain 10,000";
 					cMain.logosCounter = cMain.logosCounter + 10000;
-					cMain.soundFX.playSoundEffect(slotWinner);
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
 				}
 				
 				cMain.messageText.setText("You're the luckiest bastard of all! You hit the jackpot! All sticker prices are 1/4 the price. " + cMain.rewardsMessage);
@@ -99,13 +98,13 @@ public class Slots {
 				break;
 			}
 			else if (slot1 == slot2 || slot2==slot3) {
-				cMain.soundFX.playSoundEffect(slotWinner);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
 				luckyBastardFever("Lucky", 4);
 				cMain.messageText.setText("You pulled the rod, and the results are a bit lopsided. " + cMain.rewardsMessage);
 				break;
 			}
 			else if (slot1 == slot3) {
-				cMain.soundFX.playSoundEffect(slotWinner);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
 				luckyBastardFever("Bastard", 4);
 				cMain.messageText.setText("Keep pulling that rod, you little bastard! Something good is starting to come out! " + cMain.rewardsMessage);
 				break;
