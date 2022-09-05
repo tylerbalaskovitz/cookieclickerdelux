@@ -1,7 +1,6 @@
-package com.tbonegames.items;
+package com.tbonegames.weapons;
 
 public class Weapons {
-
 	//used for the name and the handler of the game. 
 	public String weaponName;
 	public String weaponHandlerName;
@@ -23,6 +22,5 @@ public class Weapons {
 	
 	public int weaponPrice;
 	public int weaponPriceIncrease;
-	
 	
 }

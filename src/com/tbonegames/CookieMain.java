@@ -14,12 +14,13 @@ import javax.swing.JTextArea;
 import javax.swing.Timer;
 
 import com.tbonegames.enemies.Enemies;
-import com.tbonegames.items.Armors;
-import com.tbonegames.items.Buffs;
-import com.tbonegames.items.Items;
-import com.tbonegames.items.Weapons;
+
 
 public class CookieMain {
+	
+	String item1Name, item1HandlerName, item1Description;
+	int itemIDNumber, item1HealValue, item1UnlockAmount, item1PriceIncrease, item1RateOfIncrease, item1TotalAmountPurchase; 
+	boolean item1Unlocked;
 	
 	String rewardsMessage, combatAttackingItem, weaponPurhcase1,  weaponPurchase2, weaponPurchase3, weapon1Handler, weapon2Handler, weapon3Handler, itemPurhcase1, itemPurchase2, 
 	itemPurchase3, item1Handler, item2Handler, item3Handler, armorPurchase1, armorPurchase2, armorPurchase3, armor1Handler, armor2Handler, armor3Handler;
@@ -56,16 +57,13 @@ public class CookieMain {
 	DayTimer dayTimers = new DayTimer(this);
 	ShopHandler shopHandler = new ShopHandler(this);
 	CombatHandler combatHandler = new CombatHandler(this, combat);
-	Armors armors[] = new Armors[10];
-	Buffs buffs[] = new Buffs[10];
-	Items items[] = new Items[10];
-	Weapons weapons[] = new Weapons[10];
+
 	Enemies enemy = new Enemies();
 	CookieHandler cookieHandler = new CookieHandler(this, ui, timers, dayTimers, slots);
 	Timer timer, slotTimer, dayTimer;
 	JTextArea messageText, shopMessageText, combatTextArea;
 	MouseHandler mouseHandler = new MouseHandler(this);
-	
+	ItemInventory itemInventory = new ItemInventory(this);
 	SoundFXValues soundFXValues = new SoundFXValues();
 	SoundFX soundFX = new SoundFX(this);
 	SoundFX bgMusicPlayer = new SoundFX(this);
