@@ -1,5 +1,5 @@
 package com.tbonegames.buffs;
 
-public class BastardStopwatch {
+public class BastardStopwatch extends Buffs{
 
 }
