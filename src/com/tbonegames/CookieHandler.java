@@ -2,7 +2,7 @@ package com.tbonegames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
+
 
 public class CookieHandler implements ActionListener{
 	
@@ -42,7 +42,7 @@ public class CookieHandler implements ActionListener{
 				dayTimer.timerUpdate();
 				cMain.ui.closeAllPanels();
 				cMain.ui.displayMainGame();
-				cMain.soundFX.playMusic(cMain.soundFXValues.backgroundmusic);
+				cMain.bgMusicPlayer.playMusic(cMain.soundFXValues.backgroundmusic);
 				break;
 			case "cookie": 
 				cMain.logosCounter = (cMain.logosCounter + 1 +(cMain.rodValue) + (cMain.beltValue * 2) + (cMain.maskValue * 3)); 

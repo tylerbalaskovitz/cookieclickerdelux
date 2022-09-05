@@ -38,4 +38,5 @@ public class Enemies {
 	public URL talk3;
 	public URL defeated;
 	
+	public URL imageID;
 }

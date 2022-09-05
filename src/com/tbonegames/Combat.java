@@ -1,6 +1,5 @@
 package com.tbonegames;
 
-import java.net.URL;
 import java.util.Random;
 
 import javax.swing.JButton;
@@ -8,9 +7,6 @@ import javax.swing.JButton;
 import com.tbonegames.enemies.Enemies;
 
 public class Combat {
-	
-	
-	
 	
 	Random random = new Random();
 	
@@ -318,11 +314,10 @@ public class Combat {
 		
 		if (cMain.logosCounter < 1) {
 			
-		cMain.soundFX.stop(cMain.soundFXValues.titleClip);
+		
 			
-		cMain.soundFX.stop(cMain.soundFXValues.backgroundmusic);
-		cMain.soundFX.stop(cMain.soundFXValues.backgroundmusic);
-		cMain.soundFX.stop(cMain.soundFXValues.backgroundmusic);
+		
+		cMain.bgMusicPlayer.stop(cMain.soundFXValues.backgroundmusic);
 		
 		cMain.soundFX.playSoundEffect(cMain.soundFXValues.death);
 		

@@ -1,11 +1,8 @@
 package com.tbonegames;
 
-import java.net.URL;
+
 
 public class Slots {
-	
-	
-	
 
 	
 	CookieMain cMain;

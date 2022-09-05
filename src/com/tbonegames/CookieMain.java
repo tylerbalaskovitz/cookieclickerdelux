@@ -43,6 +43,8 @@ public class CookieMain {
 	displayArmorShop, displayBuffsSHop, nutsUnlocked, juiceUnlocked, chipsUnlocked, shoulderPadsUnlocked, glovesUnlocked, vibratingShaftUnlocked, nitrogenBombUnlocked,
 	stopWatchUnlocked, bootsUnlocked, slotBeltUnlocked;
 	
+	
+	
 	Clip clip;
 	Font font1, font2, font3;
 	Slots slots = new Slots(this);
@@ -54,10 +56,10 @@ public class CookieMain {
 	DayTimer dayTimers = new DayTimer(this);
 	ShopHandler shopHandler = new ShopHandler(this);
 	CombatHandler combatHandler = new CombatHandler(this, combat);
-	Armors armors = new Armors();
-	Buffs buffs = new Buffs();
-	Items items = new Items();
-	Weapons weapons = new Weapons();
+	Armors armors[] = new Armors[10];
+	Buffs buffs[] = new Buffs[10];
+	Items items[] = new Items[10];
+	Weapons weapons[] = new Weapons[10];
 	Enemies enemy = new Enemies();
 	CookieHandler cookieHandler = new CookieHandler(this, ui, timers, dayTimers, slots);
 	Timer timer, slotTimer, dayTimer;
@@ -66,6 +68,7 @@ public class CookieMain {
 	
 	SoundFXValues soundFXValues = new SoundFXValues();
 	SoundFX soundFX = new SoundFX(this);
+	SoundFX bgMusicPlayer = new SoundFX(this);
 	
 	public static void main(String[] args) {
 		

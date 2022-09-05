@@ -66,7 +66,7 @@ public void createUI() {
 	labelConfiguration(cMain.inCombatDayLabel, "Day: " + cMain.day, cMain.font3, Color.white,cMain.combatStatsPanel);
 	
 	cMain.inCombatActionsLabel = new JLabel();
-	labelConfiguration(cMain.inCombatActionsLabel, "Actions: " + cMain.numberOfActions, cMain.font3, Color.white,cMain.combatStatsPanel);
+	labelConfiguration(cMain.inCombatActionsLabel, "Actions: " + cMain.numberOfActions, cMain.font3, Color.white,cMain.combatStatsPanel); 
 	
 	cMain.combatPanel = new JPanel();
 	panelConfiguration(cMain.combatPanel, 100, 100, 600, 250, Color.black, 1, 1, cMain.window);

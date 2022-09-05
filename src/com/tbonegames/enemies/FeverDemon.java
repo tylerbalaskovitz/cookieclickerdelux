@@ -1,5 +1,7 @@
 package com.tbonegames.enemies;
 
+import java.net.URL;
+
 public class FeverDemon extends Enemies{
 
 	public FeverDemon() {
@@ -29,6 +31,8 @@ public class FeverDemon extends Enemies{
 		attack4Command = "FlamingAss";
 		attack4Damage = 150;
 		attack4Chance = 6;
+		
+		
 	}
 	
 }
