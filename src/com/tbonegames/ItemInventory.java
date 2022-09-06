@@ -60,6 +60,18 @@ public class ItemInventory {
 		
 	}
 	
+	public void shopItems() {
+		for (int x = 0; x < 5; x++) {
+		shopItems[x] = items[x];
+		}
+	}
+	
+	public void inComabatItems() {
+		for (int x = 0; x < 3; x++) {
+		inCombatItems[x] = shopItems[x];
+		}
+	}
+	
 	public void weaponsInGame() {
 		weapons[0] = new BastardRod();
 		weapons[1] = new BastardBelt();
@@ -68,12 +80,37 @@ public class ItemInventory {
 		weapons[4] = new BastardNitrogenBomb();
 	}
 	
+	public void shopWeapons() {
+		for (int x = 0; x < 5; x++) {
+		shopWeapons[x] = weapons[x];
+		}
+	}
+	
+	public void inComabatWeapons() {
+		for (int x = 0; x < 3; x++) {
+		inCombatWeapons[x] = shopWeapons[x];
+		}
+	}
+	
+	
 	public void armorInGame() {
 		armor[0] = new BastardShoulderPads();
 		armor[1] = new BastardGloves();
 		armor[2] = new BastardBoots();
 		armor[3] = new BastardSlotBelt();
 		armor[4] = new BastardArmor();
+	}
+	
+	public void shopArmor() {
+		for (int x = 0; x < 5; x++) {
+		shopArmor[x] = armor[x];
+		}
+	}
+	
+	public void inComabatArmor() {
+		for (int x = 0; x < 3; x++) {
+		inCombatArmor[x] = shopArmor[x];
+		}
 	}
 	
 	public void buffsInGame() {

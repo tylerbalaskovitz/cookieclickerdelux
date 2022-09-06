@@ -16,7 +16,7 @@ public class Items {
 	
 	public int healValue;
 	
-	
+	public int strengthIncrease;
 	
 	public int unlockAmount;
 	public int itemPrice;

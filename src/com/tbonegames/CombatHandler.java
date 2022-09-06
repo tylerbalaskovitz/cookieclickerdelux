@@ -40,6 +40,7 @@ public class CombatHandler implements ActionListener{
 			break;
 		case "Party":
 			combat.partyChoices();
+			break;
 		case "MultiplierSelecter":
 			combat.multiplier();
 			break;
