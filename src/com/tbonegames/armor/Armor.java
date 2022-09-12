@@ -12,7 +12,9 @@ public class Armor {
 	
 	//this is used within the game timers class.
 	public boolean unlocked;
+	public int unlockAmount;
 	
+	public int totalPurchased;
 	
 	public int armorValueNumerator;
 	public int armorValueDenominator;

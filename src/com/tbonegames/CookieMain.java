@@ -57,7 +57,6 @@ public class CookieMain {
 	DayTimer dayTimers = new DayTimer(this);
 	ShopHandler shopHandler = new ShopHandler(this);
 	CombatHandler combatHandler = new CombatHandler(this, combat);
-
 	Enemies enemy = new Enemies();
 	CookieHandler cookieHandler = new CookieHandler(this, ui, timers, dayTimers, slots);
 	Timer timer, slotTimer, dayTimer;
@@ -76,7 +75,7 @@ public class CookieMain {
 	
 	public CookieMain() {
 		
-		
+		itemInventory.inventoryOfItems();
 		
 		sValues.startUpValues();
 		
