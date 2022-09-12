@@ -14,6 +14,11 @@ public class Armor {
 	public boolean unlocked;
 	public int unlockAmount;
 	
+	
+	// intended to be used with % operator to increase after x amount of purchases and to be used with totalAmountPurchased
+	public int rateOfIncrease;
+		
+	public int totalCurrentAmount;
 	public int totalPurchased;
 	
 	public int armorValueNumerator;

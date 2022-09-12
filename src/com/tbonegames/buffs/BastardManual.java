@@ -1,8 +1,8 @@
 package com.tbonegames.buffs;
 
-public class BastardStopwatch extends Buffs{
+public class BastardManual extends Buffs{
 
-	public BastardStopwatch(){
+	public BastardManual() {
 		
 		buffName = "Bastard Stopwatch";
 		buffHandlerName = "BastardStopwatch";

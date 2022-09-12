@@ -6,8 +6,12 @@ import com.tbonegames.armor.BastardBoots;
 import com.tbonegames.armor.BastardGloves;
 import com.tbonegames.armor.BastardShoulderPads;
 import com.tbonegames.armor.BastardSlotBelt;
+import com.tbonegames.buffs.AttackRestore;
+import com.tbonegames.buffs.BastardManual;
 import com.tbonegames.buffs.BastardStopwatch;
 import com.tbonegames.buffs.Buffs;
+import com.tbonegames.buffs.DefendRestore;
+import com.tbonegames.buffs.ItemRestore;
 import com.tbonegames.items.BastardChips;
 import com.tbonegames.items.BastardCola;
 import com.tbonegames.items.BastardJuice;
@@ -26,7 +30,7 @@ public class ItemInventory {
 	CookieMain cMain;
 	//these numbers will grow as more items come into the game. THe methods will need to be organized so that way random card matches can also occur. 
 	Armor armor[] = new Armor[5];
-	Buffs buffs[] = new Buffs[1];
+	Buffs buffs[] = new Buffs[5];
 	Items items[] = new Items[5];
 	Weapons weapons[] = new Weapons[5];
 	
@@ -123,7 +127,10 @@ public class ItemInventory {
 	public void buffsInGame() {
 		
 		buffs[0] = new BastardStopwatch();
-		
+		buffs[1] = new AttackRestore();
+		buffs[2] = new DefendRestore();
+		buffs[3] = new ItemRestore();
+		buffs[4] = new BastardManual();
 	}
 	
 	public void shopBuffs() {

@@ -101,22 +101,27 @@ public class MouseHandler implements MouseListener{
 		
 		if(button == cMain.shopButton1) {
 			if (cMain.displayItemsShop == true) {
-				cMain.shopMessageText.setText("Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue +" ] \n Wet your mouth with a bastard soda ");
-			}
+				if (cMain.itemInventory.items[0].unlocked == true) {
+				cMain.shopMessageText.setText(cMain.itemInventory.items[0].itemName+ " \n [Price: " + cMain.itemInventory.items[0].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[0].totalCurrentAmount +" ] \n" + cMain.itemInventory.items[0].itemDescription);
+				} else {
+				cMain.shopMessageText.setText("This item is currently locked");	
+				}
+				
+				}
 			if (cMain.displayWeaponsShop == true) {
-				if (cMain.rodUnlocked == false){
+				if (cMain.itemInventory.weapons[0].unlocked == false){
 				cMain.shopMessageText.setText("This item is currently locked");
 				} else {
-				cMain.shopMessageText.setText("Bastard Rod \n [Price: " + cMain.rodPrice + "] \n [Amount: " + cMain.rodValue +" ] \n Grab your little bastard rod and swing it at your friends and your enemies");	
+				cMain.shopMessageText.setText(cMain.itemInventory.weapons[0].weaponName + " \n [Price: " + cMain.itemInventory.weapons[0].weaponPrice + "] \n [Amount: " + cMain.itemInventory.weapons[0].totalCurrentAmount +" ] \n" + cMain.itemInventory.weapons[0].weaponDescription);	
 				}
 				
 			}
 			
 			if (cMain.displayArmorShop == true) {
-				if (cMain.armorUnlocked == false){
+				if (cMain.itemInventory.armor[0].unlocked == false){
 					cMain.shopMessageText.setText("This item is currently locked");
 					} else {
-					cMain.shopMessageText.setText("Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.armorValue +"Lucky Bastard Fever Armor");	
+					cMain.shopMessageText.setText(cMain.itemInventory.armor[0].armorName + " \n [Price: " + cMain.itemInventory.armor[0].armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[0].totalCurrentAmount +"\n" + cMain.itemInventory.armor[0].armorDescription);	
 					}
 			}
 			
@@ -125,19 +130,27 @@ public class MouseHandler implements MouseListener{
 		if(button == cMain.shopButton2) {
 			
 				if (cMain.displayItemsShop == true) {
-				cMain.shopMessageText.setText("Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die");
+					if (cMain.itemInventory.items[1].unlocked == true) {
+						cMain.shopMessageText.setText(cMain.itemInventory.items[1].itemName+ " \n [Price: " + cMain.itemInventory.items[1].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[1].totalCurrentAmount +" ] \n" + cMain.itemInventory.items[1].itemDescription);
+						} else {
+						cMain.shopMessageText.setText("This item is currently locked");	
+						}
 				}
 				
 				if (cMain.displayWeaponsShop == true) {
-					if (cMain.beltUnlocked == false){
+					if (cMain.itemInventory.weapons[1].unlocked == false){
 						cMain.shopMessageText.setText("This item is currently locked");
 						} else {
-							cMain.shopMessageText.setText("Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With growing wire for OSHA compliance");	
-						}	
+						cMain.shopMessageText.setText(cMain.itemInventory.weapons[1].weaponName + " \n [Price: " + cMain.itemInventory.weapons[1].weaponPrice + "] \n [Amount: " + cMain.itemInventory.weapons[1].totalCurrentAmount +" ] \n" + cMain.itemInventory.weapons[1].weaponDescription);	
+						}
 				}
 				
 				if (cMain.displayArmorShop == true) {
-					
+					if (cMain.itemInventory.armor[1].unlocked == false){
+						cMain.shopMessageText.setText("This item is currently locked");
+						} else {
+						cMain.shopMessageText.setText(cMain.itemInventory.armor[1].armorName + " \n [Price: " + cMain.itemInventory.armor[1].armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[1].totalCurrentAmount +"\n" + cMain.itemInventory.armor[1].armorDescription);	
+						}
 				}
 				
 		}
@@ -146,20 +159,28 @@ public class MouseHandler implements MouseListener{
 
 				
 				if (cMain.displayItemsShop == true){
-					
+					if (cMain.itemInventory.items[2].unlocked == true) {
+						cMain.shopMessageText.setText(cMain.itemInventory.items[2].itemName+ " \n [Price: " + cMain.itemInventory.items[2].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[2].totalCurrentAmount +" ] \n" + cMain.itemInventory.items[2].itemDescription);
+						} else {
+						cMain.shopMessageText.setText("This item is currently locked");	
+						}
 					
 				}
 				
 				if (cMain.displayWeaponsShop == true) {
-					if (cMain.maskUnlocked == false){
+					if (cMain.itemInventory.weapons[2].unlocked == false){
 						cMain.shopMessageText.setText("This item is currently locked");
 						} else {
-						cMain.shopMessageText.setText("Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");	
+						cMain.shopMessageText.setText(cMain.itemInventory.weapons[2].weaponName + " \n [Price: " + cMain.itemInventory.weapons[2].weaponPrice + "] \n [Amount: " + cMain.itemInventory.weapons[2].totalCurrentAmount +" ] \n" + cMain.itemInventory.weapons[2].weaponDescription);	
 						}
 				}
 				
 				if (cMain.displayArmorShop == true) {
-					
+					if (cMain.itemInventory.armor[2].unlocked == false){
+						cMain.shopMessageText.setText("This item is currently locked");
+						} else {
+						cMain.shopMessageText.setText(cMain.itemInventory.armor[2].armorName + " \n [Price: " + cMain.itemInventory.armor[2].armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[2].totalCurrentAmount +"\n" + cMain.itemInventory.armor[2].armorDescription);	
+						}
 				}
 			
 		}
@@ -167,16 +188,30 @@ public class MouseHandler implements MouseListener{
 		if(button == cMain.shopButton4) {
 			
 			if (cMain.displayItemsShop == true){
-				
+				if (cMain.itemInventory.items[3].unlocked == true) {
+				cMain.shopMessageText.setText(cMain.itemInventory.items[3].itemName+ " \n [Price: " + cMain.itemInventory.items[3].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[3].totalCurrentAmount +" ] \n" + cMain.itemInventory.items[3].itemDescription);
+				} else {
+				cMain.shopMessageText.setText("This item is currently locked");	
+				}
 				
 			}
 			
 			if (cMain.displayWeaponsShop == true) {
 				
+				if (cMain.itemInventory.weapons[3].unlocked == false){
+				cMain.shopMessageText.setText("This item is currently locked");
+				} else {
+				cMain.shopMessageText.setText(cMain.itemInventory.weapons[3].weaponName + " \n [Price: " + cMain.itemInventory.weapons[3].weaponPrice + "] \n [Amount: " + cMain.itemInventory.weapons[3].totalCurrentAmount +" ] \n" + cMain.itemInventory.weapons[3].weaponDescription);	
+				}
+				
 			}
 			
 			if (cMain.displayArmorShop == true) {
-				
+				if (cMain.itemInventory.armor[3].unlocked == false){
+					cMain.shopMessageText.setText("This item is currently locked");
+					} else {
+					cMain.shopMessageText.setText(cMain.itemInventory.armor[3].armorName + " \n [Price: " + cMain.itemInventory.armor[3].armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[3].totalCurrentAmount +"\n " + cMain.itemInventory.armor[3].armorDescription);	
+					}
 			}
 			
 					
@@ -185,16 +220,30 @@ public class MouseHandler implements MouseListener{
 		if(button == cMain.shopButton5) {
 			
 			if (cMain.displayItemsShop == true){
-				
+				if (cMain.itemInventory.items[4].unlocked == true) {
+				cMain.shopMessageText.setText(cMain.itemInventory.items[4].itemName+ " \n [Price: " + cMain.itemInventory.items[4].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[4].totalCurrentAmount +" ] \n" + cMain.itemInventory.items[4].itemDescription);
+				} else {
+				cMain.shopMessageText.setText("This item is currently locked");	
+				}
 				
 			}
 			
 			if (cMain.displayWeaponsShop == true) {
 				
+				if (cMain.itemInventory.weapons[4].unlocked == false){
+				cMain.shopMessageText.setText("This item is currently locked");
+				} else {
+				cMain.shopMessageText.setText(cMain.itemInventory.weapons[4].weaponName + " \n [Price: " + cMain.itemInventory.weapons[4].weaponPrice + "] \n [Amount: " + cMain.itemInventory.weapons[4].totalCurrentAmount +" ] \n" + cMain.itemInventory.weapons[4].weaponDescription);	
+				}
+				
 			}
 			
 			if (cMain.displayArmorShop == true) {
-				
+				if (cMain.itemInventory.armor[4].unlocked == false){
+					cMain.shopMessageText.setText("This item is currently locked");
+					} else {
+					cMain.shopMessageText.setText(cMain.itemInventory.armor[4].armorName + " \n [Price: " + cMain.itemInventory.armor[4].armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[4].totalCurrentAmount +"\n " + cMain.itemInventory.armor[4].armorDescription);	
+					}
 			}
 			
 

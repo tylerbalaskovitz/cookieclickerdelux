@@ -1,9 +1,8 @@
 package com.tbonegames.buffs;
 
-public class BastardStopwatch extends Buffs{
+public class AttackRestore extends Buffs{
 
-	public BastardStopwatch(){
-		
+	public AttackRestore() {
 		buffName = "Bastard Stopwatch";
 		buffHandlerName = "BastardStopwatch";
 		
@@ -23,8 +22,10 @@ public class BastardStopwatch extends Buffs{
 		unlockAmount = 1250;
 		buffPrice = 1250;
 		buffPriceIncrease = 1250;
-		totalAmountPurchased = 0;
 		
+		rateOfIncrase = 1;
+		
+		currentAmount = 0;
+		totalAmountPurchased = 0;
 	}
-	
 }

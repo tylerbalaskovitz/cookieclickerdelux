@@ -14,6 +14,8 @@ public class Items {
 	//used for the sound unlocks during the GameTimers class being ran.
 	public boolean unlocked;
 	
+	
+	
 	public int healValue;
 	
 	public int strengthIncrease;
@@ -24,6 +26,8 @@ public class Items {
 	
 	// intended to be used with % operator to increase after x amount of purchases and to be used with totalAmountPurchased
 	public int rateOfIncrease;
+	
+	public int totalCurrentAmount;
 	public int totalAmountPurchased;
 	
 	

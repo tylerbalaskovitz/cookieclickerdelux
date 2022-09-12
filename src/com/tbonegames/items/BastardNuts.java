@@ -15,6 +15,8 @@ public class BastardNuts extends Items{
 		//used for the sound unlocks during the GameTimers class being ran.
 		unlocked = false;
 		
+		
+		
 		healValue = 500;
 		
 		strengthIncrease = 18;

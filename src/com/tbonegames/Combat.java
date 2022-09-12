@@ -184,13 +184,13 @@ public class Combat {
 		case "BastardFists":
 			break;
 		case "BastardRod":
-			itemDamageBonus = cMain.rodValue;
+			itemDamageBonus = cMain.itemInventory.weapons[0].weaponMultiplier * cMain.itemInventory.weapons[0].totalAmountPurchased;
 			break;
 		case "BastardBelt":
-			itemDamageBonus = cMain.beltValue*4;
+			itemDamageBonus = cMain.itemInventory.weapons[1].weaponMultiplier * cMain.itemInventory.weapons[1].totalAmountPurchased;
 			break;
 		case "BastardMask":
-			itemDamageBonus = cMain.maskValue*6;
+			itemDamageBonus = cMain.itemInventory.weapons[2].weaponMultiplier * cMain.itemInventory.weapons[2].totalAmountPurchased;
 			break;
 		}
 		int playerDamage = new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus))/itemDamageDenominator);

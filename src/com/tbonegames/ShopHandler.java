@@ -37,73 +37,250 @@ public class ShopHandler implements ActionListener{
 			displayShopNavigation();
 			break;
 		
-		case "BastardCola":
-			if (cMain.logosCounter>=cMain.colaPrice) {
+		case "Item0":
+			if (cMain.logosCounter>=cMain.itemInventory.items[0].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-			cMain.startingDamage = cMain.startingDamage +3; 
-			cMain.colaValue = cMain.colaValue+ 1;
-			cMain.logosCounter = cMain.logosCounter - cMain.colaPrice;
-			cMain.shopMessageText.setText("Bastard Cola \n [Price: " + cMain.colaPrice + "]\n [Amount: " + cMain.colaValue + " ] \n Wet your mouth with a bastard soda ");
+			cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[0].strengthIncrease; 
+			cMain.itemInventory.items[0].totalCurrentAmount++;
+			cMain.itemInventory.items[0].totalAmountPurchased++;
+			cMain.logosCounter = cMain.logosCounter - cMain.itemInventory.items[0].itemPrice;
+			cMain.shopMessageText.setText(cMain.itemInventory.items[0].itemName + " \n [Price: " + cMain.itemInventory.items[0].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[0].totalCurrentAmount + " ] \n " + cMain.itemInventory.items[0].itemDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 		break;
-		case "BastardSausage":
-			if (cMain.logosCounter>=cMain.sausagePrice) {
+		case "Item1":
+			if (cMain.logosCounter>=cMain.itemInventory.items[1].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-			cMain.sausageValue = cMain.sausageValue+1;
-			cMain.startingDamage = cMain.startingDamage +10; 
-			cMain.logosCounter = cMain.logosCounter - cMain.sausagePrice;
-			cMain.shopMessageText.setText("Bastard Sausage \n [Price: " + cMain.sausagePrice + "] \n [Amount: " + cMain.sausageValue +" ] \n  Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die");
+				cMain.itemInventory.items[1].totalCurrentAmount++;
+				cMain.itemInventory.items[1].totalAmountPurchased++;
+				cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[1].strengthIncrease; 
+				cMain.logosCounter = cMain.logosCounter - cMain.itemInventory.items[1].itemPrice;
+			cMain.shopMessageText.setText(cMain.itemInventory.items[1].itemName + " \n [Price: " + cMain.itemInventory.items[1].itemPrice + "] \n [Amount: " + cMain.itemInventory.items[1].totalCurrentAmount +" ] \n  " + cMain.itemInventory.items[1].itemDescription);
 			} else { 
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 		break;
-		case "BastardRod":
-			if (cMain.logosCounter>=cMain.rodPrice) {
+		case "Item2":
+			if (cMain.logosCounter>=cMain.itemInventory.items[2].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-			cMain.rodValue = cMain.rodValue+1;
-			cMain.logosCounter = cMain.logosCounter - cMain.rodPrice;
-			cMain.rodPrice = cMain.rodPrice +400;
-			cMain.shopMessageText.setText("Bastard Rod \n [Price: " + cMain.rodPrice + "] \n [Amount: " + cMain.rodValue +" ] \n Grab your little bastard rod and swing it at your friends and your enemies");
+			cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[2].strengthIncrease; 
+			cMain.itemInventory.items[2].totalCurrentAmount++;
+			cMain.itemInventory.items[2].totalAmountPurchased++;
+			cMain.logosCounter = cMain.logosCounter - cMain.itemInventory.items[2].itemPrice;
+			cMain.shopMessageText.setText(cMain.itemInventory.items[2].itemName + " \n [Price: " + cMain.itemInventory.items[2].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[2].totalCurrentAmount + " ] \n " + cMain.itemInventory.items[2].itemDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 		break;
-		case "BastardBelt":
-			if (cMain.logosCounter>=cMain.beltPrice) {
+		case "Item3":
+			if (cMain.logosCounter>=cMain.itemInventory.items[3].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-			cMain.beltValue = cMain.beltValue+1;
-			cMain.logosCounter = cMain.logosCounter - cMain.beltPrice;
-			cMain.beltPrice = cMain.beltPrice +800;
-			cMain.shopMessageText.setText("Bastard Belt \n [Price: " + cMain.beltPrice + "] \n [Amount: " + cMain.beltValue +"] \n With attachment for OSHA certification");
+				cMain.itemInventory.items[3].totalCurrentAmount++;
+				cMain.itemInventory.items[3].totalAmountPurchased++;
+				cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[3].strengthIncrease; 
+				cMain.logosCounter = cMain.logosCounter - cMain.itemInventory.items[3].itemPrice;
+			cMain.shopMessageText.setText(cMain.itemInventory.items[3].itemName + " \n [Price: " + cMain.itemInventory.items[3].itemPrice + "] \n [Amount: " + cMain.itemInventory.items[3].totalCurrentAmount +" ] \n " + cMain.itemInventory.items[3].itemDescription);
+			} else { 
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+			}
+		break;
+		case "Item4":
+			if (cMain.logosCounter>=cMain.itemInventory.items[4].itemPrice) {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+			cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[4].strengthIncrease; 
+			cMain.itemInventory.items[4].totalCurrentAmount++;
+			cMain.itemInventory.items[4].totalAmountPurchased++;
+			cMain.logosCounter = cMain.logosCounter - cMain.itemInventory.items[4].itemPrice;
+			cMain.shopMessageText.setText(cMain.itemInventory.items[4].itemName + " \n [Price: " + cMain.itemInventory.items[4].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[4].totalCurrentAmount + " ] \n " + cMain.itemInventory.items[4].itemDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 		break;
-		case "BastardMask":
-			if (cMain.maskUnlocked==true) {
-			if (cMain.logosCounter>= cMain.maskPrice){
+		
+		
+		
+		case "Weapon0":
+			if (cMain.itemInventory.weapons[0].unlocked==true) {
+			if (cMain.logosCounter>= cMain.itemInventory.weapons[0].weaponPrice){
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-			cMain.maskValue = cMain.maskValue+1;
-			cMain.logosCounter = cMain.logosCounter - cMain.maskPrice;
-			cMain.maskPrice = cMain.maskPrice +1600;
-			cMain.shopMessageText.setText("Bastard Mask \n [Price: " + cMain.maskPrice + "] \n[Amount: " + cMain.maskValue +"] \n With attachment for OSHA certification");
+				
+			cMain.itemInventory.weapons[0].totalCurrentAmount++;
+			cMain.itemInventory.weapons[0].totalAmountPurchased++;
+			cMain.logosCounter -= cMain.itemInventory.weapons[0].weaponPrice;
+			cMain.itemInventory.weapons[0].weaponPrice += cMain.itemInventory.weapons[0].weaponPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.weapons[0].weaponName + "\n [Price: " + cMain.itemInventory.weapons[0].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[0].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[0].weaponDescription);
 			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
 			}	cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 		break;
-		case "BastardArmor":
-			if (cMain.logosCounter >= cMain.armorPrice) {
+		case "Weapon1":
+			if (cMain.itemInventory.weapons[1].unlocked==true) {
+			if (cMain.logosCounter>= cMain.itemInventory.weapons[1].weaponPrice){
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-			cMain.armorValue = cMain.armorValue+1;
-			cMain.logosCounter = cMain.logosCounter - cMain.armorPrice;
-			cMain.armorPrice = cMain.armorPrice +2000;
-			cMain.shopMessageText.setText("Lucky Bastard Fever Bastard Armor \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.armorValue +"] \n Lucky Bastard Fever Armor");
+				cMain.itemInventory.weapons[1].totalCurrentAmount++;
+			cMain.itemInventory.weapons[1].totalAmountPurchased++;
+			cMain.logosCounter -= cMain.itemInventory.weapons[1].weaponPrice;
+			cMain.itemInventory.weapons[1].weaponPrice += cMain.itemInventory.weapons[1].weaponPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.weapons[1].weaponName + "\n [Price: " + cMain.itemInventory.weapons[1].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[1].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[1].weaponDescription);
+			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
+			}	cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+		break;
+		case "Weapon2":
+			if (cMain.itemInventory.weapons[2].unlocked==true) {
+			if (cMain.logosCounter>= cMain.itemInventory.weapons[2].weaponPrice){
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.itemInventory.weapons[2].totalCurrentAmount++;
+			cMain.itemInventory.weapons[2].totalAmountPurchased++;
+			cMain.logosCounter -= cMain.itemInventory.weapons[2].weaponPrice;
+			cMain.itemInventory.weapons[2].weaponPrice += cMain.itemInventory.weapons[2].weaponPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.weapons[2].weaponName + "\n [Price: " + cMain.itemInventory.weapons[2].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[2].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[2].weaponDescription);
+			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
+			}	cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+		break;
+		case "Weapon3":
+			if (cMain.itemInventory.weapons[3].unlocked==true) {
+			if (cMain.logosCounter>= cMain.itemInventory.weapons[3].weaponPrice){
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.itemInventory.weapons[3].totalCurrentAmount++;
+			cMain.itemInventory.weapons[3].totalAmountPurchased++;
+			cMain.logosCounter -= cMain.itemInventory.weapons[3].weaponPrice;
+			cMain.itemInventory.weapons[3].weaponPrice += cMain.itemInventory.weapons[3].weaponPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.weapons[3].weaponName + "\n [Price: " + cMain.itemInventory.weapons[3].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[3].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[3].weaponDescription);
+			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
+			}	cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+		break;
+		case "Weapon4":
+			if (cMain.itemInventory.weapons[4].unlocked==true) {
+			if (cMain.logosCounter>= cMain.itemInventory.weapons[4].weaponPrice){
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.itemInventory.weapons[4].totalCurrentAmount++;
+			cMain.itemInventory.weapons[4].totalAmountPurchased++;
+			cMain.logosCounter -= cMain.itemInventory.weapons[4].weaponPrice;
+			cMain.itemInventory.weapons[4].weaponPrice += cMain.itemInventory.weapons[4].weaponPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.weapons[4].weaponName + "\n [Price: " + cMain.itemInventory.weapons[4].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[4].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[4].weaponDescription);
+			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
+			}	cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+		break;
+		case "Armor0":
+			if (cMain.logosCounter >= cMain.itemInventory.armor[0].armorPrice) {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.itemInventory.armor[0].totalCurrentAmount++;
+			cMain.itemInventory.armor[0].totalPurchased++;
+			cMain.logosCounter -= cMain.itemInventory.armor[0].armorPrice;
+			cMain.itemInventory.armor[0].armorPrice += cMain.itemInventory.armor[0].armorPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.armor[0].armorName + " \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[0].totalCurrentAmount +"] \n" + cMain.itemInventory.armor[0].armorDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 		break;
-
+		case "Armor1":
+			if (cMain.logosCounter >= cMain.itemInventory.armor[1].armorPrice) {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.itemInventory.armor[1].totalCurrentAmount++;
+			cMain.itemInventory.armor[1].totalPurchased++;
+			cMain.logosCounter -= cMain.itemInventory.armor[1].armorPrice;
+			cMain.itemInventory.armor[1].armorPrice += cMain.itemInventory.armor[1].armorPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.armor[1].armorName + " \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[1].totalCurrentAmount +"] \n" + cMain.itemInventory.armor[1].armorDescription);
+			} else {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+			}
+		break;
+		case "Armor2":
+			if (cMain.logosCounter >= cMain.itemInventory.armor[2].armorPrice) {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.itemInventory.armor[2].totalCurrentAmount++;
+			cMain.itemInventory.armor[2].totalPurchased++;
+			cMain.logosCounter -= cMain.itemInventory.armor[2].armorPrice;
+			cMain.itemInventory.armor[2].armorPrice += cMain.itemInventory.armor[2].armorPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.armor[2].armorName + " \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[2].totalCurrentAmount +"] \n" + cMain.itemInventory.armor[2].armorDescription);
+			} else {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+			}
+		break;
+		case "Armor3":
+			if (cMain.logosCounter >= cMain.itemInventory.armor[3].armorPrice) {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.itemInventory.armor[3].totalCurrentAmount++;
+			cMain.itemInventory.armor[3].totalPurchased++;
+			cMain.logosCounter -= cMain.itemInventory.armor[3].armorPrice;
+			cMain.itemInventory.armor[3].armorPrice += cMain.itemInventory.armor[3].armorPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.armor[3].armorName + " \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[3].totalCurrentAmount +"] \n" + cMain.itemInventory.armor[3].armorDescription);
+			} else {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+			}
+		break;
+		case "Armor4":
+			if (cMain.logosCounter >= cMain.itemInventory.armor[4].armorPrice) {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.itemInventory.armor[4].totalCurrentAmount++;
+			cMain.itemInventory.armor[4].totalPurchased++;
+			cMain.logosCounter -= cMain.itemInventory.armor[4].armorPrice;
+			cMain.itemInventory.armor[4].armorPrice += cMain.itemInventory.armor[4].armorPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.armor[4].armorName + " \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[4].totalCurrentAmount +"] \n" + cMain.itemInventory.armor[4].armorDescription);
+			} else {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+			}
+		break;
+		case "Buffs0":
+			if (cMain.logosCounter >= cMain.itemInventory.buffs[0].buffPrice) {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+			cMain.itemInventory.buffs[0].totalAmountPurchased++;
+			cMain.itemInventory.buffs[0].currentAmount++;
+			cMain.logosCounter -= cMain.itemInventory.buffs[0].buffPrice;
+			cMain.itemInventory.buffs[0].buffPrice += cMain.itemInventory.buffs[0].buffPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.buffs[0].buffName + " \n [Price: " + cMain.itemInventory.buffs[0].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[0].currentAmount +"] \n" + cMain.itemInventory.buffs[0].buffDescription);
+			} else {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+			}
+		break;
+		case "Buffs1":
+			if (cMain.logosCounter >= cMain.itemInventory.buffs[1].buffPrice) {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+			cMain.itemInventory.buffs[1].totalAmountPurchased++;
+			cMain.itemInventory.buffs[1].currentAmount++;
+			cMain.logosCounter -= cMain.itemInventory.buffs[1].buffPrice;
+			cMain.itemInventory.buffs[1].buffPrice += cMain.itemInventory.buffs[1].buffPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.buffs[1].buffName + " \n [Price: " + cMain.itemInventory.buffs[1].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[1].currentAmount +"] \n" + cMain.itemInventory.buffs[1].buffDescription);
+			} else {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+			}
+		break;
+		case "Buffs2":
+			if (cMain.logosCounter >= cMain.itemInventory.buffs[2].buffPrice) {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+			cMain.itemInventory.buffs[2].totalAmountPurchased++;
+			cMain.itemInventory.buffs[2].currentAmount++;
+			cMain.logosCounter -= cMain.itemInventory.buffs[2].buffPrice;
+			cMain.itemInventory.buffs[2].buffPrice += cMain.itemInventory.buffs[2].buffPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.buffs[2].buffName + " \n [Price: " + cMain.itemInventory.buffs[2].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[2].currentAmount +"] \n" + cMain.itemInventory.buffs[2].buffDescription);
+			} else {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+			}
+		break;
+		case "Buffs3":
+			if (cMain.logosCounter >= cMain.itemInventory.buffs[3].buffPrice) {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+			cMain.itemInventory.buffs[3].totalAmountPurchased++;
+			cMain.itemInventory.buffs[3].currentAmount++;
+			cMain.logosCounter -= cMain.itemInventory.buffs[3].buffPrice;
+			cMain.itemInventory.buffs[3].buffPrice += cMain.itemInventory.buffs[3].buffPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.buffs[3].buffName + " \n [Price: " + cMain.itemInventory.buffs[3].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[3].currentAmount +"] \n" + cMain.itemInventory.buffs[3].buffDescription);
+			} else {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+			}
+		break;
+		case "Buffs4":
+			if (cMain.logosCounter >= cMain.itemInventory.buffs[4].buffPrice) {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+			cMain.itemInventory.buffs[4].totalAmountPurchased++;
+			cMain.itemInventory.buffs[4].currentAmount++;
+			cMain.logosCounter -= cMain.itemInventory.buffs[4].buffPrice;
+			cMain.itemInventory.buffs[4].buffPrice += cMain.itemInventory.buffs[4].buffPriceIncrease;
+			cMain.shopMessageText.setText(cMain.itemInventory.buffs[4].buffName + " \n [Price: " + cMain.itemInventory.buffs[4].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[4].currentAmount +"] \n" + cMain.itemInventory.buffs[4].buffDescription);
+			} else {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+			}
+		break;
 		
 		}
 		
@@ -134,11 +311,12 @@ public class ShopHandler implements ActionListener{
 		cMain.displayArmorShop = false;
 		cMain.displayBuffsSHop = true;
 		
-		shopButtonConfig(cMain.shopButton1, cMain.stopWatchUnlocked,"Bastard Stopwatch", "BastardStopwatch");
-		shopButtonConfig(cMain.shopButton2, cMain.beltUnlocked,"?", "");
-		shopButtonConfig(cMain.shopButton3, cMain.maskUnlocked,"?", "");
-		shopButtonConfig(cMain.shopButton4, cMain.vibratingShaftUnlocked,"?", "");
-		shopButtonConfig(cMain.shopButton5, cMain.nitrogenBombUnlocked,"?", "");
+		//this needs to be updated for 
+		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs0");
+		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs1");
+		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs2");
+		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs3");
+		shopButtonConfig(cMain.shopButton5, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs4");
 	}
 		
 	public void displayWeaponsShop() {
@@ -149,11 +327,11 @@ public class ShopHandler implements ActionListener{
 		cMain.displayArmorShop = false;
 		cMain.displayBuffsSHop = false;
 		
-		shopButtonConfig(cMain.shopButton1, cMain.rodUnlocked,"Bastard Rod", "BastardRod");
-		shopButtonConfig(cMain.shopButton2, cMain.beltUnlocked,"Bastard Belt", "BastardBelt");
-		shopButtonConfig(cMain.shopButton3, cMain.maskUnlocked,"Bastard Mask", "BastardMask");
-		shopButtonConfig(cMain.shopButton4, cMain.vibratingShaftUnlocked,"Bastard Vibrating Shaft", "VibratingShaft");
-		shopButtonConfig(cMain.shopButton5, cMain.nitrogenBombUnlocked,"Bastard Nitrogen Bomb", "NitrogenBomb");
+		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.weapons[0].unlocked,cMain.itemInventory.weapons[0].weaponName, "Weapon0");
+		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.weapons[1].unlocked,cMain.itemInventory.weapons[1].weaponName, "Weapon1");
+		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.weapons[2].unlocked,cMain.itemInventory.weapons[2].weaponName, "Weapon2");
+		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.weapons[3].unlocked,cMain.itemInventory.weapons[3].weaponName, "Weapon3");
+		shopButtonConfig(cMain.shopButton5, cMain.itemInventory.weapons[4].unlocked,cMain.itemInventory.weapons[4].weaponName, "Weapon4");
 		
 		
 		
@@ -166,11 +344,11 @@ public class ShopHandler implements ActionListener{
 		cMain.displayBuffsSHop = false;
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopPanel.setVisible(true);
-		shopButtonConfig(cMain.shopButton1, cMain.colaUnlocked, "Bastard Cola", "BastardCola");
-		shopButtonConfig(cMain.shopButton2, cMain.sausageUnlocked, "Bastard Sausage", "BastardSausage");
-		shopButtonConfig(cMain.shopButton3, cMain.nutsUnlocked, "Bastard Nuts", "BastardNuts");
-		shopButtonConfig(cMain.shopButton4, cMain.chipsUnlocked, "Bastard Chips", "BastardChips");
-		shopButtonConfig(cMain.shopButton5, cMain.juiceUnlocked, "Bastard Juice", "BastardJuice");
+		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.items[0].unlocked, cMain.itemInventory.items[0].itemName, "Item0");
+		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.items[1].unlocked, cMain.itemInventory.items[1].itemName, "Item1");
+		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.items[2].unlocked, cMain.itemInventory.items[2].itemName, "Item2");
+		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.items[3].unlocked, cMain.itemInventory.items[3].itemName, "Item3");
+		shopButtonConfig(cMain.shopButton5, cMain.itemInventory.items[4].unlocked, cMain.itemInventory.items[4].itemName, "Item4");
 	}
 	
 	public void displayArmorShop() {
@@ -182,11 +360,11 @@ public class ShopHandler implements ActionListener{
 		cMain.shopPanel.setVisible(true);
 		
 		
-		shopButtonConfig(cMain.shopButton1, cMain.shoulderPadsUnlocked, "Bastard Shoulder Pads", "ShoulderPads");
-		shopButtonConfig(cMain.shopButton2, cMain.glovesUnlocked, "Bastard Gloves", "BastardGloves");
-		shopButtonConfig(cMain.shopButton3, cMain.bootsUnlocked, "Bastard Boots", "BastardBoots");
-		shopButtonConfig(cMain.shopButton4, cMain.slotBeltUnlocked, "Bastard Slot Belt", "SlotBelt");
-		shopButtonConfig(cMain.shopButton5, cMain.armorUnlocked, "Bastard Armor", "BastardArmor");
+		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.armor[0].unlocked, cMain.itemInventory.armor[0].armorName, "Armor0");
+		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.armor[1].unlocked, cMain.itemInventory.armor[1].armorName, "Armor1");
+		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.armor[2].unlocked, cMain.itemInventory.armor[2].armorName, "Armor2");
+		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.armor[3].unlocked, cMain.itemInventory.armor[3].armorName, "Armor3");
+		shopButtonConfig(cMain.shopButton5, cMain.itemInventory.armor[4].unlocked, cMain.itemInventory.armor[4].armorName, "Armor4");
 		
 		
 		

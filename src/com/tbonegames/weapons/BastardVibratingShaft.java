@@ -18,6 +18,10 @@ public class BastardVibratingShaft extends Weapons{
 	unlocked = false;
 	
 	unlockAmount = 3000;
+	
+	rateOfIncrease = 1;
+	
+	totalCurrentAmount = 0;
 	totalAmountPurchased = 0;
 	
 	weaponPrice = 3000;

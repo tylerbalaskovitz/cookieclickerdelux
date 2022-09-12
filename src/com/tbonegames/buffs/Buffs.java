@@ -20,5 +20,9 @@ public class Buffs {
 	public int unlockAmount;
 	public int buffPrice;
 	public int buffPriceIncrease;
+	
+	public int rateOfIncrase;
+	
+	public int currentAmount;
 	public int totalAmountPurchased;
 }

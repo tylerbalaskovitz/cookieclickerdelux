@@ -8,7 +8,7 @@ public class BastardBelt extends Weapons{
 	weaponHandlerName = "BastardBelt";
 	
 	//used for the description when hovering over the items
-	weaponDescription = "";
+	weaponDescription = "With attachment for OSHA certification";
 	
 	//this is used so there won't be duplicates when drafting in the future. ID 1, 2, 3, etc. Also, this is useful for counting the amount of items in stuff in game.
 	idNumber = 2;
@@ -20,6 +20,10 @@ public class BastardBelt extends Weapons{
 	unlocked = false;
 	
 	unlockAmount = 800;
+	
+	rateOfIncrease = 1;
+	
+	totalCurrentAmount = 0;
 	totalAmountPurchased = 0;
 	
 	weaponPrice = 800;

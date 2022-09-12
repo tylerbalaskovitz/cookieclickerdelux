@@ -7,7 +7,7 @@ public class BastardRod extends Weapons {
 	weaponHandlerName = "BastardRod";
 	
 	//used for the description when hovering over the items
-	weaponDescription = "";
+	weaponDescription = "Grab your little bastard rod and swing it at your friends and your enemies";
 	
 	//this is used so there won't be duplicates when drafting in the future. ID 1, 2, 3, etc. Also, this is useful for counting the amount of items in stuff in game.
 	idNumber = 1;

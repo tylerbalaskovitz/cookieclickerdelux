@@ -19,6 +19,11 @@ public class Weapons {
 	
 	public int unlockAmount;
 	
+	// intended to be used with % operator to increase after x amount of purchases and to be used with totalAmountPurchased
+	public int rateOfIncrease;
+		
+	public int totalCurrentAmount;
+	
 	//total amount purhcase is used when going through the combat loop. 
 	public int totalAmountPurchased;
 	
