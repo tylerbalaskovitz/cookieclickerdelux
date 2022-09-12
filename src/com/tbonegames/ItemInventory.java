@@ -34,12 +34,7 @@ public class ItemInventory {
 	Items items[] = new Items[5];
 	Weapons weapons[] = new Weapons[5];
 	
-	//these will stay the same in size but the values at each index are able to be changed.
-	Armor shopArmor[] = new Armor[4];
-	Buffs shopBuffs[] = new Buffs[4];
-	Items shopItems[] = new Items[4];
-	Weapons shopWeapons[] = new Weapons[4];
-	
+
 	//these are the options you have when attacking or doing some sort of damage to to other players
 	Armor inCombatArmor[] = new Armor[4];
 	Buffs inCombatBuffs[] = new Buffs[4];
@@ -51,6 +46,36 @@ public class ItemInventory {
 
 	public ItemInventory(CookieMain cMain) {
 		this.cMain = cMain;
+		
+	}
+	
+	public void defaultCombat() {
+		for (int i = 0; i < 4; i++ ) {
+			inCombatArmor[i] = armor[i];
+			inCombatBuffs[i] = buffs[i];
+			inCombatItems[i] = items[i];
+			inCombatWeapons[i] = weapons[i];
+		}
+	}
+	
+	public void exitCombat() {
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 5; j++) {
+				
+			if (inCombatArmor[i].idNumber == armor[j].idNumber) {
+				armor[j] = inCombatArmor[i];
+			}
+			if (inCombatBuffs[i].idNumber == buffs[j].idNumber) {
+				buffs[j] = inCombatBuffs[i];	
+				}
+			if (inCombatItems[i].idNumber ==items[j].idNumber) {
+				items[j] = inCombatItems[i];
+			}
+			if (inCombatWeapons[i].idNumber == weapons[j].idNumber) {
+				weapons[j] = inCombatWeapons[i];
+			}
+			}
+		}
 		
 	}
 	
@@ -68,41 +93,31 @@ public class ItemInventory {
 		items[2] = new BastardNuts();
 		items[3] = new BastardChips();
 		items[4] = new BastardJuice();
+	
+		for (int i = 0; i < 5; i++) {
+			items[i].idNumber = i;
+		}
 		
 	}
 	
-	public void shopItems() {
-		for (int x = 0; x < 5; x++) {
-		shopItems[x] = items[x];
-		}
-	}
 	
-	public void inComabatItems() {
-		for (int x = 0; x < 3; x++) {
-		inCombatItems[x] = shopItems[x];
-		}
-	}
+	
+
+	
 	
 	public void weaponsInGame() {
-		weapons[0] = new BastardRod();
+		weapons[0] = new BastardRod();		
 		weapons[1] = new BastardBelt();
 		weapons[2] = new BastardMask();
 		weapons[3] = new BastardVibratingShaft();
 		weapons[4] = new BastardNitrogenBomb();
-	}
-	
-	public void shopWeapons() {
-		for (int x = 0; x < 5; x++) {
-		shopWeapons[x] = weapons[x];
+
+		for (int i = 0; i < 5; i++) {
+			weapons[i].idNumber = i;
 		}
+		
 	}
-	
-	public void inComabatWeapons() {
-		for (int x = 0; x < 3; x++) {
-		inCombatWeapons[x] = shopWeapons[x];
-		}
-	}
-	
+
 	
 	public void armorInGame() {
 		armor[0] = new BastardGloves();
@@ -110,19 +125,13 @@ public class ItemInventory {
 		armor[2] = new BastardShoulderPads();
 		armor[3] = new BastardSlotBelt();
 		armor[4] = new BastardArmor();
-	}
-	
-	public void shopArmor() {
-		for (int x = 0; x < 5; x++) {
-		shopArmor[x] = armor[x];
+		
+		for (int i = 0; i < 5; i++) {
+			armor[i].idNumber = i;
 		}
 	}
 	
-	public void inComabatArmor() {
-		for (int x = 0; x < 3; x++) {
-		inCombatArmor[x] = shopArmor[x];
-		}
-	}
+
 	
 	public void buffsInGame() {
 		
@@ -131,19 +140,13 @@ public class ItemInventory {
 		buffs[2] = new DefendRestore();
 		buffs[3] = new ItemRestore();
 		buffs[4] = new BastardManual();
-	}
-	
-	public void shopBuffs() {
-		for (int x = 0; x < 5; x++) {
-		shopBuffs[x] = buffs[x];
+		
+		for (int i = 0; i < 5; i++) {
+			buffs[i].idNumber = i;
 		}
 	}
 	
-	public void inComabatBuffs() {
-		for (int x = 0; x < 3; x++) {
-		inCombatBuffs[x] = shopBuffs[x];
-		}
-	}
+
 	
 	
 
