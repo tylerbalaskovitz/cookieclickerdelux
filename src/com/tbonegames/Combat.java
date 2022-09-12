@@ -135,14 +135,14 @@ public class Combat {
 		 	}
 
 		 	if (cMain.rodValue > 0) {
-			 combatButtonConfig(cMain.combatButton2, "Bastard Rod", "BastardRod");
+			 combatButtonConfig(cMain.combatButton2, cMain.itemInventory.weapons[0].weaponName, "BastardRod");
 		
 			} else {
 				combatButtonConfig(cMain.combatButton2, "?", "");
 			}
 
 		if (cMain.beltValue > 0) {
-			combatButtonConfig(cMain.combatButton3, "Bastard Belt", "BastardBelt");
+			combatButtonConfig(cMain.combatButton3, cMain.itemInventory.weapons[1].weaponName, "BastardBelt");
 			
 			} else {
 			combatButtonConfig(cMain.combatButton3, "?", "");
@@ -151,7 +151,7 @@ public class Combat {
 		
 		
 			if (cMain.maskValue > 0) {
-				combatButtonConfig(cMain.combatButton4, "Bastard Mask", "BastardMask");
+				combatButtonConfig(cMain.combatButton4, cMain.itemInventory.weapons[2].weaponName, "BastardMask");
 			} else {
 			combatButtonConfig(cMain.combatButton4, "?", "");
 			}

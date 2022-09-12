@@ -41,10 +41,10 @@ public class ItemInventory {
 	Weapons shopWeapons[] = new Weapons[4];
 	
 	//these are the options you have when attacking or doing some sort of damage to to other players
-	Armor inCombatArmor[] = new Armor[2];
-	Buffs inCombatBuffs[] = new Buffs[2];
-	Items inCombatItems[] = new Items[2];
-	Weapons inCombatWeapons[] = new Weapons[2];
+	Armor inCombatArmor[] = new Armor[4];
+	Buffs inCombatBuffs[] = new Buffs[4];
+	Items inCombatItems[] = new Items[4];
+	Weapons inCombatWeapons[] = new Weapons[4];
 	
 	
 

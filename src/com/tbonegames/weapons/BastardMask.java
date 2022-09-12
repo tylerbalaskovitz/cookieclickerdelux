@@ -18,6 +18,10 @@ public class BastardMask extends Weapons{
 	unlocked = false;
 	
 	unlockAmount = 1600;
+	
+	rateOfIncrease = 1;
+	
+	totalCurrentAmount = 0;
 	totalAmountPurchased = 0;
 	
 	weaponPrice = 1600;

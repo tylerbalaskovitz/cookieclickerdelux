@@ -23,6 +23,10 @@ public class BastardStopwatch extends Buffs{
 		unlockAmount = 1250;
 		buffPrice = 1250;
 		buffPriceIncrease = 1250;
+		
+		rateOfIncrase = 1;
+		
+		currentAmount = 0;
 		totalAmountPurchased = 0;
 		
 	}

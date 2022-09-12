@@ -90,96 +90,63 @@ public class GameTimers {
 						cMain.button8.setText("Slots");
 					}
 				} 
-				if(cMain.nutsUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.items[2].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.nutsUnlocked = true;
-					}
-				}
-				if(cMain.chipsUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.items[3].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.chipsUnlocked = true;
-					}
-				}
-				if(cMain.juiceUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.items[4].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.juiceUnlocked = true;
-					}
-				}
+				
+				//unlock status for the in game items. 
+				itemUnlock(cMain.itemInventory.items[0].unlocked, cMain.itemInventory.items[0].unlockAmount);
+				
+				itemUnlock(cMain.itemInventory.items[1].unlocked, cMain.itemInventory.items[1].unlockAmount);
+				
+				itemUnlock(cMain.itemInventory.items[2].unlocked, cMain.itemInventory.items[2].unlockAmount);
+				
+				itemUnlock(cMain.itemInventory.items[3].unlocked, cMain.itemInventory.items[3].unlockAmount);
+				
+				itemUnlock(cMain.itemInventory.items[4].unlocked, cMain.itemInventory.items[4].unlockAmount);
+				
+				//unlock status for the in game weapons
+				itemUnlock(cMain.itemInventory.weapons[0].unlocked, cMain.itemInventory.weapons[0].unlockAmount);
+				
+				itemUnlock(cMain.itemInventory.weapons[1].unlocked, cMain.itemInventory.weapons[1].unlockAmount);
+				
+				itemUnlock(cMain.itemInventory.weapons[2].unlocked, cMain.itemInventory.weapons[2].unlockAmount);
+				
+				itemUnlock(cMain.itemInventory.weapons[3].unlocked, cMain.itemInventory.weapons[3].unlockAmount);
+				
+				itemUnlock(cMain.itemInventory.weapons[4].unlocked, cMain.itemInventory.weapons[4].unlockAmount);
+				
+				//unlock status for the in game armor
+				itemUnlock(cMain.itemInventory.armor[0].unlocked, cMain.itemInventory.armor[0].unlockAmount);
+				
+				itemUnlock(cMain.itemInventory.armor[1].unlocked, cMain.itemInventory.armor[1].unlockAmount);
+				
+				itemUnlock(cMain.itemInventory.armor[2].unlocked, cMain.itemInventory.armor[2].unlockAmount);
+				
+				itemUnlock(cMain.itemInventory.armor[3].unlocked, cMain.itemInventory.armor[3].unlockAmount);
+				
+				itemUnlock(cMain.itemInventory.armor[4].unlocked, cMain.itemInventory.armor[4].unlockAmount);
 
-				if(cMain.rodUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.weapons[0].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.rodUnlocked = true;	
-					}
-				} 
-				if(cMain.beltUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.weapons[1].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.beltUnlocked = true;
-						}
-					}
+				//unlock status for the in game buffs
+				itemUnlock(cMain.itemInventory.buffs[0].unlocked, cMain.itemInventory.buffs[0].unlockAmount);
 				
-				if(cMain.maskUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.weapons[2].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.maskUnlocked = true;
-					}
-				} 
-				if(cMain.vibratingShaftUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.weapons[3].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.vibratingShaftUnlocked = true;
-					}
-				} 
-				if(cMain.nitrogenBombUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.weapons[4].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.nitrogenBombUnlocked = true;
-					}
-				} 
-			
-			
-				if(cMain.glovesUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.armor[0].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.glovesUnlocked = true;
-					}
-				} 
+				itemUnlock(cMain.itemInventory.buffs[1].unlocked, cMain.itemInventory.buffs[1].unlockAmount);
 				
+				itemUnlock(cMain.itemInventory.buffs[2].unlocked, cMain.itemInventory.buffs[2].unlockAmount);
 				
-				if(cMain.bootsUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.armor[1].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.bootsUnlocked = true;
-					}
-				} 
+				itemUnlock(cMain.itemInventory.buffs[3].unlocked, cMain.itemInventory.buffs[3].unlockAmount);
 				
-				if(cMain.shoulderPadsUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.armor[2].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.shoulderPadsUnlocked = true;
-					}
-				}
-				if(cMain.slotBeltUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.armor[3].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.slotBeltUnlocked = true;
-					}
-				} 
-				
-				if(cMain.armorUnlocked==false) {
-					if(cMain.logosCounter >= cMain.itemInventory.armor[4].unlockAmount) {
-						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.armorUnlocked = true;
-					}
-				} 
+				itemUnlock(cMain.itemInventory.buffs[4].unlocked, cMain.itemInventory.buffs[4].unlockAmount);
 				
 				
 			}
 		});
+	}
+	
+	public void itemUnlock(boolean unlockStatus, int unlockAmount) {
+		if(unlockStatus==false) {
+			if(cMain.logosCounter >= unlockAmount) {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
+				unlockStatus = true;
+			}
+		}
 	}
 	
 	public void timerUpdate() {

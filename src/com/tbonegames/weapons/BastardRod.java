@@ -19,6 +19,10 @@ public class BastardRod extends Weapons {
 	unlocked = false;
 	
 	unlockAmount = 400;
+	
+	rateOfIncrease = 1;
+	
+	totalCurrentAmount = 0;
 	totalAmountPurchased = 0;
 	
 	weaponPrice = 400;

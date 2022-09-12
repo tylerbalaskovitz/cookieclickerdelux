@@ -156,11 +156,37 @@ public class DayTimer {
 	}
 	
 	public void statTracker() {
-		System.out.println("Day" + cMain.day + ", Logos: " + cMain.logosCounter + ". Armor:" + cMain.armorValue + 
-				" \n Rod" + cMain.rodValue + "Mask:" + cMain.maskValue + ". Belt:" + cMain.beltValue + "\n Cola:" + cMain.colaValue + "Sausage" + cMain.sausageValue
-				+ "\n =============================");
+		System.out.println("Day" + cMain.day + ", Logos: " + cMain.logosCounter);
+		nameAndStat(cMain.itemInventory.items[0].itemName, cMain.itemInventory.items[0].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.items[1].itemName, cMain.itemInventory.items[1].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.items[2].itemName, cMain.itemInventory.items[2].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.items[3].itemName, cMain.itemInventory.items[3].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.items[4].itemName, cMain.itemInventory.items[4].totalCurrentAmount);
+		
+		nameAndStat(cMain.itemInventory.weapons[0].weaponName, cMain.itemInventory.weapons[0].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.weapons[1].weaponName, cMain.itemInventory.weapons[1].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.weapons[2].weaponName, cMain.itemInventory.weapons[2].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.weapons[3].weaponName, cMain.itemInventory.weapons[3].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.weapons[4].weaponName, cMain.itemInventory.weapons[4].totalCurrentAmount);
+		
+		nameAndStat(cMain.itemInventory.armor[0].armorName, cMain.itemInventory.weapons[0].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.armor[1].armorName, cMain.itemInventory.weapons[1].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.armor[2].armorName, cMain.itemInventory.weapons[2].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.armor[3].armorName, cMain.itemInventory.weapons[3].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.armor[4].armorName, cMain.itemInventory.weapons[4].totalCurrentAmount);
+		
+		nameAndStat(cMain.itemInventory.buffs[0].buffName, cMain.itemInventory.buffs[0].currentAmount);
+		nameAndStat(cMain.itemInventory.buffs[1].buffName, cMain.itemInventory.buffs[1].currentAmount);
+		nameAndStat(cMain.itemInventory.buffs[2].buffName, cMain.itemInventory.buffs[2].currentAmount);
+		nameAndStat(cMain.itemInventory.buffs[3].buffName, cMain.itemInventory.buffs[3].currentAmount);
+		nameAndStat(cMain.itemInventory.buffs[4].buffName, cMain.itemInventory.buffs[4].currentAmount);
+		System.out.println("==================================================");
 		
 		
+	}
+	
+	public void nameAndStat(String name, int stat) {
+		System.out.println(name + ":" + stat);
 	}
 	
 	public void launchCombat() {
