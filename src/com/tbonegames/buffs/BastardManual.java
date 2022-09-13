@@ -4,8 +4,8 @@ public class BastardManual extends Buffs{
 
 	public BastardManual() {
 		
-		buffName = "Bastard Stopwatch";
-		buffHandlerName = "BastardStopwatch";
+		buffName = "Bastard Manual";
+		buffHandlerName = "BastardManual";
 		
 		//description for when hovering over the items themselves.
 		buffDescription = "";

@@ -3,8 +3,8 @@ package com.tbonegames.buffs;
 public class DefendRestore extends Buffs{
 
 	public DefendRestore() {
-		buffName = "Bastard Stopwatch";
-		buffHandlerName = "BastardStopwatch";
+		buffName = "Restore Blocks";
+		buffHandlerName = "RestoreBlocks";
 		
 		//description for when hovering over the items themselves.
 		buffDescription = "";
