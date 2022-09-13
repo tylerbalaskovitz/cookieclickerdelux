@@ -190,9 +190,11 @@ public class DayTimer {
 	}
 	
 	public void launchCombat() {
+	
 	cMain.ui.closeAllPanels();
 	cMain.ui.displayCombat();
 	cMain.numberOfActions = 1;
+	cMain.combat.combatSetup();
 	cMain.combat.fight();
 	}
 	

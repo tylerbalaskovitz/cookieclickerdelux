@@ -313,10 +313,10 @@ public class ShopHandler implements ActionListener{
 		
 		//this needs to be updated for 
 		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs0");
-		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs1");
-		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs2");
-		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs3");
-		shopButtonConfig(cMain.shopButton5, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs4");
+		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.buffs[1].unlocked,cMain.itemInventory.buffs[1].buffName, "Buffs1");
+		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.buffs[2].unlocked,cMain.itemInventory.buffs[2].buffName, "Buffs2");
+		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.buffs[3].unlocked,cMain.itemInventory.buffs[3].buffName, "Buffs3");
+		shopButtonConfig(cMain.shopButton5, cMain.itemInventory.buffs[4].unlocked,cMain.itemInventory.buffs[4].buffName, "Buffs4");
 	}
 		
 	public void displayWeaponsShop() {

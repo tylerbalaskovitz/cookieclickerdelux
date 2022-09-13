@@ -26,6 +26,14 @@ public class Combat {
 	public Combat(CookieMain cMain) {
 		this.cMain = cMain;
 	}
+	
+	public void combatSetup() {
+		if (cMain.customCombat == true) {
+			
+		} else {
+			cMain.itemInventory.defaultCombat();
+		}
+	}
 
 	public void fight() {
 		
@@ -131,31 +139,36 @@ public class Combat {
 	public void playerAttackChoices() {
 		
 		 	if (cMain.attacksDisabled == false) {
-			 	combatButtonConfig(cMain.combatButton1, "Bastard Fists", "BastardFists");
-		 	}
+			 	
+		 	
 
-		 	if (cMain.rodValue > 0) {
-			 combatButtonConfig(cMain.combatButton2, cMain.itemInventory.weapons[0].weaponName, "BastardRod");
+		 	if (cMain.itemInventory.weapons[0].totalCurrentAmount > 0) {
+			 combatButtonConfig(cMain.combatButton1, cMain.itemInventory.weapons[0].weaponName, cMain.itemInventory.weapons[0].weaponHandlerName);
 		
 			} else {
-				combatButtonConfig(cMain.combatButton2, "?", "");
+				combatButtonConfig(cMain.combatButton1, "Bastard Fists", "BastardFists");
+				
 			}
 
-		if (cMain.beltValue > 0) {
-			combatButtonConfig(cMain.combatButton3, cMain.itemInventory.weapons[1].weaponName, "BastardBelt");
+		if (cMain.itemInventory.weapons[1].totalCurrentAmount  > 0) {
+			combatButtonConfig(cMain.combatButton2, cMain.itemInventory.weapons[1].weaponName, cMain.itemInventory.weapons[1].weaponHandlerName );
 			
+			} else {
+			combatButtonConfig(cMain.combatButton2, "?", "");
+			}
+		
+		
+		
+			if (cMain.itemInventory.weapons[2].totalCurrentAmount  > 0) {
+				combatButtonConfig(cMain.combatButton3, cMain.itemInventory.weapons[2].weaponName, cMain.itemInventory.weapons[2].weaponHandlerName );
 			} else {
 			combatButtonConfig(cMain.combatButton3, "?", "");
 			}
-		
-		
-		
-			if (cMain.maskValue > 0) {
-				combatButtonConfig(cMain.combatButton4, cMain.itemInventory.weapons[2].weaponName, "BastardMask");
-			} else {
-			combatButtonConfig(cMain.combatButton4, "?", "");
-			}
-		
+			
+			
+			
+			
+		 	}
 	}
 	
 	public void playerHealResult() {
@@ -341,6 +354,7 @@ public class Combat {
 		if (cMain.enemy.hp < 1) {
 			cMain.combatTextArea.setText("You have defeated " + cMain.enemy.name);
 			defeatedEnemy = cMain.enemy.name;
+			cMain.itemInventory.exitCombat();
 			cMain.inCombat = false;
 			cMain.enemiesDefeated++;
 			
