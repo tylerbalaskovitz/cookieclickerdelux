@@ -26,7 +26,7 @@ public class Buffs {
 	public int currentAmount;
 	public int totalAmountPurchased;
 	
-	void special(int turns, int amountGiven) {
+	public void special(int turns, int amountGiven) {
 		
 	}
 	
