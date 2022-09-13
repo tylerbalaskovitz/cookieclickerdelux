@@ -16,7 +16,6 @@ public class BastardSausage extends Items{
 		unlocked = true;
 		
 		
-		
 		healValue = 300;
 		
 		strengthIncrease = 10;

@@ -20,9 +20,9 @@ public class BastardChips extends Items{
 		
 		
 		
-		unlockAmount = 0;
-		itemPrice = 100;
-		itemPriceIncrease = 100;
+		unlockAmount = 750;
+		itemPrice = 750;
+		itemPriceIncrease = 250;
 		
 		// intended to be used with % operator to increase after x amount of purchases and to be used with totalAmountPurchased
 		rateOfIncrease = 5;

@@ -19,7 +19,7 @@ public class BastardJuice extends Items{
 		
 		strengthIncrease = 80;
 		
-		unlockAmount = 0;
+		unlockAmount = 2000;
 		itemPrice = 2000;
 		itemPriceIncrease = 2000;
 		

@@ -21,7 +21,7 @@ public class BastardNuts extends Items{
 		
 		strengthIncrease = 18;
 		
-		unlockAmount = 0;
+		unlockAmount = 500;
 		itemPrice = 500;
 		itemPriceIncrease = 500;
 		
