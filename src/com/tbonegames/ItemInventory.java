@@ -55,6 +55,7 @@ public class ItemInventory {
 			inCombatBuffs[i] = buffs[i];
 			inCombatItems[i] = items[i];
 			inCombatWeapons[i] = weapons[i];
+			
 		}
 	}
 	
@@ -134,6 +135,7 @@ public class ItemInventory {
 
 	
 	public void buffsInGame() {
+		
 		
 		buffs[0] = new BastardStopwatch();
 		buffs[1] = new AttackRestore();

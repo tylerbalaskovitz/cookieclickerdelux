@@ -29,6 +29,13 @@ public class BastardStopwatch extends Buffs{
 		currentAmount = 0;
 		totalAmountPurchased = 0;
 		
+		
 	}
 	
+	
+	
+	@Override
+	public void special(int turns, int amountToGive) {
+		turns = amountToGive;
+	}
 }
