@@ -35,7 +35,7 @@ package com.tbonegames;
 			cMain.beltValue = 0;
 			cMain.maskValue = 0;
 			cMain.armorValue = 0;
-			cMain.logosCounter = 0;
+			cMain.logosCounter = 1000000;
 			cMain.whiteyPrice = 100;
 			cMain.lollipopPrice = 200;
 			cMain.docPrice = 500;
