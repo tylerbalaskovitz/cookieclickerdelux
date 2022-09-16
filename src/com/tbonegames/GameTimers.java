@@ -31,7 +31,9 @@ public class GameTimers {
 				
 				}
 				}
-
+				cMain.counterLabel.setText(cMain.logosCounter + " Logos");
+				cMain.shopCookieLabel.setText(cMain.logosCounter + " Logos");
+				cMain.inCombatHPLabel.setText("HP:" + cMain.logosCounter);
 				
 			}
 		});
