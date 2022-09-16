@@ -14,7 +14,7 @@ public class UnlockTimer {
 	}
 	
 	public void unlockItemTimer() {
-		cMain.unlockTimers = new Timer(100, new ActionListener() {
+		cMain.unlockTimers = new Timer(50, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {

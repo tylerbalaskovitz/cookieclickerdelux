@@ -93,6 +93,8 @@ public class CombatHandler implements ActionListener{
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			break;
 		case "BastardCola":
+			
+			//values need to be updated 
 			cMain.selectedItemValue = cMain.colaValue;
 			cMain.combatAttackingItem = "BastardCola";
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);

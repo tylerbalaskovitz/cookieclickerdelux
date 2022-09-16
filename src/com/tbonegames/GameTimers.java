@@ -39,10 +39,6 @@ public class GameTimers {
 		});
 	}
 	
-
-	
-
-	
 	public void timerUpdate() {
 		if (cMain.timerOn == false) {
 			

@@ -96,16 +96,16 @@ public class Combat {
 	}
 	
 	public void healSelfCola() {
-		if (cMain.colaValue >0 ) {
-			cMain.colaValue-=cMain.healingMultiplier;
-			cMain.logosCounter = (cMain.logosCounter + (100 * cMain.healingMultiplier));
+		if (cMain.itemInventory.items[0].totalCurrentAmount >0 ) {
+			cMain.itemInventory.items[0].totalCurrentAmount-=cMain.healingMultiplier;
+			cMain.logosCounter = (cMain.logosCounter + (100 * cMain.itemInventory.items[0].totalCurrentAmount));
 		}
 	}
 	
 	public void healSelfSausage() {
-		if (cMain.sausageValue >0 ) {
-			cMain.sausageValue-=cMain.healingMultiplier;
-			cMain.logosCounter = (cMain.logosCounter + (300 * cMain.healingMultiplier));
+		if (cMain.itemInventory.items[1].totalCurrentAmount > 0 ) {
+			cMain.itemInventory.items[1].totalCurrentAmount-=cMain.healingMultiplier;
+			cMain.logosCounter = (cMain.logosCounter + (300 * cMain.itemInventory.items[1].totalCurrentAmount));
 		}
 	}
 	
@@ -140,29 +140,29 @@ public class Combat {
 		
 		 	if (cMain.attacksDisabled == false) {
 			 	
-		 	
+		 		combatButtonConfig(cMain.combatButton1, "Bastard Fists", "BastardFists");
 
 		 	if (cMain.itemInventory.weapons[0].totalCurrentAmount > 0) {
-			 combatButtonConfig(cMain.combatButton1, cMain.itemInventory.weapons[0].weaponName, cMain.itemInventory.weapons[0].weaponHandlerName);
+			 combatButtonConfig(cMain.combatButton2, cMain.itemInventory.weapons[0].weaponName, cMain.itemInventory.weapons[0].weaponHandlerName);
 		
 			} else {
-				combatButtonConfig(cMain.combatButton1, "Bastard Fists", "BastardFists");
+				combatButtonConfig(cMain.combatButton2, "?", "");
 				
 			}
 
 		if (cMain.itemInventory.weapons[1].totalCurrentAmount  > 0) {
-			combatButtonConfig(cMain.combatButton2, cMain.itemInventory.weapons[1].weaponName, cMain.itemInventory.weapons[1].weaponHandlerName );
+			combatButtonConfig(cMain.combatButton3, cMain.itemInventory.weapons[1].weaponName, cMain.itemInventory.weapons[1].weaponHandlerName );
 			
 			} else {
-			combatButtonConfig(cMain.combatButton2, "?", "");
+			combatButtonConfig(cMain.combatButton3, "?", "");
 			}
 		
 		
 		
 			if (cMain.itemInventory.weapons[2].totalCurrentAmount  > 0) {
-				combatButtonConfig(cMain.combatButton3, cMain.itemInventory.weapons[2].weaponName, cMain.itemInventory.weapons[2].weaponHandlerName );
+				combatButtonConfig(cMain.combatButton4, cMain.itemInventory.weapons[2].weaponName, cMain.itemInventory.weapons[2].weaponHandlerName );
 			} else {
-			combatButtonConfig(cMain.combatButton3, "?", "");
+			combatButtonConfig(cMain.combatButton4, "?", "");
 			}
 			
 			
