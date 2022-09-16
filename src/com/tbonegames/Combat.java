@@ -97,16 +97,18 @@ public class Combat {
 	
 	public void healSelfCola() {
 		if (cMain.itemInventory.items[0].totalCurrentAmount >0 ) {
-			
-			cMain.logosCounter = (cMain.logosCounter + (cMain.itemInventory.items[0].healValue * cMain.itemInventory.items[0].totalCurrentAmount));
+			//this needs to be updated with the multiplier eventually so that way 
+			cMain.logosCounter = (cMain.logosCounter + (cMain.itemInventory.items[0].healValue * 1));
 			cMain.itemInventory.items[0].totalCurrentAmount-=cMain.healingMultiplier;
 		}
-	}
+		
+	
+	};
 	
 	public void healSelfSausage() {
 		if (cMain.itemInventory.items[1].totalCurrentAmount > 0 ) {
 			
-			cMain.logosCounter = (cMain.logosCounter + (cMain.itemInventory.items[1].healValue * cMain.itemInventory.items[1].totalCurrentAmount));
+			cMain.logosCounter = (cMain.logosCounter + (cMain.itemInventory.items[1].healValue * 1));
 			cMain.itemInventory.items[1].totalCurrentAmount-=cMain.healingMultiplier;
 		}
 	}

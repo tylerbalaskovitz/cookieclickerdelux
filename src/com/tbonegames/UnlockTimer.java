@@ -14,10 +14,15 @@ public class UnlockTimer {
 	}
 	
 	public void unlockItemTimer() {
-		cMain.unlockTimers = new Timer(50, new ActionListener() {
+		cMain.unlockTimers = new Timer(100, new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				cMain.counterLabel.setText(cMain.logosCounter + " Logos");
+				cMain.shopCookieLabel.setText(cMain.logosCounter + " Logos");
+				cMain.inCombatHPLabel.setText("HP:" + cMain.logosCounter);
+				
 				if(cMain.whiteyUnlocked==false) {
 					if(cMain.logosCounter >= 100) {
 						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
@@ -126,6 +131,7 @@ public class UnlockTimer {
 				
 				cMain.itemInventory.buffs[4].unlocked = unlockItem(cMain.itemInventory.buffs[4].unlocked, cMain.itemInventory.buffs[4].unlockAmount);
 				
+			
 			}
 			
 		});
