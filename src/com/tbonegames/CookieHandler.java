@@ -40,6 +40,7 @@ public class CookieHandler implements ActionListener{
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.dayPerSecond = .1;
 				dayTimer.timerUpdate();
+				cMain.unlockTimer.startUnlockTimer();
 				cMain.ui.closeAllPanels();
 				cMain.ui.displayMainGame();
 				cMain.bgMusicPlayer.playMusic(cMain.soundFXValues.backgroundmusic);

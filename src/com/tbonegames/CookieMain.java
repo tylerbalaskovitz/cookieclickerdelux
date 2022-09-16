@@ -53,13 +53,14 @@ public class CookieMain {
 	StartingValues sValues = new StartingValues(this);
 	UI ui = new UI(this);
 	Combat combat = new Combat(this);
+	UnlockTimer unlockTimer = new UnlockTimer(this);
 	GameTimers timers = new GameTimers(this);
 	DayTimer dayTimers = new DayTimer(this);
 	ShopHandler shopHandler = new ShopHandler(this);
 	CombatHandler combatHandler = new CombatHandler(this, combat);
 	Enemies enemy = new Enemies();
 	CookieHandler cookieHandler = new CookieHandler(this, ui, timers, dayTimers, slots);
-	Timer timer, slotTimer, dayTimer;
+	Timer timer, unlockTimers, dayTimer;
 	JTextArea messageText, shopMessageText, combatTextArea;
 	MouseHandler mouseHandler = new MouseHandler(this);
 	ItemInventory itemInventory = new ItemInventory(this);
