@@ -95,14 +95,14 @@ public class CombatHandler implements ActionListener{
 		case "BastardCola":
 			
 			//values need to be updated 
-			cMain.selectedItemValue = cMain.colaValue;
+			cMain.selectedItemValue = cMain.itemInventory.items[0].totalCurrentAmount;
 			cMain.combatAttackingItem = "BastardCola";
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.healSelfCola();
 			combat.playerHealResult();
 			break;
 		case "BastardSausage":
-			cMain.selectedItemValue = cMain.colaValue;
+			cMain.selectedItemValue = cMain.itemInventory.items[1].totalCurrentAmount;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			
 			combat.healSelfSausage();
