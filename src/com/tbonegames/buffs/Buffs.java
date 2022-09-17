@@ -1,6 +1,9 @@
 package com.tbonegames.buffs;
 
+import com.tbonegames.CookieMain;
+
 public class Buffs {
+	
 	
 	public String buffName;
 	public String buffHandlerName;
@@ -26,18 +29,9 @@ public class Buffs {
 	
 	public int currentAmount;
 	public int totalAmountPurchased;
-
-	public Buffs() {
-		
-	}
 	
-	
-	public void special() {
-		
-	}
-	
-	public int special(int turns, int amountGiven) {
-//		turns += amountGiven;
+	public int turnBoost(int turns, int amountGiven) {
+		turns += amountGiven;
 		return turns;
 	}
 	

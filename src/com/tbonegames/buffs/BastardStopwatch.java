@@ -3,7 +3,7 @@ package com.tbonegames.buffs;
 import com.tbonegames.CookieMain;
 
 public class BastardStopwatch extends Buffs{
-	CookieMain cMain;
+	
 	public BastardStopwatch(){
 		
 		buffName = "Bastard Stopwatch";
@@ -33,17 +33,5 @@ public class BastardStopwatch extends Buffs{
 		
 		
 	}
-	
-	
-	
-	public void special() {
-		
-	}
-	
-	public int special(int turns, int amountToGive) {
-		turns += amountToGive;
-		return turns;
-	}
-	
 	
 }
