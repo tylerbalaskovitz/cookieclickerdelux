@@ -163,7 +163,7 @@ public class CookieHandler implements ActionListener{
 				break;
 			case "NewGame":
 				cMain.window.setVisible(false);
-				cMain.soundFX.stop(cMain.soundFXValues.backgroundmusic);
+				cMain.bgMusicPlayer.stop(cMain.soundFXValues.backgroundmusic);
 				new CookieMain();
 				break;
 				

@@ -267,9 +267,9 @@ public class Combat {
 		
 		if (cMain.numberOfActions > 0) {
 			combatButtonConfig(cMain.combatButton1, "Bastard Blitz", "Return");
-			combatButtonConfig(cMain.combatButton2, "?", "");
-			combatButtonConfig(cMain.combatButton3, "?", "");
-			combatButtonConfig(cMain.combatButton4, "?", "");
+			combatButtonConfig(cMain.combatButton2, " ", "Return");
+			combatButtonConfig(cMain.combatButton3, " ", "Return");
+			combatButtonConfig(cMain.combatButton4, " ", "Return");
 	
 			
 		} else if (cMain.numberOfActions <= 0) {
