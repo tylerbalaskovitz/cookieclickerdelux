@@ -60,7 +60,7 @@ public class CookieMain {
 	ShopHandler shopHandler = new ShopHandler(this);
 	CombatHandler combatHandler = new CombatHandler(this, combat);
 	Enemies enemy = new Enemies();
-	CookieHandler cookieHandler = new CookieHandler(this, ui, timers, dayTimers, slots);
+	ClickerHandler clickerHandler = new ClickerHandler(this, ui, timers, dayTimers, slots);
 	Timer timer, unlockTimers, dayTimer;
 	JTextArea messageText, shopMessageText, combatTextArea;
 	MouseHandler mouseHandler = new MouseHandler(this);

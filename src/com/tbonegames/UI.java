@@ -53,7 +53,7 @@ public void createUI() {
 	panelConfiguration(cMain.startButtonPanel, 350, 400, 100, 50, Color.black, 1, 1, cMain.window);
 	
 	cMain.startButton = new JButton("Start");
-	buttonGenerator(cMain.startButton, cMain.font3, Color.black, Color.white, false, cMain.cookieHandler, "Start", cMain.mouseHandler, cMain.startButtonPanel);
+	buttonGenerator(cMain.startButton, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.startButtonPanel);
 	
 	//Things relating to Combat
 	cMain.combatStatsPanel = new JPanel();
@@ -94,11 +94,11 @@ public void createUI() {
 	
 	ImageIcon shop = new ImageIcon(getClass().getClassLoader().getResource("shop.png"));
 	cMain.displayShop = new JButton();
-	iconButtonGenerator(shop, cMain.displayShop, Color.black, Color.white, false, cMain.cookieHandler, "Shop", cMain.mouseHandler, cMain.navigationPanel);
+	iconButtonGenerator(shop, cMain.displayShop, Color.black, Color.white, false, cMain.clickerHandler, "Shop", cMain.mouseHandler, cMain.navigationPanel);
 	
 	ImageIcon cog = new ImageIcon(getClass().getClassLoader().getResource("cog.png"));
 	cMain.button9 = new JButton();
-	iconButtonGenerator(cog, cMain.button9, Color.black, Color.white, false, cMain.cookieHandler, "Display", cMain.mouseHandler, cMain.navigationPanel);
+	iconButtonGenerator(cog, cMain.button9, Color.black, Color.white, false, cMain.clickerHandler, "Display", cMain.mouseHandler, cMain.navigationPanel);
 		
 	//Buttons for the inGameSHop
 		cMain.shopNavigationPanel = new JPanel();
@@ -150,7 +150,7 @@ public void createUI() {
 		panelConfiguration(cMain.cookiePanel, 100, 220, 200, 200, Color.black, 1,1, cMain.window);	
 		ImageIcon cookie = new ImageIcon(getClass().getClassLoader().getResource("cookie.png"));
 		JButton cookieButton = new JButton();
-		iconButtonGenerator(cookie, cookieButton, Color.black, Color.white, false, cMain.cookieHandler, "cookie", cMain.mouseHandler, cMain.cookiePanel);
+		iconButtonGenerator(cookie, cookieButton, Color.black, Color.white, false, cMain.clickerHandler, "cookie", cMain.mouseHandler, cMain.cookiePanel);
 	
 		//Panel for the main stats of the game to be tracked
 		cMain.counterPanel = new JPanel();
@@ -169,49 +169,49 @@ public void createUI() {
 		panelConfiguration(cMain.optionsPanel, 275, 170, 250, 250, Color.black, 3,1, cMain.window);
 		
 		cMain.optionButton1 = new JButton("New Game");
-		buttonGenerator(cMain.optionButton1, cMain.font1, Color.black, Color.white, false, cMain.cookieHandler, "NewGame", cMain.mouseHandler, cMain.optionsPanel);
+		buttonGenerator(cMain.optionButton1, cMain.font1, Color.black, Color.white, false, cMain.clickerHandler, "NewGame", cMain.mouseHandler, cMain.optionsPanel);
 		
 		cMain.optionButton2 = new JButton("High Scores");
-		buttonGenerator(cMain.optionButton2, cMain.font1, Color.black, Color.white, false, cMain.cookieHandler, "HighScore", cMain.mouseHandler, cMain.optionsPanel);
+		buttonGenerator(cMain.optionButton2, cMain.font1, Color.black, Color.white, false, cMain.clickerHandler, "HighScore", cMain.mouseHandler, cMain.optionsPanel);
 		
 		cMain.optionButton3 = new JButton("Credits");
-		buttonGenerator(cMain.optionButton3, cMain.font1, Color.black, Color.white, false, cMain.cookieHandler, "Credits", cMain.mouseHandler, cMain.optionsPanel);
+		buttonGenerator(cMain.optionButton3, cMain.font1, Color.black, Color.white, false, cMain.clickerHandler, "Credits", cMain.mouseHandler, cMain.optionsPanel);
 		
 		//Maint actions/items to be bought during the game
 		cMain.itemPanel = new JPanel();
 		panelConfiguration(cMain.itemPanel, 500, 170, 250, 250, Color.black, 4,1, cMain.window);
 		
 		cMain.button1 = new JButton("Shin-Chan");
-		buttonGenerator(cMain.button1, cMain.font1, Color.black, Color.white, false, cMain.cookieHandler, "Cursor", cMain.mouseHandler, cMain.itemPanel);
+		buttonGenerator(cMain.button1, cMain.font1, Color.black, Color.white, false, cMain.clickerHandler, "Cursor", cMain.mouseHandler, cMain.itemPanel);
 		
 		cMain.button2 = new JButton("?");
-		buttonGenerator(cMain.button2, cMain.font1, Color.black, Color.white, false, cMain.cookieHandler, "Grandpa", cMain.mouseHandler, cMain.itemPanel);
+		buttonGenerator(cMain.button2, cMain.font1, Color.black, Color.white, false, cMain.clickerHandler, "Grandpa", cMain.mouseHandler, cMain.itemPanel);
 
 		cMain.button3 = new JButton("?");
-		buttonGenerator(cMain.button3, cMain.font1, Color.black, Color.white, false, cMain.cookieHandler, "Grandma", cMain.mouseHandler, cMain.itemPanel);
+		buttonGenerator(cMain.button3, cMain.font1, Color.black, Color.white, false, cMain.clickerHandler, "Grandma", cMain.mouseHandler, cMain.itemPanel);
 	
 		cMain.button4 = new JButton("?");
-		buttonGenerator(cMain.button4, cMain.font1, Color.black, Color.white, false, cMain.cookieHandler, "Elves", cMain.mouseHandler, cMain.itemPanel);
+		buttonGenerator(cMain.button4, cMain.font1, Color.black, Color.white, false, cMain.clickerHandler, "Elves", cMain.mouseHandler, cMain.itemPanel);
 		
 		cMain.cardPanel = new JPanel();
 		panelConfiguration(cMain.cardPanel, 500, 418, 250, 60, Color.black, 1, 3, cMain.window);
 
 		//slot spaces
 		cMain.button5 = new JButton("?");
-		buttonGenerator(cMain.button5, cMain.font2, Color.black, Color.white, false, cMain.cookieHandler, "Lucky", cMain.mouseHandler, cMain.cardPanel);
+		buttonGenerator(cMain.button5, cMain.font2, Color.black, Color.white, false, cMain.clickerHandler, "Lucky", cMain.mouseHandler, cMain.cardPanel);
 	
 		cMain.button6 = new JButton("?");
-		buttonGenerator(cMain.button6, cMain.font2, Color.black, Color.white, false, cMain.cookieHandler, "Bastard", cMain.mouseHandler, cMain.cardPanel);
+		buttonGenerator(cMain.button6, cMain.font2, Color.black, Color.white, false, cMain.clickerHandler, "Bastard", cMain.mouseHandler, cMain.cardPanel);
 
 		cMain.button7 = new JButton("?");
-		buttonGenerator(cMain.button7, cMain.font2, Color.black, Color.white, false, cMain.cookieHandler, "Fever", cMain.mouseHandler, cMain.cardPanel);
+		buttonGenerator(cMain.button7, cMain.font2, Color.black, Color.white, false, cMain.clickerHandler, "Fever", cMain.mouseHandler, cMain.cardPanel);
 		
 		//slots
 		cMain.slotPanel = new JPanel();
 		panelConfiguration(cMain.slotPanel, 500, 480, 250, 60, Color.black, 1, 1, cMain.window);
 	
 		cMain.button8 = new JButton("?");
-		buttonGenerator(cMain.button8, cMain.font1, Color.black, Color.white, false, cMain.cookieHandler, "Slots", cMain.mouseHandler, cMain.slotPanel);
+		buttonGenerator(cMain.button8, cMain.font1, Color.black, Color.white, false, cMain.clickerHandler, "Slots", cMain.mouseHandler, cMain.slotPanel);
 		
 		cMain.messagePanel = new JPanel();
 		panelConfiguration(cMain.messagePanel, 500, 30, 250, 140, Color.black, 1, 1, cMain.window);

@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class CookieHandler implements ActionListener{
+public class ClickerHandler implements ActionListener{
 	
 	DayTimer dayTimer;
 	CookieMain cMain;
@@ -14,7 +14,7 @@ public class CookieHandler implements ActionListener{
 
 	
 	//each of these classes is needed to be passed into the CookieHandler class because there are values taken from each of the classes coming from the main class.
-	public CookieHandler(CookieMain cMain, UI ui, GameTimers timers, DayTimer dayTimer, Slots slots) {
+	public ClickerHandler(CookieMain cMain, UI ui, GameTimers timers, DayTimer dayTimer, Slots slots) {
 		this.cMain = cMain;
 		this.ui = ui;
 		this.timers = timers;

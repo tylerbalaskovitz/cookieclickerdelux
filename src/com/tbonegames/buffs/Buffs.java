@@ -1,7 +1,5 @@
 package com.tbonegames.buffs;
 
-import com.tbonegames.CookieMain;
-
 public class Buffs {
 	
 	
@@ -17,14 +15,14 @@ public class Buffs {
 	//this is used within the game timers class.
 	public boolean unlocked;
 	
-	
+	//this is used for giving more turns
+	public int actionIncrease;
 	
 	public int defenseValue;
 	
 	public int unlockAmount;
 	public int buffPrice;
 	public int buffPriceIncrease;
-	
 	public int rateOfIncrease;
 	
 	public int currentAmount;
@@ -33,6 +31,12 @@ public class Buffs {
 	public int turnBoost(int turns, int amountGiven) {
 		turns += amountGiven;
 		return turns;
+	}
+	
+	public void raisePrice(int price, int priceIncrease, int totalPurchase, int rateOfPurchase) {
+		if (totalPurchase % rateOfPurchase == 0) {
+			price += priceIncrease;
+		}
 	}
 	
 }

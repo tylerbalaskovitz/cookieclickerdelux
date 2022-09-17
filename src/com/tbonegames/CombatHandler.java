@@ -25,22 +25,22 @@ public class CombatHandler implements ActionListener{
 			combat.fight();
 			break;
 		case "Buff0":
-			cMain.numberOfActions = cMain.itemInventory.buffs[0].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].rateOfIncrease);
+			cMain.numberOfActions = cMain.itemInventory.buffs[0].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].actionIncrease);
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.playerBuffResult(cMain.itemInventory.buffs[0].buffName);
 			break;
 		case "Buff1":
-			cMain.numberOfActions = cMain.itemInventory.buffs[1].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].rateOfIncrease);
+			cMain.numberOfActions = cMain.itemInventory.buffs[1].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].actionIncrease);
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.playerBuffResult(cMain.itemInventory.buffs[1].buffName);
 			break;
 		case "Buff2":
-			cMain.numberOfActions = cMain.itemInventory.buffs[2].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].rateOfIncrease);
+			cMain.numberOfActions = cMain.itemInventory.buffs[2].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].actionIncrease);
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.playerBuffResult(cMain.itemInventory.buffs[2].buffName);
 			break;
 		case "Buff3":
-			cMain.numberOfActions = cMain.itemInventory.buffs[3].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].rateOfIncrease);
+			cMain.numberOfActions = cMain.itemInventory.buffs[3].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].actionIncrease);
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.playerBuffResult(cMain.itemInventory.buffs[3].buffName);
 			

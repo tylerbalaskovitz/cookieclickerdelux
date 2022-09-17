@@ -1,6 +1,5 @@
 package com.tbonegames.buffs;
 
-import com.tbonegames.CookieMain;
 
 public class BastardStopwatch extends Buffs{
 	
@@ -25,7 +24,7 @@ public class BastardStopwatch extends Buffs{
 		unlockAmount = 250;
 		buffPrice = 250;
 		buffPriceIncrease = 250;
-		
+		actionIncrease = 4;
 		rateOfIncrease = 4;
 		
 		currentAmount = 0;
