@@ -25,7 +25,7 @@ public class BastardArmor extends Armor {
 		armorValueNumerator = 1;
 		armorValueDenominator = 1;
 		
-		defenseValue = 1;
+		defenseValue = 25;
 		
 		armorPrice = 2000;
 		armorPriceIncrease = 2000;

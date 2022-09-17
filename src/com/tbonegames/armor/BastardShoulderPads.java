@@ -24,7 +24,7 @@ public class BastardShoulderPads extends Armor{
 	armorValueNumerator = 1;
 	armorValueDenominator = 1;
 	
-	defenseValue = 1;
+	defenseValue = 15;
 	
 	armorPrice = 1600;
 	armorPriceIncrease = 1600;

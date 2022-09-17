@@ -8,6 +8,7 @@ package com.tbonegames;
 	public void startUpValues() {
 			cMain.healingMultiplier = 1;
 			cMain.counterUpgrade = 1;
+			
 			cMain.combatAttackingItem = "";
 			cMain.colaUnlocked = true;
 			cMain.sausageUnlocked = true;
@@ -23,6 +24,7 @@ package com.tbonegames;
 			cMain.whiteyUnlocked = false;
 			cMain.timerOn = false;
 			cMain.inCombat = false;
+			cMain.baseNumberOfActions = 1;
 			cMain.day = 0;
 			cMain.bossDay = 20;
 			cMain.startingDamage = 5;
@@ -35,7 +37,7 @@ package com.tbonegames;
 			cMain.beltValue = 0;
 			cMain.maskValue = 0;
 			cMain.armorValue = 0;
-			cMain.logosCounter = 0;
+			cMain.logosCounter = 10000;
 			cMain.whiteyPrice = 100;
 			cMain.lollipopPrice = 200;
 			cMain.docPrice = 500;

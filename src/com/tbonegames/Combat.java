@@ -37,7 +37,9 @@ public class Combat {
 
 	public void fight() {
 		
+		
 		cMain.inCombat=true;
+		cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 		cMain.combatTextArea.setText(cMain.enemy.name +"'s HP:" + cMain.enemy.hp);
 		//playerDamage3();
 		
@@ -47,42 +49,34 @@ public class Combat {
 		
 		combatButtonConfig(cMain.combatButton3, "Item", "Item");
 		
-		combatButtonConfig(cMain.combatButton4, "Party", "Party");
+		combatButtonConfig(cMain.combatButton4, "Buffs", "Buffs");
+		victory();
 	}
 	
 	public void playerDefendChoices() {
 		
-		combatButtonConfig(cMain.combatButton1, "Bastard Block", "BastardBlock");
+		combatButtonConfig(cMain.combatButton1, cMain.itemInventory.armor[0].totalCurrentAmount,cMain.itemInventory.armor[0].armorName, "Defend0");
 		
-		if (cMain.rodUnlocked == true) {
-		combatButtonConfig(cMain.combatButton2, "Bastard Rod", "BastardRod");
-		} else {
-			combatButtonConfig(cMain.combatButton2, "?", "");
-		}
+		combatButtonConfig(cMain.combatButton2, cMain.itemInventory.armor[1].totalCurrentAmount, cMain.itemInventory.armor[1].armorName, "Defend1");
 		
-		if (cMain.beltUnlocked == true) {
-			combatButtonConfig(cMain.combatButton3, "Bastard Belt", "BastardBelt");
-			} else {
-				combatButtonConfig(cMain.combatButton3, "?", "");
-			}
+		combatButtonConfig(cMain.combatButton3, cMain.itemInventory.armor[2].totalCurrentAmount, cMain.itemInventory.armor[2].armorName, "Defend2");
+			
+		combatButtonConfig(cMain.combatButton4, cMain.itemInventory.armor[3].totalCurrentAmount, cMain.itemInventory.armor[3].armorName, "Defend3");
 		
-		if (cMain.maskUnlocked == true) {
-			combatButtonConfig(cMain.combatButton4, "Bastard Mask", "BastardMask");
-			} else {
-				combatButtonConfig(cMain.combatButton4, "?", "");
-			}
+		if (cMain.itemInventory.armor[0].totalCurrentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}	
 		
 	}
 	
 	public void itemChoices() {
-		combatButtonConfig(cMain.combatButton1, "Bastard Cola", "BastardCola");
+		combatButtonConfig(cMain.combatButton1, cMain.itemInventory.items[0].totalCurrentAmount ,cMain.itemInventory.items[0].itemName, "Item0");
 		
-		combatButtonConfig(cMain.combatButton2, "Bastard Sausage", "BastardSausage");
+		combatButtonConfig(cMain.combatButton2, cMain.itemInventory.items[1].totalCurrentAmount ,cMain.itemInventory.items[1].itemName, "Item1");
 		
-		combatButtonConfig(cMain.combatButton3, "?", "");
+		combatButtonConfig(cMain.combatButton3, cMain.itemInventory.items[2].totalCurrentAmount ,cMain.itemInventory.items[2].itemName, "Item2");
 		
-		combatButtonConfig(cMain.combatButton4, "?", "");
+		combatButtonConfig(cMain.combatButton4, cMain.itemInventory.items[3].totalCurrentAmount ,cMain.itemInventory.items[3].itemName, "Item3");
 		
+		if (cMain.itemInventory.items[0].totalCurrentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}
 	}
 	
 	public void multiplier() {
@@ -95,48 +89,32 @@ public class Combat {
 		combatButtonConfig(cMain.combatButton4, "Return", "Items");
 	}
 	
-	public void healSelfCola() {
-		if (cMain.itemInventory.items[0].totalCurrentAmount >0 ) {
-			//this needs to be updated with the multiplier eventually so that way 
-			cMain.logosCounter = (cMain.logosCounter + (cMain.itemInventory.items[0].healValue * 1));
-			cMain.itemInventory.items[0].totalCurrentAmount-=cMain.healingMultiplier;
+	public int healSelf(int healingItem, int healingValue, int healingMultiplier) {
+		if (healingItem > 0) {
+			cMain.logosCounter += (healingValue * healingMultiplier);
+			healingItem -= healingMultiplier;
 		}
+		return cMain.logosCounter;
+	}
+	
+	
+	
+	public void buffChoices() {
 		
-	
-	};
-	
-	public void healSelfSausage() {
-		if (cMain.itemInventory.items[1].totalCurrentAmount > 0 ) {
-			
-			cMain.logosCounter = (cMain.logosCounter + (cMain.itemInventory.items[1].healValue * 1));
-			cMain.itemInventory.items[1].totalCurrentAmount-=cMain.healingMultiplier;
+		if (cMain.buffsDisabled == false) {
+		
+		combatButtonConfig(cMain.combatButton1, cMain.itemInventory.buffs[0].currentAmount, cMain.itemInventory.buffs[0].buffName, "Buff0");
+		
+		combatButtonConfig(cMain.combatButton2, cMain.itemInventory.buffs[1].currentAmount, cMain.itemInventory.buffs[1].buffName, "Buff1");
+		
+		combatButtonConfig(cMain.combatButton3, cMain.itemInventory.buffs[2].currentAmount,cMain.itemInventory.buffs[2].buffName, "Buff2");
+		
+		combatButtonConfig(cMain.combatButton4, cMain.itemInventory.buffs[3].currentAmount,cMain.itemInventory.buffs[3].buffName, "Buff3");
+		
+		if (cMain.itemInventory.buffs[0].currentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}
 		}
 	}
 	
-	
-	
-	public void partyChoices() {
-		combatButtonConfig(cMain.combatButton1, "Shin Chan", "ShinChan");
-		
-		combatButtonConfig(cMain.combatButton2, "Lollipop", "Lollipop");
-		
-		combatButtonConfig(cMain.combatButton3, "Doc", "Doc");
-		
-		combatButtonConfig(cMain.combatButton4, "Return", "Return");
-		
-	}
-	
-	public void removeDisables() {
-		combatButtonConfig(cMain.combatButton1, "Restore Attacks", "RestoreAttacks");
-		
-		combatButtonConfig(cMain.combatButton2, "Restore Blocks", "RestoreBlocks");
-		
-		combatButtonConfig(cMain.combatButton3, "Restore Items", "RestoreItems");
-		
-		combatButtonConfig(cMain.combatButton4, "Return", "Party");
-		
-		
-	}
 	
 	
 	
@@ -144,33 +122,16 @@ public class Combat {
 		
 		 	if (cMain.attacksDisabled == false) {
 			 	
-		 		combatButtonConfig(cMain.combatButton1, "Bastard Fists", "BastardFists");
-
-		 	if (cMain.itemInventory.weapons[0].totalCurrentAmount > 0) {
-			 combatButtonConfig(cMain.combatButton2, cMain.itemInventory.weapons[0].weaponName, cMain.itemInventory.weapons[0].weaponHandlerName);
+			combatButtonConfig(cMain.combatButton1, cMain.itemInventory.weapons[0].totalCurrentAmount , cMain.itemInventory.weapons[0].weaponName, "Attack0");
+			if (cMain.itemInventory.weapons[0].totalCurrentAmount == 0) {combatButtonConfig(cMain.combatButton1, "Bastard Fists", "BastardFists");}
 		
-			} else {
-				combatButtonConfig(cMain.combatButton2, "?", "");
-				
-			}
-
-		if (cMain.itemInventory.weapons[1].totalCurrentAmount  > 0) {
-			combatButtonConfig(cMain.combatButton3, cMain.itemInventory.weapons[1].weaponName, cMain.itemInventory.weapons[1].weaponHandlerName );
+			combatButtonConfig(cMain.combatButton2, cMain.itemInventory.weapons[1].totalCurrentAmount , cMain.itemInventory.weapons[1].weaponName, "Attack1");
 			
-			} else {
-			combatButtonConfig(cMain.combatButton3, "?", "");
-			}
-		
-		
-		
-			if (cMain.itemInventory.weapons[2].totalCurrentAmount  > 0) {
-				combatButtonConfig(cMain.combatButton4, cMain.itemInventory.weapons[2].weaponName, cMain.itemInventory.weapons[2].weaponHandlerName );
-			} else {
-			combatButtonConfig(cMain.combatButton4, "?", "");
-			}
+			combatButtonConfig(cMain.combatButton3, cMain.itemInventory.weapons[2].totalCurrentAmount , cMain.itemInventory.weapons[2].weaponName, "Attack2");
 			
+			combatButtonConfig(cMain.combatButton4, cMain.itemInventory.weapons[3].totalCurrentAmount , cMain.itemInventory.weapons[3].weaponName, "Attack3");
 			
-			
+			if (cMain.itemInventory.weapons[3].totalCurrentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}
 			
 		 	}
 	}
@@ -196,23 +157,31 @@ public class Combat {
 		victory();
 		int itemDamageBonus = 0;
 		int itemDamageDenominator = 10;
+		String weaponName = "Bastard Fists";
 		//Allow these to be upgraded. 
 		switch (cMain.combatAttackingItem) {
 		case "BastardFists":
 			break;
-		case "BastardRod":
+		case "Attack0":
 			itemDamageBonus = cMain.itemInventory.weapons[0].weaponMultiplier * cMain.itemInventory.weapons[0].totalAmountPurchased;
+			weaponName = cMain.itemInventory.weapons[0].weaponName;
 			break;
-		case "BastardBelt":
+		case "Attack1":
 			itemDamageBonus = cMain.itemInventory.weapons[1].weaponMultiplier * cMain.itemInventory.weapons[1].totalAmountPurchased;
+			weaponName = cMain.itemInventory.weapons[1].weaponName;
 			break;
-		case "BastardMask":
+		case "Attack2":
 			itemDamageBonus = cMain.itemInventory.weapons[2].weaponMultiplier * cMain.itemInventory.weapons[2].totalAmountPurchased;
+			weaponName = cMain.itemInventory.weapons[2].weaponName;
+			break;
+		case "Attack3":
+			itemDamageBonus = cMain.itemInventory.weapons[3].weaponMultiplier * cMain.itemInventory.weapons[3].totalAmountPurchased;
+			weaponName = cMain.itemInventory.weapons[3].weaponName;
 			break;
 		}
 		int playerDamage = new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus))/itemDamageDenominator);
 		
-		cMain.combatTextArea.setText("You attacked " + cMain.enemy.name + " and dealt " + playerDamage + "damage" );
+		cMain.combatTextArea.setText("You attacked " + cMain.enemy.name + "with the" + weaponName + "and dealt " + playerDamage + " damage" );
 		
 		cMain.enemy.hp = cMain.enemy.hp - playerDamage;
 		
@@ -221,6 +190,14 @@ public class Combat {
 		gameOver();
 		
 		
+	}
+	
+	public void playerDefendResult() {
+		cMain.combatTextArea.setText("You put up your guard with the " + cMain.defendingItemCombat + "and your blocking value is now" + cMain.blockValue);
+		
+		numberOfTurns();
+		
+		gameOver();
 	}
 	
 	public void enemyAttack() {
@@ -250,6 +227,8 @@ public class Combat {
 			break;
 		
 		}
+		
+		cMain.enemyDamage = ((cMain.enemyDamage * 100) / (100 + cMain.blockValue));
 
 		cMain.logosCounter = cMain.logosCounter  - cMain.enemyDamage;
 		cMain.combatTextArea.setText(cMain.enemy.name + " attacked with " + rolledAttack + " doing "  + cMain.enemyDamage + "damage" + "\n You have " + cMain.logosCounter + "logos remaining" );
@@ -266,6 +245,17 @@ public class Combat {
 	public void combatButtonConfig(JButton combatButton, String text, String command) {
 		combatButton.setText(text);
 		combatButton.setActionCommand(command);
+	}
+	
+	public void combatButtonConfig(JButton combatButton, int unlocked, String text, String command) {
+		if (unlocked > 0 ) {
+		combatButton.setText(text);
+		combatButton.setActionCommand(command);
+		} else {
+			combatButton.setText("?");
+			combatButton.setActionCommand("");
+		}
+			
 	}
 	public void combatButtonConfig(JButton combatButton, String text, String command, String multiplier) {
 		combatButton.setText(text);

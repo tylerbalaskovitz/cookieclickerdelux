@@ -23,7 +23,7 @@ public class CookieMain {
 	boolean item1Unlocked;
 	
 	String rewardsMessage, combatAttackingItem, weaponPurhcase1,  weaponPurchase2, weaponPurchase3, weapon1Handler, weapon2Handler, weapon3Handler, itemPurhcase1, itemPurchase2, 
-	itemPurchase3, item1Handler, item2Handler, item3Handler, armorPurchase1, armorPurchase2, armorPurchase3, armor1Handler, armor2Handler, armor3Handler;
+	itemPurchase3, item1Handler, item2Handler, item3Handler, armorPurchase1, armorPurchase2, armorPurchase3, armor1Handler, armor2Handler, armor3Handler, defendingItemCombat;
 	Random rand = new Random();
 	JFrame window;
 	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, shopCookiePanel, messagePanel, counterPanel, cookiePanel, optionsPanel, navigationPanel, combatPanel, combatButtonPanel, 
@@ -36,11 +36,11 @@ public class CookieMain {
 	int  logosCounter, rounds, timerSpeed, dayTimerSpeed, cursorNumber, cursorPrice, whiteyNumber, whiteyPrice, slotsPrice, cursorUpgradeAmount, cursorUpgradePrice, colaPrice, sausagePrice, rodPrice,
 	beltPrice, maskPrice, armorPrice, lollipopPrice, lollipopNumber, docPrice, docNumber, luckyPrice, bastardPrice, feverPrice, colaValue, sausageValue, rodValue, beltValue,
 	maskValue, armorValue, day, enemyAttackChoice, enemyDamage, bossDay, startingDamage, disableAttacksCounter, disableBlocksCounter, disableItemsCounter, enemiesDefeated, 
-	numberOfActions, counterUpgrade, healingMultiplier, selectedItemValue;
+	numberOfActions, counterUpgrade, healingMultiplier, selectedItemValue, blockValue, baseNumberOfActions;
 	
 	double  perSecond, dayPerSecond;
 	boolean timerOn, dayTimerOn, whiteyUnlocked, lollipopUnlocked, docUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, rodUnlocked, beltUnlocked,
-	colaUnlocked, maskUnlocked, armorUnlocked, sausageUnlocked, antiGravityChamber, inCombat, attacksDisabled, blocksDisabled, itemsDisabled, displayItemsShop, displayWeaponsShop, 
+	colaUnlocked, maskUnlocked, armorUnlocked, sausageUnlocked, antiGravityChamber, inCombat, attacksDisabled, buffsDisabled, blocksDisabled, itemsDisabled, displayItemsShop, displayWeaponsShop, 
 	displayArmorShop, displayBuffsSHop, nutsUnlocked, juiceUnlocked, chipsUnlocked, shoulderPadsUnlocked, glovesUnlocked, vibratingShaftUnlocked, nitrogenBombUnlocked,
 	stopWatchUnlocked, bootsUnlocked, slotBeltUnlocked, customCombat;
 	

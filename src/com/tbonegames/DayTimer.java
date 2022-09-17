@@ -193,7 +193,8 @@ public class DayTimer {
 	
 	cMain.ui.closeAllPanels();
 	cMain.ui.displayCombat();
-	cMain.numberOfActions = 1;
+	cMain.blockValue = 0;
+	cMain.numberOfActions = cMain.baseNumberOfActions;
 	cMain.combat.combatSetup();
 	cMain.combat.fight();
 	}

@@ -24,22 +24,25 @@ public class CombatHandler implements ActionListener{
 		case "Return":
 			combat.fight();
 			break;
-		case "ShinChan":
+		case "Buff0":
 			break;
-		case "Lollipop":
+		case "Buff1":
 			break;
-		case "Doc":
+		case "Buff2":
+			break;
+		case "Buff3":
 			break;
 		case "Attack":
 			combat.playerAttackChoices();
 			break;
 		case "Defend":
+			combat.playerDefendChoices();
 			break;
 		case "Item":
 			combat.itemChoices();
 			break;
-		case "Party":
-			combat.partyChoices();
+		case "Buffs":
+			combat.buffChoices();
 			break;
 		case "MultiplierSelecter":
 			combat.multiplier();
@@ -54,81 +57,83 @@ public class CombatHandler implements ActionListener{
 			cMain.healingMultiplier = (cMain.selectedItemValue);
 			break;
 		case "BastardFists":
-			
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Fists";
 			combat.playerAttackResult();
 			break;
-		case "BastardRod":
-			
+		case "Attack0":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
-			cMain.combatAttackingItem = "BastardRod";
+			cMain.combatAttackingItem = "Attack0";
 			combat.playerAttackResult();
 			break;
-		case "BastardBelt":
-			
+		case "Attack1":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
-			cMain.combatAttackingItem = "BastardBelt";
+			cMain.combatAttackingItem = "Attack1";
 			combat.playerAttackResult();
 			break;
-		case "BastardMask":
-			
+		case "Attack2":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
-			cMain.combatAttackingItem = "BastardMask";
+			cMain.combatAttackingItem = "Attack2";
 			combat.playerAttackResult();
-		case "VibratingShaft":
-			break;
-		case "NitrogenBomb":
-			break;
-		case "ShoulderPads":
-			break;
-		case "BastardBoots":
-			break;
-		case "BastardGloves":
-			break;
-		case "SlotBelt":
-			break;
-		case "BastardArmor":
-			cMain.combatAttackingItem = "BastardArmor";
+		case "Attack3":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			cMain.combatAttackingItem = "Attack3";
+			combat.playerAttackResult();
 			break;
-		case "BastardCola":
-			
-			//values need to be updated 
+		case "Defend0":
+			cMain.blockValue += cMain.itemInventory.armor[0].defenseValue;
+			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			combat.playerDefendResult();
+			break;
+		case "Defend1":
+			cMain.blockValue += cMain.itemInventory.armor[1].defenseValue;
+			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			combat.playerDefendResult();
+			break;
+		case "Defend2":
+			cMain.blockValue += cMain.itemInventory.armor[2].defenseValue;
+			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			combat.playerDefendResult();
+			break;
+		case "Defend3":
+			cMain.blockValue += cMain.itemInventory.armor[3].defenseValue;
+			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			combat.playerDefendResult();
+			break;
+		case "Item0":
 			cMain.selectedItemValue = cMain.itemInventory.items[0].totalCurrentAmount;
-			cMain.combatAttackingItem = "BastardCola";
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
-			combat.healSelfCola();
+			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[0].totalCurrentAmount, cMain.itemInventory.items[0].healValue, cMain.healingMultiplier);
 			combat.playerHealResult();
 			break;
-		case "BastardSausage":
+		case "Item1":
 			cMain.selectedItemValue = cMain.itemInventory.items[1].totalCurrentAmount;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
-			
-			combat.healSelfSausage();
+			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[1].totalCurrentAmount, cMain.itemInventory.items[1].healValue, cMain.healingMultiplier);
 			combat.playerHealResult();
 			break;
-		case "BastardNuts":
+		case "Item2":
+			cMain.selectedItemValue = cMain.itemInventory.items[2].totalCurrentAmount;
+			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[2].totalCurrentAmount, cMain.itemInventory.items[2].healValue, cMain.healingMultiplier);
+			combat.playerHealResult();
 			break;
-		case "BastardChips":
-			break;
-		case "BastardJuice":
+		case "Item3":
+			cMain.selectedItemValue = cMain.itemInventory.items[3].totalCurrentAmount;
+			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[3].totalCurrentAmount, cMain.itemInventory.items[3].healValue, cMain.healingMultiplier);
+			combat.playerHealResult();
 			break;
 		case "EnemyTurn":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.enemyAttack();
 			break;
 		case "ContinueBattle":
-			cMain.numberOfActions = 1;
+			cMain.blockValue = 0;
+			cMain.numberOfActions = cMain.baseNumberOfActions;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.fight();
 			combat.gameOver();
-			break;
-		case "RestoreAttacks":
-			break;
-		case "RestoreBlocks":
-			break;
-		case "RestoreItems":
 			break;
 		case "Victory":
 			cMain.ui.closeAllPanels();
