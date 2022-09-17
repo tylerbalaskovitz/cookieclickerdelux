@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.Timer;
 
+import com.tbonegames.buffs.Buffs;
 import com.tbonegames.enemies.Enemies;
 
 
@@ -50,6 +51,7 @@ public class CookieMain {
 	Font font1, font2, font3;
 	Slots slots = new Slots(this);
 	URL url;
+	Buffs buffs = new Buffs();
 	StartingValues sValues = new StartingValues(this);
 	UI ui = new UI(this);
 	Combat combat = new Combat(this);

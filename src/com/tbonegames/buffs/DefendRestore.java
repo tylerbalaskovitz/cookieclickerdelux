@@ -23,10 +23,14 @@ public class DefendRestore extends Buffs{
 		buffPrice = 1250;
 		buffPriceIncrease = 1250;
 		
-		rateOfIncrase = 1;
+		rateOfIncrease = 1;
 		
 		currentAmount = 0;
 		totalAmountPurchased = 0;
+	}
+	
+	public void special() {
+		
 	}
 	
 }

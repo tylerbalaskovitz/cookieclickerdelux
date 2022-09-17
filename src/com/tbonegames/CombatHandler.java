@@ -25,12 +25,25 @@ public class CombatHandler implements ActionListener{
 			combat.fight();
 			break;
 		case "Buff0":
+			cMain.numberOfActions = cMain.itemInventory.buffs[0].special(cMain.numberOfActions, cMain.itemInventory.buffs[0].rateOfIncrease);
+			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			combat.playerBuffResult(cMain.itemInventory.buffs[0].buffName);
 			break;
 		case "Buff1":
+			cMain.itemInventory.buffs[1].special();
+			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			combat.playerBuffResult(cMain.itemInventory.buffs[1].buffName);
 			break;
 		case "Buff2":
+			cMain.itemInventory.buffs[2].special();
+			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			combat.playerBuffResult(cMain.itemInventory.buffs[2].buffName);
 			break;
 		case "Buff3":
+			cMain.itemInventory.buffs[3].special();
+			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			combat.playerBuffResult(cMain.itemInventory.buffs[3].buffName);
+			
 			break;
 		case "Attack":
 			combat.playerAttackChoices();

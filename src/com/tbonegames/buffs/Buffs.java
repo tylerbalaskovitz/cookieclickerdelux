@@ -1,6 +1,7 @@
 package com.tbonegames.buffs;
 
 public class Buffs {
+	
 	public String buffName;
 	public String buffHandlerName;
 	
@@ -21,13 +22,23 @@ public class Buffs {
 	public int buffPrice;
 	public int buffPriceIncrease;
 	
-	public int rateOfIncrase;
+	public int rateOfIncrease;
 	
 	public int currentAmount;
 	public int totalAmountPurchased;
-	
-	public void special(int turns, int amountGiven) {
+
+	public Buffs() {
 		
+	}
+	
+	
+	public void special() {
+		
+	}
+	
+	public int special(int turns, int amountGiven) {
+//		turns += amountGiven;
+		return turns;
 	}
 	
 }

@@ -363,5 +363,14 @@ public class Combat {
 		}
 		
 	}
+
+	public void playerBuffResult(String buffName) {
+	cMain.combatTextArea.setText("You buff your bastardly self up with the " + buffName);
+		
+		numberOfTurns();
+		
+		gameOver();
+		
+	}
 	
 }
