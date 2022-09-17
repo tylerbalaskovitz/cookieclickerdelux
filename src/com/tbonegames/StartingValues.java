@@ -8,7 +8,7 @@ package com.tbonegames;
 	public void startUpValues() {
 			cMain.healingMultiplier = 1;
 			cMain.counterUpgrade = 1;
-			
+			cMain.enemiesDefeated = 0;
 			cMain.combatAttackingItem = "";
 			cMain.colaUnlocked = true;
 			cMain.sausageUnlocked = true;

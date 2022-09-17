@@ -352,13 +352,16 @@ public class Combat {
 			cMain.inCombat = false;
 			cMain.enemiesDefeated++;
 			
+			if (cMain.enemiesDefeated >= 18) {
+				cMain.ui.closeAllPanels();
+			} else {
 		
 			combatButtonConfig(cMain.combatButton1, "Continue", "Victory");
 			combatButtonConfig(cMain.combatButton2, "?", "");
 			combatButtonConfig(cMain.combatButton3, "?", "");
 			combatButtonConfig(cMain.combatButton4, "?", "");
 			
-		
+			}
 			
 		}
 		
