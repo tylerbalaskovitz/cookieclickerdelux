@@ -64,11 +64,13 @@ public class Combat {
 			
 		combatButtonConfig(cMain.combatButton4, cMain.itemInventory.armor[3].totalCurrentAmount, cMain.itemInventory.armor[3].armorName, "Defend3");
 		
-		if (cMain.itemInventory.armor[0].totalCurrentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}	
+		if (cMain.itemInventory.armor[3].totalCurrentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}	
 		
 	}
 	
 	public void itemChoices() {
+		
+		if (cMain.itemsDisabled == false) {
 		
 		cMain.multiplierPanel.setVisible(true);
 		
@@ -80,18 +82,10 @@ public class Combat {
 		
 		combatButtonConfig(cMain.combatButton4, cMain.itemInventory.items[3].totalCurrentAmount ,cMain.itemInventory.items[3].itemName, "Item3");
 		
-		if (cMain.itemInventory.items[0].totalCurrentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}
+		if (cMain.itemInventory.items[3].totalCurrentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}
+		}
 	}
 	
-	public void multiplier() {
-		combatButtonConfig(cMain.combatButton1, "Normal", "NormalStrength");
-		
-		combatButtonConfig(cMain.combatButton2, "Extra", "ExtraStrength");
-		
-		combatButtonConfig(cMain.combatButton3, "Bastardly", "BastardlyStrength");
-		
-		combatButtonConfig(cMain.combatButton4, "Return", "Items");
-	}
 	
 	public int healSelf(int healingItem, int healingValue, int healingMultiplier, String healingMultiplierHandler) {
 		if (healingItem > 0) {
@@ -127,7 +121,7 @@ public class Combat {
 		
 		combatButtonConfig(cMain.combatButton4, cMain.itemInventory.buffs[3].currentAmount,cMain.itemInventory.buffs[3].buffName, "Buff3");
 		
-		if (cMain.itemInventory.buffs[0].currentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}
+		if (cMain.itemInventory.buffs[3].currentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}
 		}
 	}
 	
@@ -137,6 +131,8 @@ public class Combat {
 	public void playerAttackChoices() {
 		
 		 	if (cMain.attacksDisabled == false) {
+		 		
+		 		cMain.multiplierPanel.setVisible(true);
 			 	
 			combatButtonConfig(cMain.combatButton1, cMain.itemInventory.weapons[0].totalCurrentAmount , cMain.itemInventory.weapons[0].weaponName, "Attack0");
 			if (cMain.itemInventory.weapons[0].totalCurrentAmount == 0) {combatButtonConfig(cMain.combatButton1, "Bastard Fists", "BastardFists");}
@@ -152,20 +148,9 @@ public class Combat {
 		 	}
 	}
 	
-	public void playerHealResult() {
-		switch (cMain.combatAttackingItem) {
-		case "Item0":
-			break;
-		case "Item1":
-			break;
-		case "Item2":
-			break;
-		case "Item3":
-			break;
-		
-		
-		}
-		cMain.combatTextArea.setText("You healed yourself and your HP is now " + cMain.logosCounter);
+	public void playerHealResult(String itemUsed, String healingStyle) {
+	
+		cMain.combatTextArea.setText("You healed yourself with the " + itemUsed + " using the Action Bastard " + healingStyle + " Bastard Healing Technique. \n Your HP is now " + cMain.logosCounter);
 		cMain.inCombatHPLabel.setText("HP: " + cMain.logosCounter);
 		
 		numberOfTurns();
@@ -204,7 +189,7 @@ public class Combat {
 		}
 		int playerDamage = new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus))/itemDamageDenominator);
 		
-		cMain.combatTextArea.setText("You attacked " + cMain.enemy.name + "with the" + weaponName + "and dealt " + playerDamage + " damage" );
+		cMain.combatTextArea.setText("You attacked " + cMain.enemy.name + " with the " + weaponName + " and dealt " + playerDamage + " damage" );
 		
 		cMain.enemy.hp = cMain.enemy.hp - playerDamage;
 		
@@ -216,7 +201,7 @@ public class Combat {
 	}
 	
 	public void playerDefendResult() {
-		cMain.combatTextArea.setText("You put up your guard with the " + cMain.defendingItemCombat + "and your blocking value is now" + cMain.blockValue);
+		cMain.combatTextArea.setText("You put up your guard with the " + cMain.defendingItemCombat + " and your blocking value is now " + cMain.blockValue);
 		
 		numberOfTurns();
 		
@@ -254,7 +239,7 @@ public class Combat {
 		cMain.enemyDamage = ((cMain.enemyDamage * 100) / (100 + cMain.blockValue));
 
 		cMain.logosCounter = cMain.logosCounter  - cMain.enemyDamage;
-		cMain.combatTextArea.setText(cMain.enemy.name + " attacked with " + rolledAttack + " doing "  + cMain.enemyDamage + "damage" + "\n You have " + cMain.logosCounter + "logos remaining" );
+		cMain.combatTextArea.setText(cMain.enemy.name + " attacked with " + rolledAttack + " doing "  + cMain.enemyDamage + " damage" + "\n You have " + cMain.logosCounter + " logos remaining" );
 		
 		
 		combatButtonConfig(cMain.combatButton1, ">", "ContinueBattle");

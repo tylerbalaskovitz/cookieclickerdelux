@@ -61,9 +61,6 @@ public class CombatHandler implements ActionListener{
 		case "Buffs":
 			combat.buffChoices();
 			break;
-		case "MultiplierSelecter":
-			combat.multiplier();
-			break;
 		case "Normal":
 			cMain.healingMultiplierHandler = "Normal";
 			
@@ -125,7 +122,7 @@ public class CombatHandler implements ActionListener{
 			cMain.healingMultiplier = cMain.itemInventory.items[0].calculateHealing(cMain.healingMultiplierHandler, cMain.itemInventory.items[0].totalCurrentAmount);
 			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[0].totalCurrentAmount, cMain.itemInventory.items[0].healValue, cMain.healingMultiplier, cMain.healingMultiplierHandler);
 			cMain.itemInventory.items[0].totalCurrentAmount -= cMain.healingMultiplier;
-			combat.playerHealResult();
+			combat.playerHealResult(cMain.itemInventory.items[0].itemName, cMain.healingMultiplierHandler);
 			break;
 		case "Item1":
 			cMain.selectedItemValue = cMain.itemInventory.items[1].totalCurrentAmount;
@@ -133,7 +130,7 @@ public class CombatHandler implements ActionListener{
 			cMain.healingMultiplier = cMain.itemInventory.items[1].calculateHealing(cMain.healingMultiplierHandler, cMain.itemInventory.items[1].totalCurrentAmount);
 			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[1].totalCurrentAmount, cMain.itemInventory.items[1].healValue, cMain.healingMultiplier, cMain.healingMultiplierHandler);
 			cMain.itemInventory.items[1].totalCurrentAmount -= cMain.healingMultiplier;
-			combat.playerHealResult();
+			combat.playerHealResult(cMain.itemInventory.items[1].itemName, cMain.healingMultiplierHandler);
 			break;
 		case "Item2":
 			cMain.selectedItemValue = cMain.itemInventory.items[2].totalCurrentAmount;
@@ -141,7 +138,7 @@ public class CombatHandler implements ActionListener{
 			cMain.healingMultiplier = cMain.itemInventory.items[2].calculateHealing(cMain.healingMultiplierHandler, cMain.itemInventory.items[2].totalCurrentAmount);
 			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[2].totalCurrentAmount, cMain.itemInventory.items[2].healValue, cMain.healingMultiplier, cMain.healingMultiplierHandler);
 			cMain.itemInventory.items[2].totalCurrentAmount -= cMain.healingMultiplier;
-			combat.playerHealResult();
+			combat.playerHealResult(cMain.itemInventory.items[2].itemName, cMain.healingMultiplierHandler);
 			break;
 		case "Item3":
 			cMain.selectedItemValue = cMain.itemInventory.items[3].totalCurrentAmount;
@@ -149,7 +146,7 @@ public class CombatHandler implements ActionListener{
 			cMain.healingMultiplier = cMain.itemInventory.items[3].calculateHealing(cMain.healingMultiplierHandler, cMain.itemInventory.items[3].totalCurrentAmount);
 			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[3].totalCurrentAmount, cMain.itemInventory.items[3].healValue, cMain.healingMultiplier, cMain.healingMultiplierHandler);
 			cMain.itemInventory.items[3].totalCurrentAmount -= cMain.healingMultiplier;
-			combat.playerHealResult();
+			combat.playerHealResult(cMain.itemInventory.items[3].itemName, cMain.healingMultiplierHandler);
 			break;
 		case "EnemyTurn":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
