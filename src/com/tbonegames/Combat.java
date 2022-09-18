@@ -8,10 +8,6 @@ import com.tbonegames.enemies.Enemies;
 
 public class Combat {
 	
-	int recoilDamage = 0;
-	int playerAttackBonus = 0;
-	int playerDamage = 0;
-	
 	Random random = new Random();
 	
 	CookieMain cMain;
@@ -162,60 +158,114 @@ public class Combat {
 	
 		gameOver();
 	}
-		
 	
-	public void playerAttackResult(String weaponName){
-		
-		gameOver();
-		victory();
+	public int calculateDamage(int weaponsMultiplier, int totalPurchase) {
 		int itemDamageBonus = 0;
 		int itemDamageDenominator = 10;
-		//Allow these to be upgraded. 
-		switch (cMain.combatAttackingItem) {
-		case "BastardFists":
-			break;
-		case "Attack0":
-			itemDamageBonus = cMain.itemInventory.weapons[0].weaponMultiplier * cMain.itemInventory.weapons[0].totalAmountPurchased;
-			break;
-		case "Attack1":
-			itemDamageBonus = cMain.itemInventory.weapons[1].weaponMultiplier * cMain.itemInventory.weapons[1].totalAmountPurchased;
-			break;
-		case "Attack2":
-			itemDamageBonus = cMain.itemInventory.weapons[2].weaponMultiplier * cMain.itemInventory.weapons[2].totalAmountPurchased;
-			break;
-		case "Attack3":
-			itemDamageBonus = cMain.itemInventory.weapons[3].weaponMultiplier * cMain.itemInventory.weapons[3].totalAmountPurchased;
-			break;
-		}
+
+		
+		itemDamageBonus =weaponsMultiplier * totalPurchase;
 		
 		cMain.playerDamage = new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus))/itemDamageDenominator);
+		return cMain.playerDamage;
+	}
+	
+	public int calculateBonus(int playerDamage) {
+		switch (cMain.healingMultiplierHandler) {
+		case "Normal":
+			cMain.playerAttackBonus = 0;
+			break;
+		case "Extra":
+			cMain.playerAttackBonus = playerDamage * (3/10);
+			break;
+		case "Bastardly":
+			cMain.playerAttackBonus = ((playerDamage * (1/10)) +((new java.util.Random().nextInt(6))/10)* playerDamage) + (new java.util.Random().nextInt(playerDamage)*(5/10));
+			break;
+		}
+		
+		return cMain.playerAttackBonus;
+	}
+	
+	public int calculateRecoil(int extraRecoilDamage, int bastardlyRecoilDamage) {
+			int recoilDamage = 0;
+			switch (cMain.healingMultiplierHandler) {
+			case "Normal":
+				recoilDamage = 0;
+				break;
+			case "Extra":
+				recoilDamage = extraRecoilDamage;
+				break;
+			case "Bastardly":
+				recoilDamage = bastardlyRecoilDamage;
+				break;
+			}
+			
+		cMain.logosCounter = cMain.logosCounter - recoilDamage;
+		return recoilDamage;
+	}
+		
+	
+	public void playerAttackResult(String weaponName, int playerDamage, int playerBonus, int playerRecoil){
+		
+//		gameOver();
+//		victory();
+//		int itemDamageBonus = 0;
+//		int itemDamageDenominator = 10;
+//		//Allow these to be upgraded. 
+//		switch (cMain.combatAttackingItem) {
+//		case "BastardFists":
+//			break;
+//		case "Attack0":
+//			itemDamageBonus = cMain.itemInventory.weapons[0].weaponMultiplier * cMain.itemInventory.weapons[0].totalAmountPurchased;
+//			break;
+//		case "Attack1":
+//			itemDamageBonus = cMain.itemInventory.weapons[1].weaponMultiplier * cMain.itemInventory.weapons[1].totalAmountPurchased;
+//			break;
+//		case "Attack2":
+//			itemDamageBonus = cMain.itemInventory.weapons[2].weaponMultiplier * cMain.itemInventory.weapons[2].totalAmountPurchased;
+//			break;
+//		case "Attack3":
+//			itemDamageBonus = cMain.itemInventory.weapons[3].weaponMultiplier * cMain.itemInventory.weapons[3].totalAmountPurchased;
+//			break;
+//		}
+		
+//		cMain.playerDamage = new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus))/itemDamageDenominator);
 		
 		String attackStyleMessage = "";
-		if (cMain.healingMultiplierHandler.contains("Normal")) {
+		switch (cMain.healingMultiplierHandler) {
+		case "Normal":
+			break;
+		case "Extra":
+			attackStyleMessage = "Due to using the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " technique, you dealt an additional " + playerBonus + " damage, but took " + playerRecoil +" damage in recoil.";
+			break;
+		case "Bastardly":
+			attackStyleMessage = "Due to using the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " technique, you dealt an additional " + playerBonus + " damage, but took " + playerRecoil +" damage in recoil.";
+			break;
 		}
-		
-		if (cMain.healingMultiplierHandler.contains("Extra")) {
-			cMain.playerAttackBonus = cMain.playerDamage * (3/10);
-			attackStyleMessage = "Due to using the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " technique, you dealt an additional " + cMain.playerAttackBonus + " damage, but took " + cMain.extraAttackRecoil +" damage in recoil.";
-			cMain.playerRecoil = cMain.extraAttackRecoil;
-		}
-		
-		if (cMain.healingMultiplierHandler.contains("Bastardly")) {
-			cMain.playerAttackBonus = ((cMain.playerDamage * (1/10)) +((new java.util.Random().nextInt(6))/10)* cMain.playerDamage) + (new java.util.Random().nextInt(cMain.playerDamage)*(5/10));
-			
-			attackStyleMessage = "Due to using the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " technique, you dealt an additional " + cMain.playerAttackBonus + " damage, but took " + cMain.bastardlyAttackRecoil +" damage in recoil.";
-			cMain.playerRecoil = cMain.bastardlyAttackRecoil;
-		}
+
+//
+//		
+//		if (cMain.healingMultiplierHandler.contains("Extra")) {
+//			cMain.playerAttackBonus = cMain.playerDamage * (3/10);
+//			attackStyleMessage = "Due to using the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " technique, you dealt an additional " + cMain.playerAttackBonus + " damage, but took " + cMain.extraAttackRecoil +" damage in recoil.";
+//			cMain.playerRecoil = cMain.extraAttackRecoil;
+//		}
+//		
+//		if (cMain.healingMultiplierHandler.contains("Bastardly")) {
+//			cMain.playerAttackBonus = ((cMain.playerDamage * (1/10)) +((new java.util.Random().nextInt(6))/10)* cMain.playerDamage) + (new java.util.Random().nextInt(cMain.playerDamage)*(5/10));
+//			
+//			attackStyleMessage = "Due to using the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " technique, you dealt an additional " + cMain.playerAttackBonus + " damage, but took " + cMain.bastardlyAttackRecoil +" damage in recoil.";
+//			cMain.playerRecoil = cMain.bastardlyAttackRecoil;
+//		}
 		cMain.playerDamage += cMain.playerAttackBonus;
 		
 		
 		cMain.combatTextArea.setText("You attacked " + cMain.enemy.name + " with the " + weaponName + " with the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " Teachnique. " +
-		"You dealt " + cMain.playerDamage + " damage." + attackStyleMessage);
+		"You dealt " + playerDamage + " damage." + attackStyleMessage);
 				
 		
 		cMain.enemy.hp = cMain.enemy.hp - cMain.playerDamage;
 		
-		cMain.logosCounter = cMain.logosCounter - cMain.playerRecoil;
 		
 		numberOfTurns();
 		

@@ -1,10 +1,8 @@
 package com.tbonegames;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.plaf.metal.MetalBorders.ButtonBorder;
 
 public class CombatHandler implements ActionListener{
 	
@@ -81,26 +79,46 @@ public class CombatHandler implements ActionListener{
 		case "BastardFists":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "BastardFists";
-			combat.playerAttackResult("Bastard Fists");
+			cMain.playerDamage = combat.calculateDamage(0, 0);
+			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
+			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil);
+			cMain.logosCounter-= cMain.playerRecoil;
+			combat.playerAttackResult("Bastard Fists", cMain.playerDamage, cMain.playerAttackBonus, cMain.playerRecoil);
 			break;
 		case "Attack0":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Attack0";
-			combat.playerAttackResult(cMain.itemInventory.weapons[0].weaponName);
+			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[0].weaponMultiplier, cMain.itemInventory.weapons[0].totalAmountPurchased);
+			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
+			
+			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil);
+			cMain.logosCounter-= cMain.playerRecoil;
+			combat.playerAttackResult(cMain.itemInventory.weapons[0].weaponName, cMain.playerDamage, cMain.playerAttackBonus, cMain.playerRecoil);
 			break;
 		case "Attack1":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Attack1";
-			combat.playerAttackResult(cMain.itemInventory.weapons[1].weaponName);
+			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[1].weaponMultiplier, cMain.itemInventory.weapons[1].totalAmountPurchased);
+			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
+			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil);
+			cMain.logosCounter-= cMain.playerRecoil;
+			 combat.playerAttackResult(cMain.itemInventory.weapons[1].weaponName, cMain.playerDamage, cMain.playerAttackBonus, cMain.playerRecoil);
 			break;
 		case "Attack2":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Attack2";
-			combat.playerAttackResult(cMain.itemInventory.weapons[2].weaponName);
+			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[2].weaponMultiplier, cMain.itemInventory.weapons[2].totalAmountPurchased);
+			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
+			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil);
+			cMain.logosCounter-= cMain.playerRecoil;
+			combat.playerAttackResult(cMain.itemInventory.weapons[2].weaponName, cMain.playerDamage, cMain.playerAttackBonus, cMain.playerRecoil);
 		case "Attack3":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Attack3";
-			combat.playerAttackResult(cMain.itemInventory.weapons[3].weaponName);
+			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[3].weaponMultiplier, cMain.itemInventory.weapons[3].totalAmountPurchased);
+			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
+			cMain.logosCounter-= combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil);
+			combat.playerAttackResult(cMain.itemInventory.weapons[3].weaponName, cMain.playerDamage, cMain.playerAttackBonus, cMain.playerRecoil);
 			break;
 		case "Defend0":
 			cMain.blockValue += cMain.itemInventory.armor[0].defenseValue;
