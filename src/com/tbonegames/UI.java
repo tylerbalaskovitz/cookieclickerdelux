@@ -72,6 +72,20 @@ public void createUI() {
 	panelConfiguration(cMain.combatPanel, 100, 100, 600, 250, Color.black, 1, 1, cMain.window);
 	cMain.combatTextArea = new JTextArea("");
 	textAreaConfiguration(cMain.combatTextArea, Color.black, Color.white, cMain.font3, true, true, false, true, cMain.combatPanel);
+	
+	cMain.multiplierPanel = new JPanel();
+	panelConfiguration(cMain.multiplierPanel, 100, 500, 600, 60, Color.black, 1, 3, cMain.window);
+	
+	cMain.multiplierButton1 = new JButton("Normal");
+	buttonGenerator(cMain.multiplierButton1, cMain.font3, Color.green, Color.black, false, cMain.combatHandler, "Normal", cMain.mouseHandler, cMain.multiplierPanel);
+	
+	cMain.multiplierButton2 = new JButton("Extra");
+	buttonGenerator(cMain.multiplierButton2, cMain.font3, Color.yellow, Color.black, false, cMain.combatHandler, "Extra", cMain.mouseHandler, cMain.multiplierPanel);
+	
+	cMain.multiplierButton3 = new JButton("Bastardly");
+	buttonGenerator(cMain.multiplierButton3, cMain.font3, Color.red, Color.black, false, cMain.combatHandler, "Bastardly", cMain.mouseHandler, cMain.multiplierPanel);
+	
+	
 	cMain.combatButtonPanel = new JPanel();
 	panelConfiguration(cMain.combatButtonPanel, 100, 350, 600, 150, Color.black, 2, 2, cMain.window);
 	
@@ -287,6 +301,7 @@ public void createUI() {
 	
 	public void displayCombat() {
 		closeAllPanels();
+		cMain.multiplierPanel.setVisible(true);
 		cMain.combatStatsPanel.setVisible(true);
 		cMain.combatPanel.setVisible(true);
 		cMain.combatButtonPanel.setVisible(true);
@@ -314,6 +329,7 @@ public void createUI() {
 
 
 	public void closeAllPanels() {
+		cMain.multiplierPanel.setVisible(false);
 		cMain.combatStatsPanel.setVisible(false);
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopCookiePanel.setVisible(false);

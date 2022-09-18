@@ -10,6 +10,7 @@ package com.tbonegames;
 			cMain.counterUpgrade = 1;
 			cMain.enemiesDefeated = 0;
 			cMain.combatAttackingItem = "";
+			cMain.healingMultiplierHandler = "Normal";
 			cMain.colaUnlocked = true;
 			cMain.sausageUnlocked = true;
 			cMain.rodUnlocked = false;

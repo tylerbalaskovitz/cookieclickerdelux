@@ -27,21 +27,25 @@ public class CombatHandler implements ActionListener{
 		case "Buff0":
 			cMain.numberOfActions = cMain.itemInventory.buffs[0].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].actionIncrease);
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			cMain.itemInventory.buffs[0].currentAmount -= 1;
 			combat.playerBuffResult(cMain.itemInventory.buffs[0].buffName);
 			break;
 		case "Buff1":
 			cMain.numberOfActions = cMain.itemInventory.buffs[1].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].actionIncrease);
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			cMain.itemInventory.buffs[1].currentAmount -= 1;
 			combat.playerBuffResult(cMain.itemInventory.buffs[1].buffName);
 			break;
 		case "Buff2":
 			cMain.numberOfActions = cMain.itemInventory.buffs[2].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].actionIncrease);
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			cMain.itemInventory.buffs[2].currentAmount -= 1;
 			combat.playerBuffResult(cMain.itemInventory.buffs[2].buffName);
 			break;
 		case "Buff3":
 			cMain.numberOfActions = cMain.itemInventory.buffs[3].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].actionIncrease);
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
+			cMain.itemInventory.buffs[3].currentAmount -= 1;
 			combat.playerBuffResult(cMain.itemInventory.buffs[3].buffName);
 			
 			break;
@@ -60,14 +64,16 @@ public class CombatHandler implements ActionListener{
 		case "MultiplierSelecter":
 			combat.multiplier();
 			break;
-		case "NormalStrength":
-			cMain.healingMultiplier = 1;
+		case "Normal":
+			cMain.healingMultiplierHandler = "Normal";
+			
+			//these need sound effects for when they're clicked on. 
 			break;
-		case "ExtraStrength":
-			cMain.healingMultiplier = (cMain.selectedItemValue)/2;
+		case "Extra":
+			cMain.healingMultiplierHandler = "Extra";
 			break;
-		case "BastardlyStrength":
-			cMain.healingMultiplier = (cMain.selectedItemValue);
+		case "Bastardly":
+			cMain.healingMultiplierHandler = "Bastardly";
 			break;
 		case "BastardFists":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
@@ -116,25 +122,33 @@ public class CombatHandler implements ActionListener{
 		case "Item0":
 			cMain.selectedItemValue = cMain.itemInventory.items[0].totalCurrentAmount;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
-			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[0].totalCurrentAmount, cMain.itemInventory.items[0].healValue, cMain.healingMultiplier);
+			cMain.healingMultiplier = cMain.itemInventory.items[0].calculateHealing(cMain.healingMultiplierHandler, cMain.itemInventory.items[0].totalCurrentAmount);
+			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[0].totalCurrentAmount, cMain.itemInventory.items[0].healValue, cMain.healingMultiplier, cMain.healingMultiplierHandler);
+			cMain.itemInventory.items[0].totalCurrentAmount -= cMain.healingMultiplier;
 			combat.playerHealResult();
 			break;
 		case "Item1":
 			cMain.selectedItemValue = cMain.itemInventory.items[1].totalCurrentAmount;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
-			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[1].totalCurrentAmount, cMain.itemInventory.items[1].healValue, cMain.healingMultiplier);
+			cMain.healingMultiplier = cMain.itemInventory.items[1].calculateHealing(cMain.healingMultiplierHandler, cMain.itemInventory.items[1].totalCurrentAmount);
+			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[1].totalCurrentAmount, cMain.itemInventory.items[1].healValue, cMain.healingMultiplier, cMain.healingMultiplierHandler);
+			cMain.itemInventory.items[1].totalCurrentAmount -= cMain.healingMultiplier;
 			combat.playerHealResult();
 			break;
 		case "Item2":
 			cMain.selectedItemValue = cMain.itemInventory.items[2].totalCurrentAmount;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
-			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[2].totalCurrentAmount, cMain.itemInventory.items[2].healValue, cMain.healingMultiplier);
+			cMain.healingMultiplier = cMain.itemInventory.items[2].calculateHealing(cMain.healingMultiplierHandler, cMain.itemInventory.items[2].totalCurrentAmount);
+			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[2].totalCurrentAmount, cMain.itemInventory.items[2].healValue, cMain.healingMultiplier, cMain.healingMultiplierHandler);
+			cMain.itemInventory.items[2].totalCurrentAmount -= cMain.healingMultiplier;
 			combat.playerHealResult();
 			break;
 		case "Item3":
 			cMain.selectedItemValue = cMain.itemInventory.items[3].totalCurrentAmount;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
-			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[3].totalCurrentAmount, cMain.itemInventory.items[3].healValue, cMain.healingMultiplier);
+			cMain.healingMultiplier = cMain.itemInventory.items[3].calculateHealing(cMain.healingMultiplierHandler, cMain.itemInventory.items[3].totalCurrentAmount);
+			cMain.logosCounter=combat.healSelf(cMain.itemInventory.items[3].totalCurrentAmount, cMain.itemInventory.items[3].healValue, cMain.healingMultiplier, cMain.healingMultiplierHandler);
+			cMain.itemInventory.items[3].totalCurrentAmount -= cMain.healingMultiplier;
 			combat.playerHealResult();
 			break;
 		case "EnemyTurn":

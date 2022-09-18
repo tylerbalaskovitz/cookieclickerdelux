@@ -17,6 +17,7 @@ public class Items {
 	
 	
 	public int healValue;
+	public int healingMultiplier;
 	
 	public int strengthIncrease;
 	
@@ -32,16 +33,18 @@ public class Items {
 	
 	
 	
-	public void calculateHealing(String healingSelection, int logosAmount) {
-		switch(healingSelection) {
-		case "NormalStrength":
-			healValue = healValue * 1;
-			logosAmount+= healValue;
+	public int calculateHealing(String healingMultiplierHandler, int totalCurrentAmount) {
+		switch(healingMultiplierHandler) {
+		case "Normal":
+			healingMultiplier = 1;
 			break;
-		case "ExtraStrength":
+		case "Extra":
+			healingMultiplier = (totalCurrentAmount/2);
 			break;
-		case "BastardlyStrength":
+		case "Bastardly":
+			healingMultiplier = totalCurrentAmount;
 			break;
 		}
+		return healingMultiplier;
 	}
 }

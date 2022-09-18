@@ -89,10 +89,22 @@ public class Combat {
 		combatButtonConfig(cMain.combatButton4, "Return", "Items");
 	}
 	
-	public int healSelf(int healingItem, int healingValue, int healingMultiplier) {
+	public int healSelf(int healingItem, int healingValue, int healingMultiplier, String healingMultiplierHandler) {
 		if (healingItem > 0) {
+			switch (healingMultiplierHandler) {
+			case "Normal":
 			cMain.logosCounter += (healingValue * healingMultiplier);
 			healingItem -= healingMultiplier;
+			break;
+			case "Extra":
+			cMain.logosCounter += ((healingValue * healingMultiplier) * .8);
+			healingItem -= healingMultiplier;
+			break;
+			case "Bastardly":
+			cMain.logosCounter += ((healingValue * healingMultiplier) * .7);
+			healingItem -= healingMultiplier;
+			break;
+		}
 		}
 		return cMain.logosCounter;
 	}
@@ -138,7 +150,14 @@ public class Combat {
 	
 	public void playerHealResult() {
 		switch (cMain.combatAttackingItem) {
-		
+		case "Item0":
+			break;
+		case "Item1":
+			break;
+		case "Item2":
+			break;
+		case "Item3":
+			break;
 		
 		
 		}
@@ -354,6 +373,8 @@ public class Combat {
 			
 			if (cMain.enemiesDefeated >= 18) {
 				cMain.ui.closeAllPanels();
+				cMain.ui.displayOptions();
+				
 			} else {
 		
 			combatButtonConfig(cMain.combatButton1, "Continue", "Victory");
