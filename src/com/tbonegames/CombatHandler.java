@@ -1,7 +1,10 @@
 package com.tbonegames;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.plaf.metal.MetalBorders.ButtonBorder;
 
 public class CombatHandler implements ActionListener{
 	
@@ -65,36 +68,39 @@ public class CombatHandler implements ActionListener{
 			cMain.healingMultiplierHandler = "Normal";
 			
 			//these need sound effects for when they're clicked on. 
+			setBoldness();
 			break;
 		case "Extra":
 			cMain.healingMultiplierHandler = "Extra";
+			setBoldness();
 			break;
 		case "Bastardly":
 			cMain.healingMultiplierHandler = "Bastardly";
+			setBoldness();
 			break;
 		case "BastardFists":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
-			cMain.combatAttackingItem = "Fists";
-			combat.playerAttackResult();
+			cMain.combatAttackingItem = "BastardFists";
+			combat.playerAttackResult("Bastard Fists");
 			break;
 		case "Attack0":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Attack0";
-			combat.playerAttackResult();
+			combat.playerAttackResult(cMain.itemInventory.weapons[0].weaponName);
 			break;
 		case "Attack1":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Attack1";
-			combat.playerAttackResult();
+			combat.playerAttackResult(cMain.itemInventory.weapons[1].weaponName);
 			break;
 		case "Attack2":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Attack2";
-			combat.playerAttackResult();
+			combat.playerAttackResult(cMain.itemInventory.weapons[2].weaponName);
 		case "Attack3":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Attack3";
-			combat.playerAttackResult();
+			combat.playerAttackResult(cMain.itemInventory.weapons[3].weaponName);
 			break;
 		case "Defend0":
 			cMain.blockValue += cMain.itemInventory.armor[0].defenseValue;
@@ -178,6 +184,25 @@ public class CombatHandler implements ActionListener{
 		
 	}
 
+	public void setBoldness() {
+		switch (cMain.healingMultiplierHandler) {
+		case "Normal":
+			cMain.multiplierButton1.setFont(cMain.font3Bold);
+			cMain.multiplierButton2.setFont(cMain.font3);
+			cMain.multiplierButton3.setFont(cMain.font3);
+			break;
+		case "Extra":
+			cMain.multiplierButton1.setFont(cMain.font3);
+			cMain.multiplierButton2.setFont(cMain.font3Bold);
+			cMain.multiplierButton3.setFont(cMain.font3);
+			break;
+		case "Bastardly":
+			cMain.multiplierButton1.setFont(cMain.font3);
+			cMain.multiplierButton2.setFont(cMain.font3);
+			cMain.multiplierButton3.setFont(cMain.font3Bold);
+			break;
+		}
+	}
 	
 	
 }

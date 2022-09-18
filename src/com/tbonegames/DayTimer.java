@@ -194,6 +194,8 @@ public class DayTimer {
 	cMain.ui.closeAllPanels();
 	cMain.ui.displayCombat();
 	cMain.blockValue = 0;
+	cMain.extraAttackRecoil = (cMain.logosCounter * (85/100));
+	cMain.bastardlyAttackRecoil = (cMain.logosCounter * (70/100));
 	cMain.numberOfActions = cMain.baseNumberOfActions;
 	cMain.combat.combatSetup();
 	cMain.combat.fight();

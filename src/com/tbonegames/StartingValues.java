@@ -26,7 +26,7 @@ package com.tbonegames;
 			cMain.timerOn = false;
 			cMain.inCombat = false;
 			cMain.baseNumberOfActions = 1;
-			cMain.day = 18;
+			cMain.day = 19;
 			cMain.bossDay = 20;
 			cMain.logosCounter = 10000;
 			cMain.startingDamage = 5;

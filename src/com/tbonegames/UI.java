@@ -401,5 +401,6 @@ public void createUI() {
 			cMain.font1 = new Font("Comic Sans MS", Font.PLAIN, 32);
 			cMain.font2 = new Font("Comic Sans MS", Font.PLAIN, 16);
 			cMain.font3 = new Font("Comic Sans MS", Font.PLAIN, 20);
+			cMain.font3Bold = new Font("Comic Sans MS", Font.BOLD, 26);
 		}	
 }

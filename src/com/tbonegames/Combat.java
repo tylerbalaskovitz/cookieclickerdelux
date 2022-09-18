@@ -8,6 +8,10 @@ import com.tbonegames.enemies.Enemies;
 
 public class Combat {
 	
+	int recoilDamage = 0;
+	int extraDamage = 0;
+	int playerDamage = 0;
+	
 	Random random = new Random();
 	
 	CookieMain cMain;
@@ -72,6 +76,7 @@ public class Combat {
 		
 		if (cMain.itemsDisabled == false) {
 		
+		setBoldness();
 		cMain.multiplierPanel.setVisible(true);
 		
 		combatButtonConfig(cMain.combatButton1, cMain.itemInventory.items[0].totalCurrentAmount ,cMain.itemInventory.items[0].itemName, "Item0");
@@ -95,11 +100,11 @@ public class Combat {
 			healingItem -= healingMultiplier;
 			break;
 			case "Extra":
-			cMain.logosCounter += ((healingValue * healingMultiplier) * .8);
+			cMain.logosCounter += ((healingValue * healingMultiplier) * (8/10));
 			healingItem -= healingMultiplier;
 			break;
 			case "Bastardly":
-			cMain.logosCounter += ((healingValue * healingMultiplier) * .7);
+			cMain.logosCounter += ((healingValue * healingMultiplier) * (7/10));
 			healingItem -= healingMultiplier;
 			break;
 		}
@@ -159,39 +164,58 @@ public class Combat {
 	}
 		
 	
-	public void playerAttackResult(){
+	public void playerAttackResult(String weaponName){
 		
 		gameOver();
 		victory();
 		int itemDamageBonus = 0;
 		int itemDamageDenominator = 10;
-		String weaponName = "Bastard Fists";
 		//Allow these to be upgraded. 
 		switch (cMain.combatAttackingItem) {
 		case "BastardFists":
 			break;
 		case "Attack0":
 			itemDamageBonus = cMain.itemInventory.weapons[0].weaponMultiplier * cMain.itemInventory.weapons[0].totalAmountPurchased;
-			weaponName = cMain.itemInventory.weapons[0].weaponName;
 			break;
 		case "Attack1":
 			itemDamageBonus = cMain.itemInventory.weapons[1].weaponMultiplier * cMain.itemInventory.weapons[1].totalAmountPurchased;
-			weaponName = cMain.itemInventory.weapons[1].weaponName;
 			break;
 		case "Attack2":
 			itemDamageBonus = cMain.itemInventory.weapons[2].weaponMultiplier * cMain.itemInventory.weapons[2].totalAmountPurchased;
-			weaponName = cMain.itemInventory.weapons[2].weaponName;
 			break;
 		case "Attack3":
 			itemDamageBonus = cMain.itemInventory.weapons[3].weaponMultiplier * cMain.itemInventory.weapons[3].totalAmountPurchased;
-			weaponName = cMain.itemInventory.weapons[3].weaponName;
 			break;
 		}
-		int playerDamage = new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus))/itemDamageDenominator);
 		
-		cMain.combatTextArea.setText("You attacked " + cMain.enemy.name + " with the " + weaponName + " and dealt " + playerDamage + " damage" );
+		playerDamage = new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus))/itemDamageDenominator);
+		
+		String attackStyleMessage = "";
+		if (cMain.healingMultiplierHandler.contains("Normal")) {
+		}
+		
+		if (cMain.healingMultiplierHandler.contains("Extra")) {
+			extraDamage = playerDamage * (3/10);
+			attackStyleMessage = "Due to using the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " technique, you dealt an additional " + extraDamage + " damage, but took " + cMain.extraAttackRecoil +" damage in recoil.";
+			recoilDamage = cMain.extraAttackRecoil;
+		}
+		
+		if (cMain.healingMultiplierHandler.contains("Bastardly")) {
+			extraDamage = ((playerDamage * (1/10)) +((new java.util.Random().nextInt(6))/10)* playerDamage) + (new java.util.Random().nextInt(playerDamage)*(5/10));
+			
+			attackStyleMessage = "Due to using the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " technique, you dealt an additional " + extraDamage + " damage, but took " + cMain.bastardlyAttackRecoil +" damage in recoil.";
+			recoilDamage = cMain.bastardlyAttackRecoil;
+		}
+		playerDamage += extraDamage;
+		
+		
+		cMain.combatTextArea.setText("You attacked " + cMain.enemy.name + " with the " + weaponName + " with the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " Teachnique. " +
+		"You dealt " + playerDamage + " damage." + attackStyleMessage);
+				
 		
 		cMain.enemy.hp = cMain.enemy.hp - playerDamage;
+		
+		cMain.logosCounter = cMain.logosCounter - recoilDamage;
 		
 		numberOfTurns();
 		
@@ -375,6 +399,26 @@ public class Combat {
 			
 		}
 		
+	}
+	
+	public void setBoldness() {
+		switch (cMain.healingMultiplierHandler) {
+		case "Normal":
+			cMain.multiplierButton1.setFont(cMain.font3Bold);
+			cMain.multiplierButton2.setFont(cMain.font3);
+			cMain.multiplierButton3.setFont(cMain.font3);
+			break;
+		case "Extra":
+			cMain.multiplierButton1.setFont(cMain.font3);
+			cMain.multiplierButton2.setFont(cMain.font3Bold);
+			cMain.multiplierButton3.setFont(cMain.font3);
+			break;
+		case "Bastardly":
+			cMain.multiplierButton1.setFont(cMain.font3);
+			cMain.multiplierButton2.setFont(cMain.font3);
+			cMain.multiplierButton3.setFont(cMain.font3Bold);
+			break;
+		}
 	}
 
 	public void playerBuffResult(String buffName) {
