@@ -24,7 +24,7 @@ public class BastardSlotBelt extends Armor{
 	armorValueNumerator = 1;
 	armorValueDenominator = 1;
 	
-	defenseValue = 20;
+	defenseValue = 40;
 	
 	armorPrice = 1750;
 	armorPriceIncrease = 1750;

@@ -24,7 +24,7 @@ public class BastardGloves extends Armor{
 	armorValueNumerator = 1;
 	armorValueDenominator = 1;
 	
-	defenseValue = 5;
+	defenseValue = 10;
 	
 	armorPrice = 500;
 	armorPriceIncrease = 500;
