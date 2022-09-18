@@ -42,6 +42,7 @@ public class Combat {
 		cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 		cMain.combatTextArea.setText(cMain.enemy.name +"'s HP:" + cMain.enemy.hp);
 		//playerDamage3();
+		cMain.multiplierPanel.setVisible(false);
 		
 		combatButtonConfig(cMain.combatButton1, "Attack", "Attack");
 	
@@ -68,6 +69,9 @@ public class Combat {
 	}
 	
 	public void itemChoices() {
+		
+		cMain.multiplierPanel.setVisible(true);
+		
 		combatButtonConfig(cMain.combatButton1, cMain.itemInventory.items[0].totalCurrentAmount ,cMain.itemInventory.items[0].itemName, "Item0");
 		
 		combatButtonConfig(cMain.combatButton2, cMain.itemInventory.items[1].totalCurrentAmount ,cMain.itemInventory.items[1].itemName, "Item1");
