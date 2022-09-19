@@ -171,24 +171,26 @@ public class Combat {
 	}
 	
 	public int calculateBonus(int playerDamage) {
+		double bonusCalculation = 0;
 		switch (cMain.healingMultiplierHandler) {
 		case "Normal":
 			cMain.playerAttackBonus = 0;
 			break;
 		case "Extra":
-			cMain.playerAttackBonus = playerDamage * (3/10);
+			bonusCalculation = (double)(playerDamage * .3);
 			break;
 		case "Bastardly":
-			cMain.playerAttackBonus = ((playerDamage * (1/10)) +((new java.util.Random().nextInt(6))/10)* playerDamage) + (new java.util.Random().nextInt(playerDamage)*(5/10));
+			bonusCalculation = (double)(((playerDamage * (1/10)) +((double)(new java.util.Random().nextInt(6))/10)* playerDamage) + (double)(new java.util.Random().nextInt(playerDamage)*(double)(5/10)));
 			break;
 		}
+			cMain.playerAttackBonus = (int)bonusCalculation;
 		
 		return cMain.playerAttackBonus;
 	}
 	
-	public int calculateRecoil(int extraRecoilDamage, int bastardlyRecoilDamage) {
+	public int calculateRecoil(int extraRecoilDamage, int bastardlyRecoilDamage, String handler) {
 			int recoilDamage = 0;
-			switch (cMain.healingMultiplierHandler) {
+			switch (handler) {
 			case "Normal":
 				recoilDamage = 0;
 				break;
@@ -200,36 +202,15 @@ public class Combat {
 				break;
 			}
 			
-		cMain.logosCounter = cMain.logosCounter - recoilDamage;
 		return recoilDamage;
 	}
 		
 	
 	public void playerAttackResult(String weaponName, int playerDamage, int playerBonus, int playerRecoil){
 		
-//		gameOver();
-//		victory();
-//		int itemDamageBonus = 0;
-//		int itemDamageDenominator = 10;
-//		//Allow these to be upgraded. 
-//		switch (cMain.combatAttackingItem) {
-//		case "BastardFists":
-//			break;
-//		case "Attack0":
-//			itemDamageBonus = cMain.itemInventory.weapons[0].weaponMultiplier * cMain.itemInventory.weapons[0].totalAmountPurchased;
-//			break;
-//		case "Attack1":
-//			itemDamageBonus = cMain.itemInventory.weapons[1].weaponMultiplier * cMain.itemInventory.weapons[1].totalAmountPurchased;
-//			break;
-//		case "Attack2":
-//			itemDamageBonus = cMain.itemInventory.weapons[2].weaponMultiplier * cMain.itemInventory.weapons[2].totalAmountPurchased;
-//			break;
-//		case "Attack3":
-//			itemDamageBonus = cMain.itemInventory.weapons[3].weaponMultiplier * cMain.itemInventory.weapons[3].totalAmountPurchased;
-//			break;
-//		}
-		
-//		cMain.playerDamage = new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus))/itemDamageDenominator);
+		gameOver();
+		victory();
+
 		
 		String attackStyleMessage = "";
 		switch (cMain.healingMultiplierHandler) {
@@ -243,27 +224,13 @@ public class Combat {
 			break;
 		}
 
-//
-//		
-//		if (cMain.healingMultiplierHandler.contains("Extra")) {
-//			cMain.playerAttackBonus = cMain.playerDamage * (3/10);
-//			attackStyleMessage = "Due to using the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " technique, you dealt an additional " + cMain.playerAttackBonus + " damage, but took " + cMain.extraAttackRecoil +" damage in recoil.";
-//			cMain.playerRecoil = cMain.extraAttackRecoil;
-//		}
-//		
-//		if (cMain.healingMultiplierHandler.contains("Bastardly")) {
-//			cMain.playerAttackBonus = ((cMain.playerDamage * (1/10)) +((new java.util.Random().nextInt(6))/10)* cMain.playerDamage) + (new java.util.Random().nextInt(cMain.playerDamage)*(5/10));
-//			
-//			attackStyleMessage = "Due to using the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " technique, you dealt an additional " + cMain.playerAttackBonus + " damage, but took " + cMain.bastardlyAttackRecoil +" damage in recoil.";
-//			cMain.playerRecoil = cMain.bastardlyAttackRecoil;
-//		}
 		cMain.playerDamage += cMain.playerAttackBonus;
 		
 		
 		cMain.combatTextArea.setText("You attacked " + cMain.enemy.name + " with the " + weaponName + " with the Action Bastard Lucky Bastard " + cMain.healingMultiplierHandler + " Teachnique. " +
 		"You dealt " + playerDamage + " damage." + attackStyleMessage);
 				
-		
+		cMain.logosCounter = cMain.logosCounter - playerRecoil;
 		cMain.enemy.hp = cMain.enemy.hp - cMain.playerDamage;
 		
 		
@@ -402,7 +369,17 @@ public class Combat {
 	public void gameOver() {
 		
 		if (cMain.logosCounter < 1) {
+			String recoilDeath = "";
 			
+			switch(cMain.healingMultiplierHandler) {
+			
+			case "Extra":
+				recoilDeath = "You took" + cMain.playerRecoil + " in recoil damage and blew yourself to bastard bits. ";
+				break;
+			case "Bastardly":
+				recoilDeath = "You took" + cMain.playerRecoil + " in recoil damage and bastardly blew yourself to bastard bits. ";
+				break;
+			}
 		
 			
 		
@@ -411,7 +388,7 @@ public class Combat {
 		cMain.soundFX.playSoundEffect(cMain.soundFXValues.death);
 		
 		cMain.inCombat = true;
-		cMain.combatTextArea.setText("You have ran out of life \n Game Over.");
+		cMain.combatTextArea.setText( recoilDeath + "You have ran out of life \n Game Over.");
 		
 		
 		

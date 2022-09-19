@@ -81,7 +81,7 @@ public class CombatHandler implements ActionListener{
 			cMain.combatAttackingItem = "BastardFists";
 			cMain.playerDamage = combat.calculateDamage(0, 0);
 			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
-			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil);
+			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil, cMain.healingMultiplierHandler);
 			cMain.logosCounter-= cMain.playerRecoil;
 			combat.playerAttackResult("Bastard Fists", cMain.playerDamage, cMain.playerAttackBonus, cMain.playerRecoil);
 			break;
@@ -90,8 +90,7 @@ public class CombatHandler implements ActionListener{
 			cMain.combatAttackingItem = "Attack0";
 			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[0].weaponMultiplier, cMain.itemInventory.weapons[0].totalAmountPurchased);
 			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
-			
-			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil);
+			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil, cMain.healingMultiplierHandler);
 			cMain.logosCounter-= cMain.playerRecoil;
 			combat.playerAttackResult(cMain.itemInventory.weapons[0].weaponName, cMain.playerDamage, cMain.playerAttackBonus, cMain.playerRecoil);
 			break;
@@ -100,7 +99,7 @@ public class CombatHandler implements ActionListener{
 			cMain.combatAttackingItem = "Attack1";
 			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[1].weaponMultiplier, cMain.itemInventory.weapons[1].totalAmountPurchased);
 			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
-			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil);
+			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil, cMain.healingMultiplierHandler);
 			cMain.logosCounter-= cMain.playerRecoil;
 			 combat.playerAttackResult(cMain.itemInventory.weapons[1].weaponName, cMain.playerDamage, cMain.playerAttackBonus, cMain.playerRecoil);
 			break;
@@ -109,7 +108,7 @@ public class CombatHandler implements ActionListener{
 			cMain.combatAttackingItem = "Attack2";
 			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[2].weaponMultiplier, cMain.itemInventory.weapons[2].totalAmountPurchased);
 			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
-			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil);
+			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil, cMain.healingMultiplierHandler);
 			cMain.logosCounter-= cMain.playerRecoil;
 			combat.playerAttackResult(cMain.itemInventory.weapons[2].weaponName, cMain.playerDamage, cMain.playerAttackBonus, cMain.playerRecoil);
 		case "Attack3":
@@ -117,7 +116,7 @@ public class CombatHandler implements ActionListener{
 			cMain.combatAttackingItem = "Attack3";
 			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[3].weaponMultiplier, cMain.itemInventory.weapons[3].totalAmountPurchased);
 			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
-			cMain.logosCounter-= combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil);
+			cMain.logosCounter-= combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil, cMain.healingMultiplierHandler);
 			combat.playerAttackResult(cMain.itemInventory.weapons[3].weaponName, cMain.playerDamage, cMain.playerAttackBonus, cMain.playerRecoil);
 			break;
 		case "Defend0":

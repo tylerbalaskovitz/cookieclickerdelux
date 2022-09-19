@@ -194,11 +194,17 @@ public class DayTimer {
 	cMain.ui.closeAllPanels();
 	cMain.ui.displayCombat();
 	cMain.blockValue = 0;
-	cMain.extraAttackRecoil = (cMain.logosCounter * (15/100));
-	cMain.bastardlyAttackRecoil = (cMain.logosCounter * (30/100));
+	calculateRecoil();
 	cMain.numberOfActions = cMain.baseNumberOfActions;
 	cMain.combat.combatSetup();
 	cMain.combat.fight();
+	}
+	
+	public void calculateRecoil() {
+		double doubleExtraRecoil = ((double)cMain.logosCounter * .15);
+		cMain.extraAttackRecoil = (int)doubleExtraRecoil;
+		double doubleBastardlyAttackRecoil = ((double)cMain.logosCounter * .3);
+		cMain.bastardlyAttackRecoil = (int)doubleBastardlyAttackRecoil;
 	}
 	
 	public void timerUpdate() {
