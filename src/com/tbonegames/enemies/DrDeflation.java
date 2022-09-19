@@ -7,9 +7,14 @@ public class DrDeflation extends Enemies{
 		name = "Dr. Deflation";
 		hp = 6000;
 		attack = 700;
-		defense = 50;
+		defense = 10;
 		dodge = 10;
 		disableDuration = 0;
+		
+		attackDisableCounter = 0;
+		blockDisableCounter = 0;
+		itemDisableCounter = 0;
+		buffsDisableCounter = 0;
 		
 		//attacks the items in your inventory as well as the player
 		attack1 = "Price Deflation";

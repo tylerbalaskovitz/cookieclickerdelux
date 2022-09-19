@@ -2,14 +2,20 @@ package com.tbonegames.enemies;
 
 public class DrHitlerCloneAndroid extends Enemies{
 
+	
 	public DrHitlerCloneAndroid() {
 		
 		name = "Dr. Hitler Clone Android";
 		hp = 100000;
 		attack = 15000;
-		defense = 50;
+		defense = 10;
 		dodge = 10;
 		disableDuration = 0;
+		
+		attackDisableCounter = 0;
+		blockDisableCounter = 0;
+		itemDisableCounter = 0;
+		buffsDisableCounter = 0;
 		
 		//Massive Damage
 		attack1 = "Chicken Shit Satelite";
@@ -35,11 +41,15 @@ public class DrHitlerCloneAndroid extends Enemies{
 		attack4Chance = 8;
 		
 		specialMessage = "";
+		
+		
 	}
 	
 	
 	
 	public void special1() {
+		specialMessage = "Dr. Hitler Clone Android's Nuclear Holocaust is armed and ready to annahilate. ";
+		attack4Damage *= 1000;
 		
 	}
 
@@ -48,7 +58,10 @@ public class DrHitlerCloneAndroid extends Enemies{
 	}
 	
 	public void special3() {
-		
+		attack3Damage *= 4;
+		specialMessage = "Dr. Hitler Clone Android's Damage increase and he recovered health. ";
+		double healingHP = (double)hp *.25;
+		hp += (int)healingHP;
 	}
 	
 	public void special4() {

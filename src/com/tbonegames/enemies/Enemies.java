@@ -13,6 +13,11 @@ public class Enemies {
 	public int dodge;
 	public int disableDuration;
 	
+	public int attackDisableCounter;
+	public int blockDisableCounter;
+	public int itemDisableCounter;
+	public int buffsDisableCounter;
+	
 	public String attack1;
 	public String attack1Command;
 	public int attack1Damage;

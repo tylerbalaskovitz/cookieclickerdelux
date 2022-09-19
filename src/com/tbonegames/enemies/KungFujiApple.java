@@ -6,9 +6,14 @@ public class KungFujiApple extends Enemies{
 		name = "Kung Fuji Apple";
 		hp = 2200;
 		attack = 200;
-		defense = 50;
+		defense = 10;
 		dodge = 10;
 		disableDuration = 0;
+		
+		attackDisableCounter = 0;
+		blockDisableCounter = 0;
+		itemDisableCounter = 0;
+		buffsDisableCounter = 0;
 		
 		attack1 = "Rotten to the Core Sphincter Clench";
 		attack1Command = "SpincterClench";

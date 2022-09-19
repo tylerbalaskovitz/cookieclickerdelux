@@ -8,9 +8,14 @@ public class FeverDemon extends Enemies{
 		name = "The Red Hot Fever Demon";
 		hp = 300;
 		attack = 50;
-		defense = 50;
+		defense = 10;
 		dodge = 10;
 		disableDuration = 0;
+		
+		attackDisableCounter = 0;
+		blockDisableCounter = 0;
+		itemDisableCounter = 0;
+		buffsDisableCounter = 0;
 		
 		attack1 = "Flaming Griddle of Doom";
 		attack1Command = "FlamingGriddle";

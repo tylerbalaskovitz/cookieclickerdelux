@@ -7,9 +7,14 @@ public class Arachnobots extends Enemies {
 		name = "Arachnobots";
 		hp = 50000;
 		attack = 2000;
-		defense = 50;
+		defense = 10;
 		dodge = 10;
 		disableDuration = 0;
+		
+		attackDisableCounter = 0;
+		blockDisableCounter = 0;
+		itemDisableCounter = 0;
+		buffsDisableCounter = 0;
 		
 		//Everything is disabled. Lose a turn.
 		attack1 = "Mind Control";
@@ -33,6 +38,24 @@ public class Arachnobots extends Enemies {
 		attack4Command = "ArachnoBots";
 		attack4Damage = 0;
 		attack4Chance = 6;
+		specialMessage = "";
 	}
 	
+	
+	
+	public void special1() {
+		
+	}
+
+	public void special2() {
+		
+	}
+	
+	public void special3() {
+		
+	}
+	
+	public void special4() {
+		
+	}
 }

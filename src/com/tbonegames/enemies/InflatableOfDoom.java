@@ -6,9 +6,14 @@ public class InflatableOfDoom extends Enemies {
 		name ="The Inflatable of Doom";
 		hp = 75000;
 		attack = 5000;
-		defense = 50;
+		defense = 10;
 		dodge = 10;
 		disableDuration = 0;
+		
+		attackDisableCounter = 0;
+		blockDisableCounter = 0;
+		itemDisableCounter = 0;
+		buffsDisableCounter = 0;
 		
 		attack1 = "Tsunami";
 		attack1Command = "Tsunami";

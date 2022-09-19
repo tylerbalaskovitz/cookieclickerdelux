@@ -7,10 +7,15 @@ public class HenchPeckers extends Enemies{
 			name = "Hench Peckers";
 			hp = 35000;
 			attack = 2200;
-			defense = 50;
+			defense = 5;
 			dodge = 10;
 			
-			attack1 = "Off Season Ice Dance";
+			attackDisableCounter = 0;
+			blockDisableCounter = 0;
+			itemDisableCounter = 0;
+			buffsDisableCounter = 0;
+			
+			attack1 = "Off Season Ice Dancer";
 			attack1Command = "IceDance";
 			attack1Damage = 4000;
 			attack1Chance = 0;

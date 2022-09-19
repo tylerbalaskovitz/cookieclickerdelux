@@ -6,9 +6,14 @@ public class DrHitlerClone extends Enemies{
 	name = "Dr. Hitler Clone";
 	hp = 75000;
 	attack = 10000;
-	defense = 50;
+	defense = 10;
 	dodge = 10;
 	disableDuration = 0;
+	
+	attackDisableCounter = 0;
+	blockDisableCounter = 0;
+	itemDisableCounter = 0;
+	buffsDisableCounter = 0;
 	
 	attack1 = "Mad Sciences";
 	attack1Command = "MadScience";
@@ -45,6 +50,10 @@ public class DrHitlerClone extends Enemies{
 	}
 	
 	public void special3() {
+		attackDisableCounter += 3;
+		blockDisableCounter += 3;
+		itemDisableCounter += 3;
+		buffsDisableCounter += 3;
 		
 	}
 	

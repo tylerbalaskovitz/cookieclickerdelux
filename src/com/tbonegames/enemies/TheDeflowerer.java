@@ -6,9 +6,14 @@ public class TheDeflowerer extends Enemies {
 		name = "The Deflowerer";
 		hp = 7000;
 		attack = 1000;
-		defense = 50;
+		defense = 10;
 		dodge = 10;
 		disableDuration = 0;
+		
+		attackDisableCounter = 0;
+		blockDisableCounter = 0;
+		itemDisableCounter = 0;
+		buffsDisableCounter = 0;
 		
 		//disables an attack
 		attack1 = "Hymen Break";
@@ -33,16 +38,18 @@ public class TheDeflowerer extends Enemies {
 		attack4Chance = 6;
 		
 		specialMessage = "";
+	
 	}
 	
 	
 	
 	public void special1() {
-		
+		attackDisableCounter += 2;
 	}
 
 	public void special2() {
-		
+		blockDisableCounter = 2;
+		itemDisableCounter = 2;
 	}
 	
 	public void special3() {

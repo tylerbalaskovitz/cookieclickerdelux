@@ -44,6 +44,8 @@ public class Combat {
 		//playerDamage3();
 		cMain.multiplierPanel.setVisible(false);
 		
+		if (cMain.attacksDisabled == false || cMain.blocksDisabled == false || cMain.itemsDisabled == false || cMain.buffsDisabled == false) {
+		
 		combatButtonConfig(cMain.combatButton1, "Attack", "Attack");
 	
 		combatButtonConfig(cMain.combatButton2, "Defend", "Defend");
@@ -51,11 +53,14 @@ public class Combat {
 		combatButtonConfig(cMain.combatButton3, "Item", "Item");
 		
 		combatButtonConfig(cMain.combatButton4, "Buffs", "Buffs");
+		} else {
+			enemyAttack();
+		}
 		victory();
 	}
 	
 	public void playerDefendChoices() {
-		
+		if (cMain.blocksDisabled == false) {
 		combatButtonConfig(cMain.combatButton1, cMain.itemInventory.armor[0].totalCurrentAmount,cMain.itemInventory.armor[0].armorName, "Defend0");
 		
 		combatButtonConfig(cMain.combatButton2, cMain.itemInventory.armor[1].totalCurrentAmount, cMain.itemInventory.armor[1].armorName, "Defend1");
@@ -65,7 +70,9 @@ public class Combat {
 		combatButtonConfig(cMain.combatButton4, cMain.itemInventory.armor[3].totalCurrentAmount, cMain.itemInventory.armor[3].armorName, "Defend3");
 		
 		if (cMain.itemInventory.armor[3].totalCurrentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}	
-		
+		} else {
+	 		enemyAttack();
+	 	}
 	}
 	
 	public void itemChoices() {
@@ -84,7 +91,9 @@ public class Combat {
 		combatButtonConfig(cMain.combatButton4, cMain.itemInventory.items[3].totalCurrentAmount ,cMain.itemInventory.items[3].itemName, "Item3");
 		
 		if (cMain.itemInventory.items[3].totalCurrentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}
-		}
+		} else {
+	 		enemyAttack();
+	 	}
 	}
 	
 	
@@ -123,7 +132,9 @@ public class Combat {
 		combatButtonConfig(cMain.combatButton4, cMain.itemInventory.buffs[3].currentAmount,cMain.itemInventory.buffs[3].buffName, "Buff3");
 		
 		if (cMain.itemInventory.buffs[3].currentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}
-		}
+		} else {
+	 		enemyAttack();
+	 	}
 	}
 	
 	
@@ -146,6 +157,8 @@ public class Combat {
 			
 			if (cMain.itemInventory.weapons[3].totalCurrentAmount == 0) {combatButtonConfig(cMain.combatButton4, "Return", "Return");}
 			
+		 	} else {
+		 		enemyAttack();
 		 	}
 	}
 	
@@ -161,12 +174,11 @@ public class Combat {
 	
 	public int calculateDamage(int weaponsMultiplier, int totalPurchase) {
 		int itemDamageBonus = 0;
-		int itemDamageDenominator = 10;
 
 		
 		itemDamageBonus =weaponsMultiplier * totalPurchase;
 		
-		cMain.playerDamage = new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus))/itemDamageDenominator);
+		cMain.playerDamage = new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus))/cMain.enemy.defense);
 		return cMain.playerDamage;
 	}
 	
@@ -250,6 +262,7 @@ public class Combat {
 	}
 	
 	public void enemyAttack() {
+		calculateDisables(cMain.enemy.attackDisableCounter, cMain.enemy.blockDisableCounter, cMain.enemy.itemDisableCounter, cMain.enemy.buffsDisableCounter);
 		victory();
 		if (cMain.inCombat==true) {
 		String rolledAttack = "";
@@ -286,6 +299,7 @@ public class Combat {
 		cMain.logosCounter = cMain.logosCounter  - cMain.enemyDamage;
 		cMain.combatTextArea.setText(cMain.enemy.name + " attacked with " + rolledAttack + " doing "  + cMain.enemyDamage + " damage." + cMain.enemy.specialMessage + "\n You have " + cMain.logosCounter + " logos remaining");
 		
+		cMain.enemy.specialMessage = "";
 		
 		combatButtonConfig(cMain.combatButton1, ">", "ContinueBattle");
 		combatButtonConfig(cMain.combatButton2, "?", "");
@@ -335,40 +349,43 @@ public class Combat {
 		}
 	}
 	
-	public void disableAttackCounter() {
-		cMain.disableAttacksCounter--;
-		if (cMain.disableAttacksCounter <= 0) {
-			cMain.disableAttacksCounter = 0;
+	public void calculateDisables(int attackCounter, int blockCounter, int itemsCounter, int buffsCounter) {
+		attackCounter--;
+		if (attackCounter <= 0) {
+			attackCounter = 0;
 			cMain.attacksDisabled = false;
-		} else if (cMain.disableAttacksCounter > 0 ) {
+		} else if (attackCounter> 0 ) {
 			cMain.attacksDisabled = true;
 		}
-	}
-	
-	public void disableBlocksCounter() {
-		cMain.disableBlocksCounter--;
-		if (cMain.disableBlocksCounter <= 0) {
-			cMain.disableBlocksCounter = 0;
+		
+		blockCounter--;
+		if (blockCounter <= 0) {
+			blockCounter = 0;
 			cMain.blocksDisabled = false;
-		} else if (cMain.disableAttacksCounter > 0 ) {
+		} else if (blockCounter> 0 ) {
 			cMain.blocksDisabled = true;
 		}
-	}
-	
-	public void disableItemsCounter() {
-		cMain.disableItemsCounter--;
-		if (cMain.disableItemsCounter <= 0) {
-			cMain.disableItemsCounter = 0;
+		
+		itemsCounter--;
+		if (itemsCounter <= 0) {
+			itemsCounter = 0;
 			cMain.itemsDisabled = false;
-		} else if (cMain.disableItemsCounter > 0 ) {
+		} else if (attackCounter> 0 ) {
 			cMain.itemsDisabled = true;
 		}
+		
+		buffsCounter--;
+		if (buffsCounter <= 0) {
+			buffsCounter = 0;
+			cMain.buffsDisabled = false;
+		} else if (buffsCounter> 0 ) {
+			cMain.buffsDisabled = true;
+		}
+		
+		
+		
 	}
 	
-	
-	
-	
-
 	
 	public void gameOver() {
 		

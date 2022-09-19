@@ -10,13 +10,18 @@ public class FlyingPecker extends Enemies {
 	dodge = 10;
 	disableDuration = 0;
 	
+	attackDisableCounter = 0;
+	blockDisableCounter = 0;
+	itemDisableCounter = 0;
+	buffsDisableCounter = 0;
+	
 	attack1 = "the Big Pecker with feathers";
 	attack1Command = "BigPecker";
 	attack1Damage = 8000;
 	attack1Chance = 0;
 	
 	//High hitting energy ball
-	attack2 = "Poly Blast";
+	attack2 = "Poly-Blast";
 	attack2Command = "PolyBlast";
 	attack2Damage = 12000;
 	attack2Chance = 2;
@@ -41,7 +46,9 @@ public class FlyingPecker extends Enemies {
 	}
 	
 	public void special2() {
-		
+		attack2Damage *= 4;
+		attack *= 4;
+		specialMessage = "Flying Pecker's attack and Poly-Blast grew much stronger!";
 	}
 	
 	public void special3() {

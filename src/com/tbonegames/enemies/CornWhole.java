@@ -7,9 +7,14 @@ public class CornWhole extends Enemies{
 		name = "Corn Whole";
 		hp = 4200;
 		attack = 400;
-		defense = 50;
+		defense = 10;
 		dodge = 10;
 		disableDuration = 0;
+		
+		attackDisableCounter = 0;
+		blockDisableCounter = 0;
+		itemDisableCounter = 0;
+		buffsDisableCounter = 0;
 		
 		attack1 = "Cornhole Blast";
 		attack1Command = "CornholeBlast";

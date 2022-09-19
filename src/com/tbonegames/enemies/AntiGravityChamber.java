@@ -6,9 +6,14 @@ public class AntiGravityChamber extends Enemies {
 		name = "Anti-Gravity Chamber";
 		hp = 3000;
 		attack = 300;
-		defense = 50;
+		defense = 10;
 		dodge = 10;
 		disableDuration = 0;
+		
+		attackDisableCounter = 0;
+		blockDisableCounter = 0;
+		itemDisableCounter = 0;
+		buffsDisableCounter = 0;
 		
 		attack1 = "Anti-Gravity Pounding";
 		attack1Command = "BigPecker";

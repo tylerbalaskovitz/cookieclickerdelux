@@ -6,9 +6,14 @@ public class BetaCarrotine extends Enemies {
 	name = "Beta Carrotine";
 	hp = 3500;
 	attack = 300;
-	defense = 50;
+	defense = 10;
 	dodge = 10;
 	disableDuration = 0;
+	
+	attackDisableCounter = 0;
+	blockDisableCounter = 0;
+	itemDisableCounter = 0;
+	buffsDisableCounter = 0;
 	
 	attack1 = "24 Carrot Golden Shower";
 	attack1Command = "CarrotShower";
