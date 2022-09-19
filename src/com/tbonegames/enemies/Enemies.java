@@ -39,4 +39,24 @@ public class Enemies {
 	public URL defeated;
 	
 	public URL imageID;
+	
+	public String specialMessage = "";
+	
+	public void special1() {
+		
+	}
+
+	public void special2() {
+		
+	}
+	
+	public void special3() {
+		
+	}
+	
+	public void special4() {
+		
+	}
+	
 }
+

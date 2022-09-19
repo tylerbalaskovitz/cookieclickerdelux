@@ -33,6 +33,24 @@ public class TheGreatO extends Enemies{
 		attack4Command = "NeverTravelAlone";
 		attack4Damage = 11000;
 		attack4Chance = 6;
+		specialMessage = "";
 	}
 	
+	
+	
+	public void special1() {
+		
+	}
+
+	public void special2() {
+		
+	}
+	
+	public void special3() {
+		
+	}
+	
+	public void special4() {
+		
+	}
 }

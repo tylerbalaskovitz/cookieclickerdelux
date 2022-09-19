@@ -34,6 +34,25 @@ public class DrDeflation extends Enemies{
 		attack4Command = "BlackFriday";
 		attack4Damage = 0;
 		attack4Chance = 8;
+		specialMessage = "";
+	}
+	
+	
+	
+	public void special1() {
+		
+	}
+
+	public void special2() {
+		
+	}
+	
+	public void special3() {
+		
+	}
+	
+	public void special4() {
+		
 	}
 		
 		

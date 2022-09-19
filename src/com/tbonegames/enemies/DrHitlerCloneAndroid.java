@@ -34,6 +34,25 @@ public class DrHitlerCloneAndroid extends Enemies{
 		attack4Damage = 200000;
 		attack4Chance = 8;
 		
+		specialMessage = "";
+	}
+	
+	
+	
+	public void special1() {
+		
+	}
+
+	public void special2() {
+		
+	}
+	
+	public void special3() {
+		
+	}
+	
+	public void special4() {
+		
 	}
 	
 }

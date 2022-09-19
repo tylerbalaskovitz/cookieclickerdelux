@@ -29,5 +29,24 @@ public class BetaCarrotine extends Enemies {
 	attack4Command = "DoYouCarrot";
 	attack4Damage = 1000;
 	attack4Chance = 6;
+	specialMessage = "";
+}
+
+
+
+	public void special1() {
+	
+	}
+
+	public void special2() {
+	
+	}
+
+	public void special3() {
+	
+	}
+
+	public void special4() {
+	
 	}
 }

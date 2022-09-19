@@ -29,6 +29,25 @@ public class DrEnema extends Enemies{
 		attack4Command = "ArachnoBots";
 		attack4Damage = 250;
 		attack4Chance = 6;
+		specialMessage = "";
+	}
+	
+	
+	
+	public void special1() {
+		
+	}
+
+	public void special2() {
+		
+	}
+	
+	public void special3() {
+		
+	}
+	
+	public void special4() {
+		
 	}
 	
 }

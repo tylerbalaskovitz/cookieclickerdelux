@@ -31,6 +31,25 @@ public class DrHitlerClone extends Enemies{
 	attack4Command = "Hindenburg";
 	attack4Damage = 100000;
 	attack4Chance = 8;
+	specialMessage = "";
+	}
+
+
+
+	public void special1() {
+	
+	}
+
+	public void special2() {
+	
+	}
+	
+	public void special3() {
+		
+	}
+	
+	public void special4() {
+		
 	}
 	
 }

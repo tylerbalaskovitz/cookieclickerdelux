@@ -30,6 +30,24 @@ public class HenchPeckers extends Enemies{
 			attack4Command = "DrillHole";
 			attack4Damage = 20000;
 			attack4Chance = 8;
-	}
-	
+			specialMessage = "";
+		}
+		
+		
+		
+		public void special1() {
+			
+		}
+
+		public void special2() {
+			
+		}
+		
+		public void special3() {
+			
+		}
+		
+		public void special4() {
+			
+		}
 }

@@ -29,6 +29,24 @@ public class InflatableOfDoom extends Enemies {
 		attack4Command = "";
 		attack4Damage = 0;
 		attack4Chance = 12;
+		
+		
 	}
 	
+	public void special1(){
+		attack1Damage *= 2;
+		attack *=2;
+	}
+	
+	public void speical2() {
+		
+	}
+	
+	public void speical3() {
+		
+	}
+
+	public void speical4() {
+	
+	}
 }

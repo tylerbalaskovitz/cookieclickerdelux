@@ -32,7 +32,24 @@ public class TheDeflowerer extends Enemies {
 		attack4Damage = 10000;
 		attack4Chance = 6;
 		
+		specialMessage = "";
+	}
+	
+	
+	
+	public void special1() {
+		
+	}
+
+	public void special2() {
 		
 	}
 	
+	public void special3() {
+		
+	}
+	
+	public void special4() {
+		
+	}
 }

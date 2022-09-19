@@ -30,7 +30,24 @@ public class KungFujiApple extends Enemies{
 		attack4Damage = 1000;
 		attack4Chance = 8;
 		
+		specialMessage = "";
+	}
+	
+	
+	
+	public void special1() {
+		
+	}
+
+	public void special2() {
 		
 	}
 	
+	public void special3() {
+		
+	}
+	
+	public void special4() {
+		
+	}
 }

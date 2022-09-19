@@ -256,18 +256,22 @@ public class Combat {
 		cMain.enemyAttackChoice = new java.util.Random().nextInt(10);
 		if (cMain.enemyAttackChoice  >= cMain.enemy.attack4Chance) {
 			rolledAttack = cMain.enemy.attack4;
+			cMain.enemy.special4();
 			cMain.enemyDamage = new java.util.Random().nextInt(cMain.enemy.attack4Damage) + cMain.enemy.attack;
 		}
 		if ((cMain.enemyAttackChoice  >= cMain.enemy.attack3Chance) && (cMain.enemyAttackChoice  < cMain.enemy.attack4Chance)) {
 			rolledAttack = cMain.enemy.attack3;
+			cMain.enemy.special3();
 			cMain.enemyDamage = new java.util.Random().nextInt(cMain.enemy.attack3Damage) + cMain.enemy.attack;
 		}
 		if ((cMain.enemyAttackChoice  >= cMain.enemy.attack2Chance) && (cMain.enemyAttackChoice  < cMain.enemy.attack3Chance)) {
 			rolledAttack = cMain.enemy.attack2;
+			cMain.enemy.special2();
 			cMain.enemyDamage = new java.util.Random().nextInt(cMain.enemy.attack2Damage) + cMain.enemy.attack;
 		}
 		if ((cMain.enemyAttackChoice  >= cMain.enemy.attack1Chance) && (cMain.enemyAttackChoice  < cMain.enemy.attack2Chance)) {
 			rolledAttack = cMain.enemy.attack1;
+			cMain.enemy.special1();
 			cMain.enemyDamage = new java.util.Random().nextInt(cMain.enemy.attack1Damage) + cMain.enemy.attack;
 		}
 
@@ -280,7 +284,7 @@ public class Combat {
 		cMain.enemyDamage = ((cMain.enemyDamage * 100) / (100 + cMain.blockValue));
 
 		cMain.logosCounter = cMain.logosCounter  - cMain.enemyDamage;
-		cMain.combatTextArea.setText(cMain.enemy.name + " attacked with " + rolledAttack + " doing "  + cMain.enemyDamage + " damage" + "\n You have " + cMain.logosCounter + " logos remaining" );
+		cMain.combatTextArea.setText(cMain.enemy.name + " attacked with " + rolledAttack + " doing "  + cMain.enemyDamage + " damage." + cMain.enemy.specialMessage + "\n You have " + cMain.logosCounter + " logos remaining");
 		
 		
 		combatButtonConfig(cMain.combatButton1, ">", "ContinueBattle");
