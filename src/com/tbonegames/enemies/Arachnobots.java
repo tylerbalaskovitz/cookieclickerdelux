@@ -44,6 +44,10 @@ public class Arachnobots extends Enemies {
 	
 	
 	public void special1() {
+		attackDisableCounter = 2;
+		blockDisableCounter = 2;
+		itemDisableCounter = 2;
+		buffsDisableCounter = 2;
 		
 	}
 
@@ -56,6 +60,8 @@ public class Arachnobots extends Enemies {
 	}
 	
 	public void special4() {
-		
+		specialMessage = "The Arachnobots recovered health. ";
+		double healingHP = (double)hp *.25;
+		hp += (int)healingHP;
 	}
 }

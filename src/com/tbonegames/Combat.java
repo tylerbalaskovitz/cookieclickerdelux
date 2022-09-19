@@ -37,8 +37,10 @@ public class Combat {
 
 	public void fight() {
 		
+		gameOver();
 		
 		cMain.inCombat=true;
+		cMain.combatDeath = false;
 		cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 		cMain.combatTextArea.setText(cMain.enemy.name +"'s HP:" + cMain.enemy.hp);
 		//playerDamage3();
@@ -98,6 +100,7 @@ public class Combat {
 	
 	
 	public int healSelf(int healingItem, int healingValue, int healingMultiplier, String healingMultiplierHandler) {
+		double doubleHealingMultiplier = 0.0;
 		if (healingItem > 0) {
 			switch (healingMultiplierHandler) {
 			case "Normal":
@@ -105,11 +108,13 @@ public class Combat {
 			healingItem -= healingMultiplier;
 			break;
 			case "Extra":
-			cMain.logosCounter += ((healingValue * healingMultiplier) * (8/10));
+				doubleHealingMultiplier = ((double)(healingValue * healingMultiplier) * .8);
+			cMain.logosCounter += (int)doubleHealingMultiplier;
 			healingItem -= healingMultiplier;
 			break;
 			case "Bastardly":
-			cMain.logosCounter += ((healingValue * healingMultiplier) * (7/10));
+				doubleHealingMultiplier = ((double)(healingValue * healingMultiplier) * .7);
+			cMain.logosCounter += (int)doubleHealingMultiplier;
 			healingItem -= healingMultiplier;
 			break;
 		}
@@ -192,7 +197,7 @@ public class Combat {
 			bonusCalculation = (double)(playerDamage * .3);
 			break;
 		case "Bastardly":
-			bonusCalculation = (double)(((playerDamage * (1/10)) +((double)(new java.util.Random().nextInt(6))/10)* playerDamage) + (double)(new java.util.Random().nextInt(playerDamage)*(double)(5/10)));
+			bonusCalculation = (double)(((playerDamage * .1) +((double)(new java.util.Random().nextInt(6))*.1)* playerDamage) + (double)(new java.util.Random().nextInt(playerDamage)*.5));
 			break;
 		}
 			cMain.playerAttackBonus = (int)bonusCalculation;
@@ -263,6 +268,7 @@ public class Combat {
 	
 	public void enemyAttack() {
 		calculateDisables(cMain.enemy.attackDisableCounter, cMain.enemy.blockDisableCounter, cMain.enemy.itemDisableCounter, cMain.enemy.buffsDisableCounter);
+		cMain.multiplierPanel.setVisible(false);
 		victory();
 		if (cMain.inCombat==true) {
 		String rolledAttack = "";
@@ -293,6 +299,8 @@ public class Combat {
 			break;
 		
 		}
+		
+		cMain.combatDeath = true;
 		
 		cMain.enemyDamage = ((cMain.enemyDamage * 100) / (100 + cMain.blockValue));
 
@@ -392,6 +400,7 @@ public class Combat {
 		if (cMain.logosCounter < 1) {
 			String recoilDeath = "";
 			
+			if (cMain.combatDeath == false) {
 			switch(cMain.healingMultiplierHandler) {
 			
 			case "Extra":
@@ -400,6 +409,7 @@ public class Combat {
 			case "Bastardly":
 				recoilDeath = "You took" + cMain.playerRecoil + " in recoil damage and bastardly blew yourself to bastard bits. ";
 				break;
+			}
 			}
 		
 			

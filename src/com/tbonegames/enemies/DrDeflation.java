@@ -19,19 +19,19 @@ public class DrDeflation extends Enemies{
 		//attacks the items in your inventory as well as the player
 		attack1 = "Price Deflation";
 		attack1Command = "Deflation";
-		attack1Damage = 0;
+		attack1Damage = 1000;
 		attack1Chance = 0;
 		
 		//same as above but more damage
 		attack2 = "50% Off";
 		attack2Command = "Sale";
-		attack2Damage = 0;
+		attack1Damage = 2000;
 		attack2Chance = 2;
 		
 		
 		attack3 = "D for Damn it";
 		attack3Command = "DamnIt";
-		attack3Damage = 0;
+		attack1Damage = 4000;
 		attack3Chance = 6;
 		
 		//massive percentile but with a low chance of success
