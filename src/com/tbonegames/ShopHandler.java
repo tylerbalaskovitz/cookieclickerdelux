@@ -43,7 +43,8 @@ public class ShopHandler implements ActionListener{
 			cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[0].strengthIncrease; 
 			cMain.itemInventory.items[0].totalCurrentAmount++;
 			cMain.itemInventory.items[0].totalAmountPurchased++;
-			cMain.logosCounter = cMain.logosCounter - cMain.itemInventory.items[0].itemPrice;
+			cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[0].strengthIncrease; 
+			cMain.itemInventory.items[0].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.items[0].itemName + " \n [Price: " + cMain.itemInventory.items[0].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[0].totalCurrentAmount + " ] \n " + cMain.itemInventory.items[0].itemDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -56,6 +57,7 @@ public class ShopHandler implements ActionListener{
 				cMain.itemInventory.items[1].totalAmountPurchased++;
 				cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[1].strengthIncrease; 
 				cMain.logosCounter = cMain.logosCounter - cMain.itemInventory.items[1].itemPrice;
+				cMain.itemInventory.items[1].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.items[1].itemName + " \n [Price: " + cMain.itemInventory.items[1].itemPrice + "] \n [Amount: " + cMain.itemInventory.items[1].totalCurrentAmount +" ] \n  " + cMain.itemInventory.items[1].itemDescription);
 			} else { 
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -68,6 +70,7 @@ public class ShopHandler implements ActionListener{
 			cMain.itemInventory.items[2].totalCurrentAmount++;
 			cMain.itemInventory.items[2].totalAmountPurchased++;
 			cMain.logosCounter = cMain.logosCounter - cMain.itemInventory.items[2].itemPrice;
+			cMain.itemInventory.items[2].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.items[2].itemName + " \n [Price: " + cMain.itemInventory.items[2].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[2].totalCurrentAmount + " ] \n " + cMain.itemInventory.items[2].itemDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -80,6 +83,7 @@ public class ShopHandler implements ActionListener{
 				cMain.itemInventory.items[3].totalAmountPurchased++;
 				cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[3].strengthIncrease; 
 				cMain.logosCounter = cMain.logosCounter - cMain.itemInventory.items[3].itemPrice;
+				cMain.itemInventory.items[3].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.items[3].itemName + " \n [Price: " + cMain.itemInventory.items[3].itemPrice + "] \n [Amount: " + cMain.itemInventory.items[3].totalCurrentAmount +" ] \n " + cMain.itemInventory.items[3].itemDescription);
 			} else { 
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -92,6 +96,7 @@ public class ShopHandler implements ActionListener{
 			cMain.itemInventory.items[4].totalCurrentAmount++;
 			cMain.itemInventory.items[4].totalAmountPurchased++;
 			cMain.logosCounter = cMain.logosCounter - cMain.itemInventory.items[4].itemPrice;
+			cMain.itemInventory.items[4].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.items[4].itemName + " \n [Price: " + cMain.itemInventory.items[4].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[4].totalCurrentAmount + " ] \n " + cMain.itemInventory.items[4].itemDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -108,7 +113,7 @@ public class ShopHandler implements ActionListener{
 			cMain.itemInventory.weapons[0].totalCurrentAmount++;
 			cMain.itemInventory.weapons[0].totalAmountPurchased++;
 			cMain.logosCounter -= cMain.itemInventory.weapons[0].weaponPrice;
-			cMain.itemInventory.weapons[0].weaponPrice += cMain.itemInventory.weapons[0].weaponPriceIncrease;
+			cMain.itemInventory.weapons[0].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.weapons[0].weaponName + "\n [Price: " + cMain.itemInventory.weapons[0].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[0].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[0].weaponDescription);
 			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
 			}	
@@ -120,7 +125,7 @@ public class ShopHandler implements ActionListener{
 				cMain.itemInventory.weapons[1].totalCurrentAmount++;
 			cMain.itemInventory.weapons[1].totalAmountPurchased++;
 			cMain.logosCounter -= cMain.itemInventory.weapons[1].weaponPrice;
-			cMain.itemInventory.weapons[1].weaponPrice += cMain.itemInventory.weapons[1].weaponPriceIncrease;
+			cMain.itemInventory.weapons[1].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.weapons[1].weaponName + "\n [Price: " + cMain.itemInventory.weapons[1].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[1].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[1].weaponDescription);
 			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
 			}	
@@ -132,7 +137,7 @@ public class ShopHandler implements ActionListener{
 				cMain.itemInventory.weapons[2].totalCurrentAmount++;
 			cMain.itemInventory.weapons[2].totalAmountPurchased++;
 			cMain.logosCounter -= cMain.itemInventory.weapons[2].weaponPrice;
-			cMain.itemInventory.weapons[2].weaponPrice += cMain.itemInventory.weapons[2].weaponPriceIncrease;
+			cMain.itemInventory.weapons[2].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.weapons[2].weaponName + "\n [Price: " + cMain.itemInventory.weapons[2].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[2].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[2].weaponDescription);
 			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
 			}	
@@ -144,7 +149,7 @@ public class ShopHandler implements ActionListener{
 				cMain.itemInventory.weapons[3].totalCurrentAmount++;
 			cMain.itemInventory.weapons[3].totalAmountPurchased++;
 			cMain.logosCounter -= cMain.itemInventory.weapons[3].weaponPrice;
-			cMain.itemInventory.weapons[3].weaponPrice += cMain.itemInventory.weapons[3].weaponPriceIncrease;
+			cMain.itemInventory.weapons[3].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.weapons[3].weaponName + "\n [Price: " + cMain.itemInventory.weapons[3].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[3].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[3].weaponDescription);
 			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
 			}	
@@ -156,7 +161,7 @@ public class ShopHandler implements ActionListener{
 				cMain.itemInventory.weapons[4].totalCurrentAmount++;
 			cMain.itemInventory.weapons[4].totalAmountPurchased++;
 			cMain.logosCounter -= cMain.itemInventory.weapons[4].weaponPrice;
-			cMain.itemInventory.weapons[4].weaponPrice += cMain.itemInventory.weapons[4].weaponPriceIncrease;
+			cMain.itemInventory.weapons[4].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.weapons[4].weaponName + "\n [Price: " + cMain.itemInventory.weapons[4].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[4].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[4].weaponDescription);
 			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
 			}	
@@ -167,7 +172,7 @@ public class ShopHandler implements ActionListener{
 				cMain.itemInventory.armor[0].totalCurrentAmount++;
 			cMain.itemInventory.armor[0].totalPurchased++;
 			cMain.logosCounter -= cMain.itemInventory.armor[0].armorPrice;
-			cMain.itemInventory.armor[0].armorPrice += cMain.itemInventory.armor[0].armorPriceIncrease;
+			cMain.itemInventory.armor[0].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.armor[0].armorName + " \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[0].totalCurrentAmount +"] \n" + cMain.itemInventory.armor[0].armorDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -179,7 +184,7 @@ public class ShopHandler implements ActionListener{
 				cMain.itemInventory.armor[1].totalCurrentAmount++;
 			cMain.itemInventory.armor[1].totalPurchased++;
 			cMain.logosCounter -= cMain.itemInventory.armor[1].armorPrice;
-			cMain.itemInventory.armor[1].armorPrice += cMain.itemInventory.armor[1].armorPriceIncrease;
+			cMain.itemInventory.armor[1].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.armor[1].armorName + " \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[1].totalCurrentAmount +"] \n" + cMain.itemInventory.armor[1].armorDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -191,7 +196,7 @@ public class ShopHandler implements ActionListener{
 				cMain.itemInventory.armor[2].totalCurrentAmount++;
 			cMain.itemInventory.armor[2].totalPurchased++;
 			cMain.logosCounter -= cMain.itemInventory.armor[2].armorPrice;
-			cMain.itemInventory.armor[2].armorPrice += cMain.itemInventory.armor[2].armorPriceIncrease;
+			cMain.itemInventory.armor[2].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.armor[2].armorName + " \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[2].totalCurrentAmount +"] \n" + cMain.itemInventory.armor[2].armorDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -203,7 +208,7 @@ public class ShopHandler implements ActionListener{
 				cMain.itemInventory.armor[3].totalCurrentAmount++;
 			cMain.itemInventory.armor[3].totalPurchased++;
 			cMain.logosCounter -= cMain.itemInventory.armor[3].armorPrice;
-			cMain.itemInventory.armor[3].armorPrice += cMain.itemInventory.armor[3].armorPriceIncrease;
+			cMain.itemInventory.armor[3].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.armor[3].armorName + " \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[3].totalCurrentAmount +"] \n" + cMain.itemInventory.armor[3].armorDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -215,7 +220,7 @@ public class ShopHandler implements ActionListener{
 				cMain.itemInventory.armor[4].totalCurrentAmount++;
 			cMain.itemInventory.armor[4].totalPurchased++;
 			cMain.logosCounter -= cMain.itemInventory.armor[4].armorPrice;
-			cMain.itemInventory.armor[4].armorPrice += cMain.itemInventory.armor[4].armorPriceIncrease;
+			cMain.itemInventory.armor[4].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.armor[4].armorName + " \n [Price: " + cMain.armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[4].totalCurrentAmount +"] \n" + cMain.itemInventory.armor[4].armorDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);

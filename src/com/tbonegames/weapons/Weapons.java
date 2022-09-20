@@ -24,10 +24,16 @@ public class Weapons {
 		
 	public int totalCurrentAmount;
 	
-	//total amount purhcase is used when going through the combat loop. 
+	//total amount purchase is used when going through the combat loop. 
 	public int totalAmountPurchased;
 	
 	public int weaponPrice;
 	public int weaponPriceIncrease;
+	
+	public void raisePrice() {
+		if (totalAmountPurchased % rateOfIncrease == 0) {
+			weaponPrice += weaponPriceIncrease;
+		}
+	}
 	
 }

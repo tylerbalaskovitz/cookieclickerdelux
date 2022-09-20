@@ -29,5 +29,10 @@ public class Armor {
 	public int armorPrice;
 	public int armorPriceIncrease;
 	
+	public void raisePrice() {
+		if (totalPurchased % rateOfIncrease == 0) {
+			armorPrice += armorPriceIncrease;
+		}
+	}
 	
 }

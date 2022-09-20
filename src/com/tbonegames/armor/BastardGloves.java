@@ -16,7 +16,7 @@ public class BastardGloves extends Armor{
 	unlocked= false;
 	unlockAmount = 500;
 	
-	rateOfIncrease = 1;
+	rateOfIncrease = 3;
 	
 	totalCurrentAmount = 0;
 	totalPurchased = 0;

@@ -19,7 +19,7 @@ public class BastardMask extends Weapons{
 	
 	unlockAmount = 1600;
 	
-	rateOfIncrease = 1;
+	rateOfIncrease = 4;
 	
 	totalCurrentAmount = 0;
 	totalAmountPurchased = 0;

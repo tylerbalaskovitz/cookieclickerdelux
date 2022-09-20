@@ -16,7 +16,7 @@ public class BastardShoulderPads extends Armor{
 	unlocked = false;
 	unlockAmount  = 1600;
 	
-	rateOfIncrease = 1;
+	rateOfIncrease = 3;
 	
 	totalCurrentAmount = 0;
 	totalPurchased = 0;

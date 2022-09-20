@@ -25,7 +25,7 @@ public class BastardSausage extends Items{
 		itemPriceIncrease = 300;
 		
 		// intended to be used with % operator to increase after x amount of purchases and to be used with totalAmountPurchased
-		rateOfIncrease = 5;
+		rateOfIncrease = 25;
 		totalCurrentAmount = 0;
 		totalAmountPurchased = 0;
 	}

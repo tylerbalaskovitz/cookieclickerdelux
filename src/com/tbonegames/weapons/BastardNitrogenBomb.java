@@ -20,7 +20,7 @@ public class BastardNitrogenBomb extends Weapons{
 	
 	unlockAmount = 10000;
 	
-	rateOfIncrease = 1;
+	rateOfIncrease = 10;
 	
 	totalCurrentAmount = 0;
 	totalAmountPurchased = 0;

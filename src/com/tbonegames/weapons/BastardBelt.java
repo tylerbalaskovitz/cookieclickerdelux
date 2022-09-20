@@ -21,7 +21,7 @@ public class BastardBelt extends Weapons{
 	
 	unlockAmount = 800;
 	
-	rateOfIncrease = 1;
+	rateOfIncrease = 3;
 	
 	totalCurrentAmount = 0;
 	totalAmountPurchased = 0;

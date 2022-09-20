@@ -17,7 +17,7 @@ public class BastardArmor extends Armor {
 		unlocked = false;
 		unlockAmount = 2000;
 		
-		rateOfIncrease = 1;
+		rateOfIncrease = 3;
 		
 		totalCurrentAmount = 0;
 		totalPurchased = 0;

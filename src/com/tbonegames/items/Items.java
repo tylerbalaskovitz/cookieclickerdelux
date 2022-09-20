@@ -31,6 +31,12 @@ public class Items {
 	public int totalCurrentAmount;
 	public int totalAmountPurchased;
 	
+	public void raisePrice() {
+		if (totalAmountPurchased % rateOfIncrease == 0) {
+			itemPrice += itemPriceIncrease;
+		}
+	}
+	
 	
 	
 	public int calculateHealing(String healingMultiplierHandler, int totalCurrentAmount) {
