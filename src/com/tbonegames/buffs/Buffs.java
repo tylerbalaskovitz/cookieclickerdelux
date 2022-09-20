@@ -20,9 +20,23 @@ public class Buffs {
 	
 	public int defenseValue;
 	
+	public int removeDebuffAttack;
+	public int removeDebuffAttackUpgrade;
+	
+	public int removeDebuffBlock;
+	public int removeDebuffBlockUpgrade;
+	
+	public int removeDebuffItems;
+	public int removeDebuffItemsUpgrade;
+	
+	public int removeDebuffBuffs;
+	public int removeDebuffBuffsUpgrade;
+	
+	
 	public int unlockAmount;
 	public int buffPrice;
 	public int buffPriceIncrease;
+	
 	public int rateOfIncrease;
 	
 	public int currentAmount;
@@ -33,10 +47,33 @@ public class Buffs {
 		return turns;
 	}
 	
-	public void raisePrice(int price, int priceIncrease, int totalPurchase, int rateOfPurchase) {
-		if (totalPurchase % rateOfPurchase == 0) {
-			price += priceIncrease;
+	public void raisePrice() {
+		if (totalAmountPurchased % rateOfIncrease == 0) {
+			buffPrice += buffPriceIncrease;
 		}
+	}
+	
+	public void debuff(int debuffAttack, int debuffBlock, int debuffItems, int debuffBuffs) {
+		
+		if (totalAmountPurchased % rateOfIncrease == 0) {
+		 if (removeDebuffAttack > 0) {
+			 removeDebuffAttack += removeDebuffAttackUpgrade;
+		 }
+		 if (removeDebuffBlock > 0) {
+			 removeDebuffBlock += removeDebuffBlockUpgrade;
+		 }
+		 if (removeDebuffItems > 0) {
+			 removeDebuffItems += removeDebuffItemsUpgrade;
+		 }
+		 if (removeDebuffBuffs > 0) {
+			 removeDebuffBuffs += removeDebuffBuffsUpgrade;
+		 }
+		}
+		
+		debuffAttack -= removeDebuffAttack;
+		debuffBlock -= removeDebuffBlock;
+		debuffItems -= removeDebuffItems;
+		debuffBuffs -= removeDebuffBuffs;
 	}
 	
 }

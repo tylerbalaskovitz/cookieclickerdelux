@@ -7,7 +7,7 @@ public class AttackRestore extends Buffs{
 		buffHandlerName = "RestoreAttacks";
 		
 		//description for when hovering over the items themselves.
-		buffDescription = "";
+		buffDescription = "Give your bastardly self some protection against future debuffs and remove ones you may already have. ";
 		
 		//this is used so there won't be duplicates when drafting in the future. ID 1, 2, 3, etc. Also, this is useful for counting the amount of items in stuff in game.
 		idNumber = 1;
@@ -19,11 +19,23 @@ public class AttackRestore extends Buffs{
 		
 		defenseValue = 0;
 		
-		unlockAmount = 1250;
-		buffPrice = 1250;
-		buffPriceIncrease = 1250;
+		removeDebuffAttack = 2;
+		removeDebuffAttackUpgrade = 3;
 		
-		rateOfIncrease = 1;
+		removeDebuffBlock = 0;
+		removeDebuffBlockUpgrade = 0;
+		
+		removeDebuffItems = 0;
+		removeDebuffItemsUpgrade = 0;
+		
+		removeDebuffBuffs = 0;
+		removeDebuffBuffsUpgrade = 0;
+		
+		unlockAmount = 400;
+		buffPrice = 400;
+		buffPriceIncrease = 400;
+		
+		rateOfIncrease = 7;
 		
 		currentAmount = 0;
 		totalAmountPurchased = 0;

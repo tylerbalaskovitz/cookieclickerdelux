@@ -7,7 +7,7 @@ import com.tbonegames.armor.BastardGloves;
 import com.tbonegames.armor.BastardShoulderPads;
 import com.tbonegames.armor.BastardSlotBelt;
 import com.tbonegames.buffs.AttackRestore;
-import com.tbonegames.buffs.BastardManual;
+import com.tbonegames.buffs.BuffRestore;
 import com.tbonegames.buffs.BastardStopwatch;
 import com.tbonegames.buffs.Buffs;
 import com.tbonegames.buffs.DefendRestore;
@@ -141,7 +141,7 @@ public class ItemInventory {
 		buffs[1] = new AttackRestore();
 		buffs[2] = new DefendRestore();
 		buffs[3] = new ItemRestore();
-		buffs[4] = new BastardManual();
+		buffs[4] = new BuffRestore();
 		
 		for (int i = 0; i < 5; i++) {
 			buffs[i].idNumber = i;

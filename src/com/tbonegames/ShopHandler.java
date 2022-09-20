@@ -227,7 +227,7 @@ public class ShopHandler implements ActionListener{
 			cMain.itemInventory.buffs[0].totalAmountPurchased++;
 			cMain.itemInventory.buffs[0].currentAmount++;
 			cMain.logosCounter -= cMain.itemInventory.buffs[0].buffPrice;
-			cMain.itemInventory.buffs[0].buffPrice += cMain.itemInventory.buffs[0].buffPriceIncrease;
+			cMain.itemInventory.buffs[0].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.buffs[0].buffName + " \n [Price: " + cMain.itemInventory.buffs[0].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[0].currentAmount +"] \n" + cMain.itemInventory.buffs[0].buffDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -239,7 +239,7 @@ public class ShopHandler implements ActionListener{
 			cMain.itemInventory.buffs[1].totalAmountPurchased++;
 			cMain.itemInventory.buffs[1].currentAmount++;
 			cMain.logosCounter -= cMain.itemInventory.buffs[1].buffPrice;
-			cMain.itemInventory.buffs[1].buffPrice += cMain.itemInventory.buffs[1].buffPriceIncrease;
+			cMain.itemInventory.buffs[1].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.buffs[1].buffName + " \n [Price: " + cMain.itemInventory.buffs[1].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[1].currentAmount +"] \n" + cMain.itemInventory.buffs[1].buffDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -251,7 +251,7 @@ public class ShopHandler implements ActionListener{
 			cMain.itemInventory.buffs[2].totalAmountPurchased++;
 			cMain.itemInventory.buffs[2].currentAmount++;
 			cMain.logosCounter -= cMain.itemInventory.buffs[2].buffPrice;
-			cMain.itemInventory.buffs[2].buffPrice += cMain.itemInventory.buffs[2].buffPriceIncrease;
+			cMain.itemInventory.buffs[2].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.buffs[2].buffName + " \n [Price: " + cMain.itemInventory.buffs[2].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[2].currentAmount +"] \n" + cMain.itemInventory.buffs[2].buffDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -263,7 +263,7 @@ public class ShopHandler implements ActionListener{
 			cMain.itemInventory.buffs[3].totalAmountPurchased++;
 			cMain.itemInventory.buffs[3].currentAmount++;
 			cMain.logosCounter -= cMain.itemInventory.buffs[3].buffPrice;
-			cMain.itemInventory.buffs[3].buffPrice += cMain.itemInventory.buffs[3].buffPriceIncrease;
+			cMain.itemInventory.buffs[3].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.buffs[3].buffName + " \n [Price: " + cMain.itemInventory.buffs[3].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[3].currentAmount +"] \n" + cMain.itemInventory.buffs[3].buffDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -275,7 +275,7 @@ public class ShopHandler implements ActionListener{
 			cMain.itemInventory.buffs[4].totalAmountPurchased++;
 			cMain.itemInventory.buffs[4].currentAmount++;
 			cMain.logosCounter -= cMain.itemInventory.buffs[4].buffPrice;
-			cMain.itemInventory.buffs[4].buffPrice += cMain.itemInventory.buffs[4].buffPriceIncrease;
+			cMain.itemInventory.buffs[4].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.buffs[4].buffName + " \n [Price: " + cMain.itemInventory.buffs[4].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[4].currentAmount +"] \n" + cMain.itemInventory.buffs[4].buffDescription);
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -309,7 +309,7 @@ public class ShopHandler implements ActionListener{
 		cMain.displayItemsShop = false;
 		cMain.displayWeaponsShop = false;
 		cMain.displayArmorShop = false;
-		cMain.displayBuffsSHop = true;
+		cMain.displayBuffsShop = true;
 		
 		//this needs to be updated for 
 		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs0");
@@ -325,7 +325,7 @@ public class ShopHandler implements ActionListener{
 		cMain.displayItemsShop = false;
 		cMain.displayWeaponsShop = true;
 		cMain.displayArmorShop = false;
-		cMain.displayBuffsSHop = false;
+		cMain.displayBuffsShop = false;
 		
 		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.weapons[0].unlocked,cMain.itemInventory.weapons[0].weaponName, "Weapon0");
 		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.weapons[1].unlocked,cMain.itemInventory.weapons[1].weaponName, "Weapon1");
@@ -341,7 +341,7 @@ public class ShopHandler implements ActionListener{
 		cMain.displayItemsShop = true;
 		cMain.displayWeaponsShop = false;
 		cMain.displayArmorShop = false;
-		cMain.displayBuffsSHop = false;
+		cMain.displayBuffsShop = false;
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopPanel.setVisible(true);
 		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.items[0].unlocked, cMain.itemInventory.items[0].itemName, "Item0");
@@ -354,7 +354,7 @@ public class ShopHandler implements ActionListener{
 	public void displayArmorShop() {
 		cMain.displayItemsShop = false;
 		cMain.displayWeaponsShop = false;
-		cMain.displayBuffsSHop = false;
+		cMain.displayBuffsShop = false;
 		cMain.displayArmorShop = true;
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopPanel.setVisible(true);

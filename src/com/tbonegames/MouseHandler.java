@@ -124,6 +124,13 @@ public class MouseHandler implements MouseListener{
 					cMain.shopMessageText.setText(cMain.itemInventory.armor[0].armorName + " \n [Price: " + cMain.itemInventory.armor[0].armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[0].totalCurrentAmount +"\n" + cMain.itemInventory.armor[0].armorDescription);	
 					}
 			}
+			if (cMain.displayBuffsShop == true) {
+				if (cMain.itemInventory.buffs[0].unlocked == false){
+					cMain.shopMessageText.setText("This item is currently locked");
+					} else {
+					cMain.shopMessageText.setText(cMain.itemInventory.buffs[0].buffName + " \n [Price: " + cMain.itemInventory.buffs[0].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[0].currentAmount +"\n" + cMain.itemInventory.buffs[0].buffDescription);	
+					}
+			}
 			
 		}
 		
@@ -150,6 +157,13 @@ public class MouseHandler implements MouseListener{
 						cMain.shopMessageText.setText("This item is currently locked");
 						} else {
 						cMain.shopMessageText.setText(cMain.itemInventory.armor[1].armorName + " \n [Price: " + cMain.itemInventory.armor[1].armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[1].totalCurrentAmount +"\n" + cMain.itemInventory.armor[1].armorDescription);	
+						}
+				}
+				if (cMain.displayBuffsShop == true) {
+					if (cMain.itemInventory.buffs[1].unlocked == false){
+						cMain.shopMessageText.setText("This item is currently locked");
+						} else {
+						cMain.shopMessageText.setText(cMain.itemInventory.buffs[1].buffName + " \n [Price: " + cMain.itemInventory.buffs[1].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[1].currentAmount +"\n" + cMain.itemInventory.buffs[1].buffDescription);	
 						}
 				}
 				
@@ -180,6 +194,13 @@ public class MouseHandler implements MouseListener{
 						cMain.shopMessageText.setText("This item is currently locked");
 						} else {
 						cMain.shopMessageText.setText(cMain.itemInventory.armor[2].armorName + " \n [Price: " + cMain.itemInventory.armor[2].armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[2].totalCurrentAmount +"\n" + cMain.itemInventory.armor[2].armorDescription);	
+						}
+				}
+				if (cMain.displayBuffsShop == true) {
+					if (cMain.itemInventory.buffs[2].unlocked == false){
+						cMain.shopMessageText.setText("This item is currently locked");
+						} else {
+						cMain.shopMessageText.setText(cMain.itemInventory.buffs[2].buffName + " \n [Price: " + cMain.itemInventory.buffs[2].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[2].currentAmount +"\n" + cMain.itemInventory.buffs[2].buffDescription);	
 						}
 				}
 			
@@ -213,7 +234,13 @@ public class MouseHandler implements MouseListener{
 					cMain.shopMessageText.setText(cMain.itemInventory.armor[3].armorName + " \n [Price: " + cMain.itemInventory.armor[3].armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[3].totalCurrentAmount +"\n " + cMain.itemInventory.armor[3].armorDescription);	
 					}
 			}
-			
+			if (cMain.displayBuffsShop == true) {
+				if (cMain.itemInventory.buffs[3].unlocked == false){
+					cMain.shopMessageText.setText("This item is currently locked");
+					} else {
+					cMain.shopMessageText.setText(cMain.itemInventory.buffs[3].buffName + " \n [Price: " + cMain.itemInventory.buffs[3].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[3].currentAmount +"\n" + cMain.itemInventory.buffs[3].buffDescription);	
+					}
+			}
 					
 		}
 		
@@ -243,6 +270,14 @@ public class MouseHandler implements MouseListener{
 					cMain.shopMessageText.setText("This item is currently locked");
 					} else {
 					cMain.shopMessageText.setText(cMain.itemInventory.armor[4].armorName + " \n [Price: " + cMain.itemInventory.armor[4].armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[4].totalCurrentAmount +"\n " + cMain.itemInventory.armor[4].armorDescription);	
+					}
+			}
+			
+			if (cMain.displayBuffsShop == true) {
+				if (cMain.itemInventory.buffs[4].unlocked == false){
+					cMain.shopMessageText.setText("This item is currently locked");
+					} else {
+					cMain.shopMessageText.setText(cMain.itemInventory.buffs[4].buffName + " \n [Price: " + cMain.itemInventory.buffs[4].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[4].currentAmount +"\n" + cMain.itemInventory.buffs[4].buffDescription);	
 					}
 			}
 			

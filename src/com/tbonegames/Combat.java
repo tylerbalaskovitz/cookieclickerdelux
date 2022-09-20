@@ -37,10 +37,9 @@ public class Combat {
 
 	public void fight() {
 		
-		gameOver();
+		
 		
 		cMain.inCombat=true;
-		cMain.combatDeath = false;
 		cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 		cMain.combatTextArea.setText(cMain.enemy.name +"'s HP:" + cMain.enemy.hp);
 		//playerDamage3();
@@ -148,6 +147,8 @@ public class Combat {
 	public void playerAttackChoices() {
 		
 		 	if (cMain.attacksDisabled == false) {
+				cMain.combatDeath = false;
+
 		 		
 		 		cMain.multiplierPanel.setVisible(true);
 			 	
@@ -358,56 +359,60 @@ public class Combat {
 	}
 	
 	public void calculateDisables(int attackCounter, int blockCounter, int itemsCounter, int buffsCounter) {
-		attackCounter--;
-		if (attackCounter <= 0) {
-			attackCounter = 0;
-			cMain.attacksDisabled = false;
-		} else if (attackCounter> 0 ) {
+		
+		if (attackCounter > 0) {
+			attackCounter--;
 			cMain.attacksDisabled = true;
+		} else if (attackCounter <= 0 ) {
+			cMain.attacksDisabled = false;
 		}
 		
-		blockCounter--;
-		if (blockCounter <= 0) {
-			blockCounter = 0;
-			cMain.blocksDisabled = false;
-		} else if (blockCounter> 0 ) {
+		
+		if (blockCounter > 0) {
+			blockCounter--;
 			cMain.blocksDisabled = true;
+		} else if (blockCounter <=  0 ) {
+			cMain.blocksDisabled = false;
 		}
 		
-		itemsCounter--;
-		if (itemsCounter <= 0) {
-			itemsCounter = 0;
-			cMain.itemsDisabled = false;
-		} else if (attackCounter> 0 ) {
+		
+		if (itemsCounter > 0) {
+			itemsCounter--;
 			cMain.itemsDisabled = true;
+		} else if (attackCounter<=  0 ) {
+			cMain.itemsDisabled = false;
 		}
 		
-		buffsCounter--;
-		if (buffsCounter <= 0) {
-			buffsCounter = 0;
-			cMain.buffsDisabled = false;
-		} else if (buffsCounter> 0 ) {
+		
+		if (buffsCounter > 0) {
+			buffsCounter--;
 			cMain.buffsDisabled = true;
+		} else if (buffsCounter<=  0 ) {
+			cMain.buffsDisabled = false;
 		}
 		
-		
+		if (cMain.inCombat == false) {
+			attackCounter = 0;
+			blockCounter = 0;
+			itemsCounter = 0;
+			buffsCounter = 0;
+		}
 		
 	}
 	
 	
 	public void gameOver() {
-		
+		String recoilDeath = "";
 		if (cMain.logosCounter < 1) {
-			String recoilDeath = "";
 			
 			if (cMain.combatDeath == false) {
 			switch(cMain.healingMultiplierHandler) {
 			
 			case "Extra":
-				recoilDeath = "You took" + cMain.playerRecoil + " in recoil damage and blew yourself to bastard bits. ";
+				recoilDeath = "You took " + cMain.playerRecoil + " in recoil damage and blew yourself to bastard bits. ";
 				break;
 			case "Bastardly":
-				recoilDeath = "You took" + cMain.playerRecoil + " in recoil damage and bastardly blew yourself to bastard bits. ";
+				recoilDeath = "You took " + cMain.playerRecoil + " in recoil damage and bastardly blew yourself to bastard bits. ";
 				break;
 			}
 			}
@@ -418,7 +423,7 @@ public class Combat {
 		
 		cMain.soundFX.playSoundEffect(cMain.soundFXValues.death);
 		
-		cMain.inCombat = true;
+		
 		cMain.combatTextArea.setText( recoilDeath + "You have ran out of life \n Game Over.");
 		
 		
@@ -443,8 +448,7 @@ public class Combat {
 			cMain.enemiesDefeated++;
 			
 			if (cMain.enemiesDefeated >= 18) {
-				cMain.ui.closeAllPanels();
-				cMain.ui.displayOptions();
+				beatGame();
 				
 			} else {
 		
@@ -457,6 +461,13 @@ public class Combat {
 			
 		}
 		
+	}
+	
+	public void beatGame() {
+		cMain.bgMusicPlayer.play(cMain.soundFXValues.victorymusic);
+		
+		cMain.ui.closeAllPanels();
+		cMain.ui.displayOptions();
 	}
 	
 	public void setBoldness() {

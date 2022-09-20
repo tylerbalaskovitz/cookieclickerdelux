@@ -21,11 +21,23 @@ public class BastardStopwatch extends Buffs{
 		
 		defenseValue = 0;
 		
+		removeDebuffAttack = 0;
+		removeDebuffAttackUpgrade = 0;
+		
+		removeDebuffBlock = 0;
+		removeDebuffBlockUpgrade = 0;
+		
+		removeDebuffItems = 0;
+		removeDebuffItemsUpgrade = 0;
+		
+		removeDebuffBuffs = 0;
+		removeDebuffBuffsUpgrade = 0;
+		
 		unlockAmount = 250;
 		buffPrice = 250;
 		buffPriceIncrease = 250;
 		actionIncrease = 4;
-		rateOfIncrease = 4;
+		rateOfIncrease = 10;
 		
 		currentAmount = 0;
 		totalAmountPurchased = 0;

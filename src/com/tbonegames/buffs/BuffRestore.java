@@ -1,10 +1,11 @@
 package com.tbonegames.buffs;
 
-public class DefendRestore extends Buffs{
+public class BuffRestore extends Buffs{
 
-	public DefendRestore() {
-		buffName = "Restore Blocks";
-		buffHandlerName = "RestoreBlocks";
+	public BuffRestore() {
+		
+		buffName = "Buff Restore";
+		buffHandlerName = "BuffsRestore";
 		
 		//description for when hovering over the items themselves.
 		buffDescription = "Give your bastardly self some protection against future debuffs and remove ones you may already have.";
@@ -22,23 +23,24 @@ public class DefendRestore extends Buffs{
 		removeDebuffAttack = 0;
 		removeDebuffAttackUpgrade = 0;
 		
-		removeDebuffBlock = 2;
-		removeDebuffBlockUpgrade = 3;
+		removeDebuffBlock = 0;
+		removeDebuffBlockUpgrade = 0;
 		
 		removeDebuffItems = 0;
 		removeDebuffItemsUpgrade = 0;
 		
-		removeDebuffBuffs = 0;
-		removeDebuffBuffsUpgrade = 0;
+		removeDebuffBuffs = 2;
+		removeDebuffBuffsUpgrade = 3;
 		
-		unlockAmount = 500;
-		buffPrice = 500;
-		buffPriceIncrease = 500;
+		unlockAmount = 600;
+		buffPrice = 600;
+		buffPriceIncrease = 600;
 		
 		rateOfIncrease = 7;
 		
 		currentAmount = 0;
 		totalAmountPurchased = 0;
+		
 	}
 	
 	public void special() {

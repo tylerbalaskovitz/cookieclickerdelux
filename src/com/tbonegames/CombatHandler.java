@@ -27,24 +27,29 @@ public class CombatHandler implements ActionListener{
 			break;
 		case "Buff0":
 			cMain.numberOfActions = cMain.itemInventory.buffs[0].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].actionIncrease);
+			cMain.itemInventory.buffs[0].debuff(cMain.disableAttacksCounter, cMain.disableBlocksCounter, cMain.disableItemsCounter, cMain.disableBuffsCounter);
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.itemInventory.buffs[0].currentAmount -= 1;
 			combat.playerBuffResult(cMain.itemInventory.buffs[0].buffName);
 			break;
 		case "Buff1":
-			cMain.numberOfActions = cMain.itemInventory.buffs[1].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].actionIncrease);
+			cMain.numberOfActions = cMain.itemInventory.buffs[1].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[1].actionIncrease);
+			cMain.itemInventory.buffs[1].debuff(cMain.disableAttacksCounter, cMain.disableBlocksCounter, cMain.disableItemsCounter, cMain.disableBuffsCounter);
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.itemInventory.buffs[1].currentAmount -= 1;
 			combat.playerBuffResult(cMain.itemInventory.buffs[1].buffName);
 			break;
 		case "Buff2":
-			cMain.numberOfActions = cMain.itemInventory.buffs[2].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].actionIncrease);
+			cMain.numberOfActions = cMain.itemInventory.buffs[2].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[2].actionIncrease);
+			cMain.itemInventory.buffs[2].debuff(cMain.disableAttacksCounter, cMain.disableBlocksCounter, cMain.disableItemsCounter, cMain.disableBuffsCounter);
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.itemInventory.buffs[2].currentAmount -= 1;
 			combat.playerBuffResult(cMain.itemInventory.buffs[2].buffName);
 			break;
 		case "Buff3":
-			cMain.numberOfActions = cMain.itemInventory.buffs[3].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[0].actionIncrease);
+			cMain.numberOfActions = cMain.itemInventory.buffs[3].turnBoost(cMain.numberOfActions, cMain.itemInventory.buffs[3].actionIncrease);
+			cMain.itemInventory.buffs[3].debuff(cMain.disableAttacksCounter, cMain.disableBlocksCounter, cMain.disableItemsCounter, cMain.disableBuffsCounter);
+			
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.itemInventory.buffs[3].currentAmount -= 1;
 			combat.playerBuffResult(cMain.itemInventory.buffs[3].buffName);
@@ -183,10 +188,12 @@ public class CombatHandler implements ActionListener{
 			combat.gameOver();
 			break;
 		case "Victory":
+			combat.calculateDisables(cMain.enemy.attackDisableCounter, cMain.enemy.blockDisableCounter, cMain.enemy.itemDisableCounter, cMain.enemy.buffsDisableCounter);
 			cMain.ui.closeAllPanels();
 			cMain.ui.displayMainGame();
 			break;
 		case "GameOver":
+			combat.calculateDisables(cMain.enemy.attackDisableCounter, cMain.enemy.blockDisableCounter, cMain.enemy.itemDisableCounter, cMain.enemy.buffsDisableCounter);
 			cMain.window.setVisible(false);
 			cMain.soundFX.stop(cMain.soundFXValues.backgroundmusic);
 			new CookieMain();
