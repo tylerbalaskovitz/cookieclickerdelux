@@ -14,7 +14,7 @@ public class BastardShoulderPads extends Armor{
 	
 	//this is used within the game timers class.
 	unlocked = false;
-	unlockAmount  = 1600;
+	unlockAmount  = 800;
 	
 	rateOfIncrease = 3;
 	
@@ -24,10 +24,10 @@ public class BastardShoulderPads extends Armor{
 	armorValueNumerator = 1;
 	armorValueDenominator = 1;
 	
-	defenseValue = 30;
+	defenseValue = 60;
 	
-	armorPrice = 1600;
-	armorPriceIncrease = 1600;
+	armorPrice = 800;
+	armorPriceIncrease = 800;
 	
 	}
 }

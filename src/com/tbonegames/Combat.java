@@ -37,7 +37,7 @@ public class Combat {
 
 	public void fight() {
 		
-		
+		gameOver();
 		
 		cMain.inCombat=true;
 		cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
@@ -446,7 +446,9 @@ public class Combat {
 			cMain.itemInventory.exitCombat();
 			cMain.inCombat = false;
 			cMain.enemiesDefeated++;
-			
+			if (cMain.enemiesDefeated % 4 == 0) {
+				cMain.clickerBonus++;
+			}
 			if (cMain.enemiesDefeated >= 18) {
 				beatGame();
 				

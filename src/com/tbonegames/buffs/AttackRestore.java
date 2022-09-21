@@ -15,7 +15,8 @@ public class AttackRestore extends Buffs{
 		//this is used within the game timers class.
 		unlocked = false;
 		
-		
+		actionIncrease = 0;
+		actionIncreaseUpgrade = 0;
 		
 		defenseValue = 0;
 		

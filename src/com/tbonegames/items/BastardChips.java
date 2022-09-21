@@ -8,7 +8,7 @@ public class BastardChips extends Items{
 		itemHandlerName = "BastardChips";
 		
 		//used for when players hover over the itemw within the shop.
-		itemDescription = "TBD";
+		itemDescription = "Gives a small strength increase, but heals for a decent amount.";
 		
 		//this is used so there won't be duplicates when drafting in the future. ID 1, 2, 3, etc. Also, this is useful for counting the amount of items in stuff in game.
 		idNumber = 4;
@@ -18,14 +18,14 @@ public class BastardChips extends Items{
 		
 		healValue = 750;
 		
-		
+		strengthIncrease = 2;
 		
 		unlockAmount = 750;
 		itemPrice = 750;
 		itemPriceIncrease = 250;
 		
 		// intended to be used with % operator to increase after x amount of purchases and to be used with totalAmountPurchased
-		rateOfIncrease = 5;
+		rateOfIncrease = 25;
 		totalCurrentAmount = 0;
 		totalAmountPurchased = 0;
 	}

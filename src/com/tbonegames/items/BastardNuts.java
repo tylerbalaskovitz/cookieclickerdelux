@@ -26,7 +26,7 @@ public class BastardNuts extends Items{
 		itemPriceIncrease = 500;
 		
 		// intended to be used with % operator to increase after x amount of purchases and to be used with totalAmountPurchased
-		rateOfIncrease = 5;
+		rateOfIncrease = 25;
 		totalCurrentAmount = 0;
 		totalAmountPurchased = 0;
 	}

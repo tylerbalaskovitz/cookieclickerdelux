@@ -14,7 +14,7 @@ public class BastardSlotBelt extends Armor{
 	
 	//this is used within the game timers class.
 	unlocked = false;
-	unlockAmount = 1750;
+	unlockAmount = 875;
 	
 	rateOfIncrease = 3;
 	
@@ -24,10 +24,10 @@ public class BastardSlotBelt extends Armor{
 	armorValueNumerator = 1;
 	armorValueDenominator = 1;
 	
-	defenseValue = 40;
+	defenseValue = 80;
 	
-	armorPrice = 1750;
-	armorPriceIncrease = 1750;
+	armorPrice = 875;
+	armorPriceIncrease = 875;
 	
 	}
 }

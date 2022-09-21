@@ -20,22 +20,22 @@ public class Slots {
 		case(0):
 			cMain.docPrice = cMain.docPrice/2;
 			cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
-			cMain.rewardsMessage = "The cost of elves have been halved!";
+			cMain.rewardsMessage = "The cost of Doc's have been halved!";
 			break;
 		case (1):
 			cMain.lollipopPrice = cMain.lollipopPrice/2;
 			cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
-			cMain.rewardsMessage = "The cost of grandmas have been halved!";
+			cMain.rewardsMessage = "The cost of Lollipop's have been halved!";
 			break;
 		case (2):
 			cMain.whiteyPrice = cMain.whiteyPrice/2;
 			cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
-			cMain.rewardsMessage = "The cost of grandpas have been halved!";
+			cMain.rewardsMessage = "The cost of Whitey's have been halved!";
 			break;
 		case (3):
 			cMain.cursorPrice = cMain.cursorPrice/2;
 			cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
-			cMain.rewardsMessage = "The cost of cursors have been halved!";
+			cMain.rewardsMessage = "The cost of Shin-Chan's have been halved!";
 			break;
 			default:
 			cMain.rewardsMessage = "Ya lost you little bastard!";
@@ -68,20 +68,34 @@ public class Slots {
 			cMain.button7.setText(""+ slot3);
 			if (slot1 == slot2 && slot1 == slot3) {
 				if (slot1 == 0) {
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);
 					cMain.counterUpgrade++;
-					cMain.rewardsMessage = "Gain 5,000, and you upgrade your counter";
+					cMain.rewardsMessage = "Gain 5,000, an Actions upgrade and counter upgrade!";
 					cMain.logosCounter = cMain.logosCounter + 5000;
+					cMain.baseNumberOfActions++;
+				}
+				if (slot1 == 1 ) {
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);
+					cMain.counterUpgrade++;
+					cMain.rewardsMessage = "Gain 7,500, an Actions upgrade and counter upgrade!";
+					cMain.logosCounter = cMain.logosCounter + 7500;
+					cMain.baseNumberOfActions++;
+				}
+				if (slot1 == 2) {
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);
+					cMain.counterUpgrade++;
+					cMain.rewardsMessage = "Gain 20,000, an Actions upgrade and counter upgrade!";
+					cMain.logosCounter = cMain.logosCounter + 20000;
+					cMain.baseNumberOfActions++;
 				}
 				else if (slot1 == 3) {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);
-					cMain.rewardsMessage = "Gain 50,000 Cookies";
+					cMain.rewardsMessage = "Gain 50,000 Cookies, an Actions upgrade and counter upgrade!";
 					cMain.logosCounter = cMain.logosCounter + 50000;
-				} else if ((slot1 == 2) || (slot1 == 1)){
-					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);
-					cMain.rewardsMessage = "Gain 10,000";
-					cMain.logosCounter = cMain.logosCounter + 10000;
-					cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
-				}
+					cMain.baseNumberOfActions++;
+					cMain.counterUpgrade++;
+					
+				} 
 				
 				cMain.messageText.setText("You're the luckiest bastard of all! You hit the jackpot! All sticker prices are 1/4 the price. " + cMain.rewardsMessage);
 				cMain.cursorPrice = cMain.cursorPrice/4;

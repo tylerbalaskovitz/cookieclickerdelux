@@ -17,7 +17,8 @@ public class BastardStopwatch extends Buffs{
 		//this is used within the game timers class.
 		unlocked = false;
 		
-		
+		actionIncrease = 4;
+		actionIncreaseUpgrade = 2;
 		
 		defenseValue = 0;
 		
@@ -36,7 +37,6 @@ public class BastardStopwatch extends Buffs{
 		unlockAmount = 250;
 		buffPrice = 250;
 		buffPriceIncrease = 250;
-		actionIncrease = 4;
 		rateOfIncrease = 10;
 		
 		currentAmount = 0;

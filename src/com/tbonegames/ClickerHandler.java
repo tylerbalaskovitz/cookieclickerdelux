@@ -46,7 +46,7 @@ public class ClickerHandler implements ActionListener{
 				cMain.bgMusicPlayer.playMusic(cMain.soundFXValues.backgroundmusic);
 				break;
 			case "cookie": 
-				cMain.logosCounter = (cMain.logosCounter + 1 +(cMain.rodValue) + (cMain.beltValue * 2) + (cMain.maskValue * 3)); 
+				cMain.logosCounter = (cMain.logosCounter + 1 + cMain.clickerBonus); 
 				cMain.counterLabel.setText(cMain.logosCounter + " Logos"); 
 				cMain.shopMessageText.setText(cMain.logosCounter + " Cookies \n");
 			break;

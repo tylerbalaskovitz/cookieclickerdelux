@@ -14,7 +14,7 @@ public class BastardBoots extends Armor {
 	
 	//this is used within the game timers class.
 	unlocked = false;
-	unlockAmount = 1000;
+	unlockAmount = 500;
 	
 	rateOfIncrease = 3;
 	
@@ -24,10 +24,10 @@ public class BastardBoots extends Armor {
 	armorValueNumerator = 1;
 	armorValueDenominator = 1;
 	
-	defenseValue = 20;
+	defenseValue = 40;
 	
-	armorPrice = 1000;
-	armorPriceIncrease = 1000;
+	armorPrice = 500;
+	armorPriceIncrease = 500;
 	
 	}
 }

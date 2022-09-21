@@ -77,7 +77,7 @@ public class UnlockTimer {
 					}
 				} 
 				if(cMain.slotsUnlocked==false) {
-					if(cMain.logosCounter >= 1500) {
+					if(cMain.logosCounter >= 1000) {
 						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
 						cMain.slotsUnlocked = true;
 						cMain.button8.setText("Slots");

@@ -14,7 +14,7 @@ public class BastardGloves extends Armor{
 	
 	//this is used within the game timers class.
 	unlocked= false;
-	unlockAmount = 500;
+	unlockAmount = 250;
 	
 	rateOfIncrease = 3;
 	
@@ -24,10 +24,10 @@ public class BastardGloves extends Armor{
 	armorValueNumerator = 1;
 	armorValueDenominator = 1;
 	
-	defenseValue = 10;
+	defenseValue = 20;
 	
-	armorPrice = 500;
-	armorPriceIncrease = 500;
+	armorPrice = 250;
+	armorPriceIncrease = 250;
 	
 	}
 }

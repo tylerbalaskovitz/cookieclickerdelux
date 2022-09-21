@@ -17,6 +17,7 @@ public class Buffs {
 	
 	//this is used for giving more turns
 	public int actionIncrease;
+	public int actionIncreaseUpgrade;
 	
 	public int defenseValue;
 	
@@ -67,6 +68,9 @@ public class Buffs {
 		 }
 		 if (removeDebuffBuffs > 0) {
 			 removeDebuffBuffs += removeDebuffBuffsUpgrade;
+		 }
+		 if (actionIncrease > 0) {
+			 actionIncrease += actionIncreaseUpgrade;
 		 }
 		}
 		
