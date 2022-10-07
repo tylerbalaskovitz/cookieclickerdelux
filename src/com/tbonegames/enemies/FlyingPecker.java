@@ -4,7 +4,7 @@ public class FlyingPecker extends Enemies {
 	
 	public FlyingPecker () {
 	name = "Flying Pecker";
-	hp = 40000;
+	hp = 400000;
 	attack = 5000;
 	defense = 50;
 	dodge = 10;

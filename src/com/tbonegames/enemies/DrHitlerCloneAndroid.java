@@ -6,9 +6,9 @@ public class DrHitlerCloneAndroid extends Enemies{
 	public DrHitlerCloneAndroid() {
 		
 		name = "Dr. Hitler Clone Android";
-		hp = 100000;
+		hp = 4000000;
 		attack = 15000;
-		defense = 10;
+		defense = 200;
 		dodge = 10;
 		disableDuration = 0;
 		

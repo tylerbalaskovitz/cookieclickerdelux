@@ -466,6 +466,7 @@ public class Combat {
 	}
 	
 	public void beatGame() {
+		cMain.bgMusicPlayer.stop(cMain.soundFXValues.backgroundmusic);
 		cMain.bgMusicPlayer.play(cMain.soundFXValues.victorymusic);
 		
 		cMain.ui.closeAllPanels();

@@ -7,7 +7,7 @@ public class BastardSausage extends Items{
 		itemHandlerName = "BastardSausage";
 		
 		//used for when players hover over the itemw within the shop.
-		itemDescription = "Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die";
+		itemDescription = "Be like Action Bastard and put your mouth on a sausage. From Action Foods, if you don't buy it, you'll die. Increase strength, but heals for little";
 		
 		//this is used so there won't be duplicates when drafting in the future. ID 1, 2, 3, etc. Also, this is useful for counting the amount of items in stuff in game.
 		idNumber = 2;
@@ -16,9 +16,9 @@ public class BastardSausage extends Items{
 		unlocked = true;
 		
 		
-		healValue = 300;
+		healValue = 100;
 		
-		strengthIncrease = 10;
+		strengthIncrease = 12;
 		
 		unlockAmount = 0;
 		itemPrice = 300;

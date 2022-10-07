@@ -7,7 +7,7 @@ public class CornWhole extends Enemies{
 		name = "Corn Whole";
 		hp = 4200;
 		attack = 400;
-		defense = 10;
+		defense = 12;
 		dodge = 10;
 		disableDuration = 0;
 		

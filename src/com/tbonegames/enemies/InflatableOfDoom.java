@@ -4,9 +4,9 @@ public class InflatableOfDoom extends Enemies {
 
 	public InflatableOfDoom() {
 		name ="The Inflatable of Doom";
-		hp = 75000;
+		hp = 300000;
 		attack = 5000;
-		defense = 10;
+		defense = 50;
 		dodge = 10;
 		disableDuration = 0;
 		

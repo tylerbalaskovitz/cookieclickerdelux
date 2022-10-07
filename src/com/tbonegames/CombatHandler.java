@@ -122,6 +122,7 @@ public class CombatHandler implements ActionListener{
 			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[3].weaponMultiplier, cMain.itemInventory.weapons[3].totalAmountPurchased);
 			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
 			cMain.logosCounter-= combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil, cMain.healingMultiplierHandler);
+			cMain.logosCounter-=cMain.playerRecoil;
 			combat.playerAttackResult(cMain.itemInventory.weapons[3].weaponName, cMain.playerDamage, cMain.playerAttackBonus, cMain.playerRecoil);
 			break;
 		case "Defend0":

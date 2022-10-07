@@ -5,9 +5,9 @@ public class HenchPeckers extends Enemies{
 	public HenchPeckers() {
 		
 			name = "Hench Peckers";
-			hp = 35000;
+			hp = 140000;
 			attack = 2200;
-			defense = 5;
+			defense = 20;
 			dodge = 10;
 			
 			attackDisableCounter = 0;

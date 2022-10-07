@@ -4,9 +4,9 @@ public class DrHitlerClone extends Enemies{
 
 	public DrHitlerClone() {
 	name = "Dr. Hitler Clone";
-	hp = 75000;
+	hp = 750000;
 	attack = 10000;
-	defense = 10;
+	defense = 100;
 	dodge = 10;
 	disableDuration = 0;
 	

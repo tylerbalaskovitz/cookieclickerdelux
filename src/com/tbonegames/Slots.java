@@ -69,24 +69,20 @@ public class Slots {
 			if (slot1 == slot2 && slot1 == slot3) {
 				if (slot1 == 0) {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);
-					cMain.counterUpgrade++;
-					cMain.rewardsMessage = "Gain 5,000, an Actions upgrade and counter upgrade!";
+					cMain.rewardsMessage = "Gain 5,000 logos!";
 					cMain.logosCounter = cMain.logosCounter + 5000;
-					cMain.baseNumberOfActions++;
 				}
 				if (slot1 == 1 ) {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);
-					cMain.counterUpgrade++;
-					cMain.rewardsMessage = "Gain 7,500, an Actions upgrade and counter upgrade!";
+					cMain.rewardsMessage = "Gain 7,500 logos!";
 					cMain.logosCounter = cMain.logosCounter + 7500;
-					cMain.baseNumberOfActions++;
 				}
 				if (slot1 == 2) {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);
-					cMain.counterUpgrade++;
 					cMain.rewardsMessage = "Gain 20,000, an Actions upgrade and counter upgrade!";
 					cMain.logosCounter = cMain.logosCounter + 20000;
 					cMain.baseNumberOfActions++;
+					cMain.counterUpgrade++;
 				}
 				else if (slot1 == 3) {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);

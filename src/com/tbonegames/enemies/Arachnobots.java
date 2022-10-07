@@ -5,9 +5,9 @@ public class Arachnobots extends Enemies {
 	public Arachnobots() {
 		
 		name = "Arachnobots";
-		hp = 50000;
+		hp = 200000;
 		attack = 2000;
-		defense = 10;
+		defense = 16;
 		dodge = 10;
 		disableDuration = 0;
 		

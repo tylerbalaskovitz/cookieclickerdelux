@@ -4,9 +4,9 @@ public class TheGreatO extends Enemies{
 
 	public TheGreatO() {
 		name = "The Great O";
-		hp = 9000;
+		hp = 20000;
 		attack = 2000;
-		defense = 10;
+		defense = 14;
 		dodge = 10;
 		disableDuration = 0;
 		

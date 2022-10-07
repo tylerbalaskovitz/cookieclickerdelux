@@ -5,9 +5,9 @@ public class DrDeflation extends Enemies{
 	public DrDeflation() {
 		
 		name = "Dr. Deflation";
-		hp = 6000;
+		hp = 12000;
 		attack = 700;
-		defense = 10;
+		defense = 12;
 		dodge = 10;
 		disableDuration = 0;
 		

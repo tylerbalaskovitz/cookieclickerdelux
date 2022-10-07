@@ -4,9 +4,9 @@ public class TheDeflowerer extends Enemies {
 
 	public TheDeflowerer() {
 		name = "The Deflowerer";
-		hp = 7000;
+		hp = 14000;
 		attack = 1000;
-		defense = 10;
+		defense = 13;
 		dodge = 10;
 		disableDuration = 0;
 		

@@ -4,7 +4,7 @@ public class BastardJuice extends Items{
 
 	public BastardJuice() {
 		itemName = "Bastard Juice";
-		itemHandlerName = "BastardNuts";
+		itemHandlerName = "BastardJuice";
 		
 		//used for when players hover over the itemw within the shop.
 		itemDescription = "TBD";
@@ -24,7 +24,7 @@ public class BastardJuice extends Items{
 		itemPriceIncrease = 2000;
 		
 		// intended to be used with % operator to increase after x amount of purchases and to be used with totalAmountPurchased
-		rateOfIncrease = 25;
+		rateOfIncrease = 10;
 		totalCurrentAmount = 0;
 		totalAmountPurchased = 0;
 	}
