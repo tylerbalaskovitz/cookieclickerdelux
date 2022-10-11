@@ -195,9 +195,14 @@ public class DayTimer {
 	cMain.ui.displayCombat();
 	cMain.blockValue = 0;
 	calculateRecoil();
+	calculateBlockValueBonus();
 	cMain.numberOfActions = cMain.baseNumberOfActions;
 	cMain.combat.combatSetup();
 	cMain.combat.fight();
+	}
+	
+	public void calculateBlockValueBonus() {
+		cMain.blockValueBonus = cMain.logosCounter / 200;
 	}
 	
 	public void calculateRecoil() {

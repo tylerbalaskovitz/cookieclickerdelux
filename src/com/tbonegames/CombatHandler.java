@@ -126,22 +126,22 @@ public class CombatHandler implements ActionListener{
 			combat.playerAttackResult(cMain.itemInventory.weapons[3].weaponName, cMain.playerDamage, cMain.playerAttackBonus, cMain.playerRecoil);
 			break;
 		case "Defend0":
-			cMain.blockValue += cMain.itemInventory.armor[0].defenseValue;
+			cMain.blockValue += cMain.itemInventory.armor[0].defenseValue + cMain.blockValueBonus;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.playerDefendResult();
 			break;
 		case "Defend1":
-			cMain.blockValue += cMain.itemInventory.armor[1].defenseValue;
+			cMain.blockValue += cMain.itemInventory.armor[1].defenseValue + cMain.blockValueBonus;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.playerDefendResult();
 			break;
 		case "Defend2":
-			cMain.blockValue += cMain.itemInventory.armor[2].defenseValue;
+			cMain.blockValue += cMain.itemInventory.armor[2].defenseValue + cMain.blockValueBonus;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.playerDefendResult();
 			break;
 		case "Defend3":
-			cMain.blockValue += cMain.itemInventory.armor[3].defenseValue;
+			cMain.blockValue += cMain.itemInventory.armor[3].defenseValue+ cMain.blockValueBonus;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.playerDefendResult();
 			break;
@@ -182,7 +182,9 @@ public class CombatHandler implements ActionListener{
 			combat.enemyAttack();
 			break;
 		case "ContinueBattle":
+			if (cMain.blocksDisabled == false) {
 			cMain.blockValue = 0;
+			}
 			cMain.numberOfActions = cMain.baseNumberOfActions;
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			combat.fight();

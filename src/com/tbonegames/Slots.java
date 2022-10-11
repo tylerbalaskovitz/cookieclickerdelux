@@ -79,14 +79,13 @@ public class Slots {
 				}
 				if (slot1 == 2) {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);
-					cMain.rewardsMessage = "Gain 20,000, an Actions upgrade and counter upgrade!";
+					cMain.rewardsMessage = "Gain 20,000, and a counter upgrade!";
 					cMain.logosCounter = cMain.logosCounter + 20000;
-					cMain.baseNumberOfActions++;
 					cMain.counterUpgrade++;
 				}
 				else if (slot1 == 3) {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.jackpot);
-					cMain.rewardsMessage = "Gain 50,000 Cookies, an Actions upgrade and counter upgrade!";
+					cMain.rewardsMessage = "Gain 50,000 Cookies, a Base Actions upgrade and counter upgrade!";
 					cMain.logosCounter = cMain.logosCounter + 50000;
 					cMain.baseNumberOfActions++;
 					cMain.counterUpgrade++;
