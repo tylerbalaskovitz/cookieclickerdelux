@@ -36,7 +36,7 @@ public class Arachnobots extends Enemies {
 		//restores their HP
 		attack4 = "ArachnoBots";
 		attack4Command = "ArachnoBots";
-		attack4Damage = 0;
+		attack4Damage = 2;
 		attack4Chance = 6;
 		specialMessage = "";
 	}

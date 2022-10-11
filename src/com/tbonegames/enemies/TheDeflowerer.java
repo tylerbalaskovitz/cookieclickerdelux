@@ -24,7 +24,7 @@ public class TheDeflowerer extends Enemies {
 		//disables two attacks
 		attack2 = "Deflower";
 		attack2Command = "Deflower";
-		attack2Damage = 0;
+		attack2Damage = 2000;
 		attack2Chance = 2;
 		
 		attack3 = "Old Enough to Buy Cigarettes";

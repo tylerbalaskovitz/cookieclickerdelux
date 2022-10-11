@@ -13,6 +13,7 @@ public class Weapons {
 	
 	public int clickerMultiplier;
 	
+	public int reduceDefense;
 	
 	public int weaponMultiplier;
 	
@@ -35,7 +36,12 @@ public class Weapons {
 	public void raisePrice() {
 		if (totalAmountPurchased % rateOfIncrease == 0) {
 			weaponPrice += weaponPriceIncrease;
+			if (reduceDefense > 0 ) {
+				reduceDefense++;
+			}
 		}
 	}
+	
+	
 	
 }

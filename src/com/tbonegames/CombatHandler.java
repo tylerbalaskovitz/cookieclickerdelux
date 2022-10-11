@@ -93,6 +93,7 @@ public class CombatHandler implements ActionListener{
 		case "Attack0":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Attack0";
+			cMain.combat.weaponSpecialAttack(cMain.itemInventory.weapons[0]);
 			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[0].weaponMultiplier, cMain.itemInventory.weapons[0].totalAmountPurchased);
 			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
 			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil, cMain.healingMultiplierHandler);
@@ -102,6 +103,7 @@ public class CombatHandler implements ActionListener{
 		case "Attack1":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Attack1";
+			cMain.combat.weaponSpecialAttack(cMain.itemInventory.weapons[1]);
 			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[1].weaponMultiplier, cMain.itemInventory.weapons[1].totalAmountPurchased);
 			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
 			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil, cMain.healingMultiplierHandler);
@@ -111,6 +113,7 @@ public class CombatHandler implements ActionListener{
 		case "Attack2":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Attack2";
+			cMain.combat.weaponSpecialAttack(cMain.itemInventory.weapons[2]);
 			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[2].weaponMultiplier, cMain.itemInventory.weapons[2].totalAmountPurchased);
 			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
 			cMain.playerRecoil = combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil, cMain.healingMultiplierHandler);
@@ -119,6 +122,7 @@ public class CombatHandler implements ActionListener{
 		case "Attack3":
 			cMain.inCombatActionsLabel.setText("Actions: " + cMain.numberOfActions);
 			cMain.combatAttackingItem = "Attack3";
+			cMain.combat.weaponSpecialAttack(cMain.itemInventory.weapons[3]);
 			cMain.playerDamage = combat.calculateDamage(cMain.itemInventory.weapons[3].weaponMultiplier, cMain.itemInventory.weapons[3].totalAmountPurchased);
 			cMain.playerAttackBonus = combat.calculateBonus(cMain.playerDamage);
 			cMain.logosCounter-= combat.calculateRecoil(cMain.extraAttackRecoil, cMain.bastardlyAttackRecoil, cMain.healingMultiplierHandler);

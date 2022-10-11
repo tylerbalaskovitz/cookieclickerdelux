@@ -37,7 +37,7 @@ public class DrDeflation extends Enemies{
 		//massive percentile but with a low chance of success
 		attack4 = "Black Friday";
 		attack4Command = "BlackFriday";
-		attack4Damage = 0;
+		attack4Damage = 8000;
 		attack4Chance = 8;
 		specialMessage = "";
 	}

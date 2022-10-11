@@ -5,6 +5,7 @@ import java.util.Random;
 import javax.swing.JButton;
 
 import com.tbonegames.enemies.Enemies;
+import com.tbonegames.weapons.Weapons;
 
 public class Combat {
 	
@@ -267,6 +268,16 @@ public class Combat {
 		gameOver();
 	}
 	
+	public void weaponSpecialAttack(Weapons weapon) {
+		cMain.enemy.defense -= weapon.reduceDefense;
+		
+		if (cMain.enemy.defense <= 0) {
+			cMain.enemy.defense = 1;
+		}
+		
+		
+	}
+	
 	public void enemyAttack() {
 		calculateDisables(cMain.enemy.attackDisableCounter, cMain.enemy.blockDisableCounter, cMain.enemy.itemDisableCounter, cMain.enemy.buffsDisableCounter);
 		cMain.multiplierPanel.setVisible(false);
@@ -441,6 +452,7 @@ public class Combat {
 	};
 	public void victory() {
 		if (cMain.enemy.hp < 1) {
+			cMain.soundFX.playSoundEffect(cMain.soundFXValues.battlevictory);
 			cMain.combatTextArea.setText("You have defeated " + cMain.enemy.name);
 			defeatedEnemy = cMain.enemy.name;
 			cMain.itemInventory.exitCombat();
@@ -467,7 +479,7 @@ public class Combat {
 	
 	public void beatGame() {
 		cMain.bgMusicPlayer.stop(cMain.soundFXValues.backgroundmusic);
-		cMain.soundFX.play(cMain.soundFXValues.victorymusic);
+		cMain.soundFX.playSoundEffect(cMain.soundFXValues.victorymusic);
 		
 		cMain.ui.closeAllPanels();
 		cMain.ui.displayOptions();

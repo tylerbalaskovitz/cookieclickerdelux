@@ -35,8 +35,11 @@ public class DayTimer {
 		cMain.dayTimer = new Timer(cMain.dayTimerSpeed, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				cMain.dayLimiter = cMain.bossDay - 1;
+				if (cMain.inCombat == true && (cMain.dayLimiter == cMain.day)) {
+				} else {
 				cMain.day++;
+				}
 				cMain.dayLabel.setText("Day: "+ cMain.day);
 				cMain.combatDayLabel.setText("Next Combat Day: " + (cMain.bossDay));
 				cMain.inCombatDayLabel.setText("Day: " + cMain.day);

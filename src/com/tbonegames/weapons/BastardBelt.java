@@ -13,6 +13,8 @@ public class BastardBelt extends Weapons{
 	//this is used so there won't be duplicates when drafting in the future. ID 1, 2, 3, etc. Also, this is useful for counting the amount of items in stuff in game.
 	idNumber = 2;
 	
+	reduceDefense = 0;
+	
 	clickerMultiplier = 2;
 	
 	weaponMultiplier = 4;

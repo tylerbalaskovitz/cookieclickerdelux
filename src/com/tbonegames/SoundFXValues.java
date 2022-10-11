@@ -13,6 +13,8 @@ public class SoundFXValues {
 	public final URL jackpot = getClass().getResource("/audio/jackpot.wav");
 	public final URL slotWinner = getClass().getResource("/audio/slotwinner.wav");
 	public final URL unlock = getClass().getResource("/audio/healsound.wav");
+	public final URL battlevictory = getClass().getResource("/audio/battlevictory.wav");
+	
 	
 	
 }
