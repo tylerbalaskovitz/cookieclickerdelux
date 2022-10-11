@@ -7,7 +7,7 @@ public class BastardVibratingShaft extends Weapons{
 	weaponHandlerName = "VibratingShaft";
 	
 	//used for the description when hovering over the items
-	weaponDescription ="Reduces the enemies defense for the battle.";
+	weaponDescription ="Reduces the enemy's defense for the battle.";
 	
 	//this is used so there won't be duplicates when drafting in the future. ID 1, 2, 3, etc. Also, this is useful for counting the amount of items in stuff in game.
 	idNumber = 4;

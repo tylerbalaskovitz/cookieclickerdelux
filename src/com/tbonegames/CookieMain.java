@@ -37,7 +37,7 @@ public class CookieMain {
 	int  logosCounter, rounds, timerSpeed, dayTimerSpeed, cursorNumber, cursorPrice, whiteyNumber, whiteyPrice, slotsPrice, cursorUpgradeAmount, cursorUpgradePrice, 
 	lollipopPrice, lollipopNumber, docPrice, docNumber, luckyPrice, bastardPrice, feverPrice, day, enemyAttackChoice, enemyDamage, bossDay, startingDamage, disableAttacksCounter, disableBlocksCounter, disableItemsCounter, enemiesDefeated, 
 	numberOfActions, counterUpgrade, healingMultiplier, selectedItemValue, blockValue, baseNumberOfActions, extraAttackRecoil, bastardlyAttackRecoil, playerDamage, playerRecoil, 
-	playerAttackBonus, disableBuffsCounter, clickerBonus, blockValueBonus, dayLimiter;
+	playerAttackBonus, disableBuffsCounter, clickerBonus, blockValueBonus, dayLimiter, highestLogo, score, highScore;
 	
 	double  perSecond, dayPerSecond;
 	boolean timerOn, dayTimerOn, whiteyUnlocked, lollipopUnlocked, docUnlocked, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, 
@@ -68,6 +68,7 @@ public class CookieMain {
 	SoundFXValues soundFXValues = new SoundFXValues();
 	SoundFX soundFX = new SoundFX(this);
 	SoundFX bgMusicPlayer = new SoundFX(this);
+	SaveGame saveGame = new SaveGame(this);
 	
 	public static void main(String[] args) {
 		

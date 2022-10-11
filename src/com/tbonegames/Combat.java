@@ -429,13 +429,19 @@ public class Combat {
 			}
 		
 			
-		
+		cMain.dayTimer.stop();
+		cMain.timer.stop();
+			
 		cMain.bgMusicPlayer.stop(cMain.soundFXValues.backgroundmusic);
 		
 		cMain.soundFX.playSoundEffect(cMain.soundFXValues.death);
 		
+		cMain.score = cMain.highestLogo * cMain.enemiesDefeated;
+		if (cMain.score > cMain.highScore) {
+			cMain.highScore = cMain.score;
+		}
 		
-		cMain.combatTextArea.setText( recoilDeath + "You have ran out of life \n Game Over.");
+		cMain.combatTextArea.setText("High Score:" + cMain.highScore + "\n Score:" + cMain.score + recoilDeath + "\n You have ran out of life \n Game Over.");
 		
 		
 		

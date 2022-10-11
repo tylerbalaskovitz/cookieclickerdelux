@@ -6,6 +6,7 @@ package com.tbonegames;
 			this.cMain = cMain;
 		}
 	public void startUpValues() {
+			cMain.highestLogo = 0;
 			cMain.healingMultiplier = 1;
 			cMain.counterUpgrade = 1;
 			cMain.enemiesDefeated = 0;

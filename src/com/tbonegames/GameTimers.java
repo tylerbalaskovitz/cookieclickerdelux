@@ -22,6 +22,10 @@ public class GameTimers {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				if (cMain.logosCounter > cMain.highestLogo) {
+					cMain.highestLogo = cMain.logosCounter;
+				}
+				
 				if (cMain.inCombat == false) {
 				cMain.logosCounter+=(cMain.counterUpgrade+cMain.rounds);
 				
