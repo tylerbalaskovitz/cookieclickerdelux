@@ -6,7 +6,6 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.Random;
 
-import javax.sound.sampled.Clip;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.Timer;
 
-import com.tbonegames.buffs.Buffs;
 import com.tbonegames.enemies.Enemies;
 
 
@@ -52,7 +50,6 @@ public class CookieMain implements Serializable{
 	Font font1, font2, font3, font3Bold;
 	Slots slots = new Slots(this);
 	URL url;
-	Buffs buffs = new Buffs();
 	StartingValues sValues = new StartingValues(this);
 	UI ui = new UI(this);
 	Combat combat = new Combat(this);
@@ -74,7 +71,6 @@ public class CookieMain implements Serializable{
 	SaveGameData saveGameData = new SaveGameData(this);
 	
 	public static void main(String[] args) {
-		
 		
 		new CookieMain();
 	}

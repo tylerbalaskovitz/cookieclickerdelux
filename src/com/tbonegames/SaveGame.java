@@ -76,7 +76,6 @@ try {
 	
 	
 	
-	
 	oos.writeObject(sGameData);
 	oos.close();
 	
