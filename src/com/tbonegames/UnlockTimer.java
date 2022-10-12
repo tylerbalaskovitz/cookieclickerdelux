@@ -16,8 +16,14 @@ public class UnlockTimer {
 	public void unlockItemTimer() {
 		cMain.unlockTimers = new Timer(100, new ActionListener() {
 
+			
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				if (cMain.logosCounter > cMain.highestLogo) {
+					cMain.highestLogo = cMain.logosCounter;
+				}
 				
 				cMain.counterLabel.setText(cMain.logosCounter + " Logos");
 				cMain.shopCookieLabel.setText(cMain.logosCounter + " Logos");

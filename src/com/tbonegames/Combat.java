@@ -1,5 +1,12 @@
 package com.tbonegames;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Random;
 
 import javax.swing.JButton;
@@ -428,7 +435,8 @@ public class Combat {
 			}
 			}
 		
-			
+		
+		
 		cMain.dayTimer.stop();
 		cMain.timer.stop();
 			
@@ -436,9 +444,11 @@ public class Combat {
 		
 		cMain.soundFX.playSoundEffect(cMain.soundFXValues.death);
 		
-		cMain.score = cMain.highestLogo * cMain.enemiesDefeated;
+		cMain.score = cMain.highestLogo * (cMain.enemiesDefeated + 1);
+		
 		if (cMain.score > cMain.highScore) {
 			cMain.highScore = cMain.score;
+			cMain.saveGame.saveHighScore();
 		}
 		
 		cMain.combatTextArea.setText("High Score:" + cMain.highScore + "\n Score:" + cMain.score + recoilDeath + "\n You have ran out of life \n Game Over.");
@@ -473,7 +483,7 @@ public class Combat {
 			} else {
 		
 			combatButtonConfig(cMain.combatButton1, "Continue", "Victory");
-			combatButtonConfig(cMain.combatButton2, "?", "");
+			combatButtonConfig(cMain.combatButton2, "Save Game", "SaveGame");
 			combatButtonConfig(cMain.combatButton3, "?", "");
 			combatButtonConfig(cMain.combatButton4, "?", "");
 			
@@ -484,6 +494,7 @@ public class Combat {
 	}
 	
 	public void beatGame() {
+		cMain.saveGame.saveHighScore();
 		cMain.bgMusicPlayer.stop(cMain.soundFXValues.backgroundmusic);
 		cMain.soundFX.playSoundEffect(cMain.soundFXValues.victorymusic);
 		

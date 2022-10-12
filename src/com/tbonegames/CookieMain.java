@@ -2,6 +2,7 @@ package com.tbonegames;
 
 
 import java.awt.Font;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.Random;
 
@@ -17,7 +18,9 @@ import com.tbonegames.buffs.Buffs;
 import com.tbonegames.enemies.Enemies;
 
 
-public class CookieMain {
+public class CookieMain implements Serializable{
+	
+	final static long serialVersionUID = -1404202925519361557L;
 	String item1Name, item1HandlerName, item1Description;
 	
 	boolean item1Unlocked;
@@ -46,7 +49,6 @@ public class CookieMain {
 	
 	
 	
-	Clip clip;
 	Font font1, font2, font3, font3Bold;
 	Slots slots = new Slots(this);
 	URL url;
@@ -69,6 +71,7 @@ public class CookieMain {
 	SoundFX soundFX = new SoundFX(this);
 	SoundFX bgMusicPlayer = new SoundFX(this);
 	SaveGame saveGame = new SaveGame(this);
+	SaveGameData saveGameData = new SaveGameData(this);
 	
 	public static void main(String[] args) {
 		
@@ -88,6 +91,7 @@ public class CookieMain {
 		ui.createUI(); 
 		ui.closeAllPanels(); 
 		ui.displayStartMenu();
+		saveGame.loadHighScore();
 		
 		
 		

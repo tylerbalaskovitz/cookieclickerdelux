@@ -199,6 +199,12 @@ public class CombatHandler implements ActionListener{
 			cMain.ui.closeAllPanels();
 			cMain.ui.displayMainGame();
 			break;
+		case "SaveGame":
+			cMain.saveGame.saveGame();
+			combat.calculateDisables(cMain.enemy.attackDisableCounter, cMain.enemy.blockDisableCounter, cMain.enemy.itemDisableCounter, cMain.enemy.buffsDisableCounter);
+			cMain.ui.closeAllPanels();
+			cMain.ui.displayMainGame();
+			break;
 		case "GameOver":
 			combat.calculateDisables(cMain.enemy.attackDisableCounter, cMain.enemy.blockDisableCounter, cMain.enemy.itemDisableCounter, cMain.enemy.buffsDisableCounter);
 			cMain.window.setVisible(false);

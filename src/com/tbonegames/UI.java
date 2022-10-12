@@ -50,10 +50,13 @@ public void createUI() {
 	
 	
 	cMain.startButtonPanel = new JPanel();
-	panelConfiguration(cMain.startButtonPanel, 350, 400, 100, 50, Color.black, 1, 1, cMain.window);
+	panelConfiguration(cMain.startButtonPanel, 330, 380, 140, 100, Color.black, 2, 1, cMain.window);
 	
 	cMain.startButton = new JButton("Start");
 	buttonGenerator(cMain.startButton, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.startButtonPanel);
+	
+	cMain.startButton = new JButton("Continue");
+	buttonGenerator(cMain.startButton, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.startButtonPanel);
 	
 	//Things relating to Combat
 	cMain.combatStatsPanel = new JPanel();
