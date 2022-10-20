@@ -68,7 +68,6 @@ public class CookieMain implements Serializable{
 	SoundFX soundFX = new SoundFX(this);
 	SoundFX bgMusicPlayer = new SoundFX(this);
 	SaveGame saveGame = new SaveGame(this);
-	SaveGameData saveGameData = new SaveGameData(this);
 	
 	public static void main(String[] args) {
 		
@@ -79,10 +78,8 @@ public class CookieMain implements Serializable{
 		
 		itemInventory.inventoryOfItems();
 		
-		sValues.startUpValues();
-		
 		soundFX.playSoundEffect(soundFXValues.titleClip);
-		
+		sValues.startUpValues();
 		ui.createFont();
 		ui.createUI(); 
 		ui.closeAllPanels(); 
@@ -92,6 +89,8 @@ public class CookieMain implements Serializable{
 		
 		
 	}
+	
+
 	
 	
 }

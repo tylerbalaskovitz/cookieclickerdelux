@@ -2,6 +2,7 @@ package com.tbonegames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 
 import javax.swing.Timer;
 
@@ -21,7 +22,8 @@ import com.tbonegames.enemies.KungFujiApple;
 import com.tbonegames.enemies.TheDeflowerer;
 import com.tbonegames.enemies.TheGreatO;
 
-public class DayTimer {
+public class DayTimer implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	
 	

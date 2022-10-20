@@ -1,6 +1,9 @@
 package com.tbonegames;
 
-	public class StartingValues {
+import java.io.Serializable;
+
+public class StartingValues implements Serializable{
+		final static long serialVersionUID = -1404202925519361557L;
 		CookieMain cMain;
 		StartingValues(CookieMain cMain){
 			this.cMain = cMain;
@@ -21,9 +24,9 @@ package com.tbonegames;
 			cMain.timerOn = false;
 			cMain.inCombat = false;
 			cMain.baseNumberOfActions = 2;
-			cMain.day = 18;
+			cMain.day = 0;
 			cMain.bossDay = 20;
-			cMain.logosCounter = 12111;
+			cMain.logosCounter = 0;
 			cMain.startingDamage = 5;
 			cMain.cursorUpgradeAmount = 0;
 			cMain.perSecond = 0;

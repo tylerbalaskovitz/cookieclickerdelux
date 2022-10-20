@@ -1,5 +1,7 @@
 package com.tbonegames;
 
+import java.io.Serializable;
+
 import com.tbonegames.armor.Armor;
 import com.tbonegames.armor.BastardArmor;
 import com.tbonegames.armor.BastardBoots;
@@ -25,7 +27,8 @@ import com.tbonegames.weapons.BastardRod;
 import com.tbonegames.weapons.BastardVibratingShaft;
 import com.tbonegames.weapons.Weapons;
 
-public class ItemInventory {
+public class ItemInventory implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 	
 	CookieMain cMain;
 	//these numbers will grow as more items come into the game. THe methods will need to be organized so that way random card matches can also occur. 

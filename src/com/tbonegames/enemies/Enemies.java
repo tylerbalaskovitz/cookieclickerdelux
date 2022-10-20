@@ -1,9 +1,11 @@
 package com.tbonegames.enemies;
 
+import java.io.Serializable;
 import java.net.URL;
 
 
-public class Enemies {
+public class Enemies implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 
 	public String name;

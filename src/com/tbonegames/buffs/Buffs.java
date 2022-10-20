@@ -1,6 +1,9 @@
 package com.tbonegames.buffs;
 
-public class Buffs {
+import java.io.Serializable;
+
+public class Buffs implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 	
 	
 	public String buffName;

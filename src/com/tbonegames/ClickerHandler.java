@@ -2,9 +2,11 @@ package com.tbonegames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 
 
-public class ClickerHandler implements ActionListener{
+public class ClickerHandler implements ActionListener, Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 	
 	DayTimer dayTimer;
 	CookieMain cMain;
@@ -45,9 +47,7 @@ public class ClickerHandler implements ActionListener{
 				cMain.ui.displayMainGame();
 				cMain.bgMusicPlayer.playMusic(cMain.soundFXValues.backgroundmusic);
 				break;
-			case "Contiue":
-				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
-				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+			case "Continue":
 				cMain.saveGame.loadGame();
 				break;
 			case "cookie": 

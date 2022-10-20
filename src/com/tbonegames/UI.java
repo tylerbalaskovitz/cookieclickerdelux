@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
+import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,7 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class UI {
+public class UI implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	CookieMain cMain;
 	
@@ -116,6 +118,10 @@ public void createUI() {
 	ImageIcon cog = new ImageIcon(getClass().getClassLoader().getResource("cog.png"));
 	cMain.button9 = new JButton();
 	iconButtonGenerator(cog, cMain.button9, Color.black, Color.white, false, cMain.clickerHandler, "Display", cMain.mouseHandler, cMain.navigationPanel);
+	
+	ImageIcon save = new ImageIcon(getClass().getClassLoader().getResource("save.png"));
+	cMain.button9 = new JButton();
+	iconButtonGenerator(save, cMain.button9, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.navigationPanel);
 		
 	//Buttons for the inGameSHop
 		cMain.shopNavigationPanel = new JPanel();

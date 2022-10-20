@@ -1,6 +1,10 @@
 package com.tbonegames.weapons;
 
-public class Weapons {
+import java.io.Serializable;
+
+public class Weapons implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
+	
 	//used for the name and the handler of the game. 
 	public String weaponName;
 	public String weaponHandlerName;

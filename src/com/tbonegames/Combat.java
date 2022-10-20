@@ -1,12 +1,6 @@
 package com.tbonegames;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Random;
 
 import javax.swing.JButton;
@@ -14,7 +8,8 @@ import javax.swing.JButton;
 import com.tbonegames.enemies.Enemies;
 import com.tbonegames.weapons.Weapons;
 
-public class Combat {
+public class Combat implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 	
 	Random random = new Random();
 	

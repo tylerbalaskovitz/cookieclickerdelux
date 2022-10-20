@@ -1,9 +1,11 @@
 package com.tbonegames;
 
+import java.io.Serializable;
 import java.net.URL;
 
-public class SoundFXValues {
-
+public class SoundFXValues implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
+	
 	public final URL death = getClass().getResource("/audio/deathsound.wav");
 	public final URL purchase = getClass().getResource("/audio/purchase.wav");
 	public final URL error = getClass().getResource("/audio/error.wav");

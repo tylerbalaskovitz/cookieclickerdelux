@@ -18,35 +18,38 @@ public class SaveGame implements Serializable{
 		this.cMain = cMain;
 	}
 	
-public SaveGame() {
-		// TODO Auto-generated constructor stub
+	public SaveGame() {
+
 	}
-
-
-public void loadHighScore() {
 	
-	try {
-	FileInputStream fis = new FileInputStream("HighScore.dat");
-	BufferedInputStream bis = new BufferedInputStream(fis);
-	ObjectInputStream ois = new ObjectInputStream(bis);
+
+	
+
+	public void loadHighScore() {
+	
+		try {
+			
+			FileInputStream fis = new FileInputStream("HighScore.dat");
+			BufferedInputStream bis = new BufferedInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(bis);
 		
-	SaveGameData sGameData = (SaveGameData)ois.readObject();
+			SaveGameData sGameData = (SaveGameData)ois.readObject();
 	
-	cMain.highScore = sGameData.highScore;
+			cMain.highScore = sGameData.highScore;
 	
-	ois.close();
+			ois.close();
 	
-	} catch (IOException ex) {
-		ex.printStackTrace();
-	} catch (ClassNotFoundException e) {
-		e.printStackTrace();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 	}
 	
 	
 	
-}
+	}
 
-public void saveHighScore() {
+	public void saveHighScore() {
 	
 	try {
 		FileOutputStream fos = new FileOutputStream("HighScore.dat");
@@ -63,56 +66,48 @@ public void saveHighScore() {
 		ex.printStackTrace();
 	}
 	
-}
+	}
 
-public void saveGame() {
+	public void saveGame() {
 
-try {
-	FileOutputStream fos = new FileOutputStream("SaveGame.dat");
-	BufferedOutputStream bos = new BufferedOutputStream(fos);
-	ObjectOutputStream oos = new ObjectOutputStream(bos);
+		try {
+			FileOutputStream fos = new FileOutputStream("SaveGame.dat");
+			BufferedOutputStream bos = new BufferedOutputStream(fos);
+			ObjectOutputStream oos = new ObjectOutputStream(bos);
 	
-	SaveGameData sGameData = new SaveGameData();
+			
+			
 	
+			oos.writeObject(this.cMain);
+			oos.close();
 	
-	
-	oos.writeObject(sGameData);
-	oos.close();
-	
-} catch (IOException ex ) {
-ex.printStackTrace();	
-}
+		} catch (IOException ex ) {
+			ex.printStackTrace();	
+		}
 
-}
-
-
-
-public void loadGame() {
-	
-	try {
-	FileInputStream fis = new FileInputStream("SavedGame.dat");
-	BufferedInputStream bis = new BufferedInputStream(fis);
-	ObjectInputStream ois = new ObjectInputStream(bis);
-		
-	SaveGameData sGameData = (SaveGameData)ois.readObject();
-	
-	cMain = sGameData.cMain;
-	
-	ois.close();
-	
-	} catch (IOException ex) {
-		ex.printStackTrace();
-	} catch (ClassNotFoundException e) {
-		e.printStackTrace();
 	}
 	
-	
-	
-}
 
 
+	public void loadGame() {
 	
+		try {
+			FileInputStream fis = new FileInputStream("SaveGame.dat");
+			BufferedInputStream bis = new BufferedInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(bis);
+			
+			
+			this.cMain = (CookieMain) ois.readObject(); 
+			
+			ois.close();
+	
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	
+	}
 
-	
 	
 }	

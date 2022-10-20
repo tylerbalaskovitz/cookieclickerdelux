@@ -7,8 +7,9 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-public class SoundFX {
-	Clip clip;
+public class SoundFX implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
+	transient Clip clip;
 	URL url;
 	CookieMain cMain;
 	
