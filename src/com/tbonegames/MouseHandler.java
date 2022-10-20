@@ -9,9 +9,9 @@ import javax.swing.JButton;
 public class MouseHandler implements MouseListener, Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 	
-	CookieMain cMain;
+	ClientMain cMain;
 	
-	public MouseHandler(CookieMain cMain) {
+	public MouseHandler(ClientMain cMain) {
 	this.cMain = cMain;	
 	}
 	

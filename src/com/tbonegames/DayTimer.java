@@ -27,9 +27,9 @@ public class DayTimer implements Serializable{
 
 	
 	
-	CookieMain cMain;
+	ClientMain cMain;
 	
-	public DayTimer(CookieMain cMain) {
+	public DayTimer(ClientMain cMain) {
 		this.cMain = cMain;
 	}
 	

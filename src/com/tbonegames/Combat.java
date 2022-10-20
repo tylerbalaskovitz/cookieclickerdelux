@@ -13,7 +13,7 @@ public class Combat implements Serializable{
 	
 	Random random = new Random();
 	
-	CookieMain cMain;
+	ClientMain cMain;
 	
 	CombatHandler combatHandler;
 	
@@ -21,12 +21,12 @@ public class Combat implements Serializable{
 	
 	String defeatedEnemy;
 	
-	public Combat(CookieMain cMain, CombatHandler combatHandler) {
+	public Combat(ClientMain cMain, CombatHandler combatHandler) {
 		this.cMain = cMain;
 		this.combatHandler = combatHandler;
 	}
 
-	public Combat(CookieMain cMain) {
+	public Combat(ClientMain cMain) {
 		this.cMain = cMain;
 	}
 	

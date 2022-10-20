@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class StartingValues implements Serializable{
 		final static long serialVersionUID = -1404202925519361557L;
-		CookieMain cMain;
-		StartingValues(CookieMain cMain){
+		ClientMain cMain;
+		StartingValues(ClientMain cMain){
 			this.cMain = cMain;
 		}
 	public void startUpValues() {

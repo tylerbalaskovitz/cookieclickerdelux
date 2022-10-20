@@ -11,10 +11,10 @@ import java.io.Serializable;
 
 public class SaveGame implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
-	CookieMain cMain;
+	ClientMain cMain;
 	int highScore;
 	
-	public SaveGame(CookieMain cMain) {
+	public SaveGame(ClientMain cMain) {
 		this.cMain = cMain;
 	}
 	
@@ -97,7 +97,7 @@ public class SaveGame implements Serializable{
 			ObjectInputStream ois = new ObjectInputStream(bis);
 			
 			
-			this.cMain = (CookieMain) ois.readObject(); 
+			this.cMain = (ClientMain) ois.readObject(); 
 			
 			ois.close();
 	

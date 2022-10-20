@@ -11,9 +11,9 @@ public class GameTimers implements Serializable{
 
 	
 	
-	CookieMain cMain;
+	ClientMain cMain;
 	
-	public GameTimers(CookieMain cMain) {
+	public GameTimers(ClientMain cMain) {
 		this.cMain = cMain;
 	}
 	

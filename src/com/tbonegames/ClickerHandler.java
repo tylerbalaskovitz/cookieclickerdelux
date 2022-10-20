@@ -9,14 +9,14 @@ public class ClickerHandler implements ActionListener, Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 	
 	DayTimer dayTimer;
-	CookieMain cMain;
+	ClientMain cMain;
 	UI ui;
 	GameTimers timers;
 	Slots slots;
 
 	
 	//each of these classes is needed to be passed into the CookieHandler class because there are values taken from each of the classes coming from the main class.
-	public ClickerHandler(CookieMain cMain, UI ui, GameTimers timers, DayTimer dayTimer, Slots slots) {
+	public ClickerHandler(ClientMain cMain, UI ui, GameTimers timers, DayTimer dayTimer, Slots slots) {
 		this.cMain = cMain;
 		this.ui = ui;
 		this.timers = timers;
@@ -169,7 +169,7 @@ public class ClickerHandler implements ActionListener, Serializable{
 			case "NewGame":
 				cMain.window.setVisible(false);
 				cMain.bgMusicPlayer.stop(cMain.soundFXValues.backgroundmusic);
-				new CookieMain();
+				new ClientMain();
 				break;
 				
 			

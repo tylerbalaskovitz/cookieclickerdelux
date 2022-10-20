@@ -9,9 +9,9 @@ import javax.swing.Timer;
 public class UnlockTimer implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 
-	CookieMain cMain;
+	ClientMain cMain;
 	
-	public UnlockTimer(CookieMain cMain) {
+	public UnlockTimer(ClientMain cMain) {
 		this.cMain = cMain;
 	}
 	

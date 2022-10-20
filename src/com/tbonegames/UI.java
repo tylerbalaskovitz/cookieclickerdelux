@@ -17,9 +17,9 @@ import javax.swing.JTextArea;
 public class UI implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 
-	CookieMain cMain;
+	ClientMain cMain;
 	
-	public UI(CookieMain cMain) {
+	public UI(ClientMain cMain) {
 		this.cMain=cMain;
 		
 	}

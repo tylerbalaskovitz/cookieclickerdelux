@@ -16,7 +16,7 @@ import javax.swing.Timer;
 import com.tbonegames.enemies.Enemies;
 
 
-public class CookieMain implements Serializable{
+public class ClientMain implements Serializable{
 	
 	final static long serialVersionUID = -1404202925519361557L;
 	String item1Name, item1HandlerName, item1Description;
@@ -71,10 +71,10 @@ public class CookieMain implements Serializable{
 	
 	public static void main(String[] args) {
 		
-		new CookieMain();
+		new ClientMain();
 	}
 	
-	public CookieMain() {
+	public ClientMain() {
 		
 		itemInventory.inventoryOfItems();
 		

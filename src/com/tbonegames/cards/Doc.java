@@ -1,40 +1,41 @@
 package com.tbonegames.cards;
 
-public class Cards {
+public class Doc extends Cards{
 
-	public String cardName;
-	public String cardHandlerName;
+	
+	public Doc() {
+	cardName = "Doc";
+	cardHandlerName = "";
 	
 	//used for the description when hovering over the items
-	public String cardDescription;
+	cardDescription = "";
 	
 	//this is used so there won't be duplicates when drafting in the future. ID 1, 2, 3, etc. Also, this is useful for counting the amount of items in stuff in game.
-	public int idNumber;
+	idNumber = 3;
 	
-	public int clickerIncrease;
+	clickerIncrease = 7;
 	
-	public int defenseBonus;
+	defenseBonus = 0;
 	
-	public int buffBonus;
+	buffBonus = 0;
 	
-	public int itemBonus;
+	itemBonus = 0;
 	
-	public int weaponBonus;
+	weaponBonus = 0;
 	
 	//used for the sound that unlocks during the GameTimers class being ran.
-	public boolean unlocked;
+	unlocked = false;
 	
-	public int unlockAmount;
+	unlockAmount = 500;
 	
 	// intended to be used with % operator to increase after x amount of purchases and to be used with totalAmountPurchased
 		
-	public int totalCurrentAmount;
+	totalCurrentAmount = 0;
 	
 	//total amount purchase is used when going through the combat loop. 
-	public int totalAmountPurchased;
+	totalAmountPurchased = 0;
 	
-	public int cardPrice;
-	public int cardPriceIncrease;
-	
-	
+	cardPrice = 500;
+	cardPriceIncrease = 500;
+	}
 }

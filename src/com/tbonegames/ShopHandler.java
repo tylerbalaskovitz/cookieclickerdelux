@@ -11,9 +11,9 @@ public class ShopHandler implements ActionListener, Serializable{
 
 
 	
-	CookieMain cMain;
+	ClientMain cMain;
 	
-	public ShopHandler(CookieMain cMain) {
+	public ShopHandler(ClientMain cMain) {
 		this.cMain = cMain;
 	}
 

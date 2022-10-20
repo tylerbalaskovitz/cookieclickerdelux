@@ -9,11 +9,16 @@ import com.tbonegames.armor.BastardGloves;
 import com.tbonegames.armor.BastardShoulderPads;
 import com.tbonegames.armor.BastardSlotBelt;
 import com.tbonegames.buffs.AttackRestore;
-import com.tbonegames.buffs.BuffRestore;
 import com.tbonegames.buffs.BastardStopwatch;
+import com.tbonegames.buffs.BuffRestore;
 import com.tbonegames.buffs.Buffs;
 import com.tbonegames.buffs.DefendRestore;
 import com.tbonegames.buffs.ItemRestore;
+import com.tbonegames.cards.Cards;
+import com.tbonegames.cards.Doc;
+import com.tbonegames.cards.Lollipop;
+import com.tbonegames.cards.ShinChan;
+import com.tbonegames.cards.Whitey;
 import com.tbonegames.items.BastardChips;
 import com.tbonegames.items.BastardCola;
 import com.tbonegames.items.BastardJuice;
@@ -30,12 +35,13 @@ import com.tbonegames.weapons.Weapons;
 public class ItemInventory implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 	
-	CookieMain cMain;
+	ClientMain cMain;
 	//these numbers will grow as more items come into the game. THe methods will need to be organized so that way random card matches can also occur. 
 	Armor armor[] = new Armor[5];
 	Buffs buffs[] = new Buffs[5];
 	Items items[] = new Items[5];
 	Weapons weapons[] = new Weapons[5];
+	Cards cards[] = new Cards[4];
 	
 
 	//these are the options you have when attacking or doing some sort of damage to to other players
@@ -47,7 +53,7 @@ public class ItemInventory implements Serializable{
 	
 
 
-	public ItemInventory(CookieMain cMain) {
+	public ItemInventory(ClientMain cMain) {
 		this.cMain = cMain;
 		
 	}
@@ -83,11 +89,20 @@ public class ItemInventory implements Serializable{
 		
 	}
 	
+	public void cardsInGame() {
+		cards[0] = new ShinChan();
+		cards[1] = new Whitey();
+		cards[2] = new Lollipop();
+		cards[3] = new Doc();
+		
+	}
+	
 	public void inventoryOfItems() {
 		itemsInGame();
 		weaponsInGame();
 		armorInGame();
 		buffsInGame();
+		cardsInGame();
 	}
 	
 	//this will need to be looped through to make the game work. 

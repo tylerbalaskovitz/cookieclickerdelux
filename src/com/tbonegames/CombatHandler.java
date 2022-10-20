@@ -8,9 +8,9 @@ import java.io.Serializable;
 public class CombatHandler implements ActionListener, Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 	Combat combat;
-	CookieMain cMain;
+	ClientMain cMain;
 	
-	CombatHandler(CookieMain cMain, Combat combat){
+	CombatHandler(ClientMain cMain, Combat combat){
 		this.cMain = cMain;
 		this.combat = combat;
 	}
@@ -210,7 +210,7 @@ public class CombatHandler implements ActionListener, Serializable{
 			combat.calculateDisables(cMain.enemy.attackDisableCounter, cMain.enemy.blockDisableCounter, cMain.enemy.itemDisableCounter, cMain.enemy.buffsDisableCounter);
 			cMain.window.setVisible(false);
 			cMain.soundFX.stop(cMain.soundFXValues.backgroundmusic);
-			new CookieMain();
+			new ClientMain();
 			break;
 			
 			//Action Bastard Movies

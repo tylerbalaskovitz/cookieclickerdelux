@@ -11,11 +11,11 @@ public class SoundFX implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 	transient Clip clip;
 	URL url;
-	CookieMain cMain;
+	ClientMain cMain;
 	
 	
 	
-	public SoundFX(CookieMain cMain) {
+	public SoundFX(ClientMain cMain) {
 		this.cMain = cMain;
 	}
 	
