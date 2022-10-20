@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.Serializable;
 
+import com.tbonegames.cards.Cards;
+
 
 public class ClickerHandler implements ActionListener, Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
@@ -22,6 +24,12 @@ public class ClickerHandler implements ActionListener, Serializable{
 		this.timers = timers;
 		this.dayTimer = dayTimer;
 		this.slots = slots;
+	}
+	
+	public String cardDescription(Cards cards) {
+		String localCardDescription = cards.cardName + "\n [Price: " + cards.cardPrice + "] \n Each " +cards.cardName +" produces " + cards.clickerIncrease+ " Logos persecond";
+		return localCardDescription;
+		
 	}
 	
 	
@@ -50,62 +58,71 @@ public class ClickerHandler implements ActionListener, Serializable{
 			case "Continue":
 				cMain.saveGame.loadGame();
 				break;
-			case "cookie": 
+			case "Logos": 
 				cMain.logosCounter = (cMain.logosCounter + 1 + cMain.clickerBonus); 
 				cMain.counterLabel.setText(cMain.logosCounter + " Logos"); 
-				cMain.shopMessageText.setText(cMain.logosCounter + " Cookies \n");
+				cMain.shopMessageText.setText(cMain.logosCounter + " Logos \n");
 			break;
-			case "Cursor": if (cMain.logosCounter >= cMain.cursorPrice) {
+			case "Card0": 
+			 if (cMain.logosCounter >= cMain.itemInventory.cards[0].cardPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-				cMain.logosCounter = cMain.logosCounter - cMain.cursorPrice;
-				cMain.cursorPrice = cMain.cursorPrice + 5;
-				cMain.counterLabel.setText(cMain.logosCounter + " Cookies");
-				cMain.messageText.setText("Shin-Chan: \n [Price: " + cMain.cursorPrice + "] \n AutoClicks" + (.1*cMain.cursorUpgradeAmount) + "time every second");
-				cMain.cursorNumber++;
-				cMain.button1.setText("Shin-Chan " + "(" + cMain.cursorNumber + ")");
-				cMain.perSecond = (cMain.perSecond + 0.1); timers.timerUpdate();
+				cMain.logosCounter -= cMain.itemInventory.cards[0].cardPrice;
+				cMain.itemInventory.cards[0].cardPrice += cMain.itemInventory.cards[0].cardPriceIncrease;
+				cMain.counterLabel.setText(cMain.logosCounter + " Logos");
+				cMain.messageText.setText(cardDescription(cMain.itemInventory.cards[0]));
+				cMain.itemInventory.cards[0].cardDescription = cardDescription(cMain.itemInventory.cards[0]);
+				cMain.itemInventory.cards[0].totalCurrentAmount++;
+				cMain.itemInventory.cards[0].totalAmountPurchased++;
+				cMain.button1.setText(cMain.itemInventory.cards[0].cardName + "(" + cMain.itemInventory.cards[0].totalCurrentAmount + ")");
+				cMain.perSecond+= cMain.itemInventory.cards[0].clickerIncrease; timers.timerUpdate();
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
 			break;
-			case "Grandpa":
-			 if (cMain.logosCounter >= cMain.whiteyPrice) {
-				 cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-				 cMain.logosCounter = cMain.logosCounter - cMain.whiteyPrice;
-				 cMain.whiteyPrice = cMain.whiteyPrice + 50;
-				 cMain.counterLabel.setText(cMain.logosCounter + " Cookies");
-				 cMain.whiteyNumber++;
-				 cMain.messageText.setText("Whitey: \n [Price: " + cMain.whiteyPrice + "] \n Each Whitey produces 1 cookie per second");
-				 cMain.button2.setText("Whitey " + "(" + cMain.whiteyNumber + ")");
-				 cMain.perSecond = cMain.perSecond + 1; timers.timerUpdate();
-			} else {
-				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
-			}
-			break;
-			case "Grandma":
-				if (cMain.logosCounter >= cMain.lollipopPrice) {
+			case "Card1":
+				if (cMain.logosCounter >= cMain.itemInventory.cards[1].cardPrice) {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-					cMain.logosCounter = cMain.logosCounter - cMain.lollipopPrice;
-					cMain.lollipopPrice = cMain.lollipopPrice + 200;
-					cMain.counterLabel.setText(cMain.logosCounter + " Cookies");
-					cMain.lollipopNumber++;
-					cMain.messageText.setText("Lollipop: \n [Price: " + cMain.lollipopPrice + "] \n Each Lollipop produces 3 cookie per second");
-					cMain.button3.setText("Lollipop " + "(" + cMain.lollipopNumber + ")");
-					cMain.perSecond = cMain.perSecond + 3; timers.timerUpdate();
+					cMain.logosCounter -= cMain.itemInventory.cards[1].cardPrice;
+					cMain.itemInventory.cards[1].cardPrice += cMain.itemInventory.cards[1].cardPriceIncrease;
+					cMain.counterLabel.setText(cMain.logosCounter + " Logos");
+					cMain.messageText.setText(cardDescription(cMain.itemInventory.cards[1]));
+					cMain.itemInventory.cards[1].cardDescription = cardDescription(cMain.itemInventory.cards[1]);
+					cMain.itemInventory.cards[1].totalCurrentAmount++;
+					cMain.itemInventory.cards[1].totalAmountPurchased++;
+					cMain.button1.setText(cMain.itemInventory.cards[1].cardName + "(" + cMain.itemInventory.cards[1].totalCurrentAmount + ")");
+					cMain.perSecond+= cMain.itemInventory.cards[1].clickerIncrease; timers.timerUpdate();
+			} else {
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
+			}
+			break;
+			case "Card2":
+				if (cMain.logosCounter >= cMain.itemInventory.cards[2].cardPrice) {
+					cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+					cMain.logosCounter -= cMain.itemInventory.cards[2].cardPrice;
+					cMain.itemInventory.cards[2].cardPrice += cMain.itemInventory.cards[2].cardPriceIncrease;
+					cMain.counterLabel.setText(cMain.logosCounter + " Logos");
+					cMain.messageText.setText(cardDescription(cMain.itemInventory.cards[2]));
+					cMain.itemInventory.cards[2].cardDescription = cardDescription(cMain.itemInventory.cards[2]);
+					cMain.itemInventory.cards[2].totalCurrentAmount++;
+					cMain.itemInventory.cards[2].totalAmountPurchased++;
+					cMain.button1.setText(cMain.itemInventory.cards[2].cardName + "(" + cMain.itemInventory.cards[2].totalCurrentAmount + ")");
+					cMain.perSecond+= cMain.itemInventory.cards[2].clickerIncrease; timers.timerUpdate();
 				} else {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 				}
 			break;
-			case "Elves":
-				if (cMain.logosCounter >= cMain.docPrice) {
+			case "Card3":
+				if (cMain.logosCounter >= cMain.itemInventory.cards[3].cardPrice) {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-					cMain.logosCounter = cMain.logosCounter - cMain.docPrice;
-					cMain.docPrice = cMain.docPrice + 500;
-					cMain.counterLabel.setText(cMain.logosCounter + " Cookies");
-					cMain.docNumber++;
-					cMain.messageText.setText("Doc: \n [Price: " + cMain.docPrice + "] \n Each Doc produces 7 cookie per second");
-					cMain.button4.setText("Doc " + "(" + cMain.docNumber + ")");
-					cMain.perSecond = cMain.perSecond + 7; timers.timerUpdate();
+					cMain.logosCounter -= cMain.itemInventory.cards[3].cardPrice;
+					cMain.itemInventory.cards[3].cardPrice += cMain.itemInventory.cards[3].cardPriceIncrease;
+					cMain.counterLabel.setText(cMain.logosCounter + " Logos");
+					cMain.messageText.setText(cardDescription(cMain.itemInventory.cards[3]));
+					cMain.itemInventory.cards[3].cardDescription = cardDescription(cMain.itemInventory.cards[3]);
+					cMain.itemInventory.cards[3].totalCurrentAmount++;
+					cMain.itemInventory.cards[3].totalAmountPurchased++;
+					cMain.button1.setText(cMain.itemInventory.cards[3].cardName + "(" + cMain.itemInventory.cards[3].totalCurrentAmount + ")");
+					cMain.perSecond+= cMain.itemInventory.cards[3].clickerIncrease; timers.timerUpdate();
 				} else {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 				}

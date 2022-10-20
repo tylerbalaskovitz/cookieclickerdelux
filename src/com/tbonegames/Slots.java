@@ -18,24 +18,24 @@ public class Slots implements Serializable{
 		switch (wildCard) {
 		
 		case(0):
-			cMain.docPrice = cMain.docPrice/2;
+			cMain.itemInventory.cards[3].cardPrice /= 2;
 			cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
-			cMain.rewardsMessage = "The cost of Doc's have been halved!";
+			cMain.rewardsMessage = "The cost of "+ cMain.itemInventory.cards[3].cardName +"'s have been halved!";
 			break;
 		case (1):
-			cMain.lollipopPrice = cMain.lollipopPrice/2;
+			cMain.itemInventory.cards[2].cardPrice /= 2;
 			cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
-			cMain.rewardsMessage = "The cost of Lollipop's have been halved!";
+			cMain.rewardsMessage = "The cost of "+ cMain.itemInventory.cards[2].cardName +"'s have been halved!";
 			break;
 		case (2):
-			cMain.whiteyPrice = cMain.whiteyPrice/2;
+			cMain.itemInventory.cards[1].cardPrice /= 2;
 			cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
-			cMain.rewardsMessage = "The cost of Whitey's have been halved!";
+			cMain.rewardsMessage = "The cost of "+ cMain.itemInventory.cards[1].cardName +"'s have been halved!";
 			break;
 		case (3):
-			cMain.cursorPrice = cMain.cursorPrice/2;
+			cMain.itemInventory.cards[0].cardPrice /= 2;
 			cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
-			cMain.rewardsMessage = "The cost of Shin-Chan's have been halved!";
+			cMain.rewardsMessage = "The cost of "+ cMain.itemInventory.cards[0].cardName +"'s have been halved!";
 			break;
 			default:
 			cMain.rewardsMessage = "Ya lost you little bastard!";
@@ -93,10 +93,10 @@ public class Slots implements Serializable{
 				} 
 				
 				cMain.messageText.setText("You're the luckiest bastard of all! You hit the jackpot! All sticker prices are 1/4 the price. " + cMain.rewardsMessage);
-				cMain.cursorPrice = cMain.cursorPrice/4;
-				cMain.whiteyPrice = cMain.whiteyPrice/4;
-				cMain.lollipopPrice = cMain.lollipopPrice/4;
-				cMain.docPrice = cMain.docPrice/4;
+				cMain.itemInventory.cards[0].cardPrice /= 4;
+				cMain.itemInventory.cards[1].cardPrice /= 4;
+				cMain.itemInventory.cards[2].cardPrice /= 4;
+				cMain.itemInventory.cards[3].cardPrice /= 4;
 				cMain.luckyPrice = cMain.luckyPrice/4;
 				cMain.bastardPrice = cMain.bastardPrice/4;
 				cMain.feverPrice = cMain.feverPrice/4;

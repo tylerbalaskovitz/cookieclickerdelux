@@ -7,7 +7,7 @@ public class Whitey extends Cards{
 	cardHandlerName = "";
 	
 	//used for the description when hovering over the items
-	cardDescription = "";
+	cardDescription = "Whitey: \n [Price: " + cardPrice + "] \n Each Whitey produces 1 Logos per second";
 	
 	//this is used so there won't be duplicates when drafting in the future. ID 1, 2, 3, etc. Also, this is useful for counting the amount of items in stuff in game.
 	idNumber = 1;

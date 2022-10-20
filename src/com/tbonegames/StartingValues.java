@@ -20,7 +20,6 @@ public class StartingValues implements Serializable{
 			cMain.luckyUnlocked = false;
 			cMain.bastardUnlocked = false;
 			cMain.feverUnlocked = false;
-			cMain.whiteyUnlocked = false;
 			cMain.timerOn = false;
 			cMain.inCombat = false;
 			cMain.baseNumberOfActions = 2;
@@ -31,9 +30,6 @@ public class StartingValues implements Serializable{
 			cMain.cursorUpgradeAmount = 0;
 			cMain.perSecond = 0;
 			cMain.dayPerSecond = 0;
-			cMain.whiteyPrice = 100;
-			cMain.lollipopPrice = 200;
-			cMain.docPrice = 500;
 			cMain.luckyPrice = 500;
 			cMain.bastardPrice = 750;
 			cMain.feverPrice = 1000;

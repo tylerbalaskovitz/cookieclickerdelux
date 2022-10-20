@@ -4,16 +4,19 @@ public class ShinChan extends Cards{
 
 	public ShinChan() {
 		
-		cardName = "ShinChan";
-		cardHandlerName = "";
+		cardName = "Shin-Chan";
+		
+		cardPrice = 10;
+		
+		clickerIncrease = .1;
 		
 		//used for the description when hovering over the items
-		cardDescription = "";
+		cardDescription = "Shin-Chan: \n [Price: " + cardPrice + "] \n AutoClicks " + clickerIncrease +" times every second." ;
 		
 		//this is used so there won't be duplicates when drafting in the future. ID 1, 2, 3, etc. Also, this is useful for counting the amount of items in stuff in game.
 		idNumber = 2;
 		
-		clickerIncrease = 3;
+		
 		
 		defenseBonus = 0;
 		
@@ -26,7 +29,7 @@ public class ShinChan extends Cards{
 		//used for the sound that unlocks during the GameTimers class being ran.
 		unlocked = false;
 		
-		unlockAmount = 300;
+		unlockAmount = 0;
 		
 		// intended to be used with % operator to increase after x amount of purchases and to be used with totalAmountPurchased
 			
@@ -35,8 +38,9 @@ public class ShinChan extends Cards{
 		//total amount purchase is used when going through the combat loop. 
 		totalAmountPurchased = 0;
 		
-		cardPrice = 300;
-		cardPriceIncrease = 300;
+		
+		cardPriceIncrease = 5;
+		
 	}
 	
 }

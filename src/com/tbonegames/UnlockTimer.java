@@ -31,35 +31,50 @@ public class UnlockTimer implements Serializable{
 				cMain.shopCookieLabel.setText(cMain.logosCounter + " Logos");
 				cMain.inCombatHPLabel.setText("HP:" + cMain.logosCounter);
 				
-				if(cMain.whiteyUnlocked==false) {
-					if(cMain.logosCounter >= 100) {
+				if (cMain.itemInventory.cards[0].unlocked == false) {
+					if (cMain.logosCounter >= cMain.itemInventory.cards[0].unlockAmount) {
 						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.whiteyUnlocked = true;
-						cMain.button2.setText("Whitey " + "(" + cMain.whiteyNumber + ")");
+						cMain.itemInventory.cards[0].unlocked = true;
+						cMain.button1.setText(cMain.itemInventory.cards[0].cardName + "("+cMain.itemInventory.cards[0].totalCurrentAmount+")");
 					}
-				} else if (cMain.whiteyUnlocked == true){
-					cMain.button2.setText("Whitey " + "(" + cMain.whiteyNumber + ")");
+				} else if (cMain.itemInventory.cards[0].unlocked == true) {
+					cMain.button1.setText(cMain.itemInventory.cards[0].cardName + "("+cMain.itemInventory.cards[0].totalCurrentAmount+")");
 				}
 				
-				if(cMain.lollipopUnlocked==false) {
-					if(cMain.logosCounter >= 200) {
+				
+				
+				if (cMain.itemInventory.cards[1].unlocked == false) {
+					if (cMain.logosCounter >= cMain.itemInventory.cards[1].unlockAmount) {
 						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.lollipopUnlocked = true;
-						cMain.button3.setText("Lollipop " + "(" + cMain.lollipopNumber + ")");
+						cMain.itemInventory.cards[1].unlocked = true;
+						cMain.button2.setText(cMain.itemInventory.cards[1].cardName + "("+cMain.itemInventory.cards[1].totalCurrentAmount+")");
 					}
-				} else if (cMain.lollipopUnlocked == true){
-					cMain.button3.setText("Lollipop " + "(" + cMain.lollipopNumber + ")");
+				} else if (cMain.itemInventory.cards[1].unlocked == true) {
+					cMain.button2.setText(cMain.itemInventory.cards[1].cardName + "("+cMain.itemInventory.cards[1].totalCurrentAmount+")");
 				}
 				
-				if(cMain.docUnlocked==false) {
-					if(cMain.logosCounter >= 500) {
+				
+				
+				if (cMain.itemInventory.cards[2].unlocked == false) {
+					if (cMain.logosCounter >= cMain.itemInventory.cards[2].unlockAmount) {
 						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-						cMain.docUnlocked = true;
-						cMain.button4.setText("Doc " + "(" + cMain.docNumber + ")");
+						cMain.itemInventory.cards[2].unlocked = true;
+						cMain.button3.setText(cMain.itemInventory.cards[2].cardName + "("+cMain.itemInventory.cards[2].totalCurrentAmount+")");
 					}
-				} else if (cMain.docUnlocked == true){
-					cMain.button4.setText("Doc " + "(" + cMain.docNumber + ")");
+				} else if (cMain.itemInventory.cards[2].unlocked == true) {
+					cMain.button3.setText(cMain.itemInventory.cards[2].cardName + "("+cMain.itemInventory.cards[2].totalCurrentAmount+")");
 				}
+				
+				if (cMain.itemInventory.cards[3].unlocked == false) {
+					if (cMain.logosCounter >= cMain.itemInventory.cards[3].unlockAmount) {
+						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
+						cMain.itemInventory.cards[3].unlocked = true;
+						cMain.button4.setText(cMain.itemInventory.cards[3].cardName + "("+cMain.itemInventory.cards[3].totalCurrentAmount+")");
+					}
+				} else if (cMain.itemInventory.cards[3].unlocked == true) {
+					cMain.button4.setText(cMain.itemInventory.cards[3].cardName + "("+cMain.itemInventory.cards[3].totalCurrentAmount+")");
+				}
+			
 				
 			
 				if(cMain.luckyUnlocked==false) {

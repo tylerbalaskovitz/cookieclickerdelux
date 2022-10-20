@@ -38,34 +38,43 @@ public class MouseHandler implements MouseListener, Serializable{
 	public void mouseEntered(MouseEvent e) {
 		JButton button = (JButton)e.getSource();
 		
-		if(button == cMain.button1) {
-			cMain.messageText.setText("Shin-Chan: \n [Price: " + cMain.cursorPrice + "] \n AutoClicks once every 10 seconds");
-		}
-		
-		if(button == cMain.button2) {
-			if(cMain.whiteyUnlocked==false) {
+		if (button == cMain.button1) {
+			if (cMain.itemInventory.cards[0].unlocked== false) {
 				cMain.messageText.setText("This item is currently locked");
-			} else {
-				cMain.messageText.setText("Whitey: \n [Price: " + cMain.whiteyPrice + "] \n Each Whitey produces 1 logo per second");
 			}
-		}
-		if(button == cMain.button3) {
-			if(cMain.lollipopUnlocked==false) {
-				
-			
-				cMain.messageText.setText("This item is currently locked");
-			} else {
-				cMain.messageText.setText("Lollipop: \n [Price: " + cMain.lollipopPrice + "] \n Each Lollipop produces 3 logo per second");
+			else {
+				cMain.messageText.setText(cMain.itemInventory.cards[0].cardDescription);
 			}
 		}
 		
-		if(button == cMain.button4) {
-			if(cMain.docUnlocked==false) {
+		if (button == cMain.button2) {
+			if (cMain.itemInventory.cards[1].unlocked== false) {
 				cMain.messageText.setText("This item is currently locked");
-			} else {
-				cMain.messageText.setText("Doc: \n [Price: " + cMain.docPrice + "] \n Each Doc produces 7 logo per second");
+			}
+			else {
+				cMain.messageText.setText(cMain.itemInventory.cards[1].cardDescription);
 			}
 		}
+		
+		if (button == cMain.button3) {
+			if (cMain.itemInventory.cards[2].unlocked== false) {
+				cMain.messageText.setText("This item is currently locked");
+			}
+			else {
+				cMain.messageText.setText(cMain.itemInventory.cards[2].cardDescription);
+			}
+		}
+		
+		
+		if (button == cMain.button4) {
+			if (cMain.itemInventory.cards[3].unlocked== false) {
+				cMain.messageText.setText("This item is currently locked");
+			}
+			else {
+				cMain.messageText.setText(cMain.itemInventory.cards[3].cardDescription);
+			}
+		}
+
 		if(button == cMain.button5) {
 			if (cMain.luckyUnlocked==false) {
 				cMain.messageText.setText("This item is currently locked");
