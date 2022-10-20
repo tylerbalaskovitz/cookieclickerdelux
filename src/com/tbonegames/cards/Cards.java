@@ -1,6 +1,10 @@
 package com.tbonegames.cards;
 
-public class Cards {
+import java.io.Serializable;
+
+public class Cards implements Serializable{
+	
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public String cardName;
 	public String cardHandlerName;
