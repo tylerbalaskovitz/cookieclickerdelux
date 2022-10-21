@@ -25,18 +25,33 @@ public class ShopHandler implements ActionListener, Serializable{
 		
 		case "Weapons":
 			displayWeaponsShop();
+			cMain.mouseHandler.clickedButton = 0;
+			cMain.mouseHandler.savedValue = 0;
+			cMain.mouseHandler.switcherStep = 0;
 			break;
 		case "Armor":
-			displayArmorShop();
+			displayArmorShop();			
+			cMain.mouseHandler.clickedButton = 0;
+			cMain.mouseHandler.savedValue = 0;
+			cMain.mouseHandler.switcherStep = 0;
 			break;
 		case "Items":
 			displayItemsShop();
+			cMain.mouseHandler.clickedButton = 0;
+			cMain.mouseHandler.savedValue = 0;
+			cMain.mouseHandler.switcherStep = 0;
 			break;
 		case "Buffs":
 			displayBuffsShop();
+			cMain.mouseHandler.clickedButton = 0;
+			cMain.mouseHandler.savedValue = 0;
+			cMain.mouseHandler.switcherStep = 0;
 			break;
 		case "Return":
 			displayShopNavigation();
+			cMain.mouseHandler.clickedButton = 0;
+			cMain.mouseHandler.savedValue = 0;
+			cMain.mouseHandler.switcherStep = 0;
 			break;
 		
 		case "Item0":

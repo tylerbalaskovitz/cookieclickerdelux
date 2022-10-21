@@ -9,7 +9,6 @@ import javax.swing.JButton;
 public class MouseHandler implements MouseListener, Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 	
-	JButton swapButton0, swapButton1;
 	int switcherStep, savedValue, clickedButton;
 	ClientMain cMain;
 
@@ -17,7 +16,7 @@ public class MouseHandler implements MouseListener, Serializable{
 	
 	public void shopSwitcher (int x, JButton buttonSource) {
 
-	if 	(cMain.displayItemsShop == true && cMain.switcherEnabled == true) {
+	if 	(cMain.displayItemsShop == true && cMain.switcherEnabled == true && cMain.itemInventory.items[x].unlocked == true) {
 		if (switcherStep == 0) {
 			savedValue = x;
 		cMain.itemInventory.itemsHolder[0] = cMain.itemInventory.items[x];
@@ -25,13 +24,13 @@ public class MouseHandler implements MouseListener, Serializable{
 		if (switcherStep == 1) {
 			cMain.itemInventory.items[savedValue] = cMain.itemInventory.items[x];
 			cMain.itemInventory.items[x] = cMain.itemInventory.itemsHolder[0];
+			cMain.shopMessageText.setText(cMain.itemInventory.items[x].itemName+ " \n [Price: " + cMain.itemInventory.items[x].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[x].totalCurrentAmount +" ] \n" + cMain.itemInventory.items[x].itemDescription);
 		}
 		switcherStep++;
-		cMain.shopHandler.displayShopNavigation();
-		cMain.shopHandler.displayItemsShop();
+		
 		
 	};
-	if (cMain.displayWeaponsShop == true && cMain.switcherEnabled == true) {
+	if (cMain.displayWeaponsShop == true && cMain.switcherEnabled == true  && cMain.itemInventory.weapons[x].unlocked == true) {
 		if (switcherStep == 0) {
 			savedValue = x;
 		cMain.itemInventory.weaponsHolder[0] = cMain.itemInventory.weapons[x];
@@ -39,13 +38,13 @@ public class MouseHandler implements MouseListener, Serializable{
 		if (switcherStep == 1) {
 			cMain.itemInventory.weapons[savedValue] = cMain.itemInventory.weapons[x];
 			cMain.itemInventory.weapons[x] = cMain.itemInventory.weaponsHolder[0];
-		}
+			cMain.shopMessageText.setText(cMain.itemInventory.weapons[x].weaponName + " \n [Price: " + cMain.itemInventory.weapons[x].weaponPrice + "] \n [Amount: " + cMain.itemInventory.weapons[x].totalCurrentAmount +" ] \n" + cMain.itemInventory.weapons[x].weaponDescription);
+	}
 		switcherStep++;
-		cMain.shopHandler.displayShopNavigation();
-		cMain.shopHandler.displayWeaponsShop();
+		
 	};
 	
-	if (cMain.displayArmorShop == true && cMain.switcherEnabled == true) {
+	if (cMain.displayArmorShop == true && cMain.switcherEnabled == true  && cMain.itemInventory.armor[x].unlocked == true) {
 		if (switcherStep == 0) {
 			savedValue = x;
 		cMain.itemInventory.armorHolder[0] = cMain.itemInventory.armor[x];
@@ -53,13 +52,14 @@ public class MouseHandler implements MouseListener, Serializable{
 		if (switcherStep == 1) {
 			cMain.itemInventory.armor[savedValue] = cMain.itemInventory.armor[x];
 			cMain.itemInventory.armor[x] = cMain.itemInventory.armorHolder[0];	
+			cMain.shopMessageText.setText(cMain.itemInventory.armor[x].armorName + " \n [Price: " + cMain.itemInventory.armor[x].armorPrice + "] \n [Amount: " + cMain.itemInventory.armor[x].totalCurrentAmount +"\n" + cMain.itemInventory.armor[x].armorDescription);
+
 		}
 		
 		switcherStep++;
-		cMain.shopHandler.displayShopNavigation();
-		cMain.shopHandler.displayArmorShop();
+		
 	};
-	if (cMain.displayBuffsShop == true && cMain.switcherEnabled == true) {
+	if (cMain.displayBuffsShop == true && cMain.switcherEnabled == true  && cMain.itemInventory.buffs[x].unlocked == true) {
 		if (switcherStep == 0) {
 			savedValue = x;
 			cMain.itemInventory.buffsHolder[0] = cMain.itemInventory.buffs[x];
@@ -67,13 +67,27 @@ public class MouseHandler implements MouseListener, Serializable{
 			if (switcherStep == 1) {
 				cMain.itemInventory.buffs[savedValue] = cMain.itemInventory.buffs[x];
 				cMain.itemInventory.buffs[x] = cMain.itemInventory.buffsHolder[0];
+				cMain.shopMessageText.setText(cMain.itemInventory.buffs[x].buffName + " \n [Price: " + cMain.itemInventory.buffs[x].buffPrice + "] \n [Amount: " + cMain.itemInventory.buffs[x].currentAmount +"\n" + cMain.itemInventory.buffs[x].buffDescription);
 			}
 		switcherStep++;
-		cMain.shopHandler.displayShopNavigation();
-		cMain.shopHandler.displayBuffsShop();
+		
 	};
 	
 	if (switcherStep >= 2) {
+		cMain.shopHandler.displayShopNavigation();
+		if (cMain.displayItemsShop == true) {
+		cMain.shopHandler.displayItemsShop();
+		}
+		if (cMain.displayArmorShop == true) {
+			cMain.shopHandler.displayArmorShop();
+		}
+		if (cMain.displayWeaponsShop == true) {
+			cMain.shopHandler.displayWeaponsShop();
+		}
+		if (cMain.displayBuffsShop == true) {
+			cMain.shopHandler.displayBuffsShop();
+		}
+		cMain.soundFX.playSoundEffect(cMain.soundFXValues.slotWinner);
 		switcherStep = 0;
 		savedValue = 0;
 	}
