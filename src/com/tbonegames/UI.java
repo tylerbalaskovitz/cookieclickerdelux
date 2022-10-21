@@ -108,6 +108,9 @@ public void createUI() {
 
 	
 	//Navigation Panel and Buttons
+
+	
+	
 	cMain.navigationPanel = new JPanel();
 	panelConfiguration(cMain.navigationPanel, 10, 500, 250, 50, Color.black, 1, 5, cMain.window);
 	
@@ -124,6 +127,16 @@ public void createUI() {
 	iconButtonGenerator(save, cMain.button9, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.navigationPanel);
 		
 	//Buttons for the inGameSHop
+	
+	cMain.cardModPanel = new JPanel();
+	panelConfiguration(cMain.cardModPanel, 5, 250, 100, 200, Color.yellow, 2, 1, cMain.window);
+	
+	cMain.cardModButton0 = new JButton("Switcher");
+	buttonGenerator(cMain.cardModButton0, cMain.font2, Color.black, Color.white, false, cMain.shopHandler, "Switcher", cMain.mouseHandler, cMain.cardModPanel);
+	
+	cMain.cardModButton1 = new JButton("Burn");
+	buttonGenerator(cMain.cardModButton1, cMain.font2, Color.black, Color.white, false, cMain.shopHandler, "BurnCard", cMain.mouseHandler, cMain.cardModPanel);
+	
 		cMain.shopNavigationPanel = new JPanel();
 		panelConfiguration(cMain.shopNavigationPanel, 150, 350, 500, 140, Color.yellow, 2, 2, cMain.window);
 	
@@ -358,7 +371,9 @@ public void createUI() {
 		cMain.shopUpperPanel.setVisible(false);
 		cMain.combatPanel.setVisible(false);
 		cMain.combatButtonPanel.setVisible(false);
+		cMain.cardModPanel.setVisible(false);
 		cMain.displayPanelSwitch= false;
+		
 	}
 		
 	public void displayStartMenu() {
@@ -373,6 +388,7 @@ public void createUI() {
 		cMain.shopNavigationPanel.setVisible(true);
 		cMain.shopPanel.setVisible(false);
 		cMain.shopUpperPanel.setVisible(true);
+		cMain.cardModPanel.setVisible(true);
 	}
 
 		public void displaySwitch(String displayOption) {

@@ -27,11 +27,12 @@ public class ClientMain implements Serializable{
 	Random rand = new Random();
 	JFrame window;
 	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, shopCookiePanel, messagePanel, counterPanel, cookiePanel, optionsPanel, navigationPanel, combatPanel, combatButtonPanel, 
-	startButtonPanel, titleNamePanel, descriptionPanel, shopNavigationPanel, combatStatsPanel, multiplierPanel;
+	startButtonPanel, titleNamePanel, descriptionPanel, shopNavigationPanel, combatStatsPanel, multiplierPanel, cardModPanel;
 	JLabel counterLabel, shopCookieLabel, perSecLabel, shopLabel, titleNameLabel, descriptionLabel, dayLabel, combatDayLabel, inCombatHPLabel, inCombatDayLabel, inCombatActionsLabel;
 	JButton startButton, button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton0, shopButton1, shopButton2, shopButton3, shopButton4, 
 	shopButton5, shopButton6, shopButton7, shopButton8, shopButton9, optionButton1, optionButton2, optionButton3,optionButton4, combatButton1, combatButton2, combatButton3,
-	combatButton4, shopNavigationButton1, shopNavigationButton2, shopNavigationButton3, shopNavigationButton4, multiplierButton1, multiplierButton2, multiplierButton3;
+	combatButton4, shopNavigationButton1, shopNavigationButton2, shopNavigationButton3, shopNavigationButton4, multiplierButton1, multiplierButton2, multiplierButton3, cardModButton0,
+	cardModButton1;
 	
 	int  logosCounter, rounds, timerSpeed, dayTimerSpeed, slotsPrice, cursorUpgradeAmount, 
 	luckyPrice, bastardPrice, feverPrice, day, enemyAttackChoice, enemyDamage, bossDay, startingDamage, disableAttacksCounter, disableBlocksCounter, disableItemsCounter, enemiesDefeated, 
@@ -39,7 +40,7 @@ public class ClientMain implements Serializable{
 	playerAttackBonus, disableBuffsCounter, clickerBonus, blockValueBonus, dayLimiter, highestLogo, score, highScore;
 	
 	double  perSecond, dayPerSecond;
-	boolean timerOn, dayTimerOn,luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, switcherEnabled,
+	boolean timerOn, dayTimerOn,luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, switcherEnabled, burnCardEnabled,
 	inCombat, attacksDisabled, buffsDisabled, blocksDisabled, itemsDisabled, displayItemsShop, displayWeaponsShop, 
 	displayArmorShop, displayBuffsShop, customCombat, combatDeath;
 	

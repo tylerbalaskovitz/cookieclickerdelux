@@ -34,7 +34,7 @@ public class StartingValues implements Serializable{
 			cMain.bastardPrice = 750;
 			cMain.feverPrice = 1000;
 			cMain.slotsPrice = 500;
-			cMain.switcherEnabled = true;
+			cMain.switcherEnabled = false;
 		}
 		
 	}

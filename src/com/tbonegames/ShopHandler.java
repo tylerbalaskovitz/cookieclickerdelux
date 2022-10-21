@@ -1,5 +1,6 @@
 package com.tbonegames;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.Serializable;
@@ -22,7 +23,13 @@ public class ShopHandler implements ActionListener, Serializable{
 		String action = event.getActionCommand();
 		
 		switch (action) {
-		
+		case "Switcher":
+			switcherButton();
+				
+			break;
+		case "BurnCard":
+			burnCardButton();
+			break;
 		case "Weapons":
 			displayWeaponsShop();
 			cMain.mouseHandler.clickedButton = 0;
@@ -432,5 +439,45 @@ public class ShopHandler implements ActionListener, Serializable{
 		
 		
 	}
+	
+	public void switcherButton() {
+		cMain.burnCardEnabled = false;
+		cMain.cardModButton1.setBackground(Color.black);
+		cMain.cardModButton1.setForeground(Color.white);
+		int counter = 0;
+		if (cMain.switcherEnabled == true && counter == 0) {
+			cMain.switcherEnabled = false;
+			counter++;
+			cMain.cardModButton0.setBackground(Color.black);
+			cMain.cardModButton0.setForeground(Color.white);
+		}
+		if (cMain.switcherEnabled == false && counter == 0) {
+		cMain.switcherEnabled = true;
+		cMain.cardModButton0.setBackground(Color.yellow);
+		cMain.cardModButton0.setForeground(Color.black);
+		counter++;
+		}
+	}
+	
+	public void burnCardButton() {
+		cMain.switcherEnabled = false;
+		cMain.cardModButton0.setBackground(Color.black);
+		cMain.cardModButton0.setForeground(Color.white);
+		int counter = 0;
+		if (cMain.burnCardEnabled == true && counter == 0) {
+			cMain.burnCardEnabled = false;
+			counter++;
+			cMain.cardModButton1.setBackground(Color.black);
+			cMain.cardModButton1.setForeground(Color.white);
+		}
+		if (cMain.burnCardEnabled == false && counter == 0) {
+		cMain.burnCardEnabled = true;
+		cMain.cardModButton1.setBackground(Color.red);
+		cMain.cardModButton1.setForeground(Color.black);
+		counter++;
+		}
+	}
+	
+
 	
 }
