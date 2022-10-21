@@ -49,6 +49,11 @@ public class ItemInventory implements Serializable{
 	Buffs inCombatBuffs[] = new Buffs[4];
 	Items inCombatItems[] = new Items[4];
 	Weapons inCombatWeapons[] = new Weapons[4];
+
+	Armor armorHolder[] = new Armor[1];
+	Buffs buffsHolder[] = new Buffs[1];
+	Items itemsHolder[] = new Items[1];
+	Weapons weaponsHolder[] = new Weapons[1];
 	
 	
 

@@ -9,7 +9,79 @@ import javax.swing.JButton;
 public class MouseHandler implements MouseListener, Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 	
+	JButton swapButton0, swapButton1;
+	int switcherStep, savedValue, clickedButton;
 	ClientMain cMain;
+
+
+	
+	public void shopSwitcher (int x, JButton buttonSource) {
+
+	if 	(cMain.displayItemsShop == true && cMain.switcherEnabled == true) {
+		if (switcherStep == 0) {
+			savedValue = x;
+		cMain.itemInventory.itemsHolder[0] = cMain.itemInventory.items[x];
+		}
+		if (switcherStep == 1) {
+			cMain.itemInventory.items[savedValue] = cMain.itemInventory.items[x];
+			cMain.itemInventory.items[x] = cMain.itemInventory.itemsHolder[0];
+		}
+		switcherStep++;
+		cMain.shopHandler.displayShopNavigation();
+		cMain.shopHandler.displayItemsShop();
+		
+	};
+	if (cMain.displayWeaponsShop == true && cMain.switcherEnabled == true) {
+		if (switcherStep == 0) {
+			savedValue = x;
+		cMain.itemInventory.weaponsHolder[0] = cMain.itemInventory.weapons[x];
+		}
+		if (switcherStep == 1) {
+			cMain.itemInventory.weapons[savedValue] = cMain.itemInventory.weapons[x];
+			cMain.itemInventory.weapons[x] = cMain.itemInventory.weaponsHolder[0];
+		}
+		switcherStep++;
+		cMain.shopHandler.displayShopNavigation();
+		cMain.shopHandler.displayWeaponsShop();
+	};
+	
+	if (cMain.displayArmorShop == true && cMain.switcherEnabled == true) {
+		if (switcherStep == 0) {
+			savedValue = x;
+		cMain.itemInventory.armorHolder[0] = cMain.itemInventory.armor[x];
+		}
+		if (switcherStep == 1) {
+			cMain.itemInventory.armor[savedValue] = cMain.itemInventory.armor[x];
+			cMain.itemInventory.armor[x] = cMain.itemInventory.armorHolder[0];	
+		}
+		
+		switcherStep++;
+		cMain.shopHandler.displayShopNavigation();
+		cMain.shopHandler.displayArmorShop();
+	};
+	if (cMain.displayBuffsShop == true && cMain.switcherEnabled == true) {
+		if (switcherStep == 0) {
+			savedValue = x;
+			cMain.itemInventory.buffsHolder[0] = cMain.itemInventory.buffs[x];
+			}
+			if (switcherStep == 1) {
+				cMain.itemInventory.buffs[savedValue] = cMain.itemInventory.buffs[x];
+				cMain.itemInventory.buffs[x] = cMain.itemInventory.buffsHolder[0];
+			}
+		switcherStep++;
+		cMain.shopHandler.displayShopNavigation();
+		cMain.shopHandler.displayBuffsShop();
+	};
+	
+	if (switcherStep >= 2) {
+		switcherStep = 0;
+		savedValue = 0;
+	}
+	}
+	
+	public void newShopItem() {
+		
+	}
 	
 	public MouseHandler(ClientMain cMain) {
 	this.cMain = cMain;	
@@ -18,13 +90,40 @@ public class MouseHandler implements MouseListener, Serializable{
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+
 		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
+		JButton button = (JButton)e.getSource();
+
+		
+		if (button == cMain.shopButton0) {
+			clickedButton = 0;
+			shopSwitcher(clickedButton, button);
+			
+		}
+		if (button == cMain.shopButton1) {
+			clickedButton = 1;
+			shopSwitcher(clickedButton, button);
+			
+		}
+		if (button == cMain.shopButton2) {
+			clickedButton = 2;
+			shopSwitcher(clickedButton, button);
+			
+		}
+		if (button == cMain.shopButton3) {
+			clickedButton = 3;
+			shopSwitcher(clickedButton, button);
+			
+		}
+		if (button == cMain.shopButton4) {
+			clickedButton = 4;
+			shopSwitcher(clickedButton, button);
+			
+		}
 		
 	}
 
@@ -110,7 +209,7 @@ public class MouseHandler implements MouseListener, Serializable{
 		}
 		
 		
-		if(button == cMain.shopButton1) {
+		if(button == cMain.shopButton0) {
 			if (cMain.displayItemsShop == true) {
 				if (cMain.itemInventory.items[0].unlocked == true) {
 				cMain.shopMessageText.setText(cMain.itemInventory.items[0].itemName+ " \n [Price: " + cMain.itemInventory.items[0].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[0].totalCurrentAmount +" ] \n" + cMain.itemInventory.items[0].itemDescription);
@@ -145,7 +244,7 @@ public class MouseHandler implements MouseListener, Serializable{
 			
 		}
 		
-		if(button == cMain.shopButton2) {
+		if(button == cMain.shopButton1) {
 			
 				if (cMain.displayItemsShop == true) {
 					if (cMain.itemInventory.items[1].unlocked == true) {
@@ -180,7 +279,7 @@ public class MouseHandler implements MouseListener, Serializable{
 				
 		}
 		
-		if(button == cMain.shopButton3) {
+		if(button == cMain.shopButton2) {
 
 				
 				if (cMain.displayItemsShop == true){
@@ -217,7 +316,7 @@ public class MouseHandler implements MouseListener, Serializable{
 			
 		}
 		
-		if(button == cMain.shopButton4) {
+		if(button == cMain.shopButton3) {
 			
 			if (cMain.displayItemsShop == true){
 				if (cMain.itemInventory.items[3].unlocked == true) {
@@ -255,7 +354,7 @@ public class MouseHandler implements MouseListener, Serializable{
 					
 		}
 		
-		if(button == cMain.shopButton5) {
+		if(button == cMain.shopButton4) {
 			
 			if (cMain.displayItemsShop == true){
 				if (cMain.itemInventory.items[4].unlocked == true) {
@@ -295,7 +394,7 @@ public class MouseHandler implements MouseListener, Serializable{
 
 		}
 		
-		if(button == cMain.shopButton6) {
+		if(button == cMain.shopButton5) {
 			
 			if (cMain.displayItemsShop == true){
 				
@@ -378,6 +477,10 @@ public class MouseHandler implements MouseListener, Serializable{
 			
 		}
 		
+		else if (button== cMain.shopButton0) {
+			cMain.shopMessageText.setText(null);
+		}
+		
 		else if (button== cMain.shopButton1) {
 			cMain.shopMessageText.setText(null);
 		}
@@ -395,10 +498,6 @@ public class MouseHandler implements MouseListener, Serializable{
 		}
 		
 		else if (button== cMain.shopButton5) {
-			cMain.shopMessageText.setText(null);
-		}
-		
-		else if (button== cMain.shopButton6) {
 			cMain.shopMessageText.setText(null);
 		}
 		

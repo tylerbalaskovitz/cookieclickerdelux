@@ -150,23 +150,23 @@ public void createUI() {
 		cMain.shopPanel = new JPanel();
 		panelConfiguration(cMain.shopPanel, 135, 275, 500, 200, Color.black, 2, 3, cMain.window);
 		
+		cMain.shopButton0 = new JButton("?");
+		buttonGenerator(cMain.shopButton0, cMain.font3, Color.black, Color.white, false, cMain.shopHandler, "", cMain.mouseHandler, cMain.shopPanel);
+		
 		cMain.shopButton1 = new JButton("?");
 		buttonGenerator(cMain.shopButton1, cMain.font3, Color.black, Color.white, false, cMain.shopHandler, "", cMain.mouseHandler, cMain.shopPanel);
-		
+
 		cMain.shopButton2 = new JButton("?");
 		buttonGenerator(cMain.shopButton2, cMain.font3, Color.black, Color.white, false, cMain.shopHandler, "", cMain.mouseHandler, cMain.shopPanel);
 
 		cMain.shopButton3 = new JButton("?");
 		buttonGenerator(cMain.shopButton3, cMain.font3, Color.black, Color.white, false, cMain.shopHandler, "", cMain.mouseHandler, cMain.shopPanel);
-
+		
 		cMain.shopButton4 = new JButton("?");
 		buttonGenerator(cMain.shopButton4, cMain.font3, Color.black, Color.white, false, cMain.shopHandler, "", cMain.mouseHandler, cMain.shopPanel);
 		
-		cMain.shopButton5 = new JButton("?");
-		buttonGenerator(cMain.shopButton5, cMain.font3, Color.black, Color.white, false, cMain.shopHandler, "", cMain.mouseHandler, cMain.shopPanel);
-		
-		cMain.shopButton6 = new JButton("Return");
-		buttonGenerator(cMain.shopButton6, cMain.font3, Color.black, Color.white, false, cMain.shopHandler, "Return", cMain.mouseHandler, cMain.shopPanel);
+		cMain.shopButton5 = new JButton("Return");
+		buttonGenerator(cMain.shopButton5, cMain.font3, Color.black, Color.white, false, cMain.shopHandler, "Return", cMain.mouseHandler, cMain.shopPanel);
 		
 		//Code for the main button to click
 		cMain.cookiePanel = new JPanel();

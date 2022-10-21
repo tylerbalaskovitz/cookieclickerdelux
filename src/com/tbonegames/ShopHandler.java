@@ -40,6 +40,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			break;
 		
 		case "Item0":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter>=cMain.itemInventory.items[0].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[0].strengthIncrease; 
@@ -52,8 +53,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Item1":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter>=cMain.itemInventory.items[1].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.items[1].totalCurrentAmount++;
@@ -65,8 +68,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else { 
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Item2":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter>=cMain.itemInventory.items[2].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[2].strengthIncrease; 
@@ -78,8 +83,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Item3":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter>=cMain.itemInventory.items[3].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.items[3].totalCurrentAmount++;
@@ -91,8 +98,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else { 
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Item4":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter>=cMain.itemInventory.items[4].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[4].strengthIncrease; 
@@ -104,11 +113,13 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		
 		
 		
 		case "Weapon0":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.itemInventory.weapons[0].unlocked==true) {
 			if (cMain.logosCounter>= cMain.itemInventory.weapons[0].weaponPrice){
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
@@ -119,9 +130,11 @@ public class ShopHandler implements ActionListener, Serializable{
 			cMain.itemInventory.weapons[0].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.weapons[0].weaponName + "\n [Price: " + cMain.itemInventory.weapons[0].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[0].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[0].weaponDescription);
 			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
-			}	
+			}
+			}
 		break;
 		case "Weapon1":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.itemInventory.weapons[1].unlocked==true) {
 			if (cMain.logosCounter>= cMain.itemInventory.weapons[1].weaponPrice){
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
@@ -131,9 +144,11 @@ public class ShopHandler implements ActionListener, Serializable{
 			cMain.itemInventory.weapons[1].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.weapons[1].weaponName + "\n [Price: " + cMain.itemInventory.weapons[1].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[1].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[1].weaponDescription);
 			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
-			}	
+			}
+			}
 		break;
 		case "Weapon2":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.itemInventory.weapons[2].unlocked==true) {
 			if (cMain.logosCounter>= cMain.itemInventory.weapons[2].weaponPrice){
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
@@ -144,8 +159,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			cMain.shopMessageText.setText(cMain.itemInventory.weapons[2].weaponName + "\n [Price: " + cMain.itemInventory.weapons[2].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[2].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[2].weaponDescription);
 			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
 			}	
+			}
 		break;
 		case "Weapon3":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.itemInventory.weapons[3].unlocked==true) {
 			if (cMain.logosCounter>= cMain.itemInventory.weapons[3].weaponPrice){
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
@@ -155,9 +172,11 @@ public class ShopHandler implements ActionListener, Serializable{
 			cMain.itemInventory.weapons[3].raisePrice();
 			cMain.shopMessageText.setText(cMain.itemInventory.weapons[3].weaponName + "\n [Price: " + cMain.itemInventory.weapons[3].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[3].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[3].weaponDescription);
 			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
-			}	
+			}
+			}
 		break;
 		case "Weapon4":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.itemInventory.weapons[4].unlocked==true) {
 			if (cMain.logosCounter>= cMain.itemInventory.weapons[4].weaponPrice){
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
@@ -168,8 +187,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			cMain.shopMessageText.setText(cMain.itemInventory.weapons[4].weaponName + "\n [Price: " + cMain.itemInventory.weapons[4].weaponPrice + "] \n[Amount: " + cMain.itemInventory.weapons[4].totalCurrentAmount +"] \n" + cMain.itemInventory.weapons[4].weaponDescription);
 			} else  {cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);}
 			}	
+			}
 		break;
 		case "Armor0":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.armor[0].armorPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.armor[0].totalCurrentAmount++;
@@ -180,8 +201,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Armor1":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.armor[1].armorPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.armor[1].totalCurrentAmount++;
@@ -192,8 +215,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Armor2":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.armor[2].armorPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.armor[2].totalCurrentAmount++;
@@ -204,8 +229,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Armor3":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.armor[3].armorPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.armor[3].totalCurrentAmount++;
@@ -216,8 +243,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Armor4":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.armor[4].armorPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.armor[4].totalCurrentAmount++;
@@ -228,8 +257,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Buffs0":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.buffs[0].buffPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.itemInventory.buffs[0].totalAmountPurchased++;
@@ -240,8 +271,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Buffs1":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.buffs[1].buffPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.itemInventory.buffs[1].totalAmountPurchased++;
@@ -252,8 +285,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Buffs2":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.buffs[2].buffPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.itemInventory.buffs[2].totalAmountPurchased++;
@@ -264,8 +299,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Buffs3":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.buffs[3].buffPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.itemInventory.buffs[3].totalAmountPurchased++;
@@ -276,8 +313,10 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+			}
 		break;
 		case "Buffs4":
+			if (cMain.switcherEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.buffs[4].buffPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.itemInventory.buffs[4].totalAmountPurchased++;
@@ -288,6 +327,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 			}
+		}
 		break;
 		
 		}
@@ -320,11 +360,11 @@ public class ShopHandler implements ActionListener, Serializable{
 		cMain.displayBuffsShop = true;
 		
 		//this needs to be updated for 
-		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs0");
-		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.buffs[1].unlocked,cMain.itemInventory.buffs[1].buffName, "Buffs1");
-		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.buffs[2].unlocked,cMain.itemInventory.buffs[2].buffName, "Buffs2");
-		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.buffs[3].unlocked,cMain.itemInventory.buffs[3].buffName, "Buffs3");
-		shopButtonConfig(cMain.shopButton5, cMain.itemInventory.buffs[4].unlocked,cMain.itemInventory.buffs[4].buffName, "Buffs4");
+		shopButtonConfig(cMain.shopButton0, cMain.itemInventory.buffs[0].unlocked,cMain.itemInventory.buffs[0].buffName, "Buffs0");
+		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.buffs[1].unlocked,cMain.itemInventory.buffs[1].buffName, "Buffs1");
+		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.buffs[2].unlocked,cMain.itemInventory.buffs[2].buffName, "Buffs2");
+		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.buffs[3].unlocked,cMain.itemInventory.buffs[3].buffName, "Buffs3");
+		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.buffs[4].unlocked,cMain.itemInventory.buffs[4].buffName, "Buffs4");
 	}
 		
 	public void displayWeaponsShop() {
@@ -335,11 +375,11 @@ public class ShopHandler implements ActionListener, Serializable{
 		cMain.displayArmorShop = false;
 		cMain.displayBuffsShop = false;
 		
-		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.weapons[0].unlocked,cMain.itemInventory.weapons[0].weaponName, "Weapon0");
-		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.weapons[1].unlocked,cMain.itemInventory.weapons[1].weaponName, "Weapon1");
-		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.weapons[2].unlocked,cMain.itemInventory.weapons[2].weaponName, "Weapon2");
-		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.weapons[3].unlocked,cMain.itemInventory.weapons[3].weaponName, "Weapon3");
-		shopButtonConfig(cMain.shopButton5, cMain.itemInventory.weapons[4].unlocked,cMain.itemInventory.weapons[4].weaponName, "Weapon4");
+		shopButtonConfig(cMain.shopButton0, cMain.itemInventory.weapons[0].unlocked,cMain.itemInventory.weapons[0].weaponName, "Weapon0");
+		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.weapons[1].unlocked,cMain.itemInventory.weapons[1].weaponName, "Weapon1");
+		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.weapons[2].unlocked,cMain.itemInventory.weapons[2].weaponName, "Weapon2");
+		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.weapons[3].unlocked,cMain.itemInventory.weapons[3].weaponName, "Weapon3");
+		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.weapons[4].unlocked,cMain.itemInventory.weapons[4].weaponName, "Weapon4");
 		
 		
 		
@@ -352,11 +392,11 @@ public class ShopHandler implements ActionListener, Serializable{
 		cMain.displayBuffsShop = false;
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopPanel.setVisible(true);
-		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.items[0].unlocked, cMain.itemInventory.items[0].itemName, "Item0");
-		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.items[1].unlocked, cMain.itemInventory.items[1].itemName, "Item1");
-		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.items[2].unlocked, cMain.itemInventory.items[2].itemName, "Item2");
-		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.items[3].unlocked, cMain.itemInventory.items[3].itemName, "Item3");
-		shopButtonConfig(cMain.shopButton5, cMain.itemInventory.items[4].unlocked, cMain.itemInventory.items[4].itemName, "Item4");
+		shopButtonConfig(cMain.shopButton0, cMain.itemInventory.items[0].unlocked, cMain.itemInventory.items[0].itemName, "Item0");
+		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.items[1].unlocked, cMain.itemInventory.items[1].itemName, "Item1");
+		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.items[2].unlocked, cMain.itemInventory.items[2].itemName, "Item2");
+		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.items[3].unlocked, cMain.itemInventory.items[3].itemName, "Item3");
+		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.items[4].unlocked, cMain.itemInventory.items[4].itemName, "Item4");
 	}
 	
 	public void displayArmorShop() {
@@ -368,11 +408,11 @@ public class ShopHandler implements ActionListener, Serializable{
 		cMain.shopPanel.setVisible(true);
 		
 		
-		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.armor[0].unlocked, cMain.itemInventory.armor[0].armorName, "Armor0");
-		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.armor[1].unlocked, cMain.itemInventory.armor[1].armorName, "Armor1");
-		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.armor[2].unlocked, cMain.itemInventory.armor[2].armorName, "Armor2");
-		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.armor[3].unlocked, cMain.itemInventory.armor[3].armorName, "Armor3");
-		shopButtonConfig(cMain.shopButton5, cMain.itemInventory.armor[4].unlocked, cMain.itemInventory.armor[4].armorName, "Armor4");
+		shopButtonConfig(cMain.shopButton0, cMain.itemInventory.armor[0].unlocked, cMain.itemInventory.armor[0].armorName, "Armor0");
+		shopButtonConfig(cMain.shopButton1, cMain.itemInventory.armor[1].unlocked, cMain.itemInventory.armor[1].armorName, "Armor1");
+		shopButtonConfig(cMain.shopButton2, cMain.itemInventory.armor[2].unlocked, cMain.itemInventory.armor[2].armorName, "Armor2");
+		shopButtonConfig(cMain.shopButton3, cMain.itemInventory.armor[3].unlocked, cMain.itemInventory.armor[3].armorName, "Armor3");
+		shopButtonConfig(cMain.shopButton4, cMain.itemInventory.armor[4].unlocked, cMain.itemInventory.armor[4].armorName, "Armor4");
 		
 		
 		
