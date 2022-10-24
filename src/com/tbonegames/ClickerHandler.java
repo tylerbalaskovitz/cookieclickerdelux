@@ -89,7 +89,7 @@ public class ClickerHandler implements ActionListener, Serializable{
 					cMain.itemInventory.cards[1].cardDescription = cardDescription(cMain.itemInventory.cards[1]);
 					cMain.itemInventory.cards[1].totalCurrentAmount++;
 					cMain.itemInventory.cards[1].totalAmountPurchased++;
-					cMain.button1.setText(cMain.itemInventory.cards[1].cardName + "(" + cMain.itemInventory.cards[1].totalCurrentAmount + ")");
+					cMain.button2.setText(cMain.itemInventory.cards[1].cardName + "(" + cMain.itemInventory.cards[1].totalCurrentAmount + ")");
 					cMain.perSecond+= cMain.itemInventory.cards[1].clickerIncrease; timers.timerUpdate();
 			} else {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -105,7 +105,7 @@ public class ClickerHandler implements ActionListener, Serializable{
 					cMain.itemInventory.cards[2].cardDescription = cardDescription(cMain.itemInventory.cards[2]);
 					cMain.itemInventory.cards[2].totalCurrentAmount++;
 					cMain.itemInventory.cards[2].totalAmountPurchased++;
-					cMain.button1.setText(cMain.itemInventory.cards[2].cardName + "(" + cMain.itemInventory.cards[2].totalCurrentAmount + ")");
+					cMain.button3.setText(cMain.itemInventory.cards[2].cardName + "(" + cMain.itemInventory.cards[2].totalCurrentAmount + ")");
 					cMain.perSecond+= cMain.itemInventory.cards[2].clickerIncrease; timers.timerUpdate();
 				} else {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
@@ -121,7 +121,7 @@ public class ClickerHandler implements ActionListener, Serializable{
 					cMain.itemInventory.cards[3].cardDescription = cardDescription(cMain.itemInventory.cards[3]);
 					cMain.itemInventory.cards[3].totalCurrentAmount++;
 					cMain.itemInventory.cards[3].totalAmountPurchased++;
-					cMain.button1.setText(cMain.itemInventory.cards[3].cardName + "(" + cMain.itemInventory.cards[3].totalCurrentAmount + ")");
+					cMain.button4.setText(cMain.itemInventory.cards[3].cardName + "(" + cMain.itemInventory.cards[3].totalCurrentAmount + ")");
 					cMain.perSecond+= cMain.itemInventory.cards[3].clickerIncrease; timers.timerUpdate();
 				} else {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);

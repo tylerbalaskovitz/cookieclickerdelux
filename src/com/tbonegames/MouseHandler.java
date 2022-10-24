@@ -136,6 +136,10 @@ public class MouseHandler implements MouseListener, Serializable{
 
 	}
 	
+	public void displayBurnCardName(int x) {
+		
+	}
+	
 	public MouseHandler(ClientMain cMain) {
 	this.cMain = cMain;	
 	}
