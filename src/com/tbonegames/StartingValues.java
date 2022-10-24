@@ -24,9 +24,9 @@ public class StartingValues implements Serializable{
 			cMain.timerOn = false;
 			cMain.inCombat = false;
 			cMain.baseNumberOfActions = 2;
-			cMain.day = 14;
+			cMain.day = 0;
 			cMain.bossDay = 20;
-			cMain.logosCounter = 22000;
+			cMain.logosCounter = 0;
 			cMain.startingDamage = 5;
 			cMain.perSecond = 0;
 			cMain.dayPerSecond = 0;

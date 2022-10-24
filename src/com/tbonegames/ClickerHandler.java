@@ -56,7 +56,19 @@ public class ClickerHandler implements ActionListener, Serializable{
 				cMain.bgMusicPlayer.playMusic(cMain.soundFXValues.backgroundmusic);
 				break;
 			case "Continue":
+				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.dayPerSecond = .1;
+				dayTimer.timerUpdate();
+				cMain.unlockTimer.startUnlockTimer();
+				cMain.ui.closeAllPanels();
+				cMain.ui.displayMainGame();
+				cMain.bgMusicPlayer.playMusic(cMain.soundFXValues.backgroundmusic);
 				cMain.saveGame.loadGame();
+				break;
+			case "SaveGame":
+				cMain.saveGame.saveGame();
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
 				break;
 			case "Logos": 
 				cMain.logosCounter = (cMain.logosCounter + 1 + cMain.clickerBonus); 

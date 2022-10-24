@@ -100,8 +100,23 @@ public class SaveGame implements Serializable{
 			sGameData.dayLimiter = cMain.dayLimiter;
 			sGameData.highestLogo = cMain.highestLogo;
 			sGameData.score = cMain.score;
+			sGameData.perSecond = cMain.perSecond;
+			sGameData.dayPerSecond = cMain.dayPerSecond;
 
+			for (int i = 0; i< 10; i++) {
+				sGameData.armor[i] = cMain.itemInventory.armor[i];
+				sGameData.weapons[i] = cMain.itemInventory.weapons[i];
+				sGameData.items[i] = cMain.itemInventory.items[i];
+				sGameData.buffs[i] = cMain.itemInventory.buffs[i];
+			}
 			
+			for (int i = 0; i < 4; i++) {
+				sGameData.cards[i] = cMain.itemInventory.cards[i];
+			}
+			
+			for (int i = 0; i < 4; i++) {
+			sGameData.burnManager[i] = cMain.itemInventory.burnManager[i];
+			}
 			
 	
 			oos.writeObject(sGameData);
@@ -149,6 +164,23 @@ public class SaveGame implements Serializable{
 			cMain.dayLimiter = sGameData.dayLimiter;
 			cMain.highestLogo = sGameData.highestLogo;
 			cMain.score = sGameData.score;
+			cMain.perSecond = sGameData.perSecond;
+			cMain.dayPerSecond = sGameData.dayPerSecond;
+			
+			for (int i = 0; i< 10; i++) {
+				 cMain.itemInventory.armor[i] = sGameData.armor[i];
+				 cMain.itemInventory.weapons[i] = sGameData.weapons[i];
+				 cMain.itemInventory.items[i] = sGameData.items[i];
+				 cMain.itemInventory.buffs[i] = sGameData.buffs[i];
+			}
+			
+			for (int i = 0; i < 4; i++) {
+				 cMain.itemInventory.cards[i] = sGameData.cards[i];
+			}
+			
+			for (int i = 0; i < 4; i++) {
+				 cMain.itemInventory.burnManager[i] = sGameData.burnManager[i];
+			}
 			
 			ois.close();
 	

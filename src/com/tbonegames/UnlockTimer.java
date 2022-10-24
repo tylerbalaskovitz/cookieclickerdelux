@@ -26,6 +26,10 @@ public class UnlockTimer implements Serializable{
 				if (cMain.logosCounter > cMain.highestLogo) {
 					cMain.highestLogo = cMain.logosCounter;
 				}
+				String s = String.format("%.1f", (cMain.perSecond + (cMain.rounds * 38)));
+				cMain.perSecLabel.setText("Per Second: " + s);
+				
+				cMain.dayLabel.setText("Day: "+ cMain.day);
 				
 				cMain.counterLabel.setText(cMain.logosCounter + " Logos");
 				cMain.shopCookieLabel.setText(cMain.logosCounter + " Logos");

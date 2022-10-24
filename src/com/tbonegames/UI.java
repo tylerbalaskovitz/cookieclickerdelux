@@ -124,7 +124,7 @@ public void createUI() {
 	
 	ImageIcon save = new ImageIcon(getClass().getClassLoader().getResource("save.png"));
 	cMain.button9 = new JButton();
-	iconButtonGenerator(save, cMain.button9, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.navigationPanel);
+	iconButtonGenerator(save, cMain.button9, Color.black, Color.white, false, cMain.clickerHandler, "SaveGame", cMain.mouseHandler, cMain.navigationPanel);
 		
 	//Buttons for the inGameSHop
 	
