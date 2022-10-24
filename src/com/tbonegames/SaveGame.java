@@ -25,29 +25,7 @@ public class SaveGame implements Serializable{
 
 	
 
-	public void loadHighScore() {
-	
-		try {
-			
-			FileInputStream fis = new FileInputStream("HighScore.dat");
-			BufferedInputStream bis = new BufferedInputStream(fis);
-			ObjectInputStream ois = new ObjectInputStream(bis);
-		
-			SaveGameData sGameData = (SaveGameData)ois.readObject();
-	
-			cMain.highScore = sGameData.highScore;
-	
-			ois.close();
-	
-		} catch (IOException ex) {
-			ex.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-	}
-	
-	
-	
-	}
+
 
 	public void saveHighScore() {
 	
@@ -67,6 +45,28 @@ public class SaveGame implements Serializable{
 	}
 	
 	}
+	
+	public void loadHighScore() {
+		
+		try {
+			
+			FileInputStream fis = new FileInputStream("HighScore.dat");
+			BufferedInputStream bis = new BufferedInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(bis);
+		
+			SaveGameData sGameData = (SaveGameData)ois.readObject();
+	
+			cMain.highScore = sGameData.highScore;
+	
+			ois.close();
+	
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	
+		}
 
 	public void saveGame() {
 

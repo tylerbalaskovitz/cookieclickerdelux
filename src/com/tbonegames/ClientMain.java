@@ -34,7 +34,7 @@ public class ClientMain implements Serializable{
 	combatButton4, shopNavigationButton1, shopNavigationButton2, shopNavigationButton3, shopNavigationButton4, multiplierButton1, multiplierButton2, multiplierButton3, cardModButton0,
 	cardModButton1;
 	
-	int  logosCounter, rounds, timerSpeed, dayTimerSpeed, slotsPrice, cursorUpgradeAmount, 
+	int  logosCounter, rounds, timerSpeed, dayTimerSpeed, slotsPrice, cursorUpgradeAmount, burnCountItems, burnCountArmor, burnCountWeapons, burnCountBuffs, 
 	luckyPrice, bastardPrice, feverPrice, day, enemyAttackChoice, enemyDamage, bossDay, startingDamage, disableAttacksCounter, disableBlocksCounter, disableItemsCounter, enemiesDefeated, 
 	numberOfActions, counterUpgrade, healingMultiplier, selectedItemValue, blockValue, baseNumberOfActions, extraAttackRecoil, bastardlyAttackRecoil, playerDamage, playerRecoil, 
 	playerAttackBonus, disableBuffsCounter, clickerBonus, blockValueBonus, dayLimiter, highestLogo, score, highScore;
