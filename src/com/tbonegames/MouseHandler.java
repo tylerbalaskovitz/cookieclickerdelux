@@ -1,6 +1,5 @@
 package com.tbonegames;
 
-import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.Serializable;
@@ -14,6 +13,7 @@ public class MouseHandler implements MouseListener, Serializable{
 	ClientMain cMain;
 
 
+	
 	
 	public void shopSwitcher (int x, JButton buttonSource) {
 
@@ -94,8 +94,46 @@ public class MouseHandler implements MouseListener, Serializable{
 	}
 	}
 	
-	public void newShopItem() {
+	public void burnItem(int x) {
+		if 	(cMain.displayBuffsShop == true && cMain.burnCardEnabled == true && cMain.itemInventory.buffs[x].unlocked == true && cMain.itemInventory.burnManager[0] <10) {
+			
+			cMain.shopMessageText.setText(cMain.itemInventory.buffs[x].buffName+ " \n [Price: " + cMain.itemInventory.buffs[x].buffPrice + "]\n [Amount: " + cMain.itemInventory.buffs[x].currentAmount +" ] \n" + cMain.itemInventory.buffs[x].buffDescription);
+		cMain.itemInventory.buffs[x]= cMain.itemInventory.buffs[cMain.itemInventory.burnManager[0]];
+		cMain.itemInventory.burnManager[0]++;
+		};
+		if 	(cMain.displayItemsShop == true && cMain.burnCardEnabled == true && cMain.itemInventory.items[x].unlocked == true && cMain.itemInventory.burnManager[1] <10) {
+				
+				cMain.shopMessageText.setText(cMain.itemInventory.items[x].itemName+ " \n [Price: " + cMain.itemInventory.items[x].itemPrice + "]\n [Amount: " + cMain.itemInventory.items[x].totalCurrentAmount +" ] \n" + cMain.itemInventory.items[x].itemDescription);
+			cMain.itemInventory.items[x]= cMain.itemInventory.items[cMain.itemInventory.burnManager[1]];
+			cMain.itemInventory.burnManager[1]++;
+		};
+		if 	(cMain.displayWeaponsShop == true && cMain.burnCardEnabled == true && cMain.itemInventory.weapons[x].unlocked == true && cMain.itemInventory.burnManager[2] <10) {
+			
+			cMain.shopMessageText.setText(cMain.itemInventory.weapons[x].weaponName+ " \n [Price: " + cMain.itemInventory.weapons[x].weaponPrice + "]\n [Amount: " + cMain.itemInventory.weapons[x].totalCurrentAmount +" ] \n" + cMain.itemInventory.weapons[x].weaponDescription);
+		cMain.itemInventory.weapons[x]= cMain.itemInventory.weapons[cMain.itemInventory.burnManager[2]];
+		cMain.itemInventory.burnManager[2]++;
+		};
+		if 	(cMain.displayArmorShop == true && cMain.burnCardEnabled == true && cMain.itemInventory.armor[x].unlocked == true  && cMain.itemInventory.burnManager[3] <10) {
+			
+			cMain.shopMessageText.setText(cMain.itemInventory.armor[x].armorName+ " \n [Price: " + cMain.itemInventory.armor[x].armorPrice + "]\n [Amount: " + cMain.itemInventory.armor[x].totalCurrentAmount +" ] \n" + cMain.itemInventory.armor[x].armorDescription);
+		cMain.itemInventory.armor[x]= cMain.itemInventory.armor[cMain.itemInventory.burnManager[3]];
+		cMain.itemInventory.burnManager[3]++;
+		};
 		
+		if (cMain.displayItemsShop == true) {
+		cMain.shopHandler.displayItemsShop();
+		}
+		if (cMain.displayArmorShop == true) {
+			cMain.shopHandler.displayArmorShop();
+		}
+		if (cMain.displayWeaponsShop == true) {
+			cMain.shopHandler.displayWeaponsShop();
+		}
+		if (cMain.displayBuffsShop == true) {
+			cMain.shopHandler.displayBuffsShop();
+		}
+		
+
 	}
 	
 	public MouseHandler(ClientMain cMain) {
@@ -117,26 +155,56 @@ public class MouseHandler implements MouseListener, Serializable{
 		if (button == cMain.shopButton0) {
 			clickedButton = 0;
 			shopSwitcher(clickedButton, button);
+			try {
+				burnItem(clickedButton);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 		}
 		if (button == cMain.shopButton1) {
 			clickedButton = 1;
 			shopSwitcher(clickedButton, button);
+			try {
+				burnItem(clickedButton);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 		}
 		if (button == cMain.shopButton2) {
 			clickedButton = 2;
 			shopSwitcher(clickedButton, button);
+			try {
+				burnItem(clickedButton);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 		}
 		if (button == cMain.shopButton3) {
 			clickedButton = 3;
 			shopSwitcher(clickedButton, button);
+			try {
+				burnItem(clickedButton);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 		}
 		if (button == cMain.shopButton4) {
 			clickedButton = 4;
 			shopSwitcher(clickedButton, button);
+			try {
+				burnItem(clickedButton);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 		}
 		

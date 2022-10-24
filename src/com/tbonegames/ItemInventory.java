@@ -4,31 +4,51 @@ import java.io.Serializable;
 
 import com.tbonegames.armor.Armor;
 import com.tbonegames.armor.BastardArmor;
+import com.tbonegames.armor.BastardBarricade;
 import com.tbonegames.armor.BastardBoots;
+import com.tbonegames.armor.BastardCzechHedgehog;
 import com.tbonegames.armor.BastardGloves;
+import com.tbonegames.armor.BastardMirror;
+import com.tbonegames.armor.BastardMoat;
+import com.tbonegames.armor.BastardShield;
 import com.tbonegames.armor.BastardShoulderPads;
 import com.tbonegames.armor.BastardSlotBelt;
 import com.tbonegames.buffs.AttackRestore;
 import com.tbonegames.buffs.BastardStopwatch;
 import com.tbonegames.buffs.BuffRestore;
 import com.tbonegames.buffs.Buffs;
+import com.tbonegames.buffs.CompleteDebuff;
 import com.tbonegames.buffs.DefendRestore;
+import com.tbonegames.buffs.DoubleDamage;
+import com.tbonegames.buffs.HPSwap;
 import com.tbonegames.buffs.ItemRestore;
+import com.tbonegames.buffs.SlotBelt;
+import com.tbonegames.buffs.StealAndHeal;
 import com.tbonegames.cards.Cards;
 import com.tbonegames.cards.Doc;
 import com.tbonegames.cards.Lollipop;
 import com.tbonegames.cards.ShinChan;
 import com.tbonegames.cards.Whitey;
+import com.tbonegames.items.BastardBrunch;
+import com.tbonegames.items.BastardBuffet;
 import com.tbonegames.items.BastardChips;
 import com.tbonegames.items.BastardCola;
+import com.tbonegames.items.BastardFruitSnacks;
+import com.tbonegames.items.BastardGummies;
 import com.tbonegames.items.BastardJuice;
 import com.tbonegames.items.BastardNuts;
 import com.tbonegames.items.BastardSausage;
+import com.tbonegames.items.BastardVeganOption;
 import com.tbonegames.items.Items;
+import com.tbonegames.weapons.BastardBeam;
 import com.tbonegames.weapons.BastardBelt;
+import com.tbonegames.weapons.BastardBrassKnuckles;
+import com.tbonegames.weapons.BastardKeepYourHandsOffMyHappinessCake;
 import com.tbonegames.weapons.BastardMask;
 import com.tbonegames.weapons.BastardNitrogenBomb;
 import com.tbonegames.weapons.BastardRod;
+import com.tbonegames.weapons.BastardSpikedBoots;
+import com.tbonegames.weapons.BastardSword;
 import com.tbonegames.weapons.BastardVibratingShaft;
 import com.tbonegames.weapons.Weapons;
 
@@ -37,11 +57,12 @@ public class ItemInventory implements Serializable{
 	
 	ClientMain cMain;
 	//these numbers will grow as more items come into the game. THe methods will need to be organized so that way random card matches can also occur. 
-	Armor armor[] = new Armor[5];
-	Buffs buffs[] = new Buffs[5];
-	Items items[] = new Items[5];
-	Weapons weapons[] = new Weapons[5];
+	Armor armor[] = new Armor[10];
+	Buffs buffs[] = new Buffs[10];
+	Items items[] = new Items[10];
+	Weapons weapons[] = new Weapons[10];
 	Cards cards[] = new Cards[4];
+	int burnManager [] = new int[4];
 	
 
 	//these are the options you have when attacking or doing some sort of damage to to other players
@@ -56,11 +77,18 @@ public class ItemInventory implements Serializable{
 	Weapons weaponsHolder[] = new Weapons[1];
 	
 	
+	
 
 
 	public ItemInventory(ClientMain cMain) {
 		this.cMain = cMain;
 		
+	}
+	
+	public void startingValuesBurnManager() {
+		for (int i = 0; i < 4; i ++) {
+			burnManager[i] = 5;
+		}
 	}
 	
 	public void defaultCombat() {
@@ -117,8 +145,13 @@ public class ItemInventory implements Serializable{
 		items[2] = new BastardNuts();
 		items[3] = new BastardChips();
 		items[4] = new BastardJuice();
-	
-		for (int i = 0; i < 5; i++) {
+		items[5] = new BastardBrunch();
+		items[6] = new BastardBuffet();
+		items[7] = new BastardFruitSnacks();
+		items[8] = new BastardGummies();
+		items[9] = new BastardVeganOption();
+				
+				for (int i = 0; i < 10; i++) {
 			items[i].idNumber = i;
 		}
 		
@@ -135,8 +168,12 @@ public class ItemInventory implements Serializable{
 		weapons[2] = new BastardMask();
 		weapons[3] = new BastardVibratingShaft();
 		weapons[4] = new BastardNitrogenBomb();
-
-		for (int i = 0; i < 5; i++) {
+		weapons[5] = new BastardBeam();
+		weapons[6] = new BastardBrassKnuckles();
+		weapons[7] = new BastardKeepYourHandsOffMyHappinessCake();
+		weapons[8] = new BastardSpikedBoots();
+		weapons[9] = new BastardSword();
+		for (int i = 0; i < 10; i++) {
 			weapons[i].idNumber = i;
 		}
 		
@@ -149,8 +186,12 @@ public class ItemInventory implements Serializable{
 		armor[2] = new BastardShoulderPads();
 		armor[3] = new BastardSlotBelt();
 		armor[4] = new BastardArmor();
-		
-		for (int i = 0; i < 5; i++) {
+		armor[5] = new BastardBarricade();
+		armor[6] = new BastardCzechHedgehog();
+		armor[7] = new BastardMirror();
+		armor[8] = new BastardMoat();
+		armor[9] = new BastardShield();
+		for (int i = 0; i < 10; i++) {
 			armor[i].idNumber = i;
 		}
 	}
@@ -165,8 +206,13 @@ public class ItemInventory implements Serializable{
 		buffs[2] = new DefendRestore();
 		buffs[3] = new ItemRestore();
 		buffs[4] = new BuffRestore();
+		buffs[5] = new CompleteDebuff();
+		buffs[6] = new DoubleDamage();
+		buffs[7] = new HPSwap();
+		buffs[8] = new SlotBelt();
+		buffs[9] = new StealAndHeal();
 		
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 10; i++) {
 			buffs[i].idNumber = i;
 		}
 	}

@@ -62,7 +62,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			break;
 		
 		case "Item0":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter>=cMain.itemInventory.items[0].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[0].strengthIncrease; 
@@ -78,7 +78,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Item1":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter>=cMain.itemInventory.items[1].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.items[1].totalCurrentAmount++;
@@ -93,7 +93,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Item2":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter>=cMain.itemInventory.items[2].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[2].strengthIncrease; 
@@ -108,7 +108,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Item3":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter>=cMain.itemInventory.items[3].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.items[3].totalCurrentAmount++;
@@ -123,7 +123,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Item4":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter>=cMain.itemInventory.items[4].itemPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.startingDamage = cMain.startingDamage + cMain.itemInventory.items[4].strengthIncrease; 
@@ -141,7 +141,7 @@ public class ShopHandler implements ActionListener, Serializable{
 		
 		
 		case "Weapon0":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.itemInventory.weapons[0].unlocked==true) {
 			if (cMain.logosCounter>= cMain.itemInventory.weapons[0].weaponPrice){
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
@@ -156,7 +156,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Weapon1":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.itemInventory.weapons[1].unlocked==true) {
 			if (cMain.logosCounter>= cMain.itemInventory.weapons[1].weaponPrice){
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
@@ -170,7 +170,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Weapon2":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.itemInventory.weapons[2].unlocked==true) {
 			if (cMain.logosCounter>= cMain.itemInventory.weapons[2].weaponPrice){
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
@@ -184,7 +184,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Weapon3":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.itemInventory.weapons[3].unlocked==true) {
 			if (cMain.logosCounter>= cMain.itemInventory.weapons[3].weaponPrice){
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
@@ -198,7 +198,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Weapon4":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.itemInventory.weapons[4].unlocked==true) {
 			if (cMain.logosCounter>= cMain.itemInventory.weapons[4].weaponPrice){
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
@@ -212,7 +212,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Armor0":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.armor[0].armorPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.armor[0].totalCurrentAmount++;
@@ -226,7 +226,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Armor1":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.armor[1].armorPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.armor[1].totalCurrentAmount++;
@@ -240,7 +240,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Armor2":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.armor[2].armorPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.armor[2].totalCurrentAmount++;
@@ -254,7 +254,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Armor3":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.armor[3].armorPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.armor[3].totalCurrentAmount++;
@@ -268,7 +268,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Armor4":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.armor[4].armorPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.itemInventory.armor[4].totalCurrentAmount++;
@@ -282,7 +282,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Buffs0":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.buffs[0].buffPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.itemInventory.buffs[0].totalAmountPurchased++;
@@ -296,7 +296,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Buffs1":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.buffs[1].buffPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.itemInventory.buffs[1].totalAmountPurchased++;
@@ -310,7 +310,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Buffs2":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.buffs[2].buffPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.itemInventory.buffs[2].totalAmountPurchased++;
@@ -324,7 +324,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Buffs3":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.buffs[3].buffPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.itemInventory.buffs[3].totalAmountPurchased++;
@@ -338,7 +338,7 @@ public class ShopHandler implements ActionListener, Serializable{
 			}
 		break;
 		case "Buffs4":
-			if (cMain.switcherEnabled == false) {
+			if (cMain.switcherEnabled == false && cMain.burnCardEnabled == false) {
 			if (cMain.logosCounter >= cMain.itemInventory.buffs[4].buffPrice) {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 			cMain.itemInventory.buffs[4].totalAmountPurchased++;

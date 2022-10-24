@@ -9,6 +9,7 @@ public class StartingValues implements Serializable{
 			this.cMain = cMain;
 		}
 	public void startUpValues() {
+			cMain.itemInventory.startingValuesBurnManager();
 			cMain.highestLogo = 0;
 			cMain.healingMultiplier = 1;
 			cMain.counterUpgrade = 1;
@@ -25,7 +26,7 @@ public class StartingValues implements Serializable{
 			cMain.baseNumberOfActions = 2;
 			cMain.day = 0;
 			cMain.bossDay = 20;
-			cMain.logosCounter = 0;
+			cMain.logosCounter = 22220;
 			cMain.startingDamage = 5;
 			cMain.cursorUpgradeAmount = 0;
 			cMain.perSecond = 0;
