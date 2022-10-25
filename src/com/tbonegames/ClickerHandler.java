@@ -46,6 +46,9 @@ public class ClickerHandler implements ActionListener {
 		switch (action) {
 
 			case "Start":
+				if (cMain.saveGameMode == null) {
+				cMain.saveGameMode = "Normal";
+				}
 				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
@@ -60,6 +63,9 @@ public class ClickerHandler implements ActionListener {
 				cMain.ui.displayStartMenu();
 				break;
 			case "Continue":
+				if (cMain.saveGameMode == null) {
+					cMain.saveGameMode = "Normal";
+				}
 				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
@@ -208,7 +214,15 @@ public class ClickerHandler implements ActionListener {
 				ui.displaySwitch("ItemShop");
 				break;
 			case "NewGame":
-				cMain.backgroundMusic.stop(cMain.soundFXValues.backgroundmusic);
+				if (cMain.dayTimer != null) {
+				cMain.dayTimer.stop();
+				}
+				if (cMain.timer != null) {
+				cMain.timer.stop();
+				}
+				if (cMain.unlockTimers != null) {
+				cMain.unlockTimers.stop();
+				}
 				cMain.window.setVisible(false);
 				cMain.backgroundMusic.stop(cMain.soundFXValues.backgroundmusic);
 				new ClientMain();

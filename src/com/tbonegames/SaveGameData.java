@@ -10,6 +10,9 @@ import com.tbonegames.weapons.Weapons;
 
 public class SaveGameData implements Serializable {
 	final static long serialVersionUID = -1404202925519361557L;
+	
+	String saveGameHeader;
+	
 	int day, logosCounter, rounds, timerSpeed, dayTimerSpeed, slotsPrice, cursorUpgradeAmount, 
 	luckyPrice, bastardPrice, feverPrice, enemyAttackChoice, enemyDamage, bossDay, startingDamage, disableAttacksCounter, disableBlocksCounter, disableItemsCounter, enemiesDefeated, 
 	numberOfActions, counterUpgrade, healingMultiplier, selectedItemValue, blockValue, baseNumberOfActions, extraAttackRecoil, bastardlyAttackRecoil, playerDamage, playerRecoil, 

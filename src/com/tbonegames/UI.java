@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 public class UI { 
@@ -50,13 +51,23 @@ public void createUI() {
 	
 	
 	cMain.startButtonPanel = new JPanel();
-	panelConfiguration(cMain.startButtonPanel, 330, 380, 140, 100, Color.black, 2, 1, cMain.window);
+	panelConfiguration(cMain.startButtonPanel, 300, 350, 155, 140, Color.black, 5, 1, cMain.window);
 	
-	cMain.startButton = new JButton("Start");
-	buttonGenerator(cMain.startButton, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "PreStart", cMain.mouseHandler, cMain.startButtonPanel);
+	cMain.startButton0 = new JButton("New Game");
+	buttonGenerator(cMain.startButton0, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "PreStart", cMain.mouseHandler, cMain.startButtonPanel);
 	
-	cMain.startButton = new JButton("Continue");
-	buttonGenerator(cMain.startButton, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "PreLoad", cMain.mouseHandler, cMain.startButtonPanel);
+	cMain.startButton1 = new JButton("Challenges");
+	buttonGenerator(cMain.startButton1, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Challenges", cMain.mouseHandler, cMain.startButtonPanel);
+	
+	cMain.startButton2 = new JButton("Continue");
+	buttonGenerator(cMain.startButton2, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "PreLoad", cMain.mouseHandler, cMain.startButtonPanel);
+	
+	cMain.startButton3 = new JButton("Inventory");
+	buttonGenerator(cMain.startButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Inventory", cMain.mouseHandler, cMain.startButtonPanel);
+	
+	cMain.startButton4 = new JButton("Multiplayer");
+	buttonGenerator(cMain.startButton4, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Multiplayer", cMain.mouseHandler, cMain.startButtonPanel);
+
 	
 	cMain.saveSpotPanel = new JPanel();
 	panelConfiguration(cMain.saveSpotPanel, 275, 240, 250, 250, Color.black, 4,1, cMain.window);
@@ -72,6 +83,34 @@ public void createUI() {
 	
 	cMain.saveSpotButton3 = new JButton("Return");
 	buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
+	
+	cMain.challengeModeScrollPane = new JScrollPane();
+	
+
+	cMain.challengeModeScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+	cMain.challengeModeScrollPane.setOpaque(false);
+	cMain.challengeModeScrollPane.setBackground(Color.black);
+	cMain.challengeModeScrollPane.setForeground(Color.white);
+	cMain.challengeModeScrollPane.setBounds(130, 180, 200, 200);
+	cMain.challengeModeScrollPane.setVisible(false);
+	
+	cMain.challengeModePanel = new JPanel();
+	panelConfiguration(cMain.challengeModePanel, 175, 240, 250, 250, Color.black, 10,1, cMain.window);
+	
+	for (int i = 0; i < 10; i++) {
+	cMain.challengeModeButtons[i] = new JButton("Challenge Mode");
+	buttonGenerator(cMain.challengeModeButtons[i], cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.challengeModePanel);
+	cMain.challengeModeButtons[i].setSize(100, 50);
+	cMain.challengeModePanel.add(cMain.challengeModeButtons[i]);
+	}
+	cMain.challengeModeScrollPane.setViewportView(cMain.challengeModePanel);
+	
+	
+	cMain.challengeModePanel.setVisible(false);
+	
+//cMain.window.add(cMain.challengeModeScrollPane);
+
+	
 	
 	//Things relating to Combat
 	cMain.combatStatsPanel = new JPanel();
@@ -293,11 +332,20 @@ public void createUI() {
 		textArea.setVisible(visible);
 		targetPanel.add(textArea);
 	}
+	
+	public void panelConfigurationNoLayout(JPanel newPanel, int x1,int  y1,int x2,int y2, Color colorBG, JFrame targetFrame) {
+		newPanel.setBounds(x1, y1, x2, y2 );
+		newPanel.setBackground(colorBG);
+		newPanel.setVisible(false);
+		newPanel.setAutoscrolls(true);
+		targetFrame.add(newPanel);
+	}
 
 	public void panelConfiguration(JPanel newPanel, int x1,int  y1,int x2,int y2, Color colorBG, int rows, int columns, JFrame targetFrame) {
 		newPanel.setBounds(x1, y1, x2, y2 );
 		newPanel.setBackground(colorBG);
 		newPanel.setLayout(new GridLayout(rows,columns));
+		newPanel.setVisible(false);
 		targetFrame.add(newPanel);
 	}
 
@@ -330,9 +378,15 @@ public void createUI() {
 	public void displayPreStartMenu() {
 		cMain.startButtonPanel.setVisible(false);
 		cMain.saveSpotPanel.setVisible(true);
+		if (cMain.saveHeaderArray[0] < 1) {
 		buttonGenerator(cMain.saveSpotButton0, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
+		}
+		if (cMain.saveHeaderArray[1] < 1) {
 		buttonGenerator(cMain.saveSpotButton1, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
+		}
+		if (cMain.saveHeaderArray[2] < 1) {
 		buttonGenerator(cMain.saveSpotButton2, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
+		}
 		buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
 		
 	}
@@ -340,9 +394,15 @@ public void createUI() {
 	public void displayPreLoadMenu() {
 		cMain.startButtonPanel.setVisible(false);
 		cMain.saveSpotPanel.setVisible(true);
-		buttonGenerator(cMain.saveSpotButton0, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
-		buttonGenerator(cMain.saveSpotButton1, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
-		buttonGenerator(cMain.saveSpotButton2, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
+			if (cMain.saveHeaderArray[0] < 1) {
+			buttonGenerator(cMain.saveSpotButton0, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
+			}
+			if (cMain.saveHeaderArray[1] < 1) {
+			buttonGenerator(cMain.saveSpotButton1, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
+			}
+			if (cMain.saveHeaderArray[2] < 1) {
+			buttonGenerator(cMain.saveSpotButton2, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
+			}
 		buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
 		
 	}
@@ -406,7 +466,7 @@ public void createUI() {
 		cMain.cardModPanel.setVisible(false);
 		cMain.saveSpotPanel.setVisible(false);
 		cMain.displayPanelSwitch= false;
-
+		
 		
 	}
 		
@@ -415,6 +475,7 @@ public void createUI() {
 		cMain.descriptionPanel.setVisible(true);
 		cMain.titleNamePanel.setVisible(true);
 		cMain.startButtonPanel.setVisible(true);
+		cMain.challengeModeScrollPane.setVisible(true);
 	}
 		
 		public void displayShop() {
@@ -462,5 +523,6 @@ public void createUI() {
 			cMain.font2 = new Font("Comic Sans MS", Font.PLAIN, 16);
 			cMain.font3 = new Font("Comic Sans MS", Font.PLAIN, 20);
 			cMain.font3Bold = new Font("Comic Sans MS", Font.BOLD, 26);
+			cMain.font4 = new Font("Comic Sans MS", Font.PLAIN, 13);
 		}	
 }

@@ -22,8 +22,39 @@ public class SaveGame implements Serializable{
 
 	}
 	
-
+	public void loadFileHeader(int x) {
+		try {
+			FileInputStream fis = new FileInputStream("SaveGame" + x +".dat");
+			BufferedInputStream bis = new BufferedInputStream(fis);
+			ObjectInputStream ois = new ObjectInputStream(bis);
+			
+			
+			SaveGameData sGameData = (SaveGameData) ois.readObject(); 
+			
+			if (x == 0) {
+			cMain.saveSpotButton0.setText(sGameData.saveGameHeader);
+			cMain.saveSpotButton0.setFont(cMain.font4);
+			cMain.saveHeaderArray[x] = 1;
+			}
+			if (x == 1) {
+				cMain.saveSpotButton1.setText(sGameData.saveGameHeader);
+				cMain.saveSpotButton1.setFont(cMain.font4);
+				cMain.saveHeaderArray[x] = 1;
+				}
+			if (x == 2) {
+				cMain.saveSpotButton2.setText(sGameData.saveGameHeader);
+				cMain.saveSpotButton2.setFont(cMain.font4);
+				cMain.saveHeaderArray[x] = 1;
+				}
+			
+			ois.close();
 	
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 
 
 
@@ -118,6 +149,7 @@ public class SaveGame implements Serializable{
 			sGameData.burnManager[i] = cMain.itemInventory.burnManager[i];
 			}
 			
+			sGameData.saveGameHeader = cMain.saveGameMode + "\n Days: " + cMain.day + ". Logos: " + cMain.logosCounter;
 	
 			oos.writeObject(sGameData);
 			oos.close();

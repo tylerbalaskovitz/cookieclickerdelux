@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.Timer;
 
@@ -22,22 +23,30 @@ public class ClientMain implements Serializable{
 	
 	String rewardsMessage, combatAttackingItem, weaponPurhcase1,  weaponPurchase2, weaponPurchase3, weapon1Handler, weapon2Handler, weapon3Handler, itemPurhcase1, itemPurchase2, 
 	itemPurchase3, item1Handler, item2Handler, item3Handler, armorPurchase1, armorPurchase2, armorPurchase3, armor1Handler, armor2Handler, armor3Handler, defendingItemCombat,
-	healingMultiplierHandler;
+	healingMultiplierHandler, saveGameHeader, saveGameMode;
 	
 	Random rand = new Random();
 	JFrame window;
 	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, shopCookiePanel, messagePanel, counterPanel, cookiePanel, optionsPanel, navigationPanel, combatPanel, combatButtonPanel, 
-	startButtonPanel, titleNamePanel, descriptionPanel, shopNavigationPanel, combatStatsPanel, multiplierPanel, cardModPanel, saveSpotPanel;
+	startButtonPanel, titleNamePanel, descriptionPanel, shopNavigationPanel, combatStatsPanel, multiplierPanel, cardModPanel, saveSpotPanel, challengeModePanel;
 	JLabel counterLabel, shopCookieLabel, perSecLabel, shopLabel, titleNameLabel, descriptionLabel, dayLabel, combatDayLabel, inCombatHPLabel, inCombatDayLabel, inCombatActionsLabel;
-	JButton startButton, button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton0, shopButton1, shopButton2, shopButton3, shopButton4, 
-	shopButton5, shopButton6, shopButton7, shopButton8, shopButton9, optionButton1, optionButton2, optionButton3,optionButton4, combatButton1, combatButton2, combatButton3,
-	combatButton4, shopNavigationButton1, shopNavigationButton2, shopNavigationButton3, shopNavigationButton4, multiplierButton1, multiplierButton2, multiplierButton3, cardModButton0,
-	cardModButton1, saveSpotButton0, saveSpotButton1, saveSpotButton2, saveSpotButton3;
+	JButton startButton0, startButton1, startButton2, startButton3, startButton4, button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton0, 
+	shopButton1, shopButton2, shopButton3, shopButton4, shopButton5, shopButton6, shopButton7, shopButton8, shopButton9, optionButton1, optionButton2, optionButton3,optionButton4, 
+	combatButton1, combatButton2, combatButton3, combatButton4, shopNavigationButton1, shopNavigationButton2, shopNavigationButton3, shopNavigationButton4, multiplierButton1, 
+	multiplierButton2, multiplierButton3, cardModButton0, cardModButton1, saveSpotButton0, saveSpotButton1, saveSpotButton2, saveSpotButton3;
+	
+	
+	JButton challengeModeButtons[] = new JButton[10];
+	JScrollPane challengeModeScrollPane;
 	
 	int  logosCounter, rounds, timerSpeed, dayTimerSpeed, slotsPrice, saveLoadInt,
 	luckyPrice, bastardPrice, feverPrice, day, enemyAttackChoice, enemyDamage, bossDay, startingDamage, disableAttacksCounter, disableBlocksCounter, disableItemsCounter, enemiesDefeated, 
 	numberOfActions, counterUpgrade, healingMultiplier, selectedItemValue, blockValue, baseNumberOfActions, extraAttackRecoil, bastardlyAttackRecoil, playerDamage, playerRecoil, 
 	playerAttackBonus, disableBuffsCounter, clickerBonus, blockValueBonus, dayLimiter, highestLogo, score, highScore;
+	
+	int saveHeaderArray[] = new int[3];
+	
+	
 	
 	double  perSecond, dayPerSecond;
 	boolean timerOn, dayTimerOn,luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, switcherEnabled, burnCardEnabled,
@@ -45,8 +54,8 @@ public class ClientMain implements Serializable{
 	displayArmorShop, displayBuffsShop, customCombat, combatDeath;
 	
 	
-	
-	Font font1, font2, font3, font3Bold;
+	ChallengeMode challengeMode = new ChallengeMode(this);
+	Font font1, font2, font3, font3Bold, font4;
 	Slots slots = new Slots(this);
 	URL url;
 	StartingValues sValues = new StartingValues(this);
@@ -74,11 +83,14 @@ public class ClientMain implements Serializable{
 	}
 	
 	public ClientMain() {
-		
+
 		saveGame.loadHighScore();
 		itemInventory.inventoryOfItems();
 		ui.createFont();
 		ui.createUI(); 
+		for (int i = 0; i < 3; i++) {
+		saveGame.loadFileHeader(i);
+		}
 		ui.closeAllPanels(); 
 		ui.displayStartMenu();
 		backgroundMusic.setFile(soundFXValues.backgroundmusic);
