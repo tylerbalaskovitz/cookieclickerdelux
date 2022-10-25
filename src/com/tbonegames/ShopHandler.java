@@ -3,12 +3,9 @@ package com.tbonegames;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.Serializable;
-
 import javax.swing.JButton;
 
-public class ShopHandler implements ActionListener, Serializable{
-	final static long serialVersionUID = -1404202925519361557L;
+public class ShopHandler implements ActionListener {
 
 
 	

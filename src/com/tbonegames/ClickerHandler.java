@@ -2,13 +2,10 @@ package com.tbonegames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.Serializable;
-
 import com.tbonegames.cards.Cards;
 
 
-public class ClickerHandler implements ActionListener, Serializable{
-	final static long serialVersionUID = -1404202925519361557L;
+public class ClickerHandler implements ActionListener { 
 	
 	DayTimer dayTimer;
 	ClientMain cMain;
@@ -25,6 +22,8 @@ public class ClickerHandler implements ActionListener, Serializable{
 		this.dayTimer = dayTimer;
 		this.slots = slots;
 	}
+	
+	
 	
 	public String cardDescription(Cards cards) {
 		String localCardDescription = cards.cardName + "\n [Price: " + cards.cardPrice + "] \n Each " +cards.cardName +" produces " + cards.clickerIncrease+ " Logos persecond";
@@ -47,7 +46,8 @@ public class ClickerHandler implements ActionListener, Serializable{
 		switch (action) {
 
 			case "Start":
-				cMain.backgroundMusic.setFile(cMain.soundFXValues.backgroundmusic);
+				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
 				cMain.dayPerSecond = .1;
 				dayTimer.timerUpdate();
@@ -60,7 +60,9 @@ public class ClickerHandler implements ActionListener, Serializable{
 				cMain.ui.displayStartMenu();
 				break;
 			case "Continue":
-				cMain.backgroundMusic.playMusic(cMain.soundFXValues.backgroundmusic);
+				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
 				cMain.dayPerSecond = .1;
 				dayTimer.timerUpdate();
 				cMain.unlockTimer.startUnlockTimer();
@@ -70,12 +72,10 @@ public class ClickerHandler implements ActionListener, Serializable{
 				break;
 			case "PreStart":
 				cMain.ui.displayPreStartMenu();
-				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				break;
 			case "PreLoad":
 				cMain.ui.displayPreLoadMenu();
-				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				break;
 			case "SaveGame":

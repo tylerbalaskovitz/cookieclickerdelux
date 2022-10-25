@@ -75,31 +75,16 @@ public class ClientMain implements Serializable{
 	
 	public ClientMain() {
 		
-		
 		saveGame.loadHighScore();
 		itemInventory.inventoryOfItems();
-
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		ui.createFont();
 		ui.createUI(); 
 		ui.closeAllPanels(); 
 		ui.displayStartMenu();
-		
-
+		backgroundMusic.setFile(soundFXValues.backgroundmusic);
 		
 		soundFX.playSoundEffect(soundFXValues.titleClip);
 		sValues.startUpValues();
-		System.gc();
-
-		
-		
-		
 		
 	}
 	

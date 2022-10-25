@@ -1,9 +1,7 @@
 package com.tbonegames;
 
-import java.io.Serializable;
 
-public class StartingValues implements Serializable{
-		final static long serialVersionUID = -1404202925519361557L;
+public class StartingValues {
 		ClientMain cMain;
 		StartingValues(ClientMain cMain){
 			this.cMain = cMain;

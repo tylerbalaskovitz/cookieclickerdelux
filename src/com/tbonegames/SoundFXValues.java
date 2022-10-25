@@ -1,15 +1,9 @@
 package com.tbonegames;
 
-import java.io.InputStream;
-import java.io.Serializable;
 import java.net.URL;
 
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
 
-public class SoundFXValues implements Serializable{
-	final static long serialVersionUID = -1404202925519361557L;
+public class SoundFXValues {
 	
 	public final URL death = getClass().getResource("/audio/deathsound.wav");
 	public final URL purchase = getClass().getResource("/audio/purchase.wav");

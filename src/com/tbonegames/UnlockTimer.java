@@ -2,12 +2,10 @@ package com.tbonegames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.Serializable;
 
 import javax.swing.Timer;
 
-public class UnlockTimer implements Serializable{
-	final static long serialVersionUID = -1404202925519361557L;
+public class UnlockTimer {
 
 	ClientMain cMain;
 	

@@ -5,7 +5,6 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
-import java.io.Serializable;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,8 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class UI implements Serializable{
-	final static long serialVersionUID = -1404202925519361557L;
+public class UI { 
 
 	ClientMain cMain;
 	

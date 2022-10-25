@@ -22,10 +22,7 @@ import com.tbonegames.enemies.KungFujiApple;
 import com.tbonegames.enemies.TheDeflowerer;
 import com.tbonegames.enemies.TheGreatO;
 
-public class DayTimer implements Serializable{
-	final static long serialVersionUID = -1404202925519361557L;
-
-	
+public class DayTimer {
 	
 	ClientMain cMain;
 	

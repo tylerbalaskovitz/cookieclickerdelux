@@ -2,12 +2,9 @@ package com.tbonegames;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.Serializable;
-
 import javax.swing.JButton;
 
-public class MouseHandler implements MouseListener, Serializable{
-	final static long serialVersionUID = -1404202925519361557L;
+public class MouseHandler implements MouseListener{
 	
 	int switcherStep, savedValue, clickedButton;
 	ClientMain cMain;

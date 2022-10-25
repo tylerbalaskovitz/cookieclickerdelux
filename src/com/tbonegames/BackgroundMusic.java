@@ -1,16 +1,13 @@
 package com.tbonegames;
 
-import java.io.Serializable;
 import java.net.URL;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-public class BackgroundMusic implements Serializable {
-	final static long serialVersionUID = -1404202925519361557L;
-	private transient Clip clip;
-	URL url;
+public class BackgroundMusic {
+	private Clip clip;
 	ClientMain cMain;
 	
 	
@@ -29,6 +26,7 @@ public class BackgroundMusic implements Serializable {
 			AudioInputStream sound = AudioSystem.getAudioInputStream(name);
 			clip = AudioSystem.getClip();
 			clip.open(sound);
+			sound.close();
 		} catch (Exception e) {
 			
 		}
