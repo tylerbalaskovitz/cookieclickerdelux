@@ -68,10 +68,10 @@ public class SaveGame implements Serializable{
 	
 		}
 
-	public void saveGame() {
+	public void saveGame(int x) {
 		
 		try {
-			FileOutputStream fos = new FileOutputStream("SaveGame.dat");
+			FileOutputStream fos = new FileOutputStream("SaveGame" + x + ".dat");
 			BufferedOutputStream bos = new BufferedOutputStream(fos);
 			ObjectOutputStream oos = new ObjectOutputStream(bos);
 			
@@ -130,10 +130,10 @@ public class SaveGame implements Serializable{
 	
 
 
-	public void loadGame() {
+	public void loadGame(int x) {
 	
 		try {
-			FileInputStream fis = new FileInputStream("SaveGame.dat");
+			FileInputStream fis = new FileInputStream("SaveGame" + x +".dat");
 			BufferedInputStream bis = new BufferedInputStream(fis);
 			ObjectInputStream ois = new ObjectInputStream(bis);
 			

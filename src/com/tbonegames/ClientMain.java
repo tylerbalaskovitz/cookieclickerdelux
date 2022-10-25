@@ -27,14 +27,14 @@ public class ClientMain implements Serializable{
 	Random rand = new Random();
 	JFrame window;
 	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, shopCookiePanel, messagePanel, counterPanel, cookiePanel, optionsPanel, navigationPanel, combatPanel, combatButtonPanel, 
-	startButtonPanel, titleNamePanel, descriptionPanel, shopNavigationPanel, combatStatsPanel, multiplierPanel, cardModPanel;
+	startButtonPanel, titleNamePanel, descriptionPanel, shopNavigationPanel, combatStatsPanel, multiplierPanel, cardModPanel, saveSpotPanel;
 	JLabel counterLabel, shopCookieLabel, perSecLabel, shopLabel, titleNameLabel, descriptionLabel, dayLabel, combatDayLabel, inCombatHPLabel, inCombatDayLabel, inCombatActionsLabel;
 	JButton startButton, button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton0, shopButton1, shopButton2, shopButton3, shopButton4, 
 	shopButton5, shopButton6, shopButton7, shopButton8, shopButton9, optionButton1, optionButton2, optionButton3,optionButton4, combatButton1, combatButton2, combatButton3,
 	combatButton4, shopNavigationButton1, shopNavigationButton2, shopNavigationButton3, shopNavigationButton4, multiplierButton1, multiplierButton2, multiplierButton3, cardModButton0,
-	cardModButton1;
+	cardModButton1, saveSpotButton0, saveSpotButton1, saveSpotButton2, saveSpotButton3;
 	
-	int  logosCounter, rounds, timerSpeed, dayTimerSpeed, slotsPrice, 
+	int  logosCounter, rounds, timerSpeed, dayTimerSpeed, slotsPrice, saveLoadInt,
 	luckyPrice, bastardPrice, feverPrice, day, enemyAttackChoice, enemyDamage, bossDay, startingDamage, disableAttacksCounter, disableBlocksCounter, disableItemsCounter, enemiesDefeated, 
 	numberOfActions, counterUpgrade, healingMultiplier, selectedItemValue, blockValue, baseNumberOfActions, extraAttackRecoil, bastardlyAttackRecoil, playerDamage, playerRecoil, 
 	playerAttackBonus, disableBuffsCounter, clickerBonus, blockValueBonus, dayLimiter, highestLogo, score, highScore;
@@ -62,10 +62,10 @@ public class ClientMain implements Serializable{
 	Timer timer, unlockTimers, dayTimer;
 	JTextArea messageText, shopMessageText, combatTextArea;
 	MouseHandler mouseHandler = new MouseHandler(this);
-	ItemInventory itemInventory = new ItemInventory(this);
+	ItemInventory itemInventory = new ItemInventory();
 	SoundFXValues soundFXValues = new SoundFXValues();
-	SoundFX soundFX = new SoundFX(this);
-	SoundFX bgMusicPlayer = new SoundFX(this);
+	SoundFX soundFX = new SoundFX();
+	BackgroundMusic backgroundMusic = new BackgroundMusic();
 	SaveGame saveGame = new SaveGame(this);
 	
 	public static void main(String[] args) {
@@ -75,15 +75,29 @@ public class ClientMain implements Serializable{
 	
 	public ClientMain() {
 		
-		itemInventory.inventoryOfItems();
 		
-		soundFX.playSoundEffect(soundFXValues.titleClip);
-		sValues.startUpValues();
+		saveGame.loadHighScore();
+		itemInventory.inventoryOfItems();
+
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		ui.createFont();
 		ui.createUI(); 
 		ui.closeAllPanels(); 
 		ui.displayStartMenu();
-		saveGame.loadHighScore();
+		
+
+		
+		soundFX.playSoundEffect(soundFXValues.titleClip);
+		sValues.startUpValues();
+		System.gc();
+
+		
 		
 		
 		

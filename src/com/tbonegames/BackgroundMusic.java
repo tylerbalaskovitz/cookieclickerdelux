@@ -1,22 +1,22 @@
 package com.tbonegames;
 
-import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
 
-import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-public class SoundFX implements Serializable{
+public class BackgroundMusic implements Serializable {
 	final static long serialVersionUID = -1404202925519361557L;
 	private transient Clip clip;
 	URL url;
-	public SoundFX() {
+	ClientMain cMain;
+	
+	
+	public BackgroundMusic() {
 		
 	}
-	
 	
 
 	public void playSoundEffect(URL name) {
@@ -53,6 +53,5 @@ public class SoundFX implements Serializable{
 	public void stop(URL name) {
 		clip.stop();
 	}
-	
 	
 }

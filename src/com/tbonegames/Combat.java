@@ -435,7 +435,7 @@ public class Combat implements Serializable{
 		cMain.dayTimer.stop();
 		cMain.timer.stop();
 			
-		cMain.bgMusicPlayer.stop(cMain.soundFXValues.backgroundmusic);
+		cMain.backgroundMusic.stop(cMain.soundFXValues.backgroundmusic);
 		
 		cMain.soundFX.playSoundEffect(cMain.soundFXValues.death);
 		
@@ -490,8 +490,8 @@ public class Combat implements Serializable{
 	
 	public void beatGame() {
 		cMain.saveGame.saveHighScore();
-		cMain.bgMusicPlayer.stop(cMain.soundFXValues.backgroundmusic);
-		cMain.soundFX.playSoundEffect(cMain.soundFXValues.victorymusic);
+		cMain.backgroundMusic.stop(cMain.soundFXValues.backgroundmusic);
+		cMain.backgroundMusic.playMusic(cMain.soundFXValues.victorymusic);
 		
 		cMain.ui.closeAllPanels();
 		cMain.ui.displayOptions();

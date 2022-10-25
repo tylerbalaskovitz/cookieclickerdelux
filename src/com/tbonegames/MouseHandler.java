@@ -75,7 +75,6 @@ public class MouseHandler implements MouseListener, Serializable{
 	};
 	
 	if (switcherStep >= 2) {
-		cMain.shopHandler.displayShopNavigation();
 		if (cMain.displayItemsShop == true) {
 		cMain.shopHandler.displayItemsShop();
 		}
@@ -155,6 +154,15 @@ public class MouseHandler implements MouseListener, Serializable{
 	public void mousePressed(MouseEvent e) {
 		JButton button = (JButton)e.getSource();
 
+		if (button == cMain.saveSpotButton0) {
+			cMain.saveLoadInt = 0;
+		}
+		if (button == cMain.saveSpotButton1) {
+			cMain.saveLoadInt = 1;
+		}
+		if (button == cMain.saveSpotButton2) {
+			cMain.saveLoadInt = 2;
+		}
 		
 		if (button == cMain.shopButton0) {
 			clickedButton = 0;

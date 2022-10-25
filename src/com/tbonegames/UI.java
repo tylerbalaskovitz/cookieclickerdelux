@@ -55,10 +55,25 @@ public void createUI() {
 	panelConfiguration(cMain.startButtonPanel, 330, 380, 140, 100, Color.black, 2, 1, cMain.window);
 	
 	cMain.startButton = new JButton("Start");
-	buttonGenerator(cMain.startButton, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.startButtonPanel);
+	buttonGenerator(cMain.startButton, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "PreStart", cMain.mouseHandler, cMain.startButtonPanel);
 	
 	cMain.startButton = new JButton("Continue");
-	buttonGenerator(cMain.startButton, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.startButtonPanel);
+	buttonGenerator(cMain.startButton, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "PreLoad", cMain.mouseHandler, cMain.startButtonPanel);
+	
+	cMain.saveSpotPanel = new JPanel();
+	panelConfiguration(cMain.saveSpotPanel, 275, 240, 250, 250, Color.black, 4,1, cMain.window);
+	
+	cMain.saveSpotButton0 = new JButton("New Save 1");
+	buttonGenerator(cMain.saveSpotButton0, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
+	
+	cMain.saveSpotButton1 = new JButton("New Save 2");
+	buttonGenerator(cMain.saveSpotButton1, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
+	
+	cMain.saveSpotButton2 = new JButton("New Save 3");
+	buttonGenerator(cMain.saveSpotButton2, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
+	
+	cMain.saveSpotButton3 = new JButton("Return");
+	buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
 	
 	//Things relating to Combat
 	cMain.combatStatsPanel = new JPanel();
@@ -314,6 +329,25 @@ public void createUI() {
 		targetPanel.add(newButton);
 	}
 
+	public void displayPreStartMenu() {
+		cMain.startButtonPanel.setVisible(false);
+		cMain.saveSpotPanel.setVisible(true);
+		buttonGenerator(cMain.saveSpotButton0, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
+		buttonGenerator(cMain.saveSpotButton1, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
+		buttonGenerator(cMain.saveSpotButton2, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
+		buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
+		
+	}
+	
+	public void displayPreLoadMenu() {
+		cMain.startButtonPanel.setVisible(false);
+		cMain.saveSpotPanel.setVisible(true);
+		buttonGenerator(cMain.saveSpotButton0, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
+		buttonGenerator(cMain.saveSpotButton1, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
+		buttonGenerator(cMain.saveSpotButton2, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
+		buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
+		
+	}
 
 
 	public void displayOptions() {
@@ -372,11 +406,14 @@ public void createUI() {
 		cMain.combatPanel.setVisible(false);
 		cMain.combatButtonPanel.setVisible(false);
 		cMain.cardModPanel.setVisible(false);
+		cMain.saveSpotPanel.setVisible(false);
 		cMain.displayPanelSwitch= false;
+
 		
 	}
 		
 	public void displayStartMenu() {
+		
 		cMain.descriptionPanel.setVisible(true);
 		cMain.titleNamePanel.setVisible(true);
 		cMain.startButtonPanel.setVisible(true);

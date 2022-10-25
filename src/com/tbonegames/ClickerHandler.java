@@ -45,29 +45,41 @@ public class ClickerHandler implements ActionListener, Serializable{
 		
 		
 		switch (action) {
+
 			case "Start":
-				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
-				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.backgroundMusic.setFile(cMain.soundFXValues.backgroundmusic);
+				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
 				cMain.dayPerSecond = .1;
 				dayTimer.timerUpdate();
 				cMain.unlockTimer.startUnlockTimer();
 				cMain.ui.closeAllPanels();
 				cMain.ui.displayMainGame();
-				cMain.bgMusicPlayer.playMusic(cMain.soundFXValues.backgroundmusic);
+				break;
+			case "StartMenu":
+				cMain.ui.closeAllPanels();
+				cMain.ui.displayStartMenu();
 				break;
 			case "Continue":
-				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
-				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.backgroundMusic.playMusic(cMain.soundFXValues.backgroundmusic);
 				cMain.dayPerSecond = .1;
 				dayTimer.timerUpdate();
 				cMain.unlockTimer.startUnlockTimer();
 				cMain.ui.closeAllPanels();
 				cMain.ui.displayMainGame();
-				cMain.bgMusicPlayer.playMusic(cMain.soundFXValues.backgroundmusic);
-				cMain.saveGame.loadGame();
+				cMain.saveGame.loadGame(cMain.saveLoadInt);
+				break;
+			case "PreStart":
+				cMain.ui.displayPreStartMenu();
+				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				break;
+			case "PreLoad":
+				cMain.ui.displayPreLoadMenu();
+				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				break;
 			case "SaveGame":
-				cMain.saveGame.saveGame();
+				cMain.saveGame.saveGame(cMain.saveLoadInt);
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
 				break;
 			case "Logos": 
@@ -196,8 +208,9 @@ public class ClickerHandler implements ActionListener, Serializable{
 				ui.displaySwitch("ItemShop");
 				break;
 			case "NewGame":
+				cMain.backgroundMusic.stop(cMain.soundFXValues.backgroundmusic);
 				cMain.window.setVisible(false);
-				cMain.bgMusicPlayer.stop(cMain.soundFXValues.backgroundmusic);
+				cMain.backgroundMusic.stop(cMain.soundFXValues.backgroundmusic);
 				new ClientMain();
 				break;
 				
