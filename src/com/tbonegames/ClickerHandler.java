@@ -62,6 +62,9 @@ public class ClickerHandler implements ActionListener {
 				cMain.ui.closeAllPanels();
 				cMain.ui.displayStartMenu();
 				break;
+			case "PreChallenge":
+				cMain.ui.displayChallenges();
+				break;
 			case "Continue":
 				if (cMain.saveGameMode == null) {
 					cMain.saveGameMode = "Normal";

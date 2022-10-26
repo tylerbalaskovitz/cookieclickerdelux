@@ -57,7 +57,7 @@ public void createUI() {
 	buttonGenerator(cMain.startButton0, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "PreStart", cMain.mouseHandler, cMain.startButtonPanel);
 	
 	cMain.startButton1 = new JButton("Challenges");
-	buttonGenerator(cMain.startButton1, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Challenges", cMain.mouseHandler, cMain.startButtonPanel);
+	buttonGenerator(cMain.startButton1, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "PreChallenge", cMain.mouseHandler, cMain.startButtonPanel);
 	
 	cMain.startButton2 = new JButton("Continue");
 	buttonGenerator(cMain.startButton2, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "PreLoad", cMain.mouseHandler, cMain.startButtonPanel);
@@ -91,18 +91,12 @@ public void createUI() {
 	cMain.challengeModeButtons[i] = new JButton("Challenge Mode");
 	buttonGenerator(cMain.challengeModeButtons[i], cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.challengeModePanel);
 	cMain.challengeModeButtons[i].setSize(100, 50);
-	cMain.challengeModePanel.add(cMain.challengeModeButtons[i]);
 	}
+	
 	cMain.challengeModePanel.setVisible(true);
 	
 	cMain.challengeModeScrollPane = new JScrollPane();
-	scrollPaneConfiguration(cMain.challengeModeScrollPane, Color.black, Color.white, false, false, 130, 180, 200, 200, cMain.challengeModePanel, cMain.window);
-	
-	
-	
-	
-//cMain.window.add(cMain.challengeModeScrollPane);
-
+	scrollPaneConfiguration(cMain.challengeModeScrollPane, Color.black, Color.white, true, true, 290, 240, 200, 200, cMain.challengeModePanel, cMain.window);
 	
 	
 	//Things relating to Combat
@@ -303,11 +297,11 @@ public void createUI() {
 		
 		cMain.window.setVisible(true);
 		
-		
 	}
 
 	public void scrollPaneConfiguration(JScrollPane jsp, Color colorBG, Color colorFG, boolean opaque, boolean visible, int x1, int y1, int x2, int y2, JPanel panel, JFrame frame) {
 		jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		jsp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		jsp.setBackground(colorBG);
 		jsp.setForeground(colorFG);
 		jsp.setBounds(x1, y1, x2, y2);
@@ -411,7 +405,12 @@ public void createUI() {
 		
 	}
 
-
+	public void displayChallenges() {
+		cMain.startButtonPanel.setVisible(false);
+		cMain.challengeModeScrollPane.setVisible(true);
+		cMain.challengeModeScrollPane.validate();
+	}
+	
 	public void displayOptions() {
 		cMain.optionsPanel.setVisible(true);
 		cMain.navigationPanel.setVisible(true);
@@ -470,7 +469,8 @@ public void createUI() {
 		cMain.cardModPanel.setVisible(false);
 		cMain.saveSpotPanel.setVisible(false);
 		cMain.displayPanelSwitch= false;
-		
+		cMain.challengeModeScrollPane.setVisible(false);
+		cMain.challengeModeScrollPane.validate();
 		
 	}
 		
@@ -479,7 +479,7 @@ public void createUI() {
 		cMain.descriptionPanel.setVisible(true);
 		cMain.titleNamePanel.setVisible(true);
 		cMain.startButtonPanel.setVisible(true);
-		cMain.challengeModeScrollPane.setVisible(true);
+		
 	}
 		
 		public void displayShop() {
