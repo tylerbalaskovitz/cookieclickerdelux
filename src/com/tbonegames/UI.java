@@ -84,16 +84,6 @@ public void createUI() {
 	cMain.saveSpotButton3 = new JButton("Return");
 	buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
 	
-	cMain.challengeModeScrollPane = new JScrollPane();
-	
-
-	cMain.challengeModeScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-	cMain.challengeModeScrollPane.setOpaque(false);
-	cMain.challengeModeScrollPane.setBackground(Color.black);
-	cMain.challengeModeScrollPane.setForeground(Color.white);
-	cMain.challengeModeScrollPane.setBounds(130, 180, 200, 200);
-	cMain.challengeModeScrollPane.setVisible(false);
-	
 	cMain.challengeModePanel = new JPanel();
 	panelConfiguration(cMain.challengeModePanel, 175, 240, 250, 250, Color.black, 10,1, cMain.window);
 	
@@ -103,10 +93,13 @@ public void createUI() {
 	cMain.challengeModeButtons[i].setSize(100, 50);
 	cMain.challengeModePanel.add(cMain.challengeModeButtons[i]);
 	}
-	cMain.challengeModeScrollPane.setViewportView(cMain.challengeModePanel);
+	cMain.challengeModePanel.setVisible(true);
+	
+	cMain.challengeModeScrollPane = new JScrollPane();
+	scrollPaneConfiguration(cMain.challengeModeScrollPane, Color.black, Color.white, false, false, 130, 180, 200, 200, cMain.challengeModePanel, cMain.window);
 	
 	
-	cMain.challengeModePanel.setVisible(false);
+	
 	
 //cMain.window.add(cMain.challengeModeScrollPane);
 
@@ -311,6 +304,17 @@ public void createUI() {
 		cMain.window.setVisible(true);
 		
 		
+	}
+
+	public void scrollPaneConfiguration(JScrollPane jsp, Color colorBG, Color colorFG, boolean opaque, boolean visible, int x1, int y1, int x2, int y2, JPanel panel, JFrame frame) {
+		jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		jsp.setBackground(colorBG);
+		jsp.setForeground(colorFG);
+		jsp.setBounds(x1, y1, x2, y2);
+		jsp.setOpaque(opaque);
+		jsp.setVisible(visible);
+		jsp.setViewportView(panel);
+		frame.add(jsp);
 	}
 
 	public void labelConfiguration(JLabel label, String labelText, Font font, Color color, JPanel targetPanel ) {
