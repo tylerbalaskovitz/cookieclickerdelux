@@ -1,5 +1,7 @@
 package com.tbonegames.buffs;
 
+import com.tbonegames.ClientMain;
+
 public class StealAndHeal extends Buffs{
 
 	public StealAndHeal() {
@@ -40,5 +42,13 @@ public class StealAndHeal extends Buffs{
 		
 		currentAmount = 0;
 		totalAmountPurchased = 0;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 }

@@ -1,5 +1,7 @@
 package com.tbonegames.items;
 
+import com.tbonegames.ClientMain;
+
 public class DeadItem extends Items{
 
 	public DeadItem() {
@@ -27,6 +29,14 @@ public class DeadItem extends Items{
 		rateOfIncrease = 2147483647;
 		totalCurrentAmount = 0;
 		totalAmountPurchased = 0;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 	
 }

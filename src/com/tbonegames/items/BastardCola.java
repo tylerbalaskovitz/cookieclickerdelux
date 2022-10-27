@@ -1,7 +1,12 @@
 package com.tbonegames.items;
 
-public class BastardCola extends Items {
+import java.io.Serializable;
 
+import com.tbonegames.ClientMain;
+
+public class BastardCola extends Items implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
+	
 	public BastardCola() {
 	itemName = "Bastard Cola";
 	itemHandlerName = "BastardCola";
@@ -28,5 +33,13 @@ public class BastardCola extends Items {
 	totalCurrentAmount = 0;
 	totalAmountPurchased = 0;
 	
+
+	
 	}
+	
+	public void special(ClientMain cMain) {
+		cMain.logosCounter+=1000000;
+	}
+	
+	
 }

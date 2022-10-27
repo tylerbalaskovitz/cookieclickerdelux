@@ -1,5 +1,7 @@
 package com.tbonegames.buffs;
 
+import com.tbonegames.ClientMain;
+
 public class BuffRestore extends Buffs{
 
 	public BuffRestore() {
@@ -44,7 +46,11 @@ public class BuffRestore extends Buffs{
 		
 	}
 	
-	public void special() {
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
 		
 	}
 	

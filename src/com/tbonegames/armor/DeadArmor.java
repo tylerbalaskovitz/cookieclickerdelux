@@ -1,5 +1,7 @@
 package com.tbonegames.armor;
 
+import com.tbonegames.ClientMain;
+
 public class DeadArmor extends Armor{
 
 	public DeadArmor() {
@@ -28,6 +30,13 @@ public class DeadArmor extends Armor{
 		
 		armorPrice = 2147483647;
 		armorPriceIncrease = 0;
+	}
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 	
 }

@@ -1,5 +1,7 @@
 package com.tbonegames.weapons;
 
+import com.tbonegames.ClientMain;
+
 public class BastardKeepYourHandsOffMyHappinessCake extends Weapons{
 
 		public BastardKeepYourHandsOffMyHappinessCake(){
@@ -32,5 +34,13 @@ public class BastardKeepYourHandsOffMyHappinessCake extends Weapons{
 		weaponPriceIncrease = 800;
 
 	}
+		
+		public void shopSpecial(ClientMain cMain) {
+			
+		}
+		
+		public void combatSpecial(ClientMain cMain) {
+			
+		}
 	
 }

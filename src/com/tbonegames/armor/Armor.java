@@ -2,6 +2,8 @@ package com.tbonegames.armor;
 
 import java.io.Serializable;
 
+import com.tbonegames.ClientMain;
+
 public class Armor implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 	
@@ -37,6 +39,14 @@ public class Armor implements Serializable{
 		if (totalPurchased % rateOfIncrease == 0) {
 			armorPrice += armorPriceIncrease;
 		}
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 	
 }

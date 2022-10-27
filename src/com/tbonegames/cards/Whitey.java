@@ -1,5 +1,7 @@
 package com.tbonegames.cards;
 
+import com.tbonegames.ClientMain;
+
 public class Whitey extends Cards{
 
 	public Whitey() {
@@ -36,5 +38,13 @@ public class Whitey extends Cards{
 	
 	cardPrice = 100;
 	cardPriceIncrease = 100;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 }

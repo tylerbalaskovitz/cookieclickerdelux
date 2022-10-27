@@ -1,5 +1,7 @@
 package com.tbonegames.armor;
 
+import com.tbonegames.ClientMain;
+
 public class BastardBoots extends Armor {
 
 	public BastardBoots() {
@@ -29,5 +31,12 @@ public class BastardBoots extends Armor {
 	armorPrice = 500;
 	armorPriceIncrease = 500;
 	
+	}
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 }

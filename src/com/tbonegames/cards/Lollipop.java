@@ -1,5 +1,7 @@
 package com.tbonegames.cards;
 
+import com.tbonegames.ClientMain;
+
 public class Lollipop extends Cards{
 
 	public Lollipop() {
@@ -37,6 +39,14 @@ public class Lollipop extends Cards{
 		
 		cardPrice = 200;
 		cardPriceIncrease = 200;
+		
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
 		
 	}
 	

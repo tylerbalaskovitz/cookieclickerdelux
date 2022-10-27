@@ -1,5 +1,7 @@
 package com.tbonegames.buffs;
 
+import com.tbonegames.ClientMain;
+
 public class HPSwap extends Buffs{
 
 	public HPSwap() {
@@ -41,6 +43,14 @@ public class HPSwap extends Buffs{
 		
 		currentAmount = 0;
 		totalAmountPurchased = 0;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 	
 }

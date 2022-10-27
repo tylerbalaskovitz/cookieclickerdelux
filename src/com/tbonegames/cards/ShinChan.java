@@ -1,5 +1,7 @@
 package com.tbonegames.cards;
 
+import com.tbonegames.ClientMain;
+
 public class ShinChan extends Cards{
 
 	public ShinChan() {
@@ -40,6 +42,14 @@ public class ShinChan extends Cards{
 		
 		
 		cardPriceIncrease = 5;
+		
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
 		
 	}
 	

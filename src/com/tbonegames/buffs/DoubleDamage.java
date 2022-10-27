@@ -1,5 +1,7 @@
 package com.tbonegames.buffs;
 
+import com.tbonegames.ClientMain;
+
 public class DoubleDamage extends Buffs {
 	
 	public DoubleDamage() {
@@ -40,5 +42,13 @@ public class DoubleDamage extends Buffs {
 	
 	currentAmount = 0;
 	totalAmountPurchased = 0;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 }

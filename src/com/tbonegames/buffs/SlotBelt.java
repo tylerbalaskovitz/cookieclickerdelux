@@ -1,5 +1,7 @@
 package com.tbonegames.buffs;
 
+import com.tbonegames.ClientMain;
+
 public class SlotBelt extends Buffs {
 
 	public SlotBelt() {
@@ -41,5 +43,13 @@ public class SlotBelt extends Buffs {
 	
 	currentAmount = 0;
 	totalAmountPurchased = 0;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 }

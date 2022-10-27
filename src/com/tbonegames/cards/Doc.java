@@ -1,5 +1,7 @@
 package com.tbonegames.cards;
 
+import com.tbonegames.ClientMain;
+
 public class Doc extends Cards{
 
 	
@@ -37,5 +39,13 @@ public class Doc extends Cards{
 	
 	cardPrice = 500;
 	cardPriceIncrease = 500;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 }

@@ -1,5 +1,7 @@
 package com.tbonegames.items;
 
+import com.tbonegames.ClientMain;
+
 public class BastardSausage extends Items{
 
 	public BastardSausage() {
@@ -28,5 +30,13 @@ public class BastardSausage extends Items{
 		rateOfIncrease = 25;
 		totalCurrentAmount = 0;
 		totalAmountPurchased = 0;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 }

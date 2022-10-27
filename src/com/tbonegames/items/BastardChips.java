@@ -1,6 +1,8 @@
 
 package com.tbonegames.items;
 
+import com.tbonegames.ClientMain;
+
 public class BastardChips extends Items{
 
 	public BastardChips() {
@@ -28,6 +30,14 @@ public class BastardChips extends Items{
 		rateOfIncrease = 5;
 		totalCurrentAmount = 0;
 		totalAmountPurchased = 0;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 	
 }

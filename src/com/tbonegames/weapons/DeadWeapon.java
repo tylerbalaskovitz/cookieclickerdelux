@@ -1,5 +1,7 @@
 package com.tbonegames.weapons;
 
+import com.tbonegames.ClientMain;
+
 public class DeadWeapon extends Weapons{
 
 	public DeadWeapon() {
@@ -32,6 +34,15 @@ public class DeadWeapon extends Weapons{
 			
 			weaponPrice = 2147483647;
 			weaponPriceIncrease = 0;
+			
 			}
+		
+	}
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 }

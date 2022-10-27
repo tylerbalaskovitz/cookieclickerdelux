@@ -2,6 +2,8 @@ package com.tbonegames.cards;
 
 import java.io.Serializable;
 
+import com.tbonegames.ClientMain;
+
 public class Cards implements Serializable{
 	
 	final static long serialVersionUID = -1404202925519361557L;
@@ -39,5 +41,13 @@ public class Cards implements Serializable{
 	
 	public int cardPrice;
 	public int cardPriceIncrease;
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
+	}
 	
 }

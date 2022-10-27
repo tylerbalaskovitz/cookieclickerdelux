@@ -1,5 +1,7 @@
 package com.tbonegames.weapons;
 
+import com.tbonegames.ClientMain;
+
 public class BastardVibratingShaft extends Weapons{
 
 	public BastardVibratingShaft() {
@@ -32,7 +34,11 @@ public class BastardVibratingShaft extends Weapons{
 	weaponPriceIncrease = 3000;
 	}
 	
-	public void special(){
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
 		
 	}
 }

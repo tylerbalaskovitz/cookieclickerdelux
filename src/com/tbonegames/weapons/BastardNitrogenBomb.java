@@ -1,5 +1,7 @@
 package com.tbonegames.weapons;
 
+import com.tbonegames.ClientMain;
+
 public class BastardNitrogenBomb extends Weapons{
 
 	public BastardNitrogenBomb() {
@@ -30,5 +32,13 @@ public class BastardNitrogenBomb extends Weapons{
 	
 	weaponPrice = 10000;
 	weaponPriceIncrease = 10000;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 }

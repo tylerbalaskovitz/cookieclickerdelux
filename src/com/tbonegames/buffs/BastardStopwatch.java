@@ -1,5 +1,6 @@
 package com.tbonegames.buffs;
 
+import com.tbonegames.ClientMain;
 
 public class BastardStopwatch extends Buffs{
 	
@@ -42,6 +43,13 @@ public class BastardStopwatch extends Buffs{
 		currentAmount = 0;
 		totalAmountPurchased = 0;
 		
+		
+	}
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
 		
 	}
 	

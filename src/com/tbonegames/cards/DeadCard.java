@@ -1,5 +1,7 @@
 package com.tbonegames.cards;
 
+import com.tbonegames.ClientMain;
+
 public class DeadCard extends Cards{
 	
 	public DeadCard() {
@@ -37,6 +39,14 @@ public class DeadCard extends Cards{
 		cardPrice = 2147483647;
 		cardPriceIncrease = 0;
 
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 
 }

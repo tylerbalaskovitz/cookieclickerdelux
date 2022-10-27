@@ -1,5 +1,7 @@
 package com.tbonegames.weapons;
 
+import com.tbonegames.ClientMain;
+
 public class BastardMask extends Weapons{
 
 	public BastardMask() {
@@ -30,5 +32,13 @@ public class BastardMask extends Weapons{
 	
 	weaponPrice = 1600;
 	weaponPriceIncrease = 1600;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 }

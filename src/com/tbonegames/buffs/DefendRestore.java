@@ -1,5 +1,7 @@
 package com.tbonegames.buffs;
 
+import com.tbonegames.ClientMain;
+
 public class DefendRestore extends Buffs{
 
 	public DefendRestore() {
@@ -42,7 +44,11 @@ public class DefendRestore extends Buffs{
 		totalAmountPurchased = 0;
 	}
 	
-	public void special() {
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
 		
 	}
 	

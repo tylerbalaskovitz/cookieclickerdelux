@@ -1,5 +1,7 @@
 package com.tbonegames.items;
 
+import com.tbonegames.ClientMain;
+
 public class BastardVeganOption extends Items{
 
 		public BastardVeganOption(){
@@ -28,5 +30,13 @@ public class BastardVeganOption extends Items{
 		totalCurrentAmount = 0;
 		totalAmountPurchased = 0;
 	}
+		
+		public void shopSpecial(ClientMain cMain) {
+			
+		}
+		
+		public void combatSpecial(ClientMain cMain) {
+			
+		}
 	
 }

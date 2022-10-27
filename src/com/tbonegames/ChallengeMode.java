@@ -41,6 +41,20 @@ public class ChallengeMode {
 		cMain.enemy.hp *= 2;
 	}
 	
+	public void lifeIsShortChallenge() {
+		cMain.dayPerSecond = .11;
+	}
+	
+	public void BlitzkriegChallenge() {
+		cMain.dayPerSecond = .13;
+		cMain.enemy.hp *= 2;
+		cMain.enemy.attack *= 2;
+		cMain.enemy.attack1Damage *= 2;
+		cMain.enemy.attack2Damage *= 2;
+		cMain.enemy.attack3Damage *= 2;
+		cMain.enemy.attack4Damage *= 2;
+	}
+	
 	public void cheapBastardChallenge() {
 		noBurnSwitch = true;
 		cMain.itemInventory.cards[0] = new ShinChan();
@@ -100,9 +114,6 @@ public class ChallengeMode {
 		}
 	}
 	
-	public void lifeIsShortChallenge() {
-		
-	}
 	
 	public void marathonModeChallenge() {
 		savesDisabled = true;

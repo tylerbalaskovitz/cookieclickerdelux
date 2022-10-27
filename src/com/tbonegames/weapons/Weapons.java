@@ -2,6 +2,8 @@ package com.tbonegames.weapons;
 
 import java.io.Serializable;
 
+import com.tbonegames.ClientMain;
+
 public class Weapons implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 	
@@ -44,6 +46,14 @@ public class Weapons implements Serializable{
 				reduceDefense++;
 			}
 		}
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 	
 	

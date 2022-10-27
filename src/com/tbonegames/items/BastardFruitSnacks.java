@@ -1,5 +1,7 @@
 package com.tbonegames.items;
 
+import com.tbonegames.ClientMain;
+
 public class BastardFruitSnacks extends Items{
 
 	public BastardFruitSnacks(){
@@ -27,6 +29,14 @@ public class BastardFruitSnacks extends Items{
 		rateOfIncrease = 5;
 		totalCurrentAmount = 0;
 		totalAmountPurchased = 0;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 	
 }

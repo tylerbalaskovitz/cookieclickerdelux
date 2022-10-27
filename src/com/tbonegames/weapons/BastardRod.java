@@ -1,5 +1,7 @@
 package com.tbonegames.weapons;
 
+import com.tbonegames.ClientMain;
+
 public class BastardRod extends Weapons {
 
 	public BastardRod() {
@@ -30,5 +32,13 @@ public class BastardRod extends Weapons {
 	
 	weaponPrice = 400;
 	weaponPriceIncrease = 400;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 }

@@ -1,5 +1,7 @@
 package com.tbonegames.buffs;
 
+import com.tbonegames.ClientMain;
+
 public class CompleteDebuff extends Buffs {
 
 	public CompleteDebuff() {
@@ -40,6 +42,14 @@ public class CompleteDebuff extends Buffs {
 		
 		currentAmount = 0;
 		totalAmountPurchased = 0;
+	}
+	
+	public void shopSpecial(ClientMain cMain) {
+		
+	}
+	
+	public void combatSpecial(ClientMain cMain) {
+		
 	}
 	
 }
