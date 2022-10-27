@@ -66,7 +66,7 @@ public class ClientMain implements Serializable{
 	DayTimer dayTimers = new DayTimer(this);
 	ShopHandler shopHandler = new ShopHandler(this);
 	CombatHandler combatHandler = new CombatHandler(this, combat);
-	Enemies enemy = new Enemies();
+	public Enemies enemy = new Enemies();
 	ClickerHandler clickerHandler = new ClickerHandler(this, ui, timers, dayTimers, slots);
 	Timer timer, unlockTimers, dayTimer;
 	JTextArea messageText, shopMessageText, combatTextArea;
