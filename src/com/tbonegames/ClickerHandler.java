@@ -88,8 +88,10 @@ public class ClickerHandler implements ActionListener {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				break;
 			case "SaveGame":
+				if (cMain.challengeMode.savesDisabled == false) {
 				cMain.saveGame.saveGame(cMain.saveLoadInt);
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
+				}
 				break;
 			case "Logos": 
 				cMain.logosCounter = (cMain.logosCounter + 1 + cMain.clickerBonus); 

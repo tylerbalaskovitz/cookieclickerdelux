@@ -478,7 +478,7 @@ public class Combat implements Serializable{
 			} else {
 		
 			combatButtonConfig(cMain.combatButton1, "Continue", "Victory");
-			combatButtonConfig(cMain.combatButton2, "Save Game", "SaveGame");
+			combatButtonConfig(cMain.combatButton2, "?", "");
 			combatButtonConfig(cMain.combatButton3, "?", "");
 			combatButtonConfig(cMain.combatButton4, "?", "");
 			

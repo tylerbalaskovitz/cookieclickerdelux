@@ -448,7 +448,7 @@ public class ShopHandler implements ActionListener {
 			cMain.cardModButton0.setBackground(Color.black);
 			cMain.cardModButton0.setForeground(Color.white);
 		}
-		if (cMain.switcherEnabled == false && counter == 0 && cMain.challengeMode.noBurnSwitchChallenge ==false) {
+		if (cMain.switcherEnabled == false && counter == 0 && cMain.challengeMode.noBurnSwitch ==false) {
 		cMain.switcherEnabled = true;
 		cMain.cardModButton0.setBackground(Color.yellow);
 		cMain.cardModButton0.setForeground(Color.black);
@@ -467,7 +467,7 @@ public class ShopHandler implements ActionListener {
 			cMain.cardModButton1.setBackground(Color.black);
 			cMain.cardModButton1.setForeground(Color.white);
 		}
-		if (cMain.burnCardEnabled == false && counter == 0 && cMain.challengeMode.noBurnSwitchChallenge ==false) {
+		if (cMain.burnCardEnabled == false && counter == 0 && cMain.challengeMode.noBurnSwitch ==false) {
 		cMain.burnCardEnabled = true;
 		cMain.cardModButton1.setBackground(Color.red);
 		cMain.cardModButton1.setForeground(Color.black);
