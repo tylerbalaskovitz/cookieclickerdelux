@@ -54,7 +54,7 @@ public class ClientMain implements Serializable{
 	displayArmorShop, displayBuffsShop, customCombat, combatDeath;
 	
 	
-	ChallengeMode challengeMode = new ChallengeMode(this);
+	public ChallengeMode challengeMode = new ChallengeMode(this);
 	Font font1, font2, font3, font3Bold, font4;
 	Slots slots = new Slots(this);
 	URL url;
@@ -71,7 +71,7 @@ public class ClientMain implements Serializable{
 	Timer timer, unlockTimers, dayTimer;
 	JTextArea messageText, shopMessageText, combatTextArea;
 	MouseHandler mouseHandler = new MouseHandler(this);
-	ItemInventory itemInventory = new ItemInventory();
+	public ItemInventory itemInventory = new ItemInventory();
 	SoundFXValues soundFXValues = new SoundFXValues();
 	SoundFX soundFX = new SoundFX();
 	BackgroundMusic backgroundMusic = new BackgroundMusic();

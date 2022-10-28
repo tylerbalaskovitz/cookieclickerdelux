@@ -12,6 +12,8 @@ public class LifeIsShort extends Challenges implements Serializable{
 	
 	challengeDescription = "The day timer is sped up, making the days to gather resources shorter";
 	
+	completed = false;
+	
 	}
 	public void combatChallenge(ClientMain cMain) {
 		

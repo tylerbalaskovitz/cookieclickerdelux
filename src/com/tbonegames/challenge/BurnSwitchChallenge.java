@@ -10,6 +10,8 @@ public class BurnSwitchChallenge extends Challenges{
 		challengeName = "The Burn Switch";
 		
 		challengeDescription = "In this challenge, the burns buttons and switch buttons have been disabled. Thus cutting your inventory of items, and ability to prepare for comabat in half";
+	
+		completed = false;
 	}
 	
 	public void combatChallenge(ClientMain cMain) {
@@ -17,7 +19,8 @@ public class BurnSwitchChallenge extends Challenges{
 	}
 	
 	public void menuChallenge(ClientMain cMain) {
-		
+		cMain.challengeMode.noBurnSwitch = true;
 	}
+	
 	
 }

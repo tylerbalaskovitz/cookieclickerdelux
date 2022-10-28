@@ -11,6 +11,8 @@ public class Challenges implements Serializable{
 	
 	public String challengeDescription;
 	
+	boolean completed;
+	
 	public void combatChallenge(ClientMain cMain) {
 		
 	}

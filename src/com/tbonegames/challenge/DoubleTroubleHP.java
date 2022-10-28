@@ -10,6 +10,8 @@ public class DoubleTroubleHP extends Challenges{
 			challengeName = "Double Trouble";
 			
 			challengeDescription = "All enemies have their HP doubled for every boss fight.";
+			
+			completed = false;
 	}
 		
 		public void combatChallenge(ClientMain cMain) {

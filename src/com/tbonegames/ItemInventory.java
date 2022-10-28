@@ -57,11 +57,11 @@ public class ItemInventory implements Serializable{
 	
 	ClientMain cMain;
 	//these numbers will grow as more items come into the game. THe methods will need to be organized so that way random card matches can also occur. 
-	Armor armor[] = new Armor[10];
-	Buffs buffs[] = new Buffs[10];
-	Items items[] = new Items[10];
-	Weapons weapons[] = new Weapons[10];
-	Cards cards[] = new Cards[4];
+	public Armor armor[] = new Armor[10];
+	public Buffs buffs[] = new Buffs[10];
+	public Items items[] = new Items[10];
+	public Weapons weapons[] = new Weapons[10];
+	public Cards cards[] = new Cards[4];
 	int burnManager [] = new int[4];
 	
 

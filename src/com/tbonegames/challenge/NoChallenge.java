@@ -10,6 +10,8 @@ public class NoChallenge extends Challenges{
 			challengeName = "No Challenge";
 			
 			challengeDescription = "";
+			
+			completed = false;
 	}
 		
 		public void combatChallenge(ClientMain cMain) {
