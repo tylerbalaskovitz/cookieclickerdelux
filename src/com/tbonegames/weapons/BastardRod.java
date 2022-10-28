@@ -4,8 +4,7 @@ import java.io.Serializable;
 
 import com.tbonegames.ClientMain;
 
-public class BastardRod extends Weapons  implements Serializable{
-	final static long serialVersionUID = -1404202925519361557L;
+public class BastardRod extends Weapons  {
 
 	public BastardRod() {
 	weaponName = "Bastard Rod";

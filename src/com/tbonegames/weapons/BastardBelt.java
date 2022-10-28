@@ -4,8 +4,7 @@ import java.io.Serializable;
 
 import com.tbonegames.ClientMain;
 
-public class BastardBelt extends Weapons implements Serializable{
-	final static long serialVersionUID = -1404202925519361557L;
+public class BastardBelt extends Weapons {
 
 	public BastardBelt() {
 	//used for the name and the handler of the game. 

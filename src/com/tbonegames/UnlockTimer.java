@@ -39,7 +39,7 @@ public class UnlockTimer {
 						cMain.itemInventory.cards[0].unlocked = true;
 						cMain.button1.setText(cMain.itemInventory.cards[0].cardName + "("+cMain.itemInventory.cards[0].totalCurrentAmount+")");
 					}
-				} else if (cMain.itemInventory.cards[0].unlocked == true) {
+				} else {
 					cMain.button1.setText(cMain.itemInventory.cards[0].cardName + "("+cMain.itemInventory.cards[0].totalCurrentAmount+")");
 				}
 				
@@ -51,7 +51,7 @@ public class UnlockTimer {
 						cMain.itemInventory.cards[1].unlocked = true;
 						cMain.button2.setText(cMain.itemInventory.cards[1].cardName + "("+cMain.itemInventory.cards[1].totalCurrentAmount+")");
 					}
-				} else if (cMain.itemInventory.cards[1].unlocked == true) {
+				} else {
 					cMain.button2.setText(cMain.itemInventory.cards[1].cardName + "("+cMain.itemInventory.cards[1].totalCurrentAmount+")");
 				}
 				
@@ -63,7 +63,7 @@ public class UnlockTimer {
 						cMain.itemInventory.cards[2].unlocked = true;
 						cMain.button3.setText(cMain.itemInventory.cards[2].cardName + "("+cMain.itemInventory.cards[2].totalCurrentAmount+")");
 					}
-				} else if (cMain.itemInventory.cards[2].unlocked == true) {
+				} else {
 					cMain.button3.setText(cMain.itemInventory.cards[2].cardName + "("+cMain.itemInventory.cards[2].totalCurrentAmount+")");
 				}
 				
@@ -73,7 +73,7 @@ public class UnlockTimer {
 						cMain.itemInventory.cards[3].unlocked = true;
 						cMain.button4.setText(cMain.itemInventory.cards[3].cardName + "("+cMain.itemInventory.cards[3].totalCurrentAmount+")");
 					}
-				} else if (cMain.itemInventory.cards[3].unlocked == true) {
+				} else  {
 					cMain.button4.setText(cMain.itemInventory.cards[3].cardName + "("+cMain.itemInventory.cards[3].totalCurrentAmount+")");
 				}
 			

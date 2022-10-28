@@ -4,8 +4,7 @@ import java.io.Serializable;
 
 import com.tbonegames.ClientMain;
 
-public class BastardKeepYourHandsOffMyHappinessCake extends Weapons implements Serializable{
-	final static long serialVersionUID = -1404202925519361557L;
+public class BastardKeepYourHandsOffMyHappinessCake extends Weapons {
 
 		public BastardKeepYourHandsOffMyHappinessCake(){
 		weaponName = "Bastard Keep Your Hands Off My Happiness Cake";

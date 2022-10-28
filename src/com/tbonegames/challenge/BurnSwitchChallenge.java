@@ -21,6 +21,7 @@ public class BurnSwitchChallenge extends Challenges implements Serializable{
 	
 	public void menuChallenge(ClientMain cMain) {
 		cMain.challengeMode.noBurnSwitch = true;
+		cMain.challengeMode.switchesDisabled = true;
 	}
 	
 	

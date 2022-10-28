@@ -133,7 +133,7 @@ public class SaveGame implements Serializable{
 			sGameData.score = cMain.score;
 			sGameData.perSecond = cMain.perSecond;
 			sGameData.dayPerSecond = cMain.dayPerSecond;
-
+			
 			for (int i = 0; i< 10; i++) {
 				sGameData.armor[i] = cMain.itemInventory.armor[i];
 				sGameData.weapons[i] = cMain.itemInventory.weapons[i];
@@ -172,6 +172,8 @@ public class SaveGame implements Serializable{
 			
 			SaveGameData sGameData = (SaveGameData) ois.readObject(); 
 			
+			
+			
 			cMain.day= sGameData.day;
 			cMain.logosCounter =sGameData.logosCounter;
 			cMain.rounds = sGameData.rounds;
@@ -198,6 +200,7 @@ public class SaveGame implements Serializable{
 			cMain.score = sGameData.score;
 			cMain.perSecond = sGameData.perSecond;
 			cMain.dayPerSecond = sGameData.dayPerSecond;
+
 			
 			for (int i = 0; i< 10; i++) {
 				 cMain.itemInventory.armor[i] = sGameData.armor[i];
@@ -214,11 +217,14 @@ public class SaveGame implements Serializable{
 				 cMain.itemInventory.burnManager[i] = sGameData.burnManager[i];
 			}
 			
+			
 			ois.close();
 	
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	

@@ -8,7 +8,7 @@ public class Blitzkrieg extends Challenges implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 
 	public Blitzkrieg() {
-	challengeName = "No Challenge";
+	challengeName = "Blitzkrieg";
 	
 	challengeDescription = "";
 	

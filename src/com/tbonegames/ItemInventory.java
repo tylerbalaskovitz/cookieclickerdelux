@@ -86,7 +86,7 @@ public class ItemInventory implements Serializable{
 	}
 	
 	public ItemInventory() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public void startingValuesBurnManager() {

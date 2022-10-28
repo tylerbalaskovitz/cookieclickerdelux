@@ -35,7 +35,7 @@ public class ClientMain implements Serializable{
 	combatButton1, combatButton2, combatButton3, combatButton4, shopNavigationButton1, shopNavigationButton2, shopNavigationButton3, shopNavigationButton4, multiplierButton1, 
 	multiplierButton2, multiplierButton3, cardModButton0, cardModButton1, saveSpotButton0, saveSpotButton1, saveSpotButton2, saveSpotButton3;
 	
-	JButton challengeModeButtons[] = new JButton[10];
+	JButton challengeModeButtons[] = new JButton[11];
 	JScrollPane challengeModeScrollPane;
 	
 	int saveHeaderArray[] = new int[3];
@@ -80,26 +80,24 @@ public class ClientMain implements Serializable{
 	
 	public ClientMain() {
 
-		loadScoresHeadersAndCollection();
+		
 		itemInventory.inventoryOfItems();
 		ui.createFont();
 		ui.createUI(); 
 		
 		ui.closeAllPanels(); 
 		ui.displayStartMenu();
+		saveGame.loadHighScore();
+		for (int i = 0; i < 3; i++) {
+			saveGame.loadFileHeader(i);
+			}
 		backgroundMusic.setFile(soundFXValues.backgroundmusic);
 		
 		soundFX.playSoundEffect(soundFXValues.titleClip);
 		sValues.startUpValues();
 		
 	}
-	
-	public void loadScoresHeadersAndCollection() {
-			saveGame.loadHighScore();
-		for (int i = 0; i < 3; i++) {
-			saveGame.loadFileHeader(i);
-			}
-	}
+
 	
 
 	

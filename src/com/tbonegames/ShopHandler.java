@@ -22,7 +22,6 @@ public class ShopHandler implements ActionListener {
 		switch (action) {
 		case "Switcher":
 			switcherButton();
-				
 			break;
 		case "BurnCard":
 			burnCardButton();
@@ -478,6 +477,7 @@ public class ShopHandler implements ActionListener {
 		counter++;
 		}
 	}
+		
 	
 	public void burnCardButton() {
 		cMain.switcherEnabled = false;

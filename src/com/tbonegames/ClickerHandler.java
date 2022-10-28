@@ -52,7 +52,6 @@ public class ClickerHandler implements ActionListener {
 				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
-				cMain.dayPerSecond = .1;
 				dayTimer.timerUpdate();
 				cMain.unlockTimer.startUnlockTimer();
 				cMain.ui.closeAllPanels();
@@ -63,21 +62,28 @@ public class ClickerHandler implements ActionListener {
 				cMain.ui.displayStartMenu();
 				break;
 			case "PreChallenge":
+				cMain.challengeMode.createChallenges();
+				cMain.challengeMode.labelChallengeButtons();
 				cMain.ui.displayChallenges();
 				break;
+			case "Challenge":
+				cMain.challengeMode.challenges[0].menuChallenge(cMain);
+				break;
 			case "Continue":
+				cMain.saveGame.loadGame(cMain.saveLoadInt);
+				System.out.println("Test");
+				/*
+				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
+				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.ui.closeAllPanels();
+				cMain.ui.displayMainGame();
+				dayTimer.timerUpdate();
+				cMain.unlockTimer.startUnlockTimer();
 				if (cMain.saveGameMode == null) {
 					cMain.saveGameMode = "Normal";
 				}
-				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
-				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
-				cMain.dayPerSecond = .1;
-				dayTimer.timerUpdate();
-				cMain.unlockTimer.startUnlockTimer();
-				cMain.ui.closeAllPanels();
-				cMain.ui.displayMainGame();
-				cMain.saveGame.loadGame(cMain.saveLoadInt);
+				*/
 				break;
 			case "PreStart":
 				cMain.ui.displayPreStartMenu();
@@ -88,10 +94,8 @@ public class ClickerHandler implements ActionListener {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				break;
 			case "SaveGame":
-				if (cMain.challengeMode.savesDisabled == false) {
 				cMain.saveGame.saveGame(cMain.saveLoadInt);
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
-				}
 				break;
 			case "Logos": 
 				cMain.logosCounter = (cMain.logosCounter + 1 + cMain.clickerBonus); 

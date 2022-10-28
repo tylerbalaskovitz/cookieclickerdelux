@@ -85,21 +85,25 @@ public void createUI() {
 	buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
 	
 	cMain.challengeModePanel = new JPanel();
-	panelConfiguration(cMain.challengeModePanel, 175, 240, 250, 250, Color.black, 10,1, cMain.window);
+	panelConfiguration(cMain.challengeModePanel, 175, 240, 250, 250, Color.black, 11,1, cMain.window);
 	
-	for (int i = 0; i < 10; i++) {
-	cMain.challengeModeButtons[i] = new JButton("Challenge Mode");
-	buttonGenerator(cMain.challengeModeButtons[i], cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.challengeModePanel);
+	for (int i = 0; i < 11; i++) {
+	cMain.challengeModeButtons[i] = new JButton("Return");
+	buttonGenerator(cMain.challengeModeButtons[i], cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Challenge", cMain.mouseHandler, cMain.challengeModePanel);
+	if (i == 10) {
+	buttonGenerator(cMain.challengeModeButtons[i], cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.challengeModePanel);	
+	}
 	cMain.challengeModeButtons[i].setSize(100, 50);
 	}
 	
 	cMain.challengeModePanel.setVisible(true);
 	
 	cMain.challengeModeScrollPane = new JScrollPane();
-	scrollPaneConfiguration(cMain.challengeModeScrollPane, Color.black, Color.white, true, true, 290, 240, 200, 200, cMain.challengeModePanel, cMain.window);
+	scrollPaneConfiguration(cMain.challengeModeScrollPane, Color.black, Color.white, true, true, 270, 240, 240, 200, cMain.challengeModePanel, cMain.window);
 	
 	
 	//Things relating to Combat
+	
 	cMain.combatStatsPanel = new JPanel();
 	panelConfiguration(cMain.combatStatsPanel, 100, 50, 600, 50, Color.black, 1, 3, cMain.window);
 	
@@ -249,8 +253,8 @@ public void createUI() {
 		cMain.optionButton2 = new JButton("High Scores");
 		buttonGenerator(cMain.optionButton2, cMain.font1, Color.black, Color.white, false, cMain.clickerHandler, "HighScore", cMain.mouseHandler, cMain.optionsPanel);
 		
-		cMain.optionButton3 = new JButton("Credits");
-		buttonGenerator(cMain.optionButton3, cMain.font1, Color.black, Color.white, false, cMain.clickerHandler, "Credits", cMain.mouseHandler, cMain.optionsPanel);
+		cMain.optionButton3 = new JButton("Quick Load");
+		buttonGenerator(cMain.optionButton3, cMain.font1, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.optionsPanel);
 		
 		//Maint actions/items to be bought during the game
 		cMain.itemPanel = new JPanel();
@@ -448,6 +452,9 @@ public void createUI() {
 	public void closeAllPanels() {
 		cMain.multiplierPanel.setVisible(false);
 		cMain.combatStatsPanel.setVisible(false);
+		cMain.combatPanel.setVisible(false);
+		cMain.combatButtonPanel.setVisible(false);
+		
 		cMain.shopNavigationPanel.setVisible(false);
 		cMain.shopCookiePanel.setVisible(false);
 		cMain.navigationPanel.setVisible(false);
@@ -464,8 +471,7 @@ public void createUI() {
 		cMain.cookiePanel.setVisible(false);
 		cMain.shopPanel.setVisible(false);
 		cMain.shopUpperPanel.setVisible(false);
-		cMain.combatPanel.setVisible(false);
-		cMain.combatButtonPanel.setVisible(false);
+
 		cMain.cardModPanel.setVisible(false);
 		cMain.saveSpotPanel.setVisible(false);
 		cMain.displayPanelSwitch= false;
@@ -473,6 +479,8 @@ public void createUI() {
 		cMain.challengeModeScrollPane.validate();
 		
 	}
+	
+	
 		
 	public void displayStartMenu() {
 		

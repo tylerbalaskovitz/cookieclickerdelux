@@ -17,19 +17,16 @@ import com.tbonegames.challenge.StopWatchFree;
 public class ChallengeMode implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 	
-	Challenges challenges[];
+	Challenges challenges[] = new Challenges[10];
 	Challenges currentChallenge;
 	ClientMain cMain;
-	public boolean noBurnSwitch;
-	public boolean savesDisabled;
+	public boolean noBurnSwitch, savesDisabled, switchesDisabled;
 	
 	public ChallengeMode(ClientMain cMain) {
 		this.cMain = cMain;
 	}
 	
 	public void createChallenges() {
-		if (currentChallenge == null) {
-			challenges = new Challenges[10];
 			challenges[0] = new BurnSwitchChallenge();
 			challenges[1] = new CheapBastard();
 			challenges[2] = new LifeIsShort();
@@ -42,7 +39,12 @@ public class ChallengeMode implements Serializable{
 			challenges[9] = new ShinAndSoda();
 					
 			
-		}
+	}
+	
+	public void labelChallengeButtons() {
+		for (int i = 0; i < 10; i++) {
+		cMain.challengeModeButtons[i].setText(challenges[i].challengeName);
+	}
 	}
 	
 	

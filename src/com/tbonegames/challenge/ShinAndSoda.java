@@ -17,7 +17,7 @@ public class ShinAndSoda extends Challenges implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 	public ShinAndSoda() {
 		
-			challengeName = "No Challenge";
+			challengeName = "Shin and Soda";
 			
 			challengeDescription = "";
 			

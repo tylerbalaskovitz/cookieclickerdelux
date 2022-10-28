@@ -27,7 +27,7 @@ public class StartingValues {
 			cMain.logosCounter = 0;
 			cMain.startingDamage = 5;
 			cMain.perSecond = 0;
-			cMain.dayPerSecond = 0;
+			cMain.dayPerSecond = .1;
 			cMain.luckyPrice = 500;
 			cMain.bastardPrice = 750;
 			cMain.feverPrice = 1000;
