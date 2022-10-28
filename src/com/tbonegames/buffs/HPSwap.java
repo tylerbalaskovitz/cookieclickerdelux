@@ -1,8 +1,11 @@
 package com.tbonegames.buffs;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class HPSwap extends Buffs{
+public class HPSwap extends Buffs implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public HPSwap() {
 		

@@ -1,10 +1,11 @@
 package com.tbonegames.challenge;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class BurnSwitchChallenge extends Challenges{
-
-	private static final long serialVersionUID = -2543433047411427472L;
+public class BurnSwitchChallenge extends Challenges implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public BurnSwitchChallenge() {
 		challengeName = "The Burn Switch";

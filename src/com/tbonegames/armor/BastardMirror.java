@@ -1,8 +1,11 @@
 package com.tbonegames.armor;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class BastardMirror extends Armor{
+public class BastardMirror extends Armor implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public BastardMirror() {
 		armorName = "Bastard Mirror";

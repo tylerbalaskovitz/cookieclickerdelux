@@ -1,8 +1,11 @@
 package com.tbonegames.buffs;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class CompleteDebuff extends Buffs {
+public class CompleteDebuff extends Buffs  implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public CompleteDebuff() {
 		buffName = "Complete Debuff";

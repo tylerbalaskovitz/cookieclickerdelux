@@ -1,8 +1,11 @@
 package com.tbonegames.items;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class BastardVeganOption extends Items{
+public class BastardVeganOption extends Items implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 		public BastardVeganOption(){
 		itemName = "Bastard Vegan Option";

@@ -1,8 +1,11 @@
 package com.tbonegames.buffs;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class DoubleDamage extends Buffs {
+public class DoubleDamage extends Buffs  implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 	
 	public DoubleDamage() {
 	buffName = "Double Damage";

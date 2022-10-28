@@ -1,8 +1,11 @@
 package com.tbonegames.items;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class BastardSausage extends Items{
+public class BastardSausage extends Items implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public BastardSausage() {
 		itemName = "Bastard Sausage";

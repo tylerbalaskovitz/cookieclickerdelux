@@ -1,8 +1,11 @@
 package com.tbonegames.armor;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class BastardBarricade extends Armor{
+public class BastardBarricade extends Armor implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 	public BastardBarricade() {
 		armorName = "Bastard Barricade";
 		armorHandlerName = "BastardArmor";

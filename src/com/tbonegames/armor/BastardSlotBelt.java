@@ -1,8 +1,11 @@
 package com.tbonegames.armor;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class BastardSlotBelt extends Armor{
+public class BastardSlotBelt extends Armor implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public BastardSlotBelt() {
 	armorName = "Bastard Slot Belt";

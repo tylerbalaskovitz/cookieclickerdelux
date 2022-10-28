@@ -1,8 +1,11 @@
 package com.tbonegames.cards;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class Whitey extends Cards{
+public class Whitey extends Cards implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public Whitey() {
 	cardName = "Whitey";

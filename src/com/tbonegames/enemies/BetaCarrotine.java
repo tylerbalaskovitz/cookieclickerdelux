@@ -1,6 +1,9 @@
 package com.tbonegames.enemies;
 
-public class BetaCarrotine extends Enemies {
+import java.io.Serializable;
+
+public class BetaCarrotine extends Enemies  implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public BetaCarrotine() {
 	name = "Beta Carrotine";

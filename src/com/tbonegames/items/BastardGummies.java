@@ -1,8 +1,11 @@
 package com.tbonegames.items;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class BastardGummies extends Items{
+public class BastardGummies extends Items implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public BastardGummies() {
 		itemName = "Bastard Gummies";

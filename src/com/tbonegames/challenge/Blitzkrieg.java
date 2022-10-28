@@ -1,8 +1,11 @@
 package com.tbonegames.challenge;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class Blitzkrieg extends Challenges{
+public class Blitzkrieg extends Challenges implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public Blitzkrieg() {
 	challengeName = "No Challenge";

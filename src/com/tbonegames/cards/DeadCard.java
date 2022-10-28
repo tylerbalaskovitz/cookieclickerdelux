@@ -1,8 +1,11 @@
 package com.tbonegames.cards;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class DeadCard extends Cards{
+public class DeadCard extends Cards implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 	
 	public DeadCard() {
 		cardName = " ";

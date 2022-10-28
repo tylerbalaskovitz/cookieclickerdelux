@@ -2,8 +2,6 @@ package com.tbonegames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.Serializable;
-
 import javax.swing.Timer;
 
 import com.tbonegames.enemies.AntiGravityChamber;

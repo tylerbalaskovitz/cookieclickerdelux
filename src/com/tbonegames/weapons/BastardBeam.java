@@ -1,8 +1,11 @@
 package com.tbonegames.weapons;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class BastardBeam extends Weapons{
+public class BastardBeam extends Weapons implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 	
 	public BastardBeam() {
 		weaponName = "Bastard Beam";

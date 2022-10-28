@@ -1,8 +1,11 @@
 package com.tbonegames.buffs;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class BastardStopwatch extends Buffs{
+public class BastardStopwatch extends Buffs implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 	
 	public BastardStopwatch(){
 		

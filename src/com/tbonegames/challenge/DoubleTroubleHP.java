@@ -6,7 +6,7 @@ public class DoubleTroubleHP extends Challenges{
 
 	private static final long serialVersionUID = 1527841505199077948L;
 
-	DoubleTroubleHP(){
+	public DoubleTroubleHP(){
 			challengeName = "Double Trouble";
 			
 			challengeDescription = "All enemies have their HP doubled for every boss fight.";

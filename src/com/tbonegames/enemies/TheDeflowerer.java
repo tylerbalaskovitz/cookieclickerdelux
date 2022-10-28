@@ -1,6 +1,9 @@
 package com.tbonegames.enemies;
 
-public class TheDeflowerer extends Enemies {
+import java.io.Serializable;
+
+public class TheDeflowerer extends Enemies  implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public TheDeflowerer() {
 		name = "The Deflowerer";

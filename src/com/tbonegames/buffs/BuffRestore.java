@@ -1,8 +1,11 @@
 package com.tbonegames.buffs;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class BuffRestore extends Buffs{
+public class BuffRestore extends Buffs implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public BuffRestore() {
 		

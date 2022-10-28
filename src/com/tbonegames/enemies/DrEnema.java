@@ -1,6 +1,9 @@
 package com.tbonegames.enemies;
 
-public class DrEnema extends Enemies{
+import java.io.Serializable;
+
+public class DrEnema extends Enemies implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public DrEnema() {
 		name = "Dr. Enema";

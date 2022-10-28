@@ -1,7 +1,10 @@
 package com.tbonegames.enemies;
 
-public class InflatableOfDoom extends Enemies {
+import java.io.Serializable;
 
+public class InflatableOfDoom extends Enemies  implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
+	
 	public InflatableOfDoom() {
 		name ="The Inflatable of Doom";
 		hp = 300000;

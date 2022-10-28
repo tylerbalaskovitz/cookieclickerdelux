@@ -1,8 +1,11 @@
 package com.tbonegames.cards;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class ShinChan extends Cards{
+public class ShinChan extends Cards implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public ShinChan() {
 		

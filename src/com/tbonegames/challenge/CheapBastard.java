@@ -1,5 +1,7 @@
 package com.tbonegames.challenge;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 import com.tbonegames.armor.BastardBoots;
 import com.tbonegames.armor.BastardGloves;
@@ -17,7 +19,8 @@ import com.tbonegames.weapons.BastardRod;
 import com.tbonegames.weapons.BastardSpikedBoots;
 import com.tbonegames.weapons.DeadWeapon;
 
-public class CheapBastard extends Challenges {
+public class CheapBastard extends Challenges  implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public CheapBastard(){
 		challengeName = "Cheap Bastard";

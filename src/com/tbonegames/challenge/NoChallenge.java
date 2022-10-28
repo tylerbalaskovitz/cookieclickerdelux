@@ -1,10 +1,11 @@
 package com.tbonegames.challenge;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class NoChallenge extends Challenges{
-
-	private static final long serialVersionUID = 2058338690883402993L;
+public class NoChallenge extends Challenges implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public NoChallenge() {
 			challengeName = "No Challenge";

@@ -1,8 +1,11 @@
 package com.tbonegames.weapons;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 
-public class BastardNitrogenBomb extends Weapons{
+public class BastardNitrogenBomb extends Weapons implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public BastardNitrogenBomb() {
 	weaponName = "Bastard Nitrogen Bomb";

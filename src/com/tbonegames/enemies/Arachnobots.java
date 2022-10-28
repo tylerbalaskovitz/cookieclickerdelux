@@ -1,6 +1,9 @@
 package com.tbonegames.enemies;
 
-public class Arachnobots extends Enemies {
+import java.io.Serializable;
+
+public class Arachnobots extends Enemies  implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public Arachnobots() {
 		

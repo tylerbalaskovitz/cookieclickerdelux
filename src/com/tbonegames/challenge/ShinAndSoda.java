@@ -1,5 +1,7 @@
 package com.tbonegames.challenge;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 import com.tbonegames.armor.DeadArmor;
 import com.tbonegames.buffs.BastardStopwatch;
@@ -11,8 +13,8 @@ import com.tbonegames.items.DeadItem;
 import com.tbonegames.weapons.BastardBrassKnuckles;
 import com.tbonegames.weapons.DeadWeapon;
 
-public class ShinAndSoda extends Challenges{
-
+public class ShinAndSoda extends Challenges implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 	public ShinAndSoda() {
 		
 			challengeName = "No Challenge";
