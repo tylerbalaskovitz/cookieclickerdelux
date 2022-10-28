@@ -2,6 +2,8 @@ package com.tbonegames.enemies;
 
 import java.io.Serializable;
 
+import com.tbonegames.ClientMain;
+
 public class TheDeflowerer extends Enemies  implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 
@@ -45,21 +47,20 @@ public class TheDeflowerer extends Enemies  implements Serializable{
 	}
 	
 	
-	
-	public void special1() {
+	public void special1(ClientMain cMain) {
 		attackDisableCounter += 2;
 	}
 
-	public void special2() {
+	public void special2(ClientMain cMain) {
 		blockDisableCounter = 2;
 		itemDisableCounter = 2;
 	}
 	
-	public void special3() {
+	public void special3(ClientMain cMain) {
 		
 	}
 	
-	public void special4() {
+	public void special4(ClientMain cMain) {
 		
 	}
 }

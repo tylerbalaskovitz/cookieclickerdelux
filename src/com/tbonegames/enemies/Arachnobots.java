@@ -2,6 +2,8 @@ package com.tbonegames.enemies;
 
 import java.io.Serializable;
 
+import com.tbonegames.ClientMain;
+
 public class Arachnobots extends Enemies  implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 
@@ -44,27 +46,26 @@ public class Arachnobots extends Enemies  implements Serializable{
 		specialMessage = "";
 	}
 	
-	
-	
-	public void special1() {
+	public void special1(ClientMain cMain) {
 		attackDisableCounter = 2;
 		blockDisableCounter = 2;
 		itemDisableCounter = 2;
 		buffsDisableCounter = 2;
-		
 	}
 
-	public void special2() {
+	public void special2(ClientMain cMain) {
 		
 	}
 	
-	public void special3() {
+	public void special3(ClientMain cMain) {
 		
 	}
 	
-	public void special4() {
+	public void special4(ClientMain cMain) {
 		specialMessage = "The Arachnobots recovered health. ";
 		double healingHP = (double)hp *.25;
 		hp += (int)healingHP;
 	}
+	
+	
 }

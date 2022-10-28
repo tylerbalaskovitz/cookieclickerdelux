@@ -4,14 +4,16 @@ import com.tbonegames.enemies.Enemies;
 
 public class Levels {
 
-	Enemies level1[];
+	String levelName;
 	
+	String levelDescription;
 	
-	Enemies []test;
+	Enemies level[];
 	
-	public void createLevel1() {
-	if (level1 == null) {
-		level1 = new Enemies[18];	
-	}
+	int combatDayArray[];
+	
+	public void createLevel() {
+
+		
 	}
 }

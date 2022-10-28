@@ -2,6 +2,8 @@ package com.tbonegames.enemies;
 
 import java.io.Serializable;
 
+import com.tbonegames.ClientMain;
+
 public class DrHitlerClone extends Enemies implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 
@@ -43,25 +45,25 @@ public class DrHitlerClone extends Enemies implements Serializable{
 	}
 
 
-
-	public void special1() {
-	
+	public void special1(ClientMain cMain) {
+		
 	}
 
-	public void special2() {
-	
+	public void special2(ClientMain cMain) {
+		
 	}
 	
-	public void special3() {
+	public void special3(ClientMain cMain) {
 		attackDisableCounter += 3;
 		blockDisableCounter += 3;
 		itemDisableCounter += 3;
 		buffsDisableCounter += 3;
+	}
+	
+	public void special4(ClientMain cMain) {
 		
 	}
 	
-	public void special4() {
-		
-	}
+
 	
 }

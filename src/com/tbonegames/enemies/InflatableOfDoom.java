@@ -2,6 +2,8 @@ package com.tbonegames.enemies;
 
 import java.io.Serializable;
 
+import com.tbonegames.ClientMain;
+
 public class InflatableOfDoom extends Enemies  implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 	
@@ -41,20 +43,20 @@ public class InflatableOfDoom extends Enemies  implements Serializable{
 		
 	}
 	
-	public void special1(){
+	public void special1(ClientMain cMain) {
 		attack1Damage *= 2;
 		attack *=2;
 	}
-	
-	public void speical2() {
-		
-	}
-	
-	public void speical3() {
-		
-	}
 
-	public void speical4() {
+	public void special2(ClientMain cMain) {
+		
+	}
 	
+	public void special3(ClientMain cMain) {
+		
+	}
+	
+	public void special4(ClientMain cMain) {
+		
 	}
 }

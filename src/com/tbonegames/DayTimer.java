@@ -33,7 +33,7 @@ public class DayTimer {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cMain.dayLimiter = cMain.bossDay - 1;
-				if (cMain.inCombat == true && (cMain.dayLimiter == cMain.day)) {
+				if (cMain.inCombat == true && (cMain.day >= cMain.dayLimiter)) {
 				} else {
 				cMain.day++;
 				}

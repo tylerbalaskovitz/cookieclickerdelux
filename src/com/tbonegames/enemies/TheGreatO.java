@@ -2,6 +2,8 @@ package com.tbonegames.enemies;
 
 import java.io.Serializable;
 
+import com.tbonegames.ClientMain;
+
 public class TheGreatO extends Enemies implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 
@@ -45,8 +47,7 @@ public class TheGreatO extends Enemies implements Serializable{
 	}
 	
 	
-	
-	public void special1() {
+	public void special1(ClientMain cMain) {
 		attackDisableCounter += 2;
 		blockDisableCounter += 2;
 		itemDisableCounter += 2;
@@ -55,17 +56,21 @@ public class TheGreatO extends Enemies implements Serializable{
 		itemDisableCounter + "\n Buffs: " + buffsDisableCounter;
 	}
 
-	public void special2() {
+	public void special2(ClientMain cMain) {
 		
 	}
 	
-	public void special3() {
+	public void special3(ClientMain cMain) {
 		attack3Damage *= 2;
 		attack4Damage *=2;
-		specialMessage = "The Great O grows more powerful.";
+		cMain.playerDamage /=2;
+		if (cMain.playerDamage <= 0){
+			cMain.playerDamage =1;
+		}
+		specialMessage = "The Great O grows more powerful. You grow considerably weaker!";
 	}
 	
-	public void special4() {
+	public void special4(ClientMain cMain) {
 		
 	}
 }

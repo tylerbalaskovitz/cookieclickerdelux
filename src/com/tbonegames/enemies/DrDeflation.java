@@ -2,6 +2,8 @@ package com.tbonegames.enemies;
 
 import java.io.Serializable;
 
+import com.tbonegames.ClientMain;
+
 public class DrDeflation extends Enemies implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 
@@ -32,7 +34,7 @@ public class DrDeflation extends Enemies implements Serializable{
 		attack2Chance = 2;
 		
 		
-		attack3 = "D for Damn it";
+		attack3 = "I is for Inflation";
 		attack3Command = "DamnIt";
 		attack1Damage = 4000;
 		attack3Chance = 6;
@@ -47,20 +49,30 @@ public class DrDeflation extends Enemies implements Serializable{
 	
 	
 	
-	public void special1() {
-		
+	public void special1(ClientMain cMain) {
+		for (int i = 0; i < 4; i++) {
+		cMain.itemInventory.weapons[i].totalCurrentAmount /= 2;
+		}
+		specialMessage = "All your weapons have lost half their power!";
 	}
 
-	public void special2() {
+	public void special2(ClientMain cMain) {
 		
+		specialMessage = "The 50% shopping spree has begun!";
 	}
 	
-	public void special3() {
-		
+	public void special3(ClientMain cMain) {
+		specialMessage = "The shop price of all the items have doubled!";
+		for (int i = 0; i < 4; i++) {
+			cMain.itemInventory.items[i].itemPrice *= 2;
+			}
 	}
 	
-	public void special4() {
-		
+	public void special4(ClientMain cMain) {
+		specialMessage = "Black Friday has commenced! All logos are 90% OFF!";
+		double temp = 0;
+		temp = (double)cMain.logosCounter * .10;
+		cMain.logosCounter = (int)temp;
 	}
 		
 		
