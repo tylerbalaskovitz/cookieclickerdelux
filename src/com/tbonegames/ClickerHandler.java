@@ -70,9 +70,10 @@ public class ClickerHandler implements ActionListener {
 				cMain.challengeMode.challenges[0].menuChallenge(cMain);
 				break;
 			case "Continue":
+				if (cMain.saveGameMode == null) {
+					cMain.saveGameMode = "Normal";
+				}
 				cMain.saveGame.loadGame(cMain.saveLoadInt);
-				System.out.println("Test");
-				/*
 				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
 				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
@@ -80,10 +81,7 @@ public class ClickerHandler implements ActionListener {
 				cMain.ui.displayMainGame();
 				dayTimer.timerUpdate();
 				cMain.unlockTimer.startUnlockTimer();
-				if (cMain.saveGameMode == null) {
-					cMain.saveGameMode = "Normal";
-				}
-				*/
+
 				break;
 			case "PreStart":
 				cMain.ui.displayPreStartMenu();

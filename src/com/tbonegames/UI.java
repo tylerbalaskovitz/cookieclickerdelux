@@ -73,13 +73,13 @@ public void createUI() {
 	panelConfiguration(cMain.saveSpotPanel, 275, 240, 250, 250, Color.black, 4,1, cMain.window);
 	
 	cMain.saveSpotButton0 = new JButton("New Save 1");
-	buttonGenerator(cMain.saveSpotButton0, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
+	buttonGenerator(cMain.saveSpotButton0, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
 	
 	cMain.saveSpotButton1 = new JButton("New Save 2");
-	buttonGenerator(cMain.saveSpotButton1, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
+	buttonGenerator(cMain.saveSpotButton1, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
 	
 	cMain.saveSpotButton2 = new JButton("New Save 3");
-	buttonGenerator(cMain.saveSpotButton2, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
+	buttonGenerator(cMain.saveSpotButton2, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
 	
 	cMain.saveSpotButton3 = new JButton("Return");
 	buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
@@ -390,7 +390,9 @@ public void createUI() {
 		buttonGenerator(cMain.saveSpotButton2, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Start", cMain.mouseHandler, cMain.saveSpotPanel);
 		}
 		buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
-		
+		cMain.saveSpotButton0.setActionCommand("Start");
+		cMain.saveSpotButton1.setActionCommand("Start");
+		cMain.saveSpotButton2.setActionCommand("Start");
 	}
 	
 	public void displayPreLoadMenu() {
@@ -405,7 +407,11 @@ public void createUI() {
 			if (cMain.saveHeaderArray[2] < 1) {
 			buttonGenerator(cMain.saveSpotButton2, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Continue", cMain.mouseHandler, cMain.saveSpotPanel);
 			}
-		buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
+			buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
+			cMain.saveSpotButton0.setActionCommand("Continue");
+			cMain.saveSpotButton1.setActionCommand("Continue");
+			cMain.saveSpotButton2.setActionCommand("Continue");
+			
 		
 	}
 
