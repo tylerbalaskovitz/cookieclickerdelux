@@ -20,6 +20,7 @@ public class Inflation extends Challenges implements Serializable{
 	
 	public void menuChallenge(ClientMain cMain) {
 		for (int i = 0; i < 10; i++) {
+			
 		cMain.itemInventory.armor[i].armorPrice *=2;
 		cMain.itemInventory.armor[i].armorPriceIncrease *=2;
 		cMain.itemInventory.armor[i].unlockAmount *=2;

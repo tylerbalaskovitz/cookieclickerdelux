@@ -151,6 +151,12 @@ public class MouseHandler implements MouseListener{
 	public void mousePressed(MouseEvent e) {
 		JButton button = (JButton)e.getSource();
 
+		for (int i = 0; i < 10; i++) {
+		if (button == cMain.challengeModeButtons[i]) {
+			cMain.challengeModeInt = i;
+		}
+		}
+		
 		if (button == cMain.saveSpotButton0) {
 			cMain.saveLoadInt = 0;
 		}

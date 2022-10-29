@@ -67,7 +67,16 @@ public class ClickerHandler implements ActionListener {
 				cMain.ui.displayChallenges();
 				break;
 			case "Challenge":
-				cMain.challengeMode.challenges[0].menuChallenge(cMain);
+				cMain.challengeMode.currentChallenge = cMain.challengeMode.challenges[cMain.challengeModeInt];
+				cMain.challengeMode.currentChallenge.menuChallenge(cMain);
+				cMain.saveGameMode = cMain.challengeMode.currentChallenge.challengeName;
+				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
+				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
+				dayTimer.timerUpdate();
+				cMain.unlockTimer.startUnlockTimer();
+				cMain.ui.closeAllPanels();
+				cMain.ui.displayMainGame();
 				break;
 			case "Continue":
 				if (cMain.saveGameMode == null) {
@@ -92,8 +101,10 @@ public class ClickerHandler implements ActionListener {
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				break;
 			case "SaveGame":
+				if (cMain.challengeMode.savesDisabled == false) {
 				cMain.saveGame.saveGame(cMain.saveLoadInt);
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
+				}
 				break;
 			case "Logos": 
 				cMain.logosCounter = (cMain.logosCounter + 1 + cMain.clickerBonus); 

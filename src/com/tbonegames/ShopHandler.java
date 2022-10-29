@@ -460,6 +460,7 @@ public class ShopHandler implements ActionListener {
 	}
 	
 	public void switcherButton() {
+		if (cMain.challengeMode.switchesDisabled == false){
 		cMain.burnCardEnabled = false;
 		cMain.cardModButton1.setBackground(Color.black);
 		cMain.cardModButton1.setForeground(Color.white);
@@ -476,10 +477,12 @@ public class ShopHandler implements ActionListener {
 		cMain.cardModButton0.setForeground(Color.black);
 		counter++;
 		}
+		}
 	}
 		
 	
 	public void burnCardButton() {
+		if (cMain.challengeMode.noBurnSwitch == false) {
 		cMain.switcherEnabled = false;
 		cMain.cardModButton0.setBackground(Color.black);
 		cMain.cardModButton0.setForeground(Color.white);
@@ -497,7 +500,7 @@ public class ShopHandler implements ActionListener {
 		counter++;
 		}
 	}
-	
+	}
 
 	
 }
