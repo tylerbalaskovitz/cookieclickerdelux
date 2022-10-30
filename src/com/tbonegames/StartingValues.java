@@ -24,7 +24,7 @@ public class StartingValues {
 			cMain.baseNumberOfActions = 2;
 			cMain.day = 0;
 			cMain.bossDay = 20;
-			cMain.logosCounter = 20000;
+			cMain.logosCounter = 0;
 			cMain.startingDamage = 5;
 			cMain.perSecond = 0;
 			cMain.dayPerSecond = .1;
@@ -33,6 +33,9 @@ public class StartingValues {
 			cMain.feverPrice = 1000;
 			cMain.slotsPrice = 500;
 			cMain.switcherEnabled = false;
+			cMain.challengeMode.savesDisabled = false;
+			cMain.challengeMode.switchesDisabled = false;
+			cMain.challengeMode.noBurnSwitch = false;
 		}
 		
 	}

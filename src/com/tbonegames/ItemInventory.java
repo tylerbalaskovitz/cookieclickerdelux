@@ -20,10 +20,10 @@ import com.tbonegames.buffs.Buffs;
 import com.tbonegames.buffs.CompleteDebuff;
 import com.tbonegames.buffs.DefendRestore;
 import com.tbonegames.buffs.DoubleDamage;
-import com.tbonegames.buffs.HPSwap;
+import com.tbonegames.buffs.SpeedUp;
 import com.tbonegames.buffs.ItemRestore;
 import com.tbonegames.buffs.SlotBelt;
-import com.tbonegames.buffs.StealAndHeal;
+import com.tbonegames.buffs.SlowDown;
 import com.tbonegames.cards.Cards;
 import com.tbonegames.cards.Doc;
 import com.tbonegames.cards.Lollipop;
@@ -212,9 +212,9 @@ public class ItemInventory implements Serializable{
 		buffs[4] = new BuffRestore();
 		buffs[5] = new CompleteDebuff();
 		buffs[6] = new DoubleDamage();
-		buffs[7] = new HPSwap();
+		buffs[7] = new SpeedUp();
 		buffs[8] = new SlotBelt();
-		buffs[9] = new StealAndHeal();
+		buffs[9] = new SlowDown();
 		
 		for (int i = 0; i < 10; i++) {
 			buffs[i].idNumber = i;

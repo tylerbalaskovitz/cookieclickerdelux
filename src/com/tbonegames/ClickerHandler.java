@@ -62,6 +62,7 @@ public class ClickerHandler implements ActionListener {
 				cMain.ui.displayStartMenu();
 				break;
 			case "PreChallenge":
+				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
 				cMain.challengeMode.createChallenges();
 				cMain.challengeMode.labelChallengeButtons();
 				cMain.ui.displayChallenges();
@@ -70,18 +71,11 @@ public class ClickerHandler implements ActionListener {
 				cMain.challengeMode.currentChallenge = cMain.challengeMode.challenges[cMain.challengeModeInt];
 				cMain.challengeMode.currentChallenge.menuChallenge(cMain);
 				cMain.saveGameMode = cMain.challengeMode.currentChallenge.challengeName;
-				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
-				dayTimer.timerUpdate();
-				cMain.unlockTimer.startUnlockTimer();
 				cMain.ui.closeAllPanels();
-				cMain.ui.displayMainGame();
+				cMain.ui.displayPreStartMenu();
 				break;
 			case "Continue":
-				if (cMain.saveGameMode == null) {
-					cMain.saveGameMode = "Normal";
-				}
 				cMain.saveGame.loadGame(cMain.saveLoadInt);
 				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
 				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
@@ -90,7 +84,9 @@ public class ClickerHandler implements ActionListener {
 				cMain.ui.displayMainGame();
 				dayTimer.timerUpdate();
 				cMain.unlockTimer.startUnlockTimer();
-
+				if (cMain.saveGameMode == null) {
+					cMain.saveGameMode = "Normal";
+				}
 				break;
 			case "PreStart":
 				cMain.ui.displayPreStartMenu();
@@ -154,7 +150,7 @@ public class ClickerHandler implements ActionListener {
 					cMain.itemInventory.cards[2].totalCurrentAmount++;
 					cMain.itemInventory.cards[2].totalAmountPurchased++;
 					cMain.button3.setText(cMain.itemInventory.cards[2].cardName + "(" + cMain.itemInventory.cards[2].totalCurrentAmount + ")");
-					cMain.perSecond+= cMain.itemInventory.cards[2].clickerIncrease; timers.timerUpdate();
+					cMain.perSecond+= cMain.itemInventory.cards[2].clickerIncrease;timers.timerUpdate();
 				} else {
 					cMain.soundFX.playSoundEffect(cMain.soundFXValues.error);
 				}

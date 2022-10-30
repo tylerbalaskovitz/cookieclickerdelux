@@ -133,6 +133,13 @@ public class SaveGame implements Serializable{
 			sGameData.score = cMain.score;
 			sGameData.perSecond = cMain.perSecond;
 			sGameData.dayPerSecond = cMain.dayPerSecond;
+			sGameData.savesDisabled = cMain.challengeMode.savesDisabled;
+			sGameData.switchesDisabled = cMain.challengeMode.switchesDisabled;
+			sGameData.noBurnSwitch = cMain.challengeMode.noBurnSwitch;
+			sGameData.luckyUnlocked = cMain.luckyUnlocked;
+			sGameData.bastardUnlocked = cMain.bastardUnlocked; 
+			sGameData.feverUnlocked = cMain.feverUnlocked;
+			sGameData.slotsUnlocked = cMain.slotsUnlocked;
 			
 			for (int i = 0; i< 10; i++) {
 				sGameData.armor[i] = cMain.itemInventory.armor[i];
@@ -200,6 +207,13 @@ public class SaveGame implements Serializable{
 			cMain.score = sGameData.score;
 			cMain.perSecond = sGameData.perSecond;
 			cMain.dayPerSecond = sGameData.dayPerSecond;
+			cMain.challengeMode.savesDisabled = sGameData.savesDisabled;
+			cMain.challengeMode.switchesDisabled = sGameData.switchesDisabled;
+			cMain.challengeMode.noBurnSwitch = sGameData.noBurnSwitch;
+			cMain.luckyUnlocked = sGameData.luckyUnlocked;
+			cMain.bastardUnlocked = sGameData.bastardUnlocked; 
+			cMain.feverUnlocked = sGameData.feverUnlocked;
+			cMain.slotsUnlocked = sGameData.slotsUnlocked;
 
 			
 			for (int i = 0; i< 10; i++) {

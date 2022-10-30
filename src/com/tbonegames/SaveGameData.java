@@ -29,7 +29,7 @@ public class SaveGameData implements Serializable {
 	
 	int burnManager [] = new int[4];
 	
-	boolean noBurnSwitch, savesDisabled, switchesDisabled;
+	boolean noBurnSwitch, savesDisabled, switchesDisabled, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked;
 	
 	
 	

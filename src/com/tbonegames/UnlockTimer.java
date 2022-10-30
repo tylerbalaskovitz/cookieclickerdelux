@@ -84,7 +84,9 @@ public class UnlockTimer {
 						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
 						cMain.luckyUnlocked = true;
 						cMain.button5.setText("Lucky");
-					}
+					} 
+				} else {
+						cMain.button5.setText("Lucky");
 				} 
 				if(cMain.bastardUnlocked==false) {
 					if(cMain.logosCounter >= 750) {
@@ -92,6 +94,8 @@ public class UnlockTimer {
 						cMain.bastardUnlocked = true;
 						cMain.button6.setText("Bastard");
 					}
+				} else {
+					cMain.button6.setText("Bastard");
 				}
 				
 				if(cMain.feverUnlocked==false) {
@@ -100,14 +104,18 @@ public class UnlockTimer {
 						cMain.feverUnlocked = true;
 						cMain.button7.setText("Fever");
 					}
-				} 
+				} else {
+					cMain.button7.setText("Fever");
+				}
 				if(cMain.slotsUnlocked==false) {
 					if(cMain.logosCounter >= 1000) {
 						cMain.soundFX.playSoundEffect(cMain.soundFXValues.unlock);
 						cMain.slotsUnlocked = true;
 						cMain.button8.setText("Slots");
 					}
-				} 
+				}  else {
+					cMain.button8.setText("Slots");
+				}
 				
 				//unlock status for the in game items. 
 				cMain.itemInventory.items[0].unlocked = unlockItem(cMain.itemInventory.items[0].unlocked, cMain.itemInventory.items[0].unlockAmount);

@@ -4,16 +4,16 @@ import java.io.Serializable;
 
 import com.tbonegames.ClientMain;
 
-public class HPSwap extends Buffs implements Serializable{
+public class SpeedUp extends Buffs implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 
-	public HPSwap() {
+	public SpeedUp() {
 		
-		buffName = "HP Swap";
+		buffName = "Speed Up!";
 		buffHandlerName = "BuffsRestore";
 		
 		//description for when hovering over the items themselves.
-		buffDescription = "Swap your HP with that of an enemy.";
+		buffDescription = "Speed up the passage of time for a little bit of moo la la";
 		
 		//this is used so there won't be duplicates when drafting in the future. ID 1, 2, 3, etc. Also, this is useful for counting the amount of items in stuff in game.
 		idNumber = 1;
@@ -38,18 +38,18 @@ public class HPSwap extends Buffs implements Serializable{
 		removeDebuffBuffs = 2;
 		removeDebuffBuffsUpgrade = 3;
 		
-		unlockAmount = 10000;
-		buffPrice = 10000;
-		buffPriceIncrease = 10000;
+		unlockAmount = 100;
+		buffPrice = 100;
+		buffPriceIncrease = 100;
 		
-		rateOfIncrease = 1;
+		rateOfIncrease = 10;
 		
 		currentAmount = 0;
 		totalAmountPurchased = 0;
 	}
 	
 	public void shopSpecial(ClientMain cMain) {
-		
+		cMain.dayPerSecond += .01;
 	}
 	
 	public void combatSpecial(ClientMain cMain) {

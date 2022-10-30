@@ -8,6 +8,8 @@ import com.tbonegames.armor.BastardGloves;
 import com.tbonegames.armor.DeadArmor;
 import com.tbonegames.buffs.BastardStopwatch;
 import com.tbonegames.buffs.DeadBuff;
+import com.tbonegames.buffs.SlowDown;
+import com.tbonegames.buffs.SpeedUp;
 import com.tbonegames.cards.DeadCard;
 import com.tbonegames.cards.ShinChan;
 import com.tbonegames.cards.Whitey;
@@ -61,8 +63,8 @@ public class CheapBastard extends Challenges  implements Serializable{
 		cMain.itemInventory.armor[4] = new DeadArmor();
 		
 		cMain.itemInventory.buffs[0] = new BastardStopwatch();
-		cMain.itemInventory.buffs[1] = new DeadBuff();
-		cMain.itemInventory.buffs[2] = new DeadBuff();
+		cMain.itemInventory.buffs[1] = new SpeedUp();
+		cMain.itemInventory.buffs[2] = new SlowDown();
 		cMain.itemInventory.buffs[3] = new DeadBuff();
 		cMain.itemInventory.buffs[4] = new DeadBuff();
 	}

@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 import com.tbonegames.ClientMain;
 
-public class StealAndHeal extends Buffs implements Serializable{
+public class SlowDown extends Buffs implements Serializable{
 	final static long serialVersionUID = -1404202925519361557L;
 
-	public StealAndHeal() {
-		buffName = "Heal and Steal";
+	public SlowDown() {
+		buffName = "Slow Down";
 		buffHandlerName = "BuffsRestore";
 		
 		//description for when hovering over the items themselves.
-		buffDescription = "Heal yourself off a little stolen sweetness from your foes.";
+		buffDescription = "Slow down the passage of time for a bit of cash.";
 		
 		//this is used so there won't be duplicates when drafting in the future. ID 1, 2, 3, etc. Also, this is useful for counting the amount of items in stuff in game.
 		idNumber = 1;
@@ -37,18 +37,21 @@ public class StealAndHeal extends Buffs implements Serializable{
 		removeDebuffBuffs = 2;
 		removeDebuffBuffsUpgrade = 3;
 		
-		unlockAmount = 600;
-		buffPrice = 600;
-		buffPriceIncrease = 600;
+		unlockAmount = 1000;
+		buffPrice = 1000;
+		buffPriceIncrease = 1000;
 		
-		rateOfIncrease = 7;
+		rateOfIncrease = 1;
 		
 		currentAmount = 0;
 		totalAmountPurchased = 0;
 	}
 	
 	public void shopSpecial(ClientMain cMain) {
-		
+		cMain.dayPerSecond -= .01;
+		if (cMain.dayPerSecond <= 0){
+			cMain.dayPerSecond = .01;
+		}
 	}
 	
 	public void combatSpecial(ClientMain cMain) {

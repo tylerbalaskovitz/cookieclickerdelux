@@ -40,7 +40,7 @@ public class BastardShield extends Armor implements Serializable{
 	}
 	
 	public void combatSpecial(ClientMain cMain) {
-		
+		cMain.enemy.hp -= (cMain.enemyDamage /4);
 	}
 	
 }
