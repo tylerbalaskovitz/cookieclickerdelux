@@ -80,13 +80,15 @@ public class ClickerHandler implements ActionListener {
 				cMain.backgroundMusic.loop(cMain.soundFXValues.backgroundmusic);
 				cMain.soundFX.stop(cMain.soundFXValues.titleClip);
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
-				cMain.ui.closeAllPanels();
-				cMain.ui.displayMainGame();
 				dayTimer.timerUpdate();
+				cMain.timers.timerUpdate();
 				cMain.unlockTimer.startUnlockTimer();
+				timerFixer();
 				if (cMain.saveGameMode == null) {
 					cMain.saveGameMode = "Normal";
 				}
+				cMain.ui.closeAllPanels();
+				cMain.ui.displayMainGame();
 				break;
 			case "PreStart":
 				cMain.ui.displayPreStartMenu();
@@ -246,7 +248,16 @@ public class ClickerHandler implements ActionListener {
 		
 				
 		}
+		
+		
 	
+	}
+	public void timerFixer() {
+		if (cMain.perSecond == 0) {
+			cMain.perSecond+=.1;
+			cMain.timers.timerUpdate();
+			cMain.perSecond-=.1;
+		}
 	}
 
 }
