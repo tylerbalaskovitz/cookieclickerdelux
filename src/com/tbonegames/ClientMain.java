@@ -15,6 +15,7 @@ import javax.swing.JTextArea;
 import javax.swing.Timer;
 
 import com.tbonegames.enemies.Enemies;
+import com.tbonegames.levels.Levels;
 
 
 public class ClientMain implements Serializable{
@@ -46,7 +47,7 @@ public class ClientMain implements Serializable{
 	
 	public double  perSecond, dayPerSecond;
 	boolean timerOn, dayTimerOn,luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked, displayPanelSwitch, switcherEnabled, burnCardEnabled,
-	inCombat, attacksDisabled, buffsDisabled, blocksDisabled, itemsDisabled, displayItemsShop, displayWeaponsShop, 
+	inCombat, attacksDisabled, buffsDisabled, blocksDisabled, itemsDisabled, displayItemsShop, displayWeaponsShop, bossGenerated,
 	displayArmorShop, displayBuffsShop, customCombat, combatDeath;
 	
 	
@@ -72,6 +73,7 @@ public class ClientMain implements Serializable{
 	SoundFX soundFX = new SoundFX();
 	BackgroundMusic backgroundMusic = new BackgroundMusic();
 	SaveGame saveGame = new SaveGame(this);
+	Levels levels = new Levels();
 	
 	public static void main(String[] args) {
 		

@@ -41,7 +41,15 @@ public class DayTimer {
 				cMain.combatDayLabel.setText("Next Combat Day: " + (cMain.bossDay));
 				cMain.inCombatDayLabel.setText("Day: " + cMain.day);
 				
+				bossGenerator();
+				
+				if (cMain.day == cMain.bossDay) {
+					launchCombat();
+					statTracker();
+				}
+				
 				//order of Boss encounters
+				/*
 				if (cMain.day == 20) {
 					cMain.enemy = new FeverDemon();
 					launchCombat();
@@ -150,9 +158,19 @@ public class DayTimer {
 					cMain.bossDay = 280;
 					statTracker();
 				}
-				
+				*/
 			}
 		});
+	}
+	
+	public void bossGenerator() {
+		
+		if (cMain.inCombat == false && cMain.bossGenerated == false) {
+			cMain.enemy = cMain.levels.level[cMain.enemiesDefeated];
+			cMain.bossDay = cMain.levels.combatDayArray[cMain.enemiesDefeated];
+			cMain.bossGenerated = true;
+		}
+		
 	}
 	
 	public void statTracker() {

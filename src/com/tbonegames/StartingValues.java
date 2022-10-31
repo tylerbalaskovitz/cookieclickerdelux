@@ -1,5 +1,6 @@
 package com.tbonegames;
 
+import com.tbonegames.levels.HitlerClone;
 
 public class StartingValues {
 		ClientMain cMain;
@@ -7,6 +8,10 @@ public class StartingValues {
 			this.cMain = cMain;
 		}
 	public void startUpValues() {
+			//temporary until the handler is created.
+			cMain.levels = new HitlerClone();
+			cMain.levels.createLevel();
+			cMain.levels.createBossDay();
 			cMain.itemInventory.startingValuesBurnManager();
 			cMain.highestLogo = 0;
 			cMain.healingMultiplier = 1;

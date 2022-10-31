@@ -6,16 +6,20 @@ import com.tbonegames.enemies.Enemies;
 
 public class Levels implements Serializable{
 
-	String levelName;
+	public String levelName;
 	
-	String levelDescription;
+	public String levelDescription;
 	
-	Enemies level[];
+	public Enemies level[];
 	
-	int combatDayArray[];
+	public int combatDayArray[];
 	
 	public void createLevel() {
 
+		
+	}
+	
+	public void createBossDay() {
 		
 	}
 }
