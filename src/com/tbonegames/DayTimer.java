@@ -43,7 +43,7 @@ public class DayTimer {
 				
 				bossGenerator();
 				
-				if (cMain.day == cMain.bossDay) {
+				if (cMain.day == cMain.bossDay && cMain.inCombat == false) {
 					launchCombat();
 					statTracker();
 				}

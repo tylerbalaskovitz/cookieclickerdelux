@@ -448,6 +448,8 @@ public class Combat implements Serializable{
 		
 		cMain.combatTextArea.setText("High Score:" + cMain.highScore + "\n Score:" + cMain.score + recoilDeath + "\n You have ran out of life \n Game Over.");
 		
+		cMain.bossGenerated = false;
+		cMain.inCombat = false;
 		
 		
 		cMain.combatButton1.setText("New Game");
@@ -463,6 +465,7 @@ public class Combat implements Serializable{
 	};
 	public void victory() {
 		if (cMain.enemy.hp < 1) {
+			cMain.bossGenerated = false;
 			cMain.soundFX.playSoundEffect(cMain.soundFXValues.battlevictory);
 			cMain.combatTextArea.setText("You have defeated " + cMain.enemy.name);
 			defeatedEnemy = cMain.enemy.name;
