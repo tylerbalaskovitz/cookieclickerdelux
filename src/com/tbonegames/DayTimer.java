@@ -4,21 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
-import com.tbonegames.enemies.AntiGravityChamber;
-import com.tbonegames.enemies.Arachnobots;
-import com.tbonegames.enemies.BetaCarrotine;
-import com.tbonegames.enemies.CornWhole;
-import com.tbonegames.enemies.DrDeflation;
-import com.tbonegames.enemies.DrEnema;
-import com.tbonegames.enemies.DrHitlerClone;
-import com.tbonegames.enemies.DrHitlerCloneAndroid;
-import com.tbonegames.enemies.FeverDemon;
-import com.tbonegames.enemies.FlyingPecker;
-import com.tbonegames.enemies.HenchPeckers;
-import com.tbonegames.enemies.InflatableOfDoom;
-import com.tbonegames.enemies.KungFujiApple;
-import com.tbonegames.enemies.TheDeflowerer;
-import com.tbonegames.enemies.TheGreatO;
 
 public class DayTimer {
 	
@@ -48,117 +33,6 @@ public class DayTimer {
 					statTracker();
 				}
 				
-				//order of Boss encounters
-				/*
-				if (cMain.day == 20) {
-					cMain.enemy = new FeverDemon();
-					launchCombat();
-					cMain.bossDay = 40;
-					statTracker();
-				}
-				if (cMain.day == 40) {
-					cMain.enemy = new DrEnema();
-					launchCombat();
-					cMain.bossDay = 60;
-					statTracker();
-				}
-				if (cMain.day == 60) {
-					cMain.enemy = new KungFujiApple();
-					launchCombat();
-					cMain.bossDay = 70;
-					statTracker();
-				}
-				if (cMain.day == 70) {
-					cMain.enemy = new BetaCarrotine();
-					launchCombat();
-					cMain.bossDay = 90;
-					statTracker();
-				}
-				if (cMain.day == 90) {
-					cMain.enemy = new AntiGravityChamber();
-					launchCombat();
-					cMain.bossDay = 100;
-					statTracker();
-				}
-				if (cMain.day == 100) {
-					cMain.enemy = new CornWhole();
-					launchCombat();
-					cMain.bossDay = 120;
-					statTracker();
-				}
-				if (cMain.day == 120) {
-					cMain.enemy = new DrDeflation();
-					launchCombat();
-					cMain.bossDay = 130;
-					statTracker();
-				}
-				if (cMain.day == 130) {
-					cMain.enemy = new TheDeflowerer();
-					launchCombat();
-					cMain.bossDay = 150;
-					statTracker();
-				}
-				if (cMain.day == 150) {
-					cMain.enemy = new TheGreatO();
-					launchCombat();
-					cMain.bossDay = 180;
-					statTracker();
-				}
-				if (cMain.day == 180) {
-					cMain.enemy = new Arachnobots();
-					launchCombat();
-					cMain.bossDay = 190;
-					statTracker();
-				}
-				if (cMain.day == 190) {
-					cMain.enemy = new HenchPeckers();
-					launchCombat();
-					cMain.bossDay = 200;
-					statTracker();
-				}
-				if (cMain.day == 200) {
-					cMain.enemy = new InflatableOfDoom();
-					launchCombat();
-					cMain.bossDay = 210;
-					statTracker();
-				}
-				if (cMain.day == 210) {
-					cMain.enemy = new FlyingPecker();
-					launchCombat();
-					cMain.bossDay = 220;
-					statTracker();
-				}
-				if (cMain.day == 220) {
-					cMain.enemy = new HenchPeckers();
-					launchCombat();
-					cMain.bossDay = 225;
-					statTracker();
-				}
-				if (cMain.day == 225) {
-					cMain.enemy = new FlyingPecker();
-					launchCombat();
-					cMain.bossDay = 230;
-					statTracker();
-				}
-				if (cMain.day == 230) {
-					cMain.enemy = new HenchPeckers();
-					launchCombat();
-					cMain.bossDay = 245;
-					statTracker();
-				}
-				if (cMain.day == 245) {
-					cMain.enemy = new DrHitlerClone();
-					launchCombat();
-					cMain.bossDay = 260;
-					statTracker();
-				}
-				if (cMain.day == 260) {
-					cMain.enemy = new DrHitlerCloneAndroid();
-					launchCombat();
-					cMain.bossDay = 280;
-					statTracker();
-				}
-				*/
 			}
 		});
 	}
@@ -175,31 +49,17 @@ public class DayTimer {
 	
 	public void statTracker() {
 		System.out.println("Day" + cMain.day + ", Logos: " + cMain.logosCounter);
-		nameAndStat(cMain.itemInventory.items[0].itemName, cMain.itemInventory.items[0].totalCurrentAmount);
-		nameAndStat(cMain.itemInventory.items[1].itemName, cMain.itemInventory.items[1].totalCurrentAmount);
-		nameAndStat(cMain.itemInventory.items[2].itemName, cMain.itemInventory.items[2].totalCurrentAmount);
-		nameAndStat(cMain.itemInventory.items[3].itemName, cMain.itemInventory.items[3].totalCurrentAmount);
-		nameAndStat(cMain.itemInventory.items[4].itemName, cMain.itemInventory.items[4].totalCurrentAmount);
+		for (int i = 0; i < 5; i++) {
+		nameAndStat(cMain.itemInventory.items[i].itemName, cMain.itemInventory.items[i].totalCurrentAmount);
 		
-		nameAndStat(cMain.itemInventory.weapons[0].weaponName, cMain.itemInventory.weapons[0].totalCurrentAmount);
-		nameAndStat(cMain.itemInventory.weapons[1].weaponName, cMain.itemInventory.weapons[1].totalCurrentAmount);
-		nameAndStat(cMain.itemInventory.weapons[2].weaponName, cMain.itemInventory.weapons[2].totalCurrentAmount);
-		nameAndStat(cMain.itemInventory.weapons[3].weaponName, cMain.itemInventory.weapons[3].totalCurrentAmount);
-		nameAndStat(cMain.itemInventory.weapons[4].weaponName, cMain.itemInventory.weapons[4].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.weapons[i].weaponName, cMain.itemInventory.weapons[i].totalCurrentAmount);
 		
-		nameAndStat(cMain.itemInventory.armor[0].armorName, cMain.itemInventory.weapons[0].totalCurrentAmount);
-		nameAndStat(cMain.itemInventory.armor[1].armorName, cMain.itemInventory.weapons[1].totalCurrentAmount);
-		nameAndStat(cMain.itemInventory.armor[2].armorName, cMain.itemInventory.weapons[2].totalCurrentAmount);
-		nameAndStat(cMain.itemInventory.armor[3].armorName, cMain.itemInventory.weapons[3].totalCurrentAmount);
-		nameAndStat(cMain.itemInventory.armor[4].armorName, cMain.itemInventory.weapons[4].totalCurrentAmount);
+		nameAndStat(cMain.itemInventory.armor[i].armorName, cMain.itemInventory.weapons[i].totalCurrentAmount);
 		
-		nameAndStat(cMain.itemInventory.buffs[0].buffName, cMain.itemInventory.buffs[0].currentAmount);
-		nameAndStat(cMain.itemInventory.buffs[1].buffName, cMain.itemInventory.buffs[1].currentAmount);
-		nameAndStat(cMain.itemInventory.buffs[2].buffName, cMain.itemInventory.buffs[2].currentAmount);
-		nameAndStat(cMain.itemInventory.buffs[3].buffName, cMain.itemInventory.buffs[3].currentAmount);
-		nameAndStat(cMain.itemInventory.buffs[4].buffName, cMain.itemInventory.buffs[4].currentAmount);
+		nameAndStat(cMain.itemInventory.buffs[i].buffName, cMain.itemInventory.buffs[i].currentAmount);
+
 		System.out.println("==================================================");
-		
+		}
 		
 	}
 	
