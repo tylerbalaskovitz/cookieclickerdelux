@@ -29,15 +29,16 @@ public class ClientMain implements Serializable{
 	Random rand = new Random();
 	JFrame window;
 	JPanel itemPanel, cardPanel, slotPanel, shopPanel, shopUpperPanel, shopCookiePanel, messagePanel, counterPanel, cookiePanel, optionsPanel, navigationPanel, combatPanel, combatButtonPanel, 
-	startButtonPanel, titleNamePanel, descriptionPanel, shopNavigationPanel, combatStatsPanel, multiplierPanel, cardModPanel, saveSpotPanel, challengeModePanel, quitPanel;
+	startButtonPanel, titleNamePanel, descriptionPanel, shopNavigationPanel, combatStatsPanel, multiplierPanel, cardModPanel, saveSpotPanel, challengeModePanel, quitPanel, levelsPanel;
 	JLabel counterLabel, shopCookieLabel, perSecLabel, shopLabel, titleNameLabel, descriptionLabel, dayLabel, combatDayLabel, inCombatHPLabel, inCombatDayLabel, inCombatActionsLabel;
 	JButton startButton0, startButton1, startButton2, startButton3, startButton4, button1, button2, button3, button4, button5, button6, button7, button8, button9, displayShop, shopButton0, 
 	shopButton1, shopButton2, shopButton3, shopButton4, shopButton5, shopButton6, shopButton7, shopButton8, shopButton9, optionButton1, optionButton2, optionButton3,optionButton4, 
 	combatButton1, combatButton2, combatButton3, combatButton4, shopNavigationButton1, shopNavigationButton2, shopNavigationButton3, shopNavigationButton4, multiplierButton1, 
 	multiplierButton2, multiplierButton3, cardModButton0, cardModButton1, saveSpotButton0, saveSpotButton1, saveSpotButton2, saveSpotButton3, quitButton;
 	
+	JButton levelsButtons[] = new JButton[6];
 	JButton challengeModeButtons[] = new JButton[11];
-	JScrollPane challengeModeScrollPane;
+	JScrollPane challengeModeScrollPane, levelsScrollPane;
 	
 	int saveHeaderArray[] = new int[3];
 	public int  logosCounter, rounds, timerSpeed, dayTimerSpeed, slotsPrice, saveLoadInt, challengeModeInt,

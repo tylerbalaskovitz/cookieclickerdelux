@@ -88,7 +88,25 @@ public void createUI() {
 	
 	cMain.saveSpotButton3 = new JButton("Return");
 	buttonGenerator(cMain.saveSpotButton3, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.saveSpotPanel);
+	// for the Levels Buttons, JScrollPane and Panel
+	cMain.levelsPanel = new JPanel();
+	panelConfiguration(cMain.levelsPanel, 175, 240, 250, 250, Color.black, 6,1, cMain.window);
 	
+	for (int i = 0; i < 6; i++) {
+	cMain.levelsButtons[i] = new JButton("Return");
+	buttonGenerator(cMain.levelsButtons[i], cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "ModeSelect", cMain.mouseHandler, cMain.levelsPanel);
+	if (i == 5) {
+	buttonGenerator(cMain.levelsButtons[i], cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.levelsPanel);	
+	}
+	cMain.levelsButtons[i].setSize(100, 50);
+	}
+	
+	cMain.levelsPanel.setVisible(true);
+	
+	cMain.levelsScrollPane = new JScrollPane();
+	scrollPaneConfiguration(cMain.levelsScrollPane, Color.black, Color.white, true, true, 270, 240, 240, 200, cMain.levelsPanel, cMain.window);
+	
+	// for the challenge buttons, JScrollPane and panel
 	cMain.challengeModePanel = new JPanel();
 	panelConfiguration(cMain.challengeModePanel, 175, 240, 250, 250, Color.black, 11,1, cMain.window);
 	
@@ -549,5 +567,23 @@ public void createUI() {
 			cMain.font3 = new Font("Comic Sans MS", Font.PLAIN, 20);
 			cMain.font3Bold = new Font("Comic Sans MS", Font.BOLD, 26);
 			cMain.font4 = new Font("Comic Sans MS", Font.PLAIN, 13);
+		}
+
+		
+		public void displayDeckSelect() {
+			
+			
+		}
+
+		public void displayModeSelect() {
+			
+			// TODO Auto-generated method stub
+			
+		}
+
+
+		public void displayLevelSelect() {
+			// TODO Auto-generated method stub
+			
 		}	
 }
