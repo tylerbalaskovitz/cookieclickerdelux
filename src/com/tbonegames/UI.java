@@ -49,6 +49,11 @@ public void createUI() {
 	cMain.descriptionLabel = new JLabel("Created by T-bone Games ©2022");
 	labelConfiguration(cMain.descriptionLabel, "Created by T-bone Games ©2022", cMain.font3, Color.white,cMain.descriptionPanel);
 	
+	cMain.quitPanel = new JPanel();
+	panelConfiguration(cMain.quitPanel, 10, 500, 155, 50, Color.black, 1, 1, cMain.window);
+	
+	cMain.quitButton = new JButton("Quit");
+	buttonGenerator(cMain.quitButton, cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Quit", cMain.mouseHandler, cMain.quitPanel);
 	
 	cMain.startButtonPanel = new JPanel();
 	panelConfiguration(cMain.startButtonPanel, 300, 350, 155, 140, Color.black, 5, 1, cMain.window);
@@ -483,6 +488,7 @@ public void createUI() {
 		cMain.displayPanelSwitch= false;
 		cMain.challengeModeScrollPane.setVisible(false);
 		cMain.challengeModeScrollPane.validate();
+		cMain.quitPanel.setVisible(false);
 		
 	}
 	
@@ -493,6 +499,7 @@ public void createUI() {
 		cMain.descriptionPanel.setVisible(true);
 		cMain.titleNamePanel.setVisible(true);
 		cMain.startButtonPanel.setVisible(true);
+		cMain.quitPanel.setVisible(true);
 		
 	}
 		

@@ -44,7 +44,9 @@ public class ClickerHandler implements ActionListener {
 		
 		
 		switch (action) {
-
+			case "Quit":
+				System.exit(0);
+			break;
 			case "Start":
 				if (cMain.saveGameMode == null) {
 				cMain.saveGameMode = "Normal";
