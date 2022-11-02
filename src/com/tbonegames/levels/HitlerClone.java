@@ -1,5 +1,7 @@
 package com.tbonegames.levels;
 
+import java.io.Serializable;
+
 import com.tbonegames.ClientMain;
 import com.tbonegames.enemies.AntiGravityChamber;
 import com.tbonegames.enemies.Arachnobots;
@@ -18,7 +20,8 @@ import com.tbonegames.enemies.KungFujiApple;
 import com.tbonegames.enemies.TheDeflowerer;
 import com.tbonegames.enemies.TheGreatO;
 
-public class HitlerClone extends Levels{
+public class HitlerClone extends Levels implements Serializable{
+	final static long serialVersionUID = -1404202925519361557L;
 
 	public HitlerClone() {
 		levelName = "The Fourth Reich";

@@ -69,7 +69,17 @@ public class ClickerHandler implements ActionListener {
 				//finish this method
 				cMain.ui.displayModeSelect();
 				break;
+			case "DeckSelect":
+				cMain.ui.closeAllPanels();
+				
+				//finish this method
+				cMain.ui.displayDeckSelect();
+				break;
 			case "Levels":
+				cMain.ui.closeAllPanels();
+				
+				//finish this method
+				cMain.ui.displayLevelSelect();
 				break;
 			case "PreChallenge":
 				cMain.soundFX.playSoundEffect(cMain.soundFXValues.purchase);
