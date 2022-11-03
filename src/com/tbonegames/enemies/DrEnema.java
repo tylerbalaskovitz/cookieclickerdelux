@@ -11,7 +11,7 @@ public class DrEnema extends Enemies implements Serializable{
 		name = "Dr. Enema";
 		hp = 1100;
 		attack = 100;
-		defense = 10;
+		defense = 100;
 		dodge = 10;
 		disableDuration = 0;
 		

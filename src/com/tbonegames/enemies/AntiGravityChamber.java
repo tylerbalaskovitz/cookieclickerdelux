@@ -11,7 +11,7 @@ public class AntiGravityChamber extends Enemies  implements Serializable{
 		name = "Anti-Gravity Chamber";
 		hp = 3000;
 		attack = 300;
-		defense = 10;
+		defense = 100;
 		dodge = 10;
 		disableDuration = 0;
 		

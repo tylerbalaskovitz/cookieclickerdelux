@@ -11,7 +11,7 @@ public class KungFujiApple extends Enemies implements Serializable{
 		name = "Kung Fuji Apple";
 		hp = 2200;
 		attack = 200;
-		defense = 10;
+		defense = 100;
 		dodge = 10;
 		disableDuration = 0;
 		

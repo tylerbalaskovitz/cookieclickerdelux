@@ -12,7 +12,7 @@ public class HenchPeckers extends Enemies implements Serializable{
 			name = "Hench Peckers";
 			hp = 140000;
 			attack = 2200;
-			defense = 20;
+			defense = 200;
 			dodge = 10;
 			
 			attackDisableCounter = 0;

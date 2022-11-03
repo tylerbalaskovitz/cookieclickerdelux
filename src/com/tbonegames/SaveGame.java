@@ -140,6 +140,7 @@ public class SaveGame implements Serializable{
 			sGameData.bastardUnlocked = cMain.bastardUnlocked; 
 			sGameData.feverUnlocked = cMain.feverUnlocked;
 			sGameData.slotsUnlocked = cMain.slotsUnlocked;
+			sGameData.currentChallenge = cMain.challengeMode.currentChallenge;
 			
 			for (int i = 0; i< 10; i++) {
 				sGameData.armor[i] = cMain.itemInventory.armor[i];
@@ -214,6 +215,7 @@ public class SaveGame implements Serializable{
 			cMain.bastardUnlocked = sGameData.bastardUnlocked; 
 			cMain.feverUnlocked = sGameData.feverUnlocked;
 			cMain.slotsUnlocked = sGameData.slotsUnlocked;
+			cMain.challengeMode.currentChallenge = sGameData.currentChallenge;
 
 			
 			for (int i = 0; i< 10; i++) {

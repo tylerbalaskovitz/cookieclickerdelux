@@ -11,7 +11,7 @@ public class TheGreatO extends Enemies implements Serializable{
 		name = "The Great O";
 		hp = 20000;
 		attack = 2000;
-		defense = 14;
+		defense = 140;
 		dodge = 10;
 		disableDuration = 0;
 		

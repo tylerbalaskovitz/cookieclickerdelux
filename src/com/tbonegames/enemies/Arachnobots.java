@@ -12,7 +12,7 @@ public class Arachnobots extends Enemies  implements Serializable{
 		name = "Arachnobots";
 		hp = 200000;
 		attack = 2000;
-		defense = 16;
+		defense = 160;
 		dodge = 10;
 		disableDuration = 0;
 		

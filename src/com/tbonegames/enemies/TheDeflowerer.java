@@ -11,7 +11,7 @@ public class TheDeflowerer extends Enemies  implements Serializable{
 		name = "The Deflowerer";
 		hp = 14000;
 		attack = 1000;
-		defense = 13;
+		defense = 130;
 		dodge = 10;
 		disableDuration = 0;
 		

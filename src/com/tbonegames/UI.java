@@ -506,6 +506,10 @@ public void createUI() {
 		cMain.displayPanelSwitch= false;
 		cMain.challengeModeScrollPane.setVisible(false);
 		cMain.challengeModeScrollPane.validate();
+		
+		cMain.levelsScrollPane.setVisible(false);
+		cMain.levelsScrollPane.validate();
+		
 		cMain.quitPanel.setVisible(false);
 		
 	}

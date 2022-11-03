@@ -187,7 +187,7 @@ public class Combat implements Serializable{
 		
 		itemDamageBonus =weaponsMultiplier * totalPurchase;
 		
-		cMain.playerDamage = new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus))/cMain.enemy.defense);
+		cMain.playerDamage = ((new java.util.Random().nextInt(cMain.startingDamage) + ((cMain.startingDamage * (10+itemDamageBonus)))*10)/cMain.enemy.defense);
 		return cMain.playerDamage;
 	}
 	

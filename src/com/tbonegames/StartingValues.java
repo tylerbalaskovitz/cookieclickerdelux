@@ -29,10 +29,10 @@ public class StartingValues {
 			cMain.baseNumberOfActions = 2;
 			cMain.day = 0;
 			cMain.bossDay = 20;
-			cMain.logosCounter = 200000;
+			cMain.logosCounter = 00;
 			cMain.startingDamage = 5;
 			cMain.perSecond = 0;
-			cMain.dayPerSecond = 1;
+			cMain.dayPerSecond = .1;
 			cMain.luckyPrice = 500;
 			cMain.bastardPrice = 750;
 			cMain.feverPrice = 1000;

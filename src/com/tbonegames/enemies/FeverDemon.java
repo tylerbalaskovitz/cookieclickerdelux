@@ -11,7 +11,7 @@ public class FeverDemon extends Enemies implements Serializable{
 		name = "The Red Hot Fever Demon";
 		hp = 300;
 		attack = 50;
-		defense = 10;
+		defense = 100;
 		dodge = 10;
 		disableDuration = 0;
 		

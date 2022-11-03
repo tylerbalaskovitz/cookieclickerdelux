@@ -13,7 +13,7 @@ public class DrHitlerCloneAndroid extends Enemies implements Serializable{
 		name = "Dr. Hitler Clone Android";
 		hp = 4000000;
 		attack = 15000;
-		defense = 200;
+		defense = 2000;
 		dodge = 10;
 		disableDuration = 0;
 		

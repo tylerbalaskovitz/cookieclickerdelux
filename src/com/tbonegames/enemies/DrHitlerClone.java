@@ -11,7 +11,7 @@ public class DrHitlerClone extends Enemies implements Serializable{
 	name = "Dr. Hitler Clone";
 	hp = 750000;
 	attack = 10000;
-	defense = 100;
+	defense = 1000;
 	dodge = 10;
 	disableDuration = 0;
 	

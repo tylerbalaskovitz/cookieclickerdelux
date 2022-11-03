@@ -42,6 +42,7 @@ public class DayTimer {
 		if (cMain.inCombat == false && cMain.bossGenerated == false) {
 			cMain.enemy = cMain.levels.level[cMain.enemiesDefeated];
 			cMain.bossDay = cMain.levels.combatDayArray[cMain.enemiesDefeated];
+			cMain.challengeMode.currentChallenge.combatChallenge(cMain);
 			cMain.bossGenerated = true;
 		}
 		

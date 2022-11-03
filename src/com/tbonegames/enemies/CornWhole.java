@@ -12,7 +12,7 @@ public class CornWhole extends Enemies implements Serializable{
 		name = "Corn Whole";
 		hp = 4200;
 		attack = 400;
-		defense = 12;
+		defense = 120;
 		dodge = 10;
 		disableDuration = 0;
 		

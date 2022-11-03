@@ -11,7 +11,7 @@ public class InflatableOfDoom extends Enemies  implements Serializable{
 		name ="The Inflatable of Doom";
 		hp = 300000;
 		attack = 5000;
-		defense = 50;
+		defense = 500;
 		dodge = 10;
 		disableDuration = 0;
 		

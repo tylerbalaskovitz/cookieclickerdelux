@@ -5,6 +5,7 @@ import java.io.Serializable;
 import com.tbonegames.armor.Armor;
 import com.tbonegames.buffs.Buffs;
 import com.tbonegames.cards.Cards;
+import com.tbonegames.challenge.Challenges;
 import com.tbonegames.items.Items;
 import com.tbonegames.weapons.Weapons;
 
@@ -26,7 +27,7 @@ public class SaveGameData implements Serializable {
 	Weapons weapons[] = new Weapons[10];
 	Items items[] = new Items[10];
 	Cards cards [] = new Cards[4];
-	
+	Challenges currentChallenge;
 	int burnManager [] = new int[4];
 	
 	boolean noBurnSwitch, savesDisabled, switchesDisabled, luckyUnlocked, bastardUnlocked, feverUnlocked, slotsUnlocked;

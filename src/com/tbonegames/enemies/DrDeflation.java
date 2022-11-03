@@ -12,7 +12,7 @@ public class DrDeflation extends Enemies implements Serializable{
 		name = "Dr. Deflation";
 		hp = 12000;
 		attack = 700;
-		defense = 12;
+		defense = 120;
 		dodge = 10;
 		disableDuration = 0;
 		

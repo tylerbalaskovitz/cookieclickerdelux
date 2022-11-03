@@ -11,7 +11,7 @@ public class FlyingPecker extends Enemies  implements Serializable{
 	name = "Flying Pecker";
 	hp = 400000;
 	attack = 5000;
-	defense = 50;
+	defense = 500;
 	dodge = 10;
 	disableDuration = 0;
 	

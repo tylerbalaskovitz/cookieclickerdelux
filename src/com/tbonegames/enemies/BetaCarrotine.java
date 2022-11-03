@@ -11,7 +11,7 @@ public class BetaCarrotine extends Enemies  implements Serializable{
 	name = "Beta Carrotine";
 	hp = 3500;
 	attack = 300;
-	defense = 10;
+	defense = 100;
 	dodge = 10;
 	disableDuration = 0;
 	
