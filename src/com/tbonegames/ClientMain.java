@@ -14,6 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.Timer;
 
+import com.tbonegames.challenge.NoChallenge;
 import com.tbonegames.enemies.Enemies;
 import com.tbonegames.levels.Levels;
 
@@ -59,14 +60,14 @@ public class ClientMain implements Serializable{
 	StartingValues sValues = new StartingValues(this);
 	UI ui = new UI(this);
 	Combat combat = new Combat(this);
-	UnlockTimer unlockTimer = new UnlockTimer(this);
-	GameTimers timers = new GameTimers(this);
-	DayTimer dayTimers = new DayTimer(this);
+	UnlockTimer unlockTimerClass = new UnlockTimer(this);
+	GameTimers gameTimersClass = new GameTimers(this);
+	DayTimer dayTimerClass = new DayTimer(this);
 	ShopHandler shopHandler = new ShopHandler(this);
 	CombatHandler combatHandler = new CombatHandler(this, combat);
 	public Enemies enemy = new Enemies();
-	ClickerHandler clickerHandler = new ClickerHandler(this, ui, timers, dayTimers, slots);
-	Timer timer, unlockTimers, dayTimer;
+	ClickerHandler clickerHandler = new ClickerHandler(this, ui, gameTimersClass, dayTimerClass, slots);
+	Timer  gameTimers, unlockTimers, dayTimer;
 	JTextArea messageText, shopMessageText, combatTextArea;
 	MouseHandler mouseHandler = new MouseHandler(this);
 	public ItemInventory itemInventory = new ItemInventory();
@@ -94,6 +95,7 @@ public class ClientMain implements Serializable{
 		for (int i = 0; i < 3; i++) {
 			saveGame.loadFileHeader(i);
 			}
+		challengeMode.currentChallenge = new NoChallenge();
 		backgroundMusic.setFile(soundFXValues.backgroundmusic);
 		
 		soundFX.playSoundEffect(soundFXValues.titleClip);

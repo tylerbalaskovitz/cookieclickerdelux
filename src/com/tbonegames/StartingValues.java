@@ -27,7 +27,7 @@ public class StartingValues {
 			cMain.timerOn = false;
 			cMain.inCombat = false;
 			cMain.baseNumberOfActions = 2;
-			cMain.day = 0;
+			cMain.day = 19;
 			cMain.bossDay = 20;
 			cMain.logosCounter = 00;
 			cMain.startingDamage = 5;

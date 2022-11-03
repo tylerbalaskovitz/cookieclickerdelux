@@ -13,10 +13,13 @@ public class DayTimer {
 		this.cMain = cMain;
 	}
 	
+	
+	
 	public void setTimer() {
 		cMain.dayTimer = new Timer(cMain.dayTimerSpeed, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				cMain.dayLimiter = cMain.bossDay - 1;
 				if (cMain.inCombat == true && (cMain.day >= cMain.dayLimiter)) {
 				} else {

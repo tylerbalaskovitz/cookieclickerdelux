@@ -1,5 +1,6 @@
 package com.tbonegames;
 
+import java.awt.Color;
 import java.io.Serializable;
 import java.util.Random;
 
@@ -433,7 +434,9 @@ public class Combat implements Serializable{
 		
 		
 		cMain.dayTimer.stop();
-		cMain.timer.stop();
+		if (cMain.gameTimers != null) {
+		cMain.gameTimers.stop();
+		}
 			
 		cMain.backgroundMusic.stop(cMain.soundFXValues.backgroundmusic);
 		
@@ -498,6 +501,7 @@ public class Combat implements Serializable{
 		
 		cMain.ui.closeAllPanels();
 		cMain.ui.displayOptions();
+		cMain.navigationPanel.setVisible(false);
 	}
 	
 	public void setBoldness() {

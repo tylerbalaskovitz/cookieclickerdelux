@@ -15,7 +15,7 @@ public class GameTimers {
 	}
 	
 	public void setTimer() {
-		cMain.timer = new Timer(cMain.timerSpeed, new ActionListener() {
+		cMain.gameTimers = new Timer(cMain.timerSpeed, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
@@ -44,7 +44,7 @@ public class GameTimers {
 			cMain.timerOn=true;
 		}
 		else if(cMain.timerOn==true) {
-			cMain.timer.stop();
+			cMain.gameTimers.stop();
 		}
 		double speed = 1/cMain.perSecond*1000;
 		
@@ -55,7 +55,7 @@ public class GameTimers {
 		cMain.perSecLabel.setText("Per Second: " + s);
 		
 		setTimer();
-		cMain.timer.start();
+		cMain.gameTimers.start();
 		
 	}
 
