@@ -122,7 +122,29 @@ public void createUI() {
 	cMain.challengeModePanel.setVisible(true);
 	
 	cMain.challengeModeScrollPane = new JScrollPane();
-	scrollPaneConfiguration(cMain.challengeModeScrollPane, Color.black, Color.white, true, true, 270, 240, 240, 200, cMain.challengeModePanel, cMain.window);
+	scrollPaneConfiguration(cMain.challengeModeScrollPane, Color.white, Color.black, true, true, 270, 240, 240, 200, cMain.challengeModePanel, cMain.window);
+	
+	
+	//Things relating to inventory
+	
+	cMain.inventoryPanel = new JPanel();
+	panelConfiguration(cMain.inventoryPanel, 20, 20, 200, 150, Color.black, 5, 1, cMain.window);
+	
+	cMain.inventoryMenuButtons[0] = new JButton("Return");
+	buttonGenerator(cMain.inventoryMenuButtons[0], cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.inventoryPanel);
+	
+	cMain.inventoryMenuButtons[1] = new JButton("Build Deck");
+	buttonGenerator(cMain.inventoryMenuButtons[1], cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "BuildDeck", cMain.mouseHandler, cMain.inventoryPanel);
+	
+	cMain.inventoryMenuButtons[2] = new JButton("Achievements");
+	buttonGenerator(cMain.inventoryMenuButtons[2], cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "Achievements", cMain.mouseHandler, cMain.inventoryPanel);
+	
+	cMain.inventoryMenuButtons[3] = new JButton("Return");
+	buttonGenerator(cMain.inventoryMenuButtons[3], cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.inventoryPanel);
+	
+	cMain.inventoryMenuButtons[4] = new JButton("Return");
+	buttonGenerator(cMain.inventoryMenuButtons[4], cMain.font3, Color.black, Color.white, false, cMain.clickerHandler, "StartMenu", cMain.mouseHandler, cMain.inventoryPanel);
+	
 	
 	
 	//Things relating to Combat
@@ -511,6 +533,7 @@ public void createUI() {
 		cMain.levelsScrollPane.validate();
 		
 		cMain.quitPanel.setVisible(false);
+		cMain.inventoryPanel.setVisible(false);
 		
 	}
 	
@@ -573,6 +596,11 @@ public void createUI() {
 			cMain.font4 = new Font("Comic Sans MS", Font.PLAIN, 13);
 		}
 
+		
+		public void displayInventoryMenu() {
+			closeAllPanels();
+			cMain.inventoryPanel.setVisible(true);
+		}
 		
 		public void displayDeckSelect() {
 			

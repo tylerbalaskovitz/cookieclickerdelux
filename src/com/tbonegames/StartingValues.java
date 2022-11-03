@@ -1,5 +1,6 @@
 package com.tbonegames;
 
+import com.tbonegames.challenge.NoChallenge;
 import com.tbonegames.levels.HitlerClone;
 
 public class StartingValues {
@@ -9,6 +10,7 @@ public class StartingValues {
 		}
 	public void startUpValues() {
 			//temporary until the handler is created.
+			cMain.challengeMode.currentChallenge = new NoChallenge();
 			cMain.levels = new HitlerClone();
 			cMain.levels.createLevel();
 			cMain.levels.createBossDay();

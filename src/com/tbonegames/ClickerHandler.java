@@ -47,6 +47,10 @@ public class ClickerHandler implements ActionListener {
 			case "Quit":
 				System.exit(0);
 			break;
+			case "Inventory":
+				cMain.ui.closeAllPanels();
+				cMain.ui.displayInventoryMenu();
+			break;
 			case "Start":
 				if (cMain.saveGameMode == null) {
 				cMain.saveGameMode = "Normal";
