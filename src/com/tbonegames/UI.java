@@ -46,8 +46,8 @@ public void createUI() {
 	panelConfiguration(cMain.descriptionPanel, 235, 500, 600, 50, Color.black, 1, 1, cMain.window);
 	
 	
-	cMain.descriptionLabel = new JLabel("Created by T-bone Games ©2022");
-	labelConfiguration(cMain.descriptionLabel, "Created by T-bone Games ©2022", cMain.font3, Color.white,cMain.descriptionPanel);
+	cMain.descriptionLabel = new JLabel("Created by T-bone Games 2022");
+	labelConfiguration(cMain.descriptionLabel, "Created by T-bone Games 2022", cMain.font3, Color.white,cMain.descriptionPanel);
 	
 	cMain.quitPanel = new JPanel();
 	panelConfiguration(cMain.quitPanel, 10, 500, 155, 50, Color.black, 1, 1, cMain.window);
